@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { Icon, List, ListItem } from "@mui/material";
 
+import { ExperienceType } from "@/lib/experience";
 import Image from "next/image";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
@@ -12,7 +13,11 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import Typography from "@mui/material/Typography";
 import { timelineOppositeContentClasses } from "@mui/lab/TimelineOppositeContent";
 
-export const Experience = ({ experience_list }) => {
+interface ExperienceParams {
+  experience_list: ExperienceType[];
+}
+
+export const Experience = ({ experience_list }: ExperienceParams) => {
   return (
     <Timeline
       sx={{
@@ -21,7 +26,7 @@ export const Experience = ({ experience_list }) => {
         },
       }}
     >
-      {experience_list.map((experience, idx) => {
+      {experience_list.map((experience: ExperienceType, idx: number) => {
         return (
           <TimelineItem
             key={idx}
@@ -56,7 +61,7 @@ export const Experience = ({ experience_list }) => {
               <List sx={{ listStyleType: "disc" }}>
                 {experience.achievements.length > 0 &&
                   experience.achievements.map(
-                    (achievement: string, achievement_idx: number) => {
+                    (achievement: React.ReactElement, achievement_idx: number) => {
                       return (
                         <ListItem
                           key={achievement_idx}

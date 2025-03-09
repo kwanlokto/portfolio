@@ -1,4 +1,12 @@
-export const work_experience = [
+export interface ExperienceType {
+  company: string;
+  icon_url: string;
+  role: string;
+  timeline: string;
+  achievements: React.ReactElement[];
+}
+
+export const work_experience: ExperienceType[] = [
   {
     company: "Skatescribe",
     icon_url: "/SS Logo.png",
@@ -77,5 +85,18 @@ export const work_experience = [
     role: "Swim Instructor",
     timeline: "Sept 2015 – May 2016",
     achievements: [],
+  },
+];
+
+export const education: ExperienceType[] = [
+  {
+    company: "University of Toronto",
+    icon_url: "/University of Toronto.png",
+    role: "BSc. in Computer Science",
+    timeline: "Sept 2016 - April 2021",
+    achievements: [
+      <>Computer Science Specialist</>,
+      <>Graduated with high distinction</>,
+    ],
   },
 ];

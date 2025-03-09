@@ -8,17 +8,17 @@ import {
   Tabs,
   Typography,
 } from "@mui/material";
+import { education, work_experience } from "@/lib/experience";
 
 import { Experience } from "@/ui/experience";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWaving } from "react-icons/pi";
 import { useState } from "react";
-import { work_experience } from "@/lib/experience";
 
 export default function Page() {
   const [tab_idx, set_tab_idx] = useState(0);
 
-  const handleDownload = async (file_path: string, file_name: string) => {
+  const handle_download = async (file_path: string, file_name: string) => {
     try {
       const response = await fetch(file_path);
       if (!response.ok) throw new Error("Network response was not ok");
@@ -41,7 +41,7 @@ export default function Page() {
 
   return (
     <Box justifyContent="center" display="flex">
-      <Grid container pt={4} sx={{ width: "700px" }} spacing={2}>
+      <Grid container pt={4} sx={{ width: "825px" }} spacing={2}>
         <Grid size={8}>
           <Box display="flex">
             <PiHandWaving style={{ display: "inline" }} size={25} />
@@ -49,16 +49,14 @@ export default function Page() {
           </Box>
           <Box pt={1}>
             <Typography>
-              I like to code, play video games and stay active. I am always
-              excited to take on new challenges!
+              I like to code, play video games, watch TV shows and stay active.
+              I am always excited to take on new challenges!
             </Typography>
           </Box>
           <Box pt={1}>
             <Button
               variant="outlined"
-              onClick={() =>
-                handleDownload("/Resume.pdf", "ray_resume.pdf")
-              }
+              onClick={() => handle_download("/Resume.pdf", "ray_resume.pdf")}
             >
               Resume
               <MdOutlineCloudDownload style={{ marginLeft: "4px" }} size={25} />
@@ -79,7 +77,7 @@ export default function Page() {
             </Tabs>
           </Box>
           {tab_idx == 0 && <Experience experience_list={work_experience} />}
-          {tab_idx == 1 && <></>}
+          {tab_idx == 1 && <Experience experience_list={education}/>}
         </Grid>
       </Grid>
     </Box>
