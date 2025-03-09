@@ -8,7 +8,7 @@ import {
   Tabs,
   Typography,
 } from "@mui/material";
-import { education, work_experience } from "@/lib/experience";
+import { education, work } from "@/lib/experience";
 
 import { Experience } from "@/ui/experience";
 import { MdOutlineCloudDownload } from "react-icons/md";
@@ -72,11 +72,11 @@ export default function Page() {
                 set_tab_idx(new_idx);
               }}
             >
-              <Tab label="Work Experience" className="dark:invert" />
+              <Tab label="Work" className="dark:invert" />
               <Tab label="Education" className="dark:invert" />
             </Tabs>
           </Box>
-          {tab_idx == 0 && <Experience experience_list={work_experience} />}
+          {tab_idx == 0 && <Experience experience_list={work} />}
           {tab_idx == 1 && <Experience experience_list={education}/>}
         </Grid>
       </Grid>

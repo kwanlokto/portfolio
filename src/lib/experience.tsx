@@ -6,7 +6,7 @@ export interface ExperienceType {
   achievements: React.ReactElement[];
 }
 
-export const work_experience: ExperienceType[] = [
+export const work: ExperienceType[] = [
   {
     company: "Skatescribe",
     icon_url: "/SS Logo.png",
