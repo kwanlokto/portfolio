@@ -10,7 +10,7 @@ const tabs = [
   { label: "Projects", href: "/project" },
 ];
 
-export default function Navbar() {
+export const Navbar = () => {
   const pathname = usePathname(); // Get current route
 
   return (

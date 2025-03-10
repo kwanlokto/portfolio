@@ -8,9 +8,11 @@ import {
   Tabs,
   Typography,
 } from "@mui/material";
+import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 import { education, work } from "@/lib/experience";
 
 import { Experience } from "@/ui/experience";
+import { HRefButton } from "@/ui/href_button";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWaving } from "react-icons/pi";
 import { useState } from "react";
@@ -52,7 +54,7 @@ export default function Home() {
             am always excited to take on new challenges!
           </Typography>
         </Box>
-        <Box pt={1}>
+        <Box pt={1} display="flex" gap={8}>
           <Button
             variant="outlined"
             onClick={() => handle_download("/Resume.pdf", "ray_resume.pdf")}
@@ -60,6 +62,15 @@ export default function Home() {
             Resume
             <MdOutlineCloudDownload style={{ marginLeft: "4px" }} size={25} />
           </Button>
+
+          <Box display="flex" alignItems="center" gap={2}>
+            <HRefButton url="https://www.linkedin.com/in/loktokwan/">
+              <SlSocialLinkedin size={23} className="text-gray-400" />
+            </HRefButton>
+            <HRefButton url="https://github.com/kwanlokto">
+              <SlSocialGithub size={23} className="text-gray-400" />
+            </HRefButton>
+          </Box>
         </Box>
       </Grid>
       <Grid size={4}># Photo here</Grid>
