@@ -53,21 +53,41 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
             </TimelineSeparator>
 
             <TimelineContent sx={{ py: "12px", px: 2 }}>
-              <Typography variant="body2" fontWeight="bold">
+              <Typography
+                variant="body2"
+                fontWeight="bold"
+                className="dark:text-gray-500"
+              >
                 {experience.timeline}
               </Typography>
-              <Typography variant="h6">{experience.company}</Typography>
-              <Typography fontSize="0.75rem">{experience.role}</Typography>
+              <Typography variant="h6" className="dark:white">
+                {experience.company}
+              </Typography>
+              <Typography
+                fontSize="0.75rem"
+                fontWeight="bold"
+                className="dark:text-gray-500"
+              >
+                {experience.role}
+              </Typography>
               <List sx={{ listStyleType: "disc" }}>
                 {experience.achievements.length > 0 &&
                   experience.achievements.map(
-                    (achievement: React.ReactElement, achievement_idx: number) => {
+                    (
+                      achievement: React.ReactElement,
+                      achievement_idx: number
+                    ) => {
                       return (
                         <ListItem
                           key={achievement_idx}
                           sx={{ display: "list-item", p: 0 }}
                         >
-                          <Typography variant="body2">{achievement}</Typography>
+                          <Typography
+                            variant="body2"
+                            className="dark:text-gray-300"
+                          >
+                            {achievement}
+                          </Typography>
                         </ListItem>
                       );
                     }
