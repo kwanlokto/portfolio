@@ -15,6 +15,7 @@ import { Experience } from "@/ui/experience";
 import { HRefButton } from "@/ui/href_button";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWaving } from "react-icons/pi";
+import { TechStack } from "@/ui/tech_stack";
 import { useState } from "react";
 
 export default function Home() {
@@ -88,6 +89,9 @@ export default function Home() {
         </Box>
         {tab_idx == 0 && <Experience experience_list={work} />}
         {tab_idx == 1 && <Experience experience_list={education} />}
+      </Grid>
+      <Grid size={12}>
+        <TechStack/>
       </Grid>
     </Grid>
   );
