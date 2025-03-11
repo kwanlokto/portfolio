@@ -44,7 +44,7 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
                     src={experience.icon_url}
                     alt="Next.js logo"
                     fill
-                    objectFit="contain"
+                    style={{ objectFit: "contain" }}
                     priority
                   />
                 </Icon>

@@ -11,6 +11,7 @@ import {
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 import { education, work } from "@/lib/experience";
 
+import { EmailButton } from "@/ui/email_button";
 import { Experience } from "@/ui/experience";
 import { HRefButton } from "@/ui/href_button";
 import { MdOutlineCloudDownload } from "react-icons/md";
@@ -71,6 +72,7 @@ export default function Home() {
             <HRefButton url="https://github.com/kwanlokto">
               <SlSocialGithub size={23} className="text-gray-400" />
             </HRefButton>
+            <EmailButton/>
           </Box>
         </Box>
       </Grid>
