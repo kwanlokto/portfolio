@@ -1,1 +1,0 @@
-export const getPosts = () => {return ["1", "2"]}

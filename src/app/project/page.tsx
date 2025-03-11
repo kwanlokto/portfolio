@@ -1,5 +1,6 @@
+import { Box } from "@mui/material";
 import React from "react";
 
 export default function Page() {
-  return <h1>Hello, Blog Post Page!</h1>;
+  return <Box> </Box>;
 }
