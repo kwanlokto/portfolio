@@ -11,11 +11,13 @@ import {
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 import { education, work } from "@/lib/experience";
 
+import { BsEmojiTearFill } from "react-icons/bs";
 import { EmailButton } from "@/ui/email_button";
 import { Experience } from "@/ui/experience";
+import { FaExclamation } from "react-icons/fa";
 import { HRefButton } from "@/ui/href_button";
 import { MdOutlineCloudDownload } from "react-icons/md";
-import { PiHandWaving } from "react-icons/pi";
+import { PiHandWavingBold } from "react-icons/pi";
 import { TechStack } from "@/ui/tech_stack";
 import { useState } from "react";
 
@@ -47,13 +49,31 @@ export default function Home() {
     <Grid container pt={4} spacing={2}>
       <Grid size={8}>
         <Box display="flex">
-          <PiHandWaving style={{ display: "inline" }} size={25} />
-          <Typography pl={1}>I'm Ray a Software Developer</Typography>
+          <PiHandWavingBold style={{ display: "inline" }} size={30} />
+          <Typography pt={0.5} pl={1}>
+            Ray here
+          </Typography>
+          <FaExclamation
+            style={{ marginTop: "4px", display: "inline" }}
+            size={20}
+          />
         </Box>
-        <Box pt={1}>
+        <Box pt={2}>
           <Typography>
-            I like to code, play video games, watch TV shows and stay active. I
-            am always excited to take on new challenges!
+            I am always looking to learn new technologies and take on new
+            challenges! In my free time, you’ll most likely find me lifting
+            weights or at the hockey rink — there’s about an 80% chance I’ll be
+            here lol. Despite all the time I spend on the ice, I’m pretty sure
+            I’m no better than most 11-year-olds.... that's one of the
+            challenges of learning as an adult.
+            <BsEmojiTearFill
+              size={20}
+              style={{
+                marginLeft: "8px",
+                marginBottom: "4px",
+                display: "inline",
+              }}
+            />
           </Typography>
         </Box>
         <Box pt={1} display="flex" gap={8}>
@@ -72,7 +92,7 @@ export default function Home() {
             <HRefButton url="https://github.com/kwanlokto">
               <SlSocialGithub size={23} className="text-gray-400" />
             </HRefButton>
-            <EmailButton/>
+            <EmailButton />
           </Box>
         </Box>
       </Grid>
@@ -93,7 +113,7 @@ export default function Home() {
         {tab_idx == 1 && <Experience experience_list={education} />}
       </Grid>
       <Grid size={12}>
-        <TechStack/>
+        <TechStack />
       </Grid>
     </Grid>
   );
