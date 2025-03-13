@@ -18,6 +18,7 @@ import { FaExclamation } from "react-icons/fa";
 import { HRefButton } from "@/ui/href_button";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
+import Projects from "@/ui/projects";
 import { TechStack } from "@/ui/tech_stack";
 import { useState } from "react";
 
@@ -114,6 +115,11 @@ export default function Home() {
       </Grid>
       <Grid size={12}>
         <TechStack />
+      </Grid>
+      <Grid size={12}>
+        <Typography> featured projects </Typography>
+        <Button> view more </Button>
+        <Projects total_featured_projects={2} />
       </Grid>
     </Grid>
   );
