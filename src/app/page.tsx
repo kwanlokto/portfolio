@@ -11,13 +11,14 @@ import {
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 import { education, work } from "@/lib/experience";
 
-import { BsEmojiTearFill } from "react-icons/bs";
 import { EmailButton } from "@/ui/email_button";
 import { Experience } from "@/ui/experience";
 import { FaExclamation } from "react-icons/fa";
 import { HRefButton } from "@/ui/href_button";
+import Link from "next/link";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
+import Projects from "@/ui/projects";
 import { TechStack } from "@/ui/tech_stack";
 import { useState } from "react";
 
@@ -46,15 +47,18 @@ export default function Home() {
   };
 
   return (
-    <Grid container pt={4} spacing={2}>
+    <Grid container spacing={2}>
       <Grid size={8}>
         <Box display="flex">
-          <PiHandWavingBold style={{ display: "inline" }} size={30} />
-          <Typography pt={0.5} pl={1}>
+          <PiHandWavingBold
+            style={{ display: "inline", marginRight: "8px" }}
+            size={30}
+          />
+          <Typography variant="h6" pl={1}>
             Ray here
           </Typography>
           <FaExclamation
-            style={{ marginTop: "4px", display: "inline" }}
+            style={{ marginTop: "6px", display: "inline" }}
             size={20}
           />
         </Box>
@@ -64,16 +68,8 @@ export default function Home() {
             challenges! In my free time, you’ll most likely find me lifting
             weights or at the hockey rink — there’s about an 80% chance I’ll be
             here lol. Despite all the time I spend on the ice, I’m pretty sure
-            I’m no better than most 11-year-olds.... that's one of the
-            challenges of learning as an adult.
-            <BsEmojiTearFill
-              size={20}
-              style={{
-                marginLeft: "8px",
-                marginBottom: "4px",
-                display: "inline",
-              }}
-            />
+            I’m no better than most 11-year-olds.... which is pretty sad but
+            just one of the challenges of learning as an adult.
           </Typography>
         </Box>
         <Box pt={1} display="flex" gap={8}>
@@ -114,6 +110,17 @@ export default function Home() {
       </Grid>
       <Grid size={12}>
         <TechStack />
+      </Grid>
+      <Grid size={12} pt={2}>
+        <Box display="flex" justifyContent="space-between">
+          <Typography variant="h6" className="dark:white" mb={1} pl={3.5}>
+            Featured Projects
+          </Typography>
+          <Link href="/project">
+            <Button> view more </Button>
+          </Link>
+        </Box>
+        <Projects total_featured_projects={2} />
       </Grid>
     </Grid>
   );

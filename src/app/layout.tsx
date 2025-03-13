@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <Box width={825}>
           <Navbar />
-          <main>{children}</main>
+          <Box py={4}>{children}</Box>
         </Box>
       </body>
     </html>

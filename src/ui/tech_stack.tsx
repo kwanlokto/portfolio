@@ -3,8 +3,8 @@ import { TechStackType, tech_stack } from "@/lib/tech_stack";
 
 export const TechStack = () => {
   return (
-    <Box className="p-6 bg-gray-100 dark:bg-gray-800 rounded-lg">
-      <Typography variant="h5" mb={1}>
+    <Box className="px-6 pt-4 pb-6 border border-gray-300 dark:border-gray-800 rounded-lg">
+      <Typography variant="h6" mb={1}>
         Tech Stack
       </Typography>
       <Box display="flex" className="flex-wrap" gap={2}>

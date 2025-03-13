@@ -1,11 +1,12 @@
-export interface Project {
+export interface ProjectType {
   title: string;
   description: React.ReactNode;
-  picture: React.ReactNode;
-  tech_stack: React.ReactNode[];
+  picture_url: string;
+  tech_stack: string[];
+  source_url: string;
 }
 
-export const projects: Project[] = [
+export const projects: ProjectType[] = [
   {
     title: "Porfolio",
     description: (
@@ -14,8 +15,9 @@ export const projects: Project[] = [
         Next.JS and TailwindCSS
       </>
     ),
-    picture: <></>,
-    tech_stack: [<></>],
+    picture_url: "/SS Logo.png",
+    tech_stack: ["Next.JS"],
+    source_url: "https://github.com/kwanlokto/portfolio",
   },
   {
     title: "Docker Practice",
@@ -25,8 +27,9 @@ export const projects: Project[] = [
         get familiar with Docker, Alembic, and Axios
       </>
     ),
-    picture: <></>,
-    tech_stack: [<></>],
+    picture_url: "/SS Logo.png",
+    tech_stack: ["Python", "React", "Docker"],
+    source_url: "https://github.com/kwanlokto/docker_practice",
   },
   {
     title: "Algorithm Library",
@@ -34,11 +37,12 @@ export const projects: Project[] = [
       <>
         Repository which is an collection of popular algorithms and data
         structures that may be useful for future projects. The goal is to create
-        a GUI that visually demonstrates how the algorithm or data
-        structure solves the desired problem
+        a GUI that visually demonstrates how the algorithm or data structure
+        solves the desired problem
       </>
     ),
-    picture: <></>,
-    tech_stack: [<>Python</>],
+    picture_url: "/SS Logo.png",
+    tech_stack: ["Python"],
+    source_url: "https://github.com/kwanlokto/algorithms",
   },
 ];
