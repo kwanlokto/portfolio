@@ -10,12 +10,9 @@ export const HRefButton = ({
   className = "",
   children,
 }: HRefButtonParams) => {
-  const open_new_tab = () => {
-    window.open(url, "_blank");
-  };
 
   return (
-    <IconButton onClick={open_new_tab} className={className}>
+    <IconButton href={url} target="_blank" className={className}>
       {children}
     </IconButton>
   );
