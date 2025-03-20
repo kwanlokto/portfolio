@@ -13,7 +13,7 @@ export default function NotFound() {
         404 - Page Not Found
       </Typography>
       <Typography variant="body1" mt={2}>
-        The page you're looking for doesn't exist.
+        {"The page you're looking for doesn't exist."}
       </Typography>
       <Button variant="contained" color="primary" href="/" sx={{ mt: 4 }}>
         Go Back Home

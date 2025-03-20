@@ -9,7 +9,7 @@ export interface ExperienceType {
 export const work: ExperienceType[] = [
   {
     company: "Skatescribe",
-    icon_url: "/SS Logo.png",
+    icon_url: "/portfolio/SS Logo.png",
     role: "Senior Software Developer & Team Lead",
     timeline: "Oct 2023 - Present",
     achievements: [
@@ -30,7 +30,7 @@ export const work: ExperienceType[] = [
   },
   {
     company: "Skatescribe",
-    icon_url: "/SS Logo.png",
+    icon_url: "/portfolio/SS Logo.png",
     role: "Full Stack Software Developer",
     timeline: "May 2021 – Oct 2023",
     achievements: [
@@ -52,7 +52,7 @@ export const work: ExperienceType[] = [
   },
   {
     company: "Cognitive Centivizer",
-    icon_url: "/Cognitive Centivizer.png",
+    icon_url: "/portfolio/Cognitive Centivizer.png",
     role: "Full Stack Software Developer",
     timeline: "Sept 2020 – May 2021",
     achievements: [
@@ -64,7 +64,7 @@ export const work: ExperienceType[] = [
   },
   {
     company: "Autocase",
-    icon_url: "/Autocase.jpeg",
+    icon_url: "/portfolio/Autocase.jpeg",
     role: "Full Stack Software Developer",
     timeline: " May 2019 – April 2020",
     achievements: [
@@ -81,7 +81,7 @@ export const work: ExperienceType[] = [
   },
   {
     company: "Town of Richmond Hill",
-    icon_url: "/Town of Richmond Hill.png",
+    icon_url: "/portfolio/Town of Richmond Hill.png",
     role: "Swim Instructor",
     timeline: "Sept 2015 – May 2016",
     achievements: [],
@@ -91,7 +91,7 @@ export const work: ExperienceType[] = [
 export const education: ExperienceType[] = [
   {
     company: "University of Toronto",
-    icon_url: "/University of Toronto.png",
+    icon_url: "/portfolio/University of Toronto.png",
     role: "BSc. in Computer Science",
     timeline: "Sept 2016 - April 2021",
     achievements: [

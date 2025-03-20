@@ -75,7 +75,7 @@ export default function Home() {
         <Box pt={1} display="flex" gap={8}>
           <Button
             variant="outlined"
-            onClick={() => handle_download("/Resume.pdf", "ray_resume.pdf")}
+            onClick={() => handle_download("/portfolio/Resume.pdf", "ray_resume.pdf")}
           >
             Resume
             <MdOutlineCloudDownload style={{ marginLeft: "4px" }} size={25} />
