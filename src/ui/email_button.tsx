@@ -3,7 +3,7 @@ import { IconButton } from "@mui/material";
 import React from "react";
 
 export const EmailButton = () => {
-  const handle_email_click = () => {
+  const handle_email_click = (e: React.MouseEvent<HTMLElement>) => {
     window.location.href = "mailto:lokto.kwan@gmail.com";
   };
 

@@ -10,7 +10,7 @@ export const HRefButton = ({
   className = "",
   children,
 }: HRefButtonParams) => {
-  const open_new_tab = () => {
+  const open_new_tab = (e: React.MouseEvent<HTMLElement>) => {
     window.open(url, "_blank");
   };
 
