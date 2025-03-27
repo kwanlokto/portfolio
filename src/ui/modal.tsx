@@ -18,13 +18,12 @@ export const Modal = ({
   return (
     <MuiModal open={open} onClose={onClose} sx={{ zIndex: z_index }}>
       <Box
+        className="dark:bg-neutral-800"
         sx={{
           position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          bgcolor: "#FEFEFA",
-          border: "1px solid grey",
           borderRadius: 2,
           boxShadow: 24,
           p: 3,
