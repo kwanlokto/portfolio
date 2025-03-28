@@ -1,7 +1,8 @@
 "use client";
 
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
-import { FormEvent, FormEventHandler, useState } from "react";
+import { EmailData, send_email } from "@/lib/email";
+import { FormEvent, useEffect, useState } from "react";
 
 import Link from "next/link";
 import { Modal } from "./modal";
@@ -29,11 +30,6 @@ const NavButton = ({ label, onClick }: NavButtonProps) => {
   );
 };
 
-interface ContactInputProps {
-  name?: string;
-  email?: string;
-  message?: string;
-}
 export const Navbar = () => {
   const [show_contact_form, set_show_contact_form] = useState(false);
   const [form_data, set_form_data] = useState({
@@ -41,7 +37,7 @@ export const Navbar = () => {
     email: "",
     message: "",
   });
-  const [errors, set_errors] = useState<ContactInputProps>({});
+  const [errors, set_errors] = useState<EmailData>({});
 
   const handle_change = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -49,7 +45,7 @@ export const Navbar = () => {
   };
 
   const validate = () => {
-    const errors: ContactInputProps = {};
+    const errors: EmailData = {};
     if (!form_data.name) errors.name = "Name is required";
     if (!form_data.email) {
       errors.email = "Email is required";
@@ -69,9 +65,30 @@ export const Navbar = () => {
     if (validate()) {
       console.log("Form Data:", form_data);
       alert("Form submitted successfully!");
+      send_email(form_data)
       set_form_data({ name: "", email: "", message: "" });
     }
   };
+
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined' && window.emailjs) {
+  //     // Initialize EmailJS only on the client side
+  //     window.emailjs.init({
+  //       publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '', // Get the public key from the environment variables
+  //       blockHeadless: true,
+  //       blockList: {
+  //         list: ['foo@emailjs.com', 'bar@emailjs.com'], // Example blocked list
+  //         watchVariable: 'userEmail', // Watch for specific variable
+  //       },
+  //       limitRate: {
+  //         id: 'app',
+  //         throttle: 10000, // Throttle requests to 1 per 10 seconds
+  //       },
+  //     });
+  //     console.log('EmailJS initialized');
+  //   }
+  // }, []);
+
   return (
     <Box
       sx={{
