@@ -42,7 +42,7 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
                 <Icon sx={{ position: "relative" }}>
                   <Image
                     src={experience.icon_url}
-                    alt="Next.js logo"
+                    alt={experience.icon_url.slice(1)}
                     fill
                     style={{ objectFit: "contain" }}
                     priority

@@ -9,12 +9,14 @@ import {
   Typography,
 } from "@mui/material";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
+import { blue, grey } from "@mui/material/colors";
 import { education, work } from "@/lib/experience";
 
 import { EmailButton } from "@/ui/email_button";
 import { Experience } from "@/ui/experience";
 import { FaExclamation } from "react-icons/fa";
 import { HRefButton } from "@/ui/href_button";
+import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
@@ -55,7 +57,7 @@ export default function Home() {
             size={30}
           />
           <Typography variant="h6" pl={1}>
-            Ray here
+            Hi, I'm Ray
           </Typography>
           <FaExclamation
             style={{ marginTop: "6px", display: "inline" }}
@@ -65,17 +67,19 @@ export default function Home() {
         <Box pt={2}>
           <Typography>
             I am always looking to learn new technologies and take on new
-            challenges! In my free time, you’ll most likely find me lifting
-            weights or at the hockey rink — there’s about an 80% chance I’ll be
-            here lol. Despite all the time I spend on the ice, I’m pretty sure
-            I’m no better than most 11-year-olds.... which is pretty sad but
-            just one of the challenges of learning as an adult.
+            challenges! In my free time, you'll likely find me lifting weights
+            or at the hockey rink — there's about an 80% chance I'm there, haha.
+            Despite all the hours on the ice, I’m pretty sure most kids could
+            still outskate me... which is a little humbling, but hey, learning
+            as an adult has its own challenges!
           </Typography>
         </Box>
         <Box pt={1} display="flex" gap={8}>
           <Button
             variant="outlined"
-            onClick={() => handle_download("/portfolio/Resume.pdf", "ray_resume.pdf")}
+            onClick={() =>
+              handle_download("/portfolio/Resume.pdf", "ray_resume.pdf")
+            }
           >
             Resume
             <MdOutlineCloudDownload style={{ marginLeft: "4px" }} size={25} />
@@ -92,7 +96,15 @@ export default function Home() {
           </Box>
         </Box>
       </Grid>
-      <Grid size={4}># Photo here</Grid>
+      <Grid size={4} position="relative">
+        <Image
+          src="/portfolio/Profile Picture.jpg"
+          alt="Ray's Picture"
+          fill
+          style={{ objectFit: "cover", borderRadius: "24px" }}
+          priority
+        />
+      </Grid>
       <Grid size={12}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs
@@ -101,8 +113,22 @@ export default function Home() {
               set_tab_idx(new_idx);
             }}
           >
-            <Tab label="Work" className="dark:invert" />
-            <Tab label="Education" className="dark:invert" />
+            <Tab
+              label="Work"
+              sx={{
+                color: "gray",
+                "&:hover": { color: grey[400] },
+                "&.Mui-selected": { color: "white" },
+              }}
+            />
+            <Tab
+              label="Education"
+              sx={{
+                color: "gray",
+                "&:hover": { color: grey[400] },
+                "&.Mui-selected": { color: "white" },
+              }}
+            />
           </Tabs>
         </Box>
         {tab_idx == 0 && <Experience experience_list={work} />}

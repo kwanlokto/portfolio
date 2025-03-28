@@ -1,7 +1,8 @@
 "use client";
 
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
-import { FormEvent, FormEventHandler, useState } from "react";
+import { EmailData, send_email } from "@/lib/email";
+import { FormEvent, useState } from "react";
 
 import Link from "next/link";
 import { Modal } from "./modal";
@@ -29,11 +30,6 @@ const NavButton = ({ label, onClick }: NavButtonProps) => {
   );
 };
 
-interface ContactInputProps {
-  name?: string;
-  email?: string;
-  message?: string;
-}
 export const Navbar = () => {
   const [show_contact_form, set_show_contact_form] = useState(false);
   const [form_data, set_form_data] = useState({
@@ -41,7 +37,7 @@ export const Navbar = () => {
     email: "",
     message: "",
   });
-  const [errors, set_errors] = useState<ContactInputProps>({});
+  const [errors, set_errors] = useState<EmailData>({});
 
   const handle_change = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -49,7 +45,7 @@ export const Navbar = () => {
   };
 
   const validate = () => {
-    const errors: ContactInputProps = {};
+    const errors: EmailData = {};
     if (!form_data.name) errors.name = "Name is required";
     if (!form_data.email) {
       errors.email = "Email is required";
@@ -67,11 +63,11 @@ export const Navbar = () => {
   const handle_submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form Data:", form_data);
-      alert("Form submitted successfully!");
+      send_email(form_data);
       set_form_data({ name: "", email: "", message: "" });
     }
   };
+
   return (
     <Box
       sx={{
@@ -112,6 +108,10 @@ export const Navbar = () => {
               onChange={handle_change}
               error={!!errors.name}
               helperText={errors.name}
+              sx={{
+                fieldset: { borderColor: "white" },
+                "&:hover fieldset": { borderColor: "white!important" },
+              }}
               slotProps={{
                 inputLabel: { style: { color: "#D1D5DB" } },
                 input: { style: { color: "#D1D5DB" } },
@@ -127,6 +127,10 @@ export const Navbar = () => {
               onChange={handle_change}
               error={!!errors.email}
               helperText={errors.email}
+              sx={{
+                fieldset: { borderColor: "white" },
+                "&:hover fieldset": { borderColor: "white!important" },
+              }}
               slotProps={{
                 inputLabel: { style: { color: "#D1D5DB" } },
                 input: { style: { color: "#D1D5DB", border: "none" } },
@@ -144,6 +148,10 @@ export const Navbar = () => {
               onChange={handle_change}
               error={!!errors.message}
               helperText={errors.message}
+              sx={{
+                fieldset: { borderColor: "white" },
+                "&:hover fieldset": { borderColor: "white!important" },
+              }}
               slotProps={{
                 inputLabel: { style: { color: "#D1D5DB" } },
                 input: { style: { color: "#D1D5DB" } },
