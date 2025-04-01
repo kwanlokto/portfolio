@@ -14,17 +14,19 @@ export const work: ExperienceType[] = [
     timeline: "Oct 2023 - Present",
     achievements: [
       <>
-        Led a team of 2 developers and 1 UI/UX designer to build critical
-        features for our electron and web application
+        Led a team of two other developers and a UI/UX designer in designing and
+        implementing cutting-edge solutions that have redefined the hockey
+        industry, and are now widely adopted by pro shops and NHL teams.
       </>,
       <>
-        Spearheaded the planning and development of a 6-month project leading to
-        a 25% reduction in cycle time, enhanced user experience, a cleaner and
-        more maintainable codebase, and improved data accuracy and reliability
+        Directed large-scale projects that increased sharpening efficiency by
+        25%, enhanced user experience, improved data accuracy and reliability,
+        and optimized code maintainability.
       </>,
       <>
-        Configured and managed containerized environments using Docker for
-        consistent and scalable deployments
+        Collaborated with stakeholders and equipment managers to define and
+        prioritize features, ensuring alignment with business goals and
+        improving project delivery timelines.
       </>,
     ],
   },
@@ -35,18 +37,15 @@ export const work: ExperienceType[] = [
     timeline: "May 2021 – Oct 2023",
     achievements: [
       <>
-        Developed an Electron app that captures any skate blade’s shape with
-        0.5μm accuracy using a laser profiler, enabling users to customize their
-        blade’s geometry with a 0.1μm tolerance on a Tormach CNC machine
+        Revolutionized the skating industry by building an automated sharpening
+        and profiling machine using CNC and a high-precision laser system, achieving
+        0.5μm accuracy in capturing blade geometry and precise
+        sharpening within a 0.1μm tolerance.
       </>,
       <>
-        Applied Savitzky-Golay filtering and spline regression to enhance 2D
-        blade images from the laser profiler, dynamically minimizing errors in
-        approximating the noisy image with G1 continuous B-splines
-      </>,
-      <>
-        Implemented algorithms to convert B-splines into segments that can be
-        processed by the CNC machine for cutting
+        Researched and implemented advanced signal processing techniques to
+        enhance laser profiler images, increasing accuracy by 0.5mm, reducing
+        costs by $2 per sharpen, and cutting runtime by 20%.
       </>,
     ],
   },
@@ -57,8 +56,9 @@ export const work: ExperienceType[] = [
     timeline: "Sept 2020 – May 2021",
     achievements: [
       <>
-        Created key components and CRUD endpoints in React and NodeJS to collect
-        and organize participant data to be used by psychology students
+        Created key components and CRUD endpoints to collect and structure data
+        on participants&apos; cognitive functions, enabling psychology students
+        to conduct further analysis.
       </>,
     ],
   },
@@ -69,13 +69,14 @@ export const work: ExperienceType[] = [
     timeline: " May 2019 – April 2020",
     achievements: [
       <>
-        Developed an AngularJS and Python-based application that translates
-        mathematical research models into a comprehensive cost-benefit analysis
-        tool for buildings
+        Translated economic research models into a comprehensive cost-benefit
+        analysis tool for builders and governments to determine impact of design
+        decisions on community, tenant and owner stakeholders.
       </>,
       <>
-        Built a custom tool in Python to aggregate and translate 150+ GB of
-        NC/CSV files into a pandas dataframe
+        Built a custom tool in Python to aggregate and convert over 150GB of
+        statistical data into a pandas dataframe for benchmarking model
+        performance.
       </>,
     ],
   },

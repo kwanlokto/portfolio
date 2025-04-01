@@ -1,7 +1,7 @@
 export interface ProjectType {
   title: string;
   description: React.ReactNode;
-  picture_url: string;
+  picture_url: string | null;
   tech_stack: string[];
   source_url: string;
 }
@@ -15,7 +15,7 @@ export const projects: ProjectType[] = [
         Next.JS and TailwindCSS
       </>
     ),
-    picture_url: "/portfolio/SS Logo.png",
+    picture_url: null,
     tech_stack: ["Next.JS"],
     source_url: "https://github.com/kwanlokto/portfolio",
   },
@@ -27,7 +27,7 @@ export const projects: ProjectType[] = [
         get familiar with Docker, Alembic, and Axios
       </>
     ),
-    picture_url: "/portfolio/SS Logo.png",
+    picture_url: "/portfolio/docker_practice.png",
     tech_stack: ["Python", "React", "Docker"],
     source_url: "https://github.com/kwanlokto/docker_practice",
   },
@@ -41,7 +41,7 @@ export const projects: ProjectType[] = [
         solves the desired problem
       </>
     ),
-    picture_url: "/portfolio/SS Logo.png",
+    picture_url: null,
     tech_stack: ["Python"],
     source_url: "https://github.com/kwanlokto/algorithms",
   },

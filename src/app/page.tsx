@@ -72,7 +72,7 @@ export default function Home() {
             size={30}
           />
           <Typography variant="h6" pl={1}>
-            Hi, I'm Ray
+            Hi, I&apos;m Ray
           </Typography>
           <FaExclamation
             style={{ marginTop: "6px", display: "inline" }}
@@ -80,19 +80,23 @@ export default function Home() {
           />
         </Box>
         <Box pt={2}>
-          <Typography fontSize={12} className="dark:text-gray-400">
-            Full Stack Developer passionate about designing efficient and
-            minimal applications.
-          </Typography>
+          {/* <Typography
+            fontSize="0.8rem"
+            fontWeight="bold"
+            className="dark:text-gray-500"
+          >
+            Full Stack Developer passionate about designing efficient, sleek and
+            minimal apps.
+          </Typography> */}
           <Typography pt={1}>
-            From writing my first 'Hello, World!' program to building
-            cutting-edge software for the top 1% atheletes, I've always enjoyed
-            tackling new challenges in the ever-evolving world of technology.
+            I’m a Full Stack developer who is passionate about learning new technologies
+            and creating efficient, minimalistic applications. Most of my time lately
+            has been spent been developing software used by professional athletes in the NHL. 
           </Typography>
           <Typography pt={2}>
-            When I'm not coding, you'll probably find me lifting weights or at
-            the local rink -- I recently started playing hockey and it's been a
-            humbling experience! I've definitely learned the value of picking
+            When I&apos;m not coding, you&apos;ll probably find me lifting weights or at
+            the local rink – I recently started playing hockey and it&apos;s been a
+            humbling experience! I&apos;ve definitely learned the value of picking
             yourself up and trying harder (and wearing good padding).
           </Typography>
         </Box>

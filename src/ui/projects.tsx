@@ -19,17 +19,23 @@ const Project = ({ project }: ProjectParams) => {
       <Box
         sx={{
           position: "relative",
-          width: 80,
-          height: 80,
+          width: "100%",
+          height: 150,
           mx: "auto",
           mb: 2,
         }}
       >
         <Image
-          src={project.picture_url}
+          src={
+            project.picture_url !== null
+              ? project.picture_url
+              : `https://api.microlink.io/?url=${encodeURIComponent(
+                  project.source_url
+                )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=880`
+          }
           alt={`${project.title} Logo`}
           fill
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "cover" }}
           priority
         />
       </Box>
@@ -62,7 +68,12 @@ const Project = ({ project }: ProjectParams) => {
       </Stack>
 
       {/* Source Code Button */}
-      <Button variant="contained" size="small" href={project.source_url} target="_blank">
+      <Button
+        variant="contained"
+        size="small"
+        href={project.source_url}
+        target="_blank"
+      >
         Source Code
       </Button>
     </Grid>
