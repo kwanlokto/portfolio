@@ -27,7 +27,7 @@ export const projects: ProjectType[] = [
         get familiar with Docker, Alembic, and Axios
       </>
     ),
-    picture_url: "/portfolio/SS Logo.png",
+    picture_url: "/portfolio/docker_practice.png",
     tech_stack: ["Python", "React", "Docker"],
     source_url: "https://github.com/kwanlokto/docker_practice",
   },

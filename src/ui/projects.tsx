@@ -19,8 +19,8 @@ const Project = ({ project }: ProjectParams) => {
       <Box
         sx={{
           position: "relative",
-          width: 80,
-          height: 80,
+          width: "100%",
+          height: 150,
           mx: "auto",
           mb: 2,
         }}
@@ -29,7 +29,7 @@ const Project = ({ project }: ProjectParams) => {
           src={project.picture_url}
           alt={`${project.title} Logo`}
           fill
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "cover" }}
           priority
         />
       </Box>

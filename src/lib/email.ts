@@ -5,6 +5,7 @@ export interface EmailData {
   name?: string;
   email?: string;
   message?: string;
+  [key: string]: unknown;
 }
 
 // Function to send an email
@@ -20,7 +21,7 @@ export const send_email = (template_params: EmailData): void => {
     })
     .then(
       (response) => {
-        console.log('SUCCESS!', response.status, response.text);
+        console.log("SUCCESS!", response.status, response.text);
       },
       (error) => {
         console.log("FAILED...", error.text);
