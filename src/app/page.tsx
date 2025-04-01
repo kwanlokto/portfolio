@@ -66,12 +66,15 @@ export default function Home() {
         </Box>
         <Box pt={2}>
           <Typography>
-            I am always looking to learn new technologies and take on new
-            challenges! In my free time, you'll likely find me lifting weights
-            or at the hockey rink — there's about an 80% chance I'm there, haha.
-            Despite all the hours on the ice, I’m pretty sure most kids could
-            still outskate me... which is a little humbling, but hey, learning
-            as an adult has its own challenges!
+            From writing my first 'Hello, World!' program to building innovative software,
+            I've always enjoyed tackling new challenges in the ever-evolving world of technology.
+            As a Full Stack Developer, I am passionate about designing efficient, sleek and
+            minimalistic applications!
+          </Typography>
+          <Typography pt={1}>
+            When I'm not coding, you'll probably find me lifting weights
+            or at the hockey rink. That said, despite all the time I’ve spent on the ice,
+            most kids still outskate me ... which is a humbling, haha.
           </Typography>
         </Box>
         <Box pt={1} display="flex" gap={8}>
