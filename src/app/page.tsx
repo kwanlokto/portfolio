@@ -9,7 +9,6 @@ import {
   Typography,
 } from "@mui/material";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
-import { blue, grey } from "@mui/material/colors";
 import { education, work } from "@/lib/experience";
 
 import { EmailButton } from "@/ui/email_button";
@@ -22,6 +21,7 @@ import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
 import Projects from "@/ui/projects";
 import { TechStack } from "@/ui/tech_stack";
+import { grey } from "@mui/material/colors";
 import { useState } from "react";
 
 export default function Home() {
@@ -50,7 +50,22 @@ export default function Home() {
 
   return (
     <Grid container spacing={2}>
-      <Grid size={8}>
+      <Grid size={12}>
+        <Image
+          src="/portfolio/Profile Picture.jpg"
+          alt="Ray's Picture"
+          width={200}
+          height={200}
+          style={{
+            objectFit: "cover",
+            float: "right",
+            marginLeft: "24px",
+            marginBottom: "24px",
+            borderRadius: "24px",
+            maxWidth: "40vw",
+            maxHeight: "24vh",
+          }}
+        />
         <Box display="flex">
           <PiHandWavingBold
             style={{ display: "inline", marginRight: "8px" }}
@@ -65,19 +80,23 @@ export default function Home() {
           />
         </Box>
         <Box pt={2}>
-          <Typography>
-            From writing my first 'Hello, World!' program to building innovative software,
-            I've always enjoyed tackling new challenges in the ever-evolving world of technology.
-            As a Full Stack Developer, I am passionate about designing efficient, sleek and
-            minimalistic applications!
+          <Typography fontSize={12} className="dark:text-gray-400">
+            Full Stack Developer passionate about designing efficient and
+            minimal applications.
           </Typography>
           <Typography pt={1}>
-            When I'm not coding, you'll probably find me lifting weights
-            or at the hockey rink. That said, despite all the time I’ve spent on the ice,
-            most kids still outskate me ... which is a humbling, haha.
+            From writing my first 'Hello, World!' program to building
+            cutting-edge software for the top 1% atheletes, I've always enjoyed
+            tackling new challenges in the ever-evolving world of technology.
+          </Typography>
+          <Typography pt={2}>
+            When I'm not coding, you'll probably find me lifting weights or at
+            the local rink -- I recently started playing hockey and it's been a
+            humbling experience! I've definitely learned the value of picking
+            yourself up and trying harder (and wearing good padding).
           </Typography>
         </Box>
-        <Box pt={1} display="flex" gap={8}>
+        <Box pt={1} display="flex" sx={{ gap: "clamp(1px, 8vw, 64px)" }}>
           <Button
             variant="outlined"
             onClick={() =>
@@ -88,7 +107,12 @@ export default function Home() {
             <MdOutlineCloudDownload style={{ marginLeft: "4px" }} size={25} />
           </Button>
 
-          <Box display="flex" alignItems="center" gap={2}>
+          <Box
+            display="flex"
+            alignItems="center"
+            gap={2}
+            sx={{ gap: "clamp(1px, 2vw, 16px)" }}
+          >
             <HRefButton url="https://www.linkedin.com/in/loktokwan/">
               <SlSocialLinkedin size={23} className="text-gray-400" />
             </HRefButton>
@@ -98,15 +122,6 @@ export default function Home() {
             <EmailButton />
           </Box>
         </Box>
-      </Grid>
-      <Grid size={4} position="relative">
-        <Image
-          src="/portfolio/Profile Picture.jpg"
-          alt="Ray's Picture"
-          fill
-          style={{ objectFit: "cover", borderRadius: "24px" }}
-          priority
-        />
       </Grid>
       <Grid size={12}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
