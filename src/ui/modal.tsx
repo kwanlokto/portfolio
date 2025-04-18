@@ -1,4 +1,4 @@
-import { Box, Modal as MuiModal, SxProps } from "@mui/material";
+import { Box, Modal as MuiModal, Paper, SxProps } from "@mui/material";
 
 interface ModalParams {
   open: boolean;
@@ -18,14 +18,15 @@ export const Modal = ({
   return (
     <MuiModal open={open} onClose={onClose} sx={{ zIndex: z_index }}>
       <Box
-        className="dark:bg-neutral-800"
+        component={Paper}
+        elevation={8} // You can adjust the elevation level (8 is a good starting point)
         sx={{
           position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
+          outline: "none",
           borderRadius: 2,
-          boxShadow: 24,
           p: 3,
           ...sx,
         }}

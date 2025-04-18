@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { EmailData, send_email } from "@/lib/email";
 import { FormEvent, useState } from "react";
 
@@ -93,81 +93,55 @@ export const Navbar = () => {
         open={show_contact_form}
         onClose={() => set_show_contact_form(false)}
       >
-        <Container maxWidth="sm" sx={{ mt: 3 }}>
-          <Typography variant="h5" gutterBottom>
-            Contact Me
-          </Typography>
+        <Typography variant="h5" fontWeight="bold" mb={3}>
+          Contact Me
+        </Typography>
 
-          <Box component="form" onSubmit={handle_submit} noValidate>
-            <TextField
-              name="name"
-              label="Name"
-              fullWidth
-              margin="normal"
-              value={form_data.name}
-              onChange={handle_change}
-              error={!!errors.name}
-              helperText={errors.name}
-              sx={{
-                fieldset: { borderColor: "white" },
-                "&:hover fieldset": { borderColor: "white!important" },
-              }}
-              slotProps={{
-                inputLabel: { style: { color: "#D1D5DB" } },
-                input: { style: { color: "#D1D5DB" } },
-              }}
-            />
+        <Box component="form" onSubmit={handle_submit} noValidate>
+          <TextField
+            name="name"
+            label="Name"
+            fullWidth
+            margin="normal"
+            value={form_data.name}
+            onChange={handle_change}
+            error={!!errors.name}
+            helperText={errors.name}
+          />
 
-            <TextField
-              name="email"
-              label="Email"
-              fullWidth
-              margin="normal"
-              value={form_data.email}
-              onChange={handle_change}
-              error={!!errors.email}
-              helperText={errors.email}
-              sx={{
-                fieldset: { borderColor: "white" },
-                "&:hover fieldset": { borderColor: "white!important" },
-              }}
-              slotProps={{
-                inputLabel: { style: { color: "#D1D5DB" } },
-                input: { style: { color: "#D1D5DB", border: "none" } },
-              }}
-            />
+          <TextField
+            name="email"
+            label="Email"
+            fullWidth
+            margin="normal"
+            value={form_data.email}
+            onChange={handle_change}
+            error={!!errors.email}
+            helperText={errors.email}
+          />
 
-            <TextField
-              name="message"
-              label="Message"
-              multiline
-              rows={4}
-              fullWidth
-              margin="normal"
-              value={form_data.message}
-              onChange={handle_change}
-              error={!!errors.message}
-              helperText={errors.message}
-              sx={{
-                fieldset: { borderColor: "white" },
-                "&:hover fieldset": { borderColor: "white!important" },
-              }}
-              slotProps={{
-                inputLabel: { style: { color: "#D1D5DB" } },
-                input: { style: { color: "#D1D5DB" } },
-              }}
-            />
+          <TextField
+            name="message"
+            label="Message"
+            multiline
+            rows={4}
+            fullWidth
+            margin="normal"
+            value={form_data.message}
+            onChange={handle_change}
+            error={!!errors.message}
+            helperText={errors.message}
+          />
 
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              sx={{ mt: 2 }}
-            >
-              Submit
-            </Button>
-          </Box>
-        </Container>
+          <Button
+            type="submit"
+            variant="contained"
+            fullWidth
+            sx={{ mt: 3, py: 1 }}
+          >
+            Submit
+          </Button>
+        </Box>
       </Modal>
     </Box>
   );
