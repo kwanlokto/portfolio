@@ -66,6 +66,17 @@ const Project = ({ project }: ProjectParams) => {
           </Typography>
         ))}
       </Stack>
+      {project.deployed_url && (
+        <Button
+          variant="contained"
+          size="small"
+          href={project.deployed_url}
+          target="_blank"
+        >
+          {" "}
+          Link{" "}
+        </Button>
+      )}
 
       {/* Source Code Button */}
       <Button

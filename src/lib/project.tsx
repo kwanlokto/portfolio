@@ -3,10 +3,26 @@ export interface ProjectType {
   description: React.ReactNode;
   picture_url: string | null;
   tech_stack: string[];
+  deployed_url?: string;
   source_url: string;
 }
 
 export const projects: ProjectType[] = [
+  {
+    title: "Wordle",
+    description: (
+      <>
+        A Wordle-inspired game built with Next.js as a passion project, born out
+        of my obsession with the NYT Wordle and the frustration of being limited
+        to just one puzzle a day. I created this app so I could play as many
+        Wordle games as I wanted.
+      </>
+    ),
+    picture_url: "/portfolio/wordle.png",
+    tech_stack: ["Next.JS"],
+    deployed_url: "https://wordle-three-gules.vercel.app/",
+    source_url: "https://github.com/kwanlokto/wordle",
+  },
   {
     title: "Porfolio",
     description: (
