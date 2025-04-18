@@ -12,10 +12,9 @@ export const projects: ProjectType[] = [
     title: "Wordle",
     description: (
       <>
-        A Wordle-inspired game built with Next.js as a passion project, born out
-        of my obsession with the NYT Wordle and the frustration of being limited
-        to just one puzzle a day. I created this app so I could play as many
-        Wordle games as I wanted.
+        A Wordle-inspired game built as a passion project, born out of my
+        obsession with the NYT Wordle and the frustration of being limited to
+        just one puzzle a day.
       </>
     ),
     picture_url: "/portfolio/wordle.png",
@@ -27,8 +26,8 @@ export const projects: ProjectType[] = [
     title: "Porfolio",
     description: (
       <>
-        A simple and interactive portfolio project to get comfortable with
-        Next.JS and TailwindCSS
+        An interactive portfolio project created to get comfortable working with
+        Next.js and TailwindCSS through real-world application.
       </>
     ),
     picture_url: null,
