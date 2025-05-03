@@ -9,6 +9,21 @@ export interface ProjectType {
 
 export const projects: ProjectType[] = [
   {
+    title: "Graphing Library",
+    description: (
+      <>
+        This interactive web application visually demonstrates how various
+        pathfinding algorithms operate on a grid. Users can place start and goal
+        nodes, add obstacles, and observe how each algorithm explores the search
+        space in real-time.
+      </>
+    ),
+    picture_url: "/portfolio/graphing_library.png",
+    tech_stack: ["Next.JS"],
+    deployed_url: "https://https://graphing-library.vercel.app/",
+    source_url: "https://github.com/kwanlokto/graphing_library",
+  },
+  {
     title: "Wordle",
     description: (
       <>
