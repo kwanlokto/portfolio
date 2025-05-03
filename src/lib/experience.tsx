@@ -14,9 +14,10 @@ export const work: ExperienceType[] = [
     timeline: "Oct 2023 - Present",
     achievements: [
       <>
-        Led a team of two other developers and a UI/UX designer in designing and
-        implementing cutting-edge solutions that have redefined the hockey
-        industry, and are now widely adopted by pro shops and NHL teams.
+        Led a cross-functional team of developers, mechanical engineers, and a
+        UI/UX designer to design and implement an automated sharpening and
+        profiling machine that has transformed the hockey industry and is now
+        widely used by NHL players
       </>,
       <>
         Directed large-scale projects that increased sharpening efficiency by
@@ -37,10 +38,9 @@ export const work: ExperienceType[] = [
     timeline: "May 2021 – Oct 2023",
     achievements: [
       <>
-        Revolutionized the skating industry by building an automated sharpening
-        and profiling machine using CNC and a high-precision laser system, achieving
-        0.5μm accuracy in capturing blade geometry and precise
-        sharpening within a 0.1μm tolerance.
+        Developed the first functional prototype integrating a high-precision
+        laser system with a CNC machine, achieving 0.5μm accuracy in blade
+        geometry capture and sharpening precision within a 0.1μm tolerance.
       </>,
       <>
         Researched and implemented advanced signal processing techniques to
@@ -59,6 +59,11 @@ export const work: ExperienceType[] = [
         Created key components and CRUD endpoints to collect and structure data
         on participants&apos; cognitive functions, enabling psychology students
         to conduct further analysis.
+      </>,
+      <>
+        Established best software practices in a dynamic team environment to
+        maintain a consistent, scalable codebase, enabling future developers to
+        contribute with ease.
       </>,
     ],
   },

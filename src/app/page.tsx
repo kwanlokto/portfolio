@@ -80,14 +80,6 @@ export default function Home() {
           />
         </Box>
         <Box pt={2}>
-          {/* <Typography
-            fontSize="0.8rem"
-            fontWeight="bold"
-            className="dark:text-gray-500"
-          >
-            Full Stack Developer passionate about designing efficient, sleek and
-            minimal apps.
-          </Typography> */}
           <Typography pt={1}>
             I’m a Full Stack developer who is passionate about learning new technologies
             and creating efficient, minimalistic applications. Most of my time lately
