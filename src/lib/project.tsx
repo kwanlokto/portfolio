@@ -20,7 +20,7 @@ export const projects: ProjectType[] = [
     ),
     picture_url: "/portfolio/graphing_library.png",
     tech_stack: ["Next.JS"],
-    deployed_url: "https://https://graphing-library.vercel.app/",
+    deployed_url: "https://graphing-library.vercel.app/",
     source_url: "https://github.com/kwanlokto/graphing_library",
   },
   {
