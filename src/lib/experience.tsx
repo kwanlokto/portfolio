@@ -12,9 +12,7 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/SS Logo.png",
     role: "CTO",
     timeline: "June 2025 - Present",
-    achievements: [
-      <></>
-    ],
+    achievements: [],
   },
   {
     company: "Skatescribe",
