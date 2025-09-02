@@ -10,8 +10,17 @@ export const work: ExperienceType[] = [
   {
     company: "Skatescribe",
     icon_url: "/portfolio/SS Logo.png",
+    role: "CTO",
+    timeline: "June 2025 - Present",
+    achievements: [
+      <></>
+    ],
+  },
+  {
+    company: "Skatescribe",
+    icon_url: "/portfolio/SS Logo.png",
     role: "Senior Software Developer & Team Lead",
-    timeline: "Oct 2023 - Present",
+    timeline: "Oct 2023 - June 2025",
     achievements: [
       <>
         Led a cross-functional team of developers, mechanical engineers, and a
