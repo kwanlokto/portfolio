@@ -9,6 +9,21 @@ export interface ProjectType {
 
 export const projects: ProjectType[] = [
   {
+    title: "Music Library",
+    description: (
+      <>
+        This mobile app (currently a work in progress) was born out of my
+        frustration with existing music players that are cluttered with ads,
+        unnecessary features, and bloat. The goal is to build a simple,
+        intuitive, and ad-free music player that focuses purely on a smooth
+        listening experience.
+      </>
+    ),
+    picture_url: null,
+    tech_stack: ["React Native"],
+    source_url: "https://github.com/kwanlokto/graphing_library",
+  },
+  {
     title: "Graphing Library",
     description: (
       <>
