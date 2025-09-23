@@ -9,6 +9,14 @@ interface ProjectParams {
 }
 
 const Project = ({ project }: ProjectParams) => {
+  const [expanded, setExpanded] = useState(false);
+  const maxChars = 200; // adjust this
+
+  const isLong = project.description.length > maxChars;
+  const shownText = expanded
+    ? project.description
+    : project.description.slice(0, maxChars) + (isLong ? "..." : "");
+
   return (
     <Grid
       size={6}
@@ -44,9 +52,19 @@ const Project = ({ project }: ProjectParams) => {
         <Typography variant="h6" fontWeight={700} gutterBottom>
           {project.title}
         </Typography>
-        <Typography variant="body2" mb={2}>
-          {project.description}
+        <Typography variant="body2" mb={1}>
+          {shownText}
         </Typography>
+
+        {isLong && (
+          <Button
+            size="small"
+            onClick={() => setExpanded((prev: boolean) => !prev)}
+            sx={{ textTransform: "none", p: 0 }}
+          >
+            {expanded ? "Show less" : "Show more"}
+          </Button>
+        )}
       </Box>
       {/* Tech Stack */}
       <Stack
