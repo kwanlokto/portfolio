@@ -2,7 +2,7 @@ import { Box, Button, Grid2 as Grid, Stack, Typography } from "@mui/material";
 import { ProjectType, projects } from "@/lib/project";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 interface ProjectParams {
   project: ProjectType;
@@ -10,12 +10,6 @@ interface ProjectParams {
 
 const Project = ({ project }: ProjectParams) => {
   const [expanded, setExpanded] = useState(false);
-  const maxChars = 200; // adjust this
-
-  const isLong = project.description.length > maxChars;
-  const shownText = expanded
-    ? project.description
-    : project.description.slice(0, maxChars) + (isLong ? "..." : "");
 
   return (
     <Grid
@@ -52,19 +46,31 @@ const Project = ({ project }: ProjectParams) => {
         <Typography variant="h6" fontWeight={700} gutterBottom>
           {project.title}
         </Typography>
-        <Typography variant="body2" mb={1}>
-          {shownText}
-        </Typography>
+        <Box
+          sx={{
+            mb: 1,
+            overflow: "hidden",
+            ...(expanded
+              ? {}
+              : {
+                  display: "-webkit-box",
+                  WebkitLineClamp: 3, // number of lines to show when collapsed
+                  WebkitBoxOrient: "vertical",
+                }),
+          }}
+        >
+          <Typography variant="body2" component="div">
+            {project.description}
+          </Typography>
+        </Box>
 
-        {isLong && (
-          <Button
-            size="small"
-            onClick={() => setExpanded((prev: boolean) => !prev)}
-            sx={{ textTransform: "none", p: 0 }}
-          >
-            {expanded ? "Show less" : "Show more"}
-          </Button>
-        )}
+        <Button
+          size="small"
+          onClick={() => setExpanded((prev: boolean) => !prev)}
+          sx={{ textTransform: "none", p: 0 }}
+        >
+          {expanded ? "Show less" : "Show more"}
+        </Button>
       </Box>
       {/* Tech Stack */}
       <Stack
