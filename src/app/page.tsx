@@ -81,7 +81,7 @@ export default function Home() {
         </Box>
         <Box pt={2}>
           <Typography pt={1}>
-            I’m a Full Stack developer who is passionate about learning new technologies
+            I’m a Senior developer who is passionate about learning new technologies
             and creating efficient, minimalistic applications. Most of my time lately
             has been spent been developing software used by professional athletes in the NHL. 
           </Typography>
