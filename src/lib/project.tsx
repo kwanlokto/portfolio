@@ -9,7 +9,7 @@ export interface ProjectType {
 
 export const projects: ProjectType[] = [
   {
-    title: "Music Library",
+    title: "Music Player",
     description: (
       <>
         This mobile app (currently a work in progress) was born out of my
@@ -20,8 +20,8 @@ export const projects: ProjectType[] = [
       </>
     ),
     picture_url: null,
-    tech_stack: ["React Native"],
-    source_url: "https://github.com/kwanlokto/graphing_library",
+    tech_stack: ["React Native", "Expo"],
+    source_url: "https://github.com/kwanlokto/MusicPlayerApp",
   },
   {
     title: "Graphing Library",

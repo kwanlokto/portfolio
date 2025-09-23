@@ -70,7 +70,7 @@ const Project = ({ project }: ProjectParams) => {
           <Button
             size="small"
             onClick={() => setExpanded((prev: boolean) => !prev)}
-            sx={{ textTransform: "none", p: 0 }}
+            sx={{ textTransform: "none", p: 0, mb: 2 }}
           >
             {expanded ? "Show less" : "Show more"}
           </Button>
