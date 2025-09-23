@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Button, Grid2 as Grid, Stack, Typography } from "@mui/material";
 import { ProjectType, projects } from "@/lib/project";
 
@@ -64,13 +66,15 @@ const Project = ({ project }: ProjectParams) => {
           </Typography>
         </Box>
 
-        <Button
-          size="small"
-          onClick={() => setExpanded((prev: boolean) => !prev)}
-          sx={{ textTransform: "none", p: 0 }}
-        >
-          {expanded ? "Show less" : "Show more"}
-        </Button>
+        <Box display="flex" justifyContent="flex-end">
+          <Button
+            size="small"
+            onClick={() => setExpanded((prev: boolean) => !prev)}
+            sx={{ textTransform: "none", p: 0 }}
+          >
+            {expanded ? "Show less" : "Show more"}
+          </Button>
+        </Box>
       </Box>
       {/* Tech Stack */}
       <Stack
