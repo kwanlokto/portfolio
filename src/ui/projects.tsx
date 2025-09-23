@@ -112,7 +112,7 @@ const Project = ({ project }: ProjectParams) => {
           </Button>
         )}
         <Button variant="outlined" href={project.source_url} target="_blank">
-          Source Code
+          Github
         </Button>
       </Stack>
     </Grid>
