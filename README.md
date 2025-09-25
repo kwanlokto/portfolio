@@ -50,6 +50,7 @@ npm run deploy
 │   ├── app         # Next.js App Router (routes, layouts, pages)
 │   ├── lib         # API client functions and constants (temporary)
 │   └── ui          # Reusable UI components
+│   └── utils       # Reusable helper functions
 └── ...
 ```
 
