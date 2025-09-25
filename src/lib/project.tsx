@@ -25,7 +25,7 @@ export const projects: ProjectType[] = [
     source_url: "https://github.com/kwanlokto/MusicPlayerApp",
   },
   {
-    title: "Graphing Library",
+    title: "Graphs",
     description: (
       <>
         This interactive web application visually demonstrates how various
