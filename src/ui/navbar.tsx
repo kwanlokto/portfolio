@@ -10,6 +10,7 @@ import { Modal } from "./modal";
 const tabs = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/project" },
+  { label: "About Me", href: "/about-me" },
 ];
 
 interface NavButtonProps {
