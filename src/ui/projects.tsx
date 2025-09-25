@@ -102,6 +102,14 @@ const Project = ({ project }: ProjectParams) => {
       </Stack>
       {/* Action Buttons */}
       <Stack direction="row" justifyContent="center" spacing={2}>
+        {project.download_url && (
+          <Button
+            variant="contained"
+            onClick={() => {}} // TOOD: do something
+          >
+            Download
+          </Button>
+        )}
         {project.deployed_url && (
           <Button
             variant="contained"

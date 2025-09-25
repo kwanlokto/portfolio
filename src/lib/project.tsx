@@ -4,6 +4,7 @@ export interface ProjectType {
   picture_url: string | null;
   tech_stack: string[];
   deployed_url?: string;
+  download_url?: string;
   source_url: string;
 }
 
