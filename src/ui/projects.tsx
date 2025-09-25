@@ -5,6 +5,7 @@ import { ProjectType, projects } from "@/lib/project";
 
 import Image from "next/image";
 import React, { useState } from "react";
+import { handle_download } from "@/utils/download";
 
 interface ProjectParams {
   project: ProjectType;
@@ -105,7 +106,12 @@ const Project = ({ project }: ProjectParams) => {
         {project.download_url && (
           <Button
             variant="contained"
-            onClick={() => {}} // TOOD: do something
+            onClick={() => {
+              if (project.download_url) {
+                const file_name = project.download_url.split("/").pop() || "";
+                handle_download(project.download_url, file_name);
+              }
+            }} // TOOD: do something
           >
             Download
           </Button>

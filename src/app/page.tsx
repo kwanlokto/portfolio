@@ -23,30 +23,10 @@ import Projects from "@/ui/projects";
 import { TechStack } from "@/ui/tech_stack";
 import { grey } from "@mui/material/colors";
 import { useState } from "react";
+import { handle_download } from "@/utils/download";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
-
-  const handle_download = async (file_path: string, file_name: string) => {
-    try {
-      const response = await fetch(file_path);
-      if (!response.ok) throw new Error("Network response was not ok");
-
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = file_name || "download.pdf";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Download failed:", error);
-    }
-  };
 
   return (
     <Grid container spacing={2}>
