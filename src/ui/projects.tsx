@@ -108,11 +108,11 @@ const Project = ({ project }: ProjectParams) => {
             href={project.deployed_url}
             target="_blank"
           >
-            Live Site
+            Visit
           </Button>
         )}
         <Button variant="outlined" href={project.source_url} target="_blank">
-          Github
+          Code
         </Button>
       </Stack>
     </Grid>
