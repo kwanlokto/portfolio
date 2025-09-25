@@ -57,8 +57,9 @@ export const projects: ProjectType[] = [
     title: "Porfolio",
     description: (
       <>
-        An interactive portfolio project created to get comfortable working with
-        Next.js and TailwindCSS through real-world application.
+        An interactive portfolio built with Next.js and TailwindCSS to showcase
+        my projects and skills. It features responsive design and modern
+        frontend best practices.
       </>
     ),
     picture_url: null,
@@ -69,8 +70,9 @@ export const projects: ProjectType[] = [
     title: "Docker Practice",
     description: (
       <>
-        A banking project designed to track all transactions, built to help me
-        get familiar with Docker, Alembic, and Axios
+        A banking project designed to manage and track all transactions, created
+        to explore Docker containerization, Alembic database migrations, and
+        Axios for API requests.
       </>
     ),
     picture_url: "/portfolio/docker_practice.png",
