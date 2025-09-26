@@ -29,7 +29,7 @@ export default function Page() {
         />
         <Box>
           <Typography variant="h4" fontWeight="500">
-            Your Name
+            Ray Kwan
           </Typography>
           <Typography variant="body1" color="text.secondary">
             Software Engineer • Designer • Problem Solver
@@ -93,7 +93,7 @@ export default function Page() {
         <Typography variant="body1" color="text.secondary">
           Want to connect? Reach me at{" "}
           <Typography component="span" color="primary">
-            your.email@example.com
+            lokto.kwan@gmail.com
           </Typography>
         </Typography>
       </Box>
