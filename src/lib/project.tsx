@@ -75,9 +75,9 @@ export const projects: ProjectType[] = [
         Axios for API requests.
       </>
     ),
-    picture_url: "/portfolio/docker_practice.png",
+    picture_url: "/portfolio/atm.png",
     tech_stack: ["Python", "React", "Docker"],
-    source_url: "https://github.com/kwanlokto/docker_practice",
+    source_url: "https://github.com/kwanlokto/atm",
   },
   {
     title: "Algorithm Library",
