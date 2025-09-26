@@ -66,7 +66,7 @@ export default function Page() {
               <Typography variant="h6" gutterBottom>
                 Skills
               </Typography>
-              <Typography variant="body2" >
+              <Typography variant="body2">
                 • JavaScript / TypeScript <br />
                 • React / Next.js <br />
                 • Node.js / Express <br />
@@ -82,7 +82,7 @@ export default function Page() {
               <Typography variant="h6" gutterBottom>
                 Interests
               </Typography>
-              <Typography variant="body2" >
+              <Typography variant="body2">
                 • Building side projects <br />
                 • Hiking & outdoor adventures <br />
                 • Learning about AI <br />
