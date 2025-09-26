@@ -97,6 +97,29 @@ export default function Page() {
           </Typography>
         </Typography>
       </Box>
+
+      <Grid container spacing={3}>
+        {[
+          { title: "Travelling", img: "/travel.jpg" },
+          { title: "Sports", img: "/sports.jpg" },
+          { title: "Photography", img: "/camera.jpg" },
+          { title: "Music", img: "/music.jpg" },
+        ].map((hobby, index) => (
+          <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
+            <Card sx={{ borderRadius: 3, overflow: "hidden" }}>
+              <Box
+                component="img"
+                src={hobby.img}
+                alt={hobby.title}
+                sx={{ width: "100%", height: 160, objectFit: "cover" }}
+              />
+              <CardContent sx={{ textAlign: "center" }}>
+                <Typography variant="body1">{hobby.title}</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   );
 }
