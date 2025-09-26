@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Box,
   Typography,
@@ -6,18 +8,19 @@ import {
   CardContent,
   Divider,
   Grid2 as Grid,
+  useTheme,
 } from "@mui/material";
 
 import React from "react";
 
 export default function Page() {
+  const theme = useTheme();
+
   return (
     <Box
+      className="max-w-4xl mx-auto px-4 py-8 font-roboto"
       sx={{
         maxWidth: 900,
-        mx: "auto",
-        px: 3,
-        py: 6,
         fontFamily: "Roboto, sans-serif",
       }}
     >
@@ -31,66 +34,70 @@ export default function Page() {
           <Typography variant="h4" fontWeight="500">
             Ray Kwan
           </Typography>
-          <Typography variant="body1" color="text.secondary">
+          <Typography
+            variant="body1"
+            className="text-gray-600 dark:text-gray-400"
+          >
             Software Engineer • Designer • Problem Solver
           </Typography>
         </Box>
       </Box>
 
       {/* About Section */}
-      <Card variant="outlined" sx={{ mb: 4, borderRadius: 3 }}>
+      <Box className="mb-6 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm hover:shadow-md transition">
         <CardContent>
           <Typography variant="h6" gutterBottom>
             About Me
           </Typography>
-          <Typography variant="body1" color="text.secondary">
+          <Typography variant="body1">
             I’m a passionate developer with experience in building scalable web
             applications, crafting clean UI, and solving complex problems. I
             love exploring new technologies, working in collaborative teams, and
             turning ideas into real products.
           </Typography>
         </CardContent>
-      </Card>
+      </Box>
 
       {/* Details Section */}
       <Grid container spacing={3}>
         <Grid size={{ xs: 12, md: 6 }}>
-          <Card variant="outlined" sx={{ borderRadius: 3 }}>
+          <Box className="mb-6 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm hover:shadow-md transition">
             <CardContent>
               <Typography variant="h6" gutterBottom>
                 Skills
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" >
                 • JavaScript / TypeScript <br />
                 • React / Next.js <br />
                 • Node.js / Express <br />
                 • SQL / NoSQL Databases <br />• UI/UX Design
               </Typography>
             </CardContent>
-          </Card>
+          </Box>
         </Grid>
+
         <Grid size={{ xs: 12, md: 6 }}>
-          <Card variant="outlined" sx={{ borderRadius: 3 }}>
+          <Box className="mb-6 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm hover:shadow-md transition">
             <CardContent>
               <Typography variant="h6" gutterBottom>
                 Interests
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" >
                 • Building side projects <br />
                 • Hiking & outdoor adventures <br />
                 • Learning about AI <br />
                 • Playing the piano <br />• Photography
               </Typography>
             </CardContent>
-          </Card>
+          </Box>
         </Grid>
       </Grid>
 
       <Divider sx={{ my: 4 }} />
 
       {/* Contact Section */}
-      <Box textAlign="center">
-        <Typography variant="body1" color="text.secondary">
+      <Box textAlign="center" mb={4}>
+        <Typography variant="body1">
           Want to connect? Reach me at{" "}
           <Typography component="span" color="primary">
             lokto.kwan@gmail.com
@@ -98,17 +105,26 @@ export default function Page() {
         </Typography>
       </Box>
 
+      {/* Hobbies Section */}
       <Grid container spacing={3}>
         {[
           { title: "Travelling", img: "/travel.jpg" },
           { title: "Sports", img: "/sports.jpg" },
           { title: "Photography", img: "/camera.jpg" },
-          { title: "Music", img: "/music.jpg" },].map((hobby, index) => (
+          { title: "Music", img: "/music.jpg" },
+        ].map((hobby, index) => (
           <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-            <Card sx={{ borderRadius: 3, overflow: "hidden" }}>
+            <Card
+              sx={{
+                borderRadius: 3,
+                overflow: "hidden",
+                bgcolor: theme.palette.background.paper,
+                "&:hover": { boxShadow: 3 },
+              }}
+            >
               <Box
                 component="img"
-                src={undefined}
+                src={hobby.img}
                 alt={hobby.title}
                 sx={{ width: "100%", height: 160, objectFit: "cover" }}
               />
