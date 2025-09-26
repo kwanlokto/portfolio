@@ -10,6 +10,7 @@ import {
   Grid2 as Grid,
   useTheme,
 } from "@mui/material";
+import Image from "next/image";
 
 import React from "react";
 
@@ -114,24 +115,18 @@ export default function Page() {
           { title: "Music", img: "/music.jpg" },
         ].map((hobby, index) => (
           <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-            <Card
-              sx={{
-                borderRadius: 3,
-                overflow: "hidden",
-                bgcolor: theme.palette.background.paper,
-                "&:hover": { boxShadow: 3 },
-              }}
-            >
-              <Box
-                component="img"
+            <Box className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-md transition">
+              <Image
                 src={hobby.img}
                 alt={hobby.title}
-                sx={{ width: "100%", height: 160, objectFit: "cover" }}
+                width={400}
+                height={160}
+                className="w-full h-40 object-cover"
               />
               <CardContent sx={{ textAlign: "center" }}>
                 <Typography variant="body1">{hobby.title}</Typography>
               </CardContent>
-            </Card>
+            </Box>
           </Grid>
         ))}
       </Grid>
