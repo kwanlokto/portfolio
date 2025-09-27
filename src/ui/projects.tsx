@@ -18,7 +18,7 @@ const Project = ({ project }: ProjectParams) => {
     <Grid
       size={6}
       className="p-6 border border-gray-300 dark:border-gray-800 rounded-lg"
-      sx={{ textAlign: "center", display: "flex", flexDirection: "column" }}
+      sx={{ display: "flex", flexDirection: "column" }}
     >
       {/* Project Image */}
       <Box sx={{ flexGrow: 1 }}>
