@@ -13,7 +13,7 @@ export const TechStack = () => {
         flexWrap="wrap"
         gap={2}
         sx={{
-          p: 4,
+          p: 2,
           border: (theme) =>
             `1px solid ${
               theme.palette.mode === "dark"
@@ -28,7 +28,7 @@ export const TechStack = () => {
             key={index}
             sx={{
               display: "flex",
-              p: 3,
+              p: 1.34,
               borderRadius: 1,
               boxShadow: 1,
               bgcolor: (theme) =>

@@ -81,7 +81,7 @@ const Project = ({ project }: ProjectParams) => {
           <Button
             size="small"
             onClick={() => setExpanded((prev) => !prev)}
-            sx={{ textTransform: "none", p: 0, mb: 2 }}
+            sx={{ textTransform: "none", py: 0.25, px: 1, mb: 2 }}
           >
             {expanded ? "Show less" : "Show more"}
           </Button>
@@ -101,8 +101,9 @@ const Project = ({ project }: ProjectParams) => {
             key={idx}
             variant="caption"
             sx={{
-              px: 1.5,
-              py: 0.5,
+              px: 1.25,
+              pt: 0.5,
+              pb: 0.25,
               borderRadius: 1,
               fontWeight: 500,
               color: (theme) =>
