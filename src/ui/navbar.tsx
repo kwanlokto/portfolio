@@ -1,11 +1,12 @@
 "use client";
 
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, IconButton, TextField, Typography } from "@mui/material";
 import { EmailData, send_email } from "@/lib/email";
 import { FormEvent, useState } from "react";
 
 import Link from "next/link";
 import { Modal } from "./modal";
+import { MdBrightness4 } from "react-icons/md";
 
 const tabs = [
   { label: "Home", href: "/" },
@@ -51,7 +52,11 @@ const NavButton = ({ label, onClick }: NavButtonProps) => {
   );
 };
 
-export const Navbar = () => {
+type NavbarProps = {
+  toggleTheme: () => void;
+};
+
+export const Navbar = ({ toggleTheme }: NavbarProps) => {
   const [show_contact_form, set_show_contact_form] = useState(false);
   const [form_data, set_form_data] = useState({
     name: "",
@@ -105,11 +110,17 @@ export const Navbar = () => {
           <NavButton label={tab.label} />
         </Link>
       ))}
-      <NavButton
-        label="contact me"
-        onClick={() => set_show_contact_form(true)}
-      />
+      <Link href="_blank" onClick={(e) => e.preventDefault()}>
+        <NavButton
+          label="Contact Me"
+          onClick={() => set_show_contact_form(true)}
+        />
+      </Link>
 
+      <IconButton color="inherit" onClick={toggleTheme}>
+        {/* you can conditionally show dark/light icons here */}
+        <MdBrightness4 style={{ marginTop: -2 }} size={18}/>
+      </IconButton>
       <Modal
         open={show_contact_form}
         onClose={() => set_show_contact_form(false)}
