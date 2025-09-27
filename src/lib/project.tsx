@@ -63,7 +63,7 @@ export const projects: ProjectType[] = [
       </>
     ),
     picture_url: null,
-    tech_stack: ["Next.JS"],
+    tech_stack: ["Next.JS", "Tailwind CSS"],
     source_url: "https://github.com/kwanlokto/portfolio",
   },
   {
