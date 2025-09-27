@@ -4,18 +4,15 @@ import {
   Box,
   Typography,
   Avatar,
-  Card,
   CardContent,
   Divider,
   Grid2 as Grid,
-  useTheme,
 } from "@mui/material";
 import Image from "next/image";
 
 import React from "react";
 
 export default function Page() {
-  const theme = useTheme();
 
   return (
     <Box
