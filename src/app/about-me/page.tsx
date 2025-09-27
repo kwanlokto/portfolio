@@ -31,13 +31,14 @@ export default function Page() {
             variant="body1"
             className="text-gray-600 dark:text-gray-400"
           >
-            Leader • Software Engineer • Designer • Problem Solver
+            Software Engineer • Designer • Leader • Problem Solver • Explorer •
+            Innovator
           </Typography>
         </Box>
       </Box>
 
       {/* About Section */}
-      <Box className="mb-8 rounded-2xl bg-white dark:bg-gray-900 p-6 shadow-sm">
+      <Box>
         <Typography variant="h6" gutterBottom>
           About Me
         </Typography>
@@ -52,58 +53,7 @@ export default function Page() {
         </Typography>
       </Box>
 
-      {/* Details Section */}
-      <Grid container spacing={4}>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Box className="rounded-2xl bg-white dark:bg-gray-900 p-6 shadow-sm">
-            <Typography variant="h6" gutterBottom>
-              Skills
-            </Typography>
-            <Typography
-              variant="body2"
-              className="text-gray-700 dark:text-gray-300 leading-relaxed"
-            >
-              • JavaScript / TypeScript <br />
-              • React / Next.js <br />
-              • Node.js / Express <br />
-              • SQL / NoSQL Databases <br />
-              • UI/UX Design <br />
-            </Typography>
-          </Box>
-        </Grid>
-
-        <Grid size={{ xs: 12, md: 6 }}>
-          <Box className="rounded-2xl bg-white dark:bg-gray-900 p-6 shadow-sm">
-            <Typography variant="h6" gutterBottom>
-              Interests
-            </Typography>
-            <Typography
-              variant="body2"
-              className="text-gray-700 dark:text-gray-300 leading-relaxed"
-            >
-              • Building side projects <br />
-              • Hiking & outdoor adventures <br />
-              • Learning about AI <br />
-              • Playing the piano <br />• Photography
-            </Typography>
-          </Box>
-        </Grid>
-      </Grid>
-
-      <Divider sx={{ my: 6 }} />
-
-      {/* Contact Section */}
-      <Box textAlign="center" mb={8}>
-        <Typography
-          variant="body1"
-          className="text-gray-700 dark:text-gray-300"
-        >
-          Want to connect? Reach me at{" "}
-          <Typography component="span" color="primary" fontWeight={500}>
-            lokto.kwan@gmail.com
-          </Typography>
-        </Typography>
-      </Box>
+      <Divider sx={{ my: 3 }} />
 
       {/* Hobbies Section */}
       <Grid container spacing={4}>
@@ -131,6 +81,21 @@ export default function Page() {
           </Grid>
         ))}
       </Grid>
+
+      <Divider sx={{ my: 3 }} />
+
+      {/* Contact Section */}
+      <Box textAlign="center" mb={8}>
+        <Typography
+          variant="body1"
+          className="text-gray-700 dark:text-gray-300"
+        >
+          Want to connect? Reach me at{" "}
+          <Typography component="span" color="primary" fontWeight={500}>
+            lokto.kwan@gmail.com
+          </Typography>
+        </Typography>
+      </Box>
     </Box>
   );
 }
