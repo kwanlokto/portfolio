@@ -67,7 +67,7 @@ export const projects: ProjectType[] = [
     source_url: "https://github.com/kwanlokto/portfolio",
   },
   {
-    title: "Docker Practice",
+    title: "ATM",
     description: (
       <>
         A banking project designed to manage and track all transactions, created
