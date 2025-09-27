@@ -7,16 +7,35 @@ export const TechStack = () => {
       <Typography variant="h6" mb={1} pl={3.5}>
         Tech Stack
       </Typography>
+
       <Box
         display="flex"
         flexWrap="wrap"
-        className="p-4 border border-gray-300 dark:border-gray-800 rounded-lg"
         gap={2}
+        sx={{
+          p: 4,
+          border: (theme) =>
+            `1px solid ${
+              theme.palette.mode === "dark"
+                ? theme.palette.grey[800]
+                : theme.palette.grey[300]
+            }`,
+          borderRadius: 2,
+        }}
       >
         {tech_stack.map((tech: TechStackType, index: number) => (
           <Box
             key={index}
-            className="flex p-3 bg-white dark:bg-gray-700 rounded-md shadow"
+            sx={{
+              display: "flex",
+              p: 3,
+              borderRadius: 1,
+              boxShadow: 1,
+              bgcolor: (theme) =>
+                theme.palette.mode === "dark"
+                  ? theme.palette.grey[700]
+                  : theme.palette.common.white,
+            }}
           >
             {tech.icon}
           </Box>

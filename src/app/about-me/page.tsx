@@ -7,18 +7,16 @@ import {
   CardContent,
   Divider,
   Grid2 as Grid,
+  Card,
 } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
 export default function Page() {
   return (
-    <Box
-      className="max-w-4xl mx-auto px-4 py-10 font-roboto"
-      sx={{ fontFamily: "Roboto, sans-serif" }}
-    >
+    <Box>
       {/* Profile Header */}
-      <Box display="flex" alignItems="center" mb={6}>
+      <Box mb={6}>
         <Avatar
           src="/profile.jpg" // Replace with your image
           sx={{ width: 100, height: 100, mr: 3 }}
@@ -29,7 +27,12 @@ export default function Page() {
           </Typography>
           <Typography
             variant="body1"
-            className="text-gray-600 dark:text-gray-400"
+            sx={{
+              color: (theme) =>
+                theme.palette.mode === "dark"
+                  ? theme.palette.grey[400]
+                  : theme.palette.grey[600],
+            }}
           >
             Software Engineer • Designer • Leader • Problem Solver • Explorer •
             Innovator
@@ -44,7 +47,12 @@ export default function Page() {
         </Typography>
         <Typography
           variant="body1"
-          className="text-gray-700 dark:text-gray-300"
+          sx={{
+            color: (theme) =>
+              theme.palette.mode === "dark"
+                ? theme.palette.grey[300]
+                : theme.palette.grey[700],
+          }}
         >
           I’m a passionate developer with experience in building scalable web
           applications, crafting clean UI, and solving complex problems. I love
@@ -64,20 +72,33 @@ export default function Page() {
           { title: "Music", img: "/music.jpg" },
         ].map((hobby, index) => (
           <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-            <Box className="rounded-2xl bg-white dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-md transition">
-              <Image
-                src={hobby.img}
-                alt={hobby.title}
-                width={400}
-                height={160}
-                className="w-full h-40 object-cover"
-              />
+            <Card
+              sx={{
+                borderRadius: 4,
+                overflow: "hidden",
+                boxShadow: 1,
+                transition: "box-shadow 0.2s",
+                "&:hover": { boxShadow: 3 },
+                bgcolor: (theme) =>
+                  theme.palette.mode === "dark"
+                    ? theme.palette.grey[900]
+                    : theme.palette.common.white,
+              }}
+            >
+              <Box sx={{ width: "100%", height: 160, position: "relative" }}>
+                <Image
+                  src={hobby.img}
+                  alt={hobby.title}
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
+              </Box>
               <CardContent sx={{ textAlign: "center" }}>
                 <Typography variant="body1" fontWeight={500}>
                   {hobby.title}
                 </Typography>
               </CardContent>
-            </Box>
+            </Card>
           </Grid>
         ))}
       </Grid>
@@ -85,10 +106,15 @@ export default function Page() {
       <Divider sx={{ my: 3 }} />
 
       {/* Contact Section */}
-      <Box textAlign="center" mb={8}>
+      <Box textAlign="center">
         <Typography
           variant="body1"
-          className="text-gray-700 dark:text-gray-300"
+          sx={{
+            color: (theme) =>
+              theme.palette.mode === "dark"
+                ? theme.palette.grey[300]
+                : theme.palette.grey[700],
+          }}
         >
           Want to connect? Reach me at{" "}
           <Typography component="span" color="primary" fontWeight={500}>

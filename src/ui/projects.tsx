@@ -17,8 +17,18 @@ const Project = ({ project }: ProjectParams) => {
   return (
     <Grid
       size={6}
-      className="p-6 border border-gray-300 dark:border-gray-800 rounded-lg"
-      sx={{ display: "flex", flexDirection: "column" }}
+      sx={{
+        p: 3,
+        border: (theme) =>
+          `1px solid ${
+            theme.palette.mode === "dark"
+              ? theme.palette.grey[800]
+              : theme.palette.grey[300]
+          }`,
+        borderRadius: 2,
+        display: "flex",
+        flexDirection: "column",
+      }}
     >
       {/* Project Image */}
       <Box sx={{ flexGrow: 1 }}>
@@ -57,7 +67,7 @@ const Project = ({ project }: ProjectParams) => {
               ? {}
               : {
                   display: "-webkit-box",
-                  WebkitLineClamp: 3, // number of lines to show when collapsed
+                  WebkitLineClamp: 3,
                   WebkitBoxOrient: "vertical",
                 }),
           }}
@@ -70,13 +80,14 @@ const Project = ({ project }: ProjectParams) => {
         <Box display="flex" justifyContent="flex-end">
           <Button
             size="small"
-            onClick={() => setExpanded((prev: boolean) => !prev)}
+            onClick={() => setExpanded((prev) => !prev)}
             sx={{ textTransform: "none", p: 0, mb: 2 }}
           >
             {expanded ? "Show less" : "Show more"}
           </Button>
         </Box>
       </Box>
+
       {/* Tech Stack */}
       <Stack
         direction="row"
@@ -85,22 +96,30 @@ const Project = ({ project }: ProjectParams) => {
         gap={1}
         mb={2}
       >
-        {project.tech_stack.map((item: string, idx: number) => (
+        {project.tech_stack.map((item, idx) => (
           <Typography
             key={idx}
             variant="caption"
-            className="text-black bg-gray-400"
             sx={{
               px: 1.5,
               py: 0.5,
               borderRadius: 1,
               fontWeight: 500,
+              color: (theme) =>
+                theme.palette.mode === "dark"
+                  ? theme.palette.common.black
+                  : theme.palette.common.black,
+              bgcolor: (theme) =>
+                theme.palette.mode === "dark"
+                  ? theme.palette.grey[400]
+                  : theme.palette.grey[300],
             }}
           >
             {item}
           </Typography>
         ))}
       </Stack>
+
       {/* Action Buttons */}
       <Stack direction="row" justifyContent="center" spacing={2}>
         {project.download_url && (
@@ -111,7 +130,7 @@ const Project = ({ project }: ProjectParams) => {
                 const file_name = project.download_url.split("/").pop() || "";
                 handle_download(project.download_url, file_name);
               }
-            }} // TOOD: do something
+            }}
           >
             Download
           </Button>

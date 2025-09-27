@@ -32,14 +32,14 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
             key={idx}
             position="right"
             sx={{
-              display: "flex", // Ensure the timeline items are in flex layout
-              alignItems: "flex-start", // Align items at the same height
+              display: "flex",
+              alignItems: "flex-start",
             }}
           >
             <TimelineSeparator>
               <TimelineConnector />
               <TimelineDot>
-                <Icon sx={{ position: "relative" }}>
+                <Icon sx={{ position: "relative", width: 24, height: 24 }}>
                   <Image
                     src={experience.icon_url}
                     alt={experience.icon_url.slice(1)}
@@ -56,42 +56,59 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
               <Typography
                 variant="body2"
                 fontWeight="bold"
-                className="dark:text-gray-500"
+                sx={{
+                  color: (theme) =>
+                    theme.palette.mode === "dark"
+                      ? theme.palette.grey[500]
+                      : theme.palette.text.secondary,
+                }}
               >
                 {experience.timeline}
               </Typography>
-              <Typography variant="h6" className="dark:white">
+
+              <Typography
+                variant="h6"
+                sx={{
+                  color: (theme) => theme.palette.text.primary,
+                }}
+              >
                 {experience.company}
               </Typography>
+
               <Typography
                 fontSize="0.75rem"
                 fontWeight="bold"
-                className="dark:text-gray-500"
+                sx={{
+                  color: (theme) =>
+                    theme.palette.mode === "dark"
+                      ? theme.palette.grey[500]
+                      : theme.palette.text.secondary,
+                }}
               >
                 {experience.role}
               </Typography>
-              <List sx={{ listStyleType: "disc" }}>
-                {experience.achievements.length > 0 &&
-                  experience.achievements.map(
-                    (
-                      achievement: React.ReactElement,
-                      achievement_idx: number
-                    ) => {
-                      return (
-                        <ListItem
-                          key={achievement_idx}
-                          sx={{ display: "list-item", p: 0 }}
-                        >
-                          <Typography
-                            variant="body2"
-                            className="dark:text-gray-300"
-                          >
-                            {achievement}
-                          </Typography>
-                        </ListItem>
-                      );
-                    }
-                  )}
+
+              <List sx={{ listStyleType: "disc", pl: 2 }}>
+                {experience.achievements.map(
+                  (achievement: React.ReactNode, achievement_idx: number) => (
+                    <ListItem
+                      key={achievement_idx}
+                      sx={{ display: "list-item", p: 0 }}
+                    >
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: (theme) =>
+                            theme.palette.mode === "dark"
+                              ? theme.palette.grey[300]
+                              : theme.palette.text.secondary,
+                        }}
+                      >
+                        {achievement}
+                      </Typography>
+                    </ListItem>
+                  )
+                )}
               </List>
             </TimelineContent>
           </TimelineItem>

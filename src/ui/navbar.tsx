@@ -20,10 +20,30 @@ interface NavButtonProps {
 
 const NavButton = ({ label, onClick }: NavButtonProps) => {
   return (
-    <Button disableRipple onClick={onClick} sx={{ bgcolor: "transparent" }}>
+    <Button
+      disableRipple
+      onClick={onClick}
+      sx={{
+        bgcolor: "transparent",
+        textTransform: "none",
+        "&:hover": { bgcolor: "transparent" },
+      }}
+    >
       <Typography
         fontSize={14}
-        className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition"
+        sx={{
+          color: (theme) =>
+            theme.palette.mode === "dark"
+              ? theme.palette.grey[400]
+              : theme.palette.grey[500],
+          transition: "color 0.2s",
+          "&:hover": {
+            color: (theme) =>
+              theme.palette.mode === "dark"
+                ? theme.palette.common.white
+                : theme.palette.common.black,
+          },
+        }}
       >
         {label}
       </Typography>
