@@ -34,7 +34,7 @@ export const TechStack = () => {
               bgcolor: (theme) =>
                 theme.palette.mode === "dark"
                   ? theme.palette.grey[700]
-                  : theme.palette.common.white,
+                  : theme.palette.grey[200],
             }}
           >
             {tech.icon}

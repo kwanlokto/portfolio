@@ -47,12 +47,6 @@ export default function Page() {
         </Typography>
         <Typography
           variant="body1"
-          sx={{
-            color: (theme) =>
-              theme.palette.mode === "dark"
-                ? theme.palette.grey[300]
-                : theme.palette.grey[700],
-          }}
         >
           I’m a passionate developer with experience in building scalable web
           applications, crafting clean UI, and solving complex problems. I love
@@ -81,8 +75,8 @@ export default function Page() {
                 "&:hover": { boxShadow: 3 },
                 bgcolor: (theme) =>
                   theme.palette.mode === "dark"
-                    ? theme.palette.grey[900]
-                    : theme.palette.common.white,
+                    ? theme.palette.grey[700]
+                    : theme.palette.grey[200],
               }}
             >
               <Box sx={{ width: "100%", height: 160, position: "relative" }}>
