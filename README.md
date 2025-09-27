@@ -14,8 +14,8 @@ It showcases my projects, skills, and experience in a clean, modern interface.
 First, clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/your-portfolio.git
-cd your-portfolio
+git clone https://github.com/kwanlokto/portfolio.git
+cd porfolio
 npm install
 ```
 
