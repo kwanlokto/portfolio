@@ -1,5 +1,7 @@
 "use client";
 
+import { Modal } from "@/ui/modal";
+import { Masonry } from "@mui/lab";
 import {
   Box,
   Typography,
@@ -9,12 +11,13 @@ import {
   Card,
 } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Page() {
+  const [open, set_open] = useState(false);
+  const [images, set_images] = useState([]);
   return (
     <Box>
-
       {/* About Section */}
       <Box>
         <Typography variant="h5" gutterBottom>
@@ -22,18 +25,20 @@ export default function Page() {
         </Typography>
         <Typography pt={1}>
           One of the biggest adventures I&apos;ve taken on recently is learning
-          hockey as an adult. It hasn&apos;t been easy—balancing on skates, taking a
-          few falls, and learning the pace of the game has been humbling—but
-          it&apos;s also been incredibly rewarding. Every time I get back up and keep
-          going, I&apos;m reminded how much persistence pays off.
+          hockey as an adult. It hasn&apos;t been easy—balancing on skates,
+          taking a few falls, and learning the pace of the game has been
+          humbling—but it&apos;s also been incredibly rewarding. Every time I
+          get back up and keep going, I&apos;m reminded how much persistence
+          pays off.
         </Typography>
         <Typography pt={2}>
-          Beyond the rink, I love hiking and traveling—whether it&apos;s reaching the
-          top of a trail for an amazing view or exploring a new country. I enjoy
-          experiencing different cultures, trying local foods, and taking in
-          landscapes that are completely different from home. On quieter days, I
-          wind down with video games. These hobbies keep me grounded, spark
-          fresh ideas, and recharge me so I can bring new energy into my work.
+          Beyond the rink, I love hiking and traveling—whether it&apos;s
+          reaching the top of a trail for an amazing view or exploring a new
+          country. I enjoy experiencing different cultures, trying local foods,
+          and taking in landscapes that are completely different from home. On
+          quieter days, I wind down with video games. These hobbies keep me
+          grounded, spark fresh ideas, and recharge me so I can bring new energy
+          into my work.
         </Typography>
       </Box>
 
@@ -98,6 +103,35 @@ export default function Page() {
           </Typography>
         </Typography>
       </Box>
+      <Modal open={open} onClose={() => set_open(false)}>
+        <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} spacing={2}>
+          {images.map((src: string, idx: number) => (
+            <Box
+              key={idx}
+              sx={{
+                borderRadius: 3,
+                overflow: "hidden",
+                boxShadow: 1,
+                transition: "0.3s",
+                "&:hover": { boxShadow: 3 },
+              }}
+            >
+              <Image
+                src={src}
+                alt={`collage-${idx}`}
+                width={600}
+                height={400}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+              />
+            </Box>
+          ))}
+        </Masonry>
+      </Modal>
     </Box>
   );
 }
