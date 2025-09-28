@@ -119,13 +119,19 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
 
       <IconButton color="inherit" onClick={toggleTheme}>
         {/* you can conditionally show dark/light icons here */}
-        <MdBrightness4 style={{ marginTop: -2 }} size={18}/>
+        <MdBrightness4 style={{ marginTop: -2 }} size={18} />
       </IconButton>
       <Modal
         open={show_contact_form}
         onClose={() => set_show_contact_form(false)}
+        sx={{
+          maxWidth: 450,
+          borderRadius: 3,
+          boxShadow: 10,
+          p: 4,
+        }}
       >
-        <Typography variant="h5" fontWeight="bold" mb={3}>
+        <Typography variant="h5" fontWeight="bold" mb={2} textAlign="center">
           Contact Me
         </Typography>
 
@@ -144,6 +150,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
           <TextField
             name="email"
             label="Email"
+            type="email"
             fullWidth
             margin="normal"
             value={form_data.email}
@@ -169,9 +176,15 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
             type="submit"
             variant="contained"
             fullWidth
-            sx={{ mt: 3, py: 1 }}
+            sx={{
+              mt: 3,
+              py: 1.2,
+              borderRadius: 2,
+              textTransform: "none",
+              fontWeight: "medium",
+            }}
           >
-            Submit
+            Send Message
           </Button>
         </Box>
       </Modal>
