@@ -17,7 +17,7 @@ export const send_email = (template_params: EmailData): void => {
   // Sending the email via EmailJS
   emailjs
     .send(serviceID, templateID, template_params, {
-      publicKey: "Ovsh2GH6HQdpFOq27",
+      publicKey: "Ovsh2GH6HQdpFOq27",  // TODO: This should not be here
     })
     .then(
       (response) => {
@@ -25,6 +25,7 @@ export const send_email = (template_params: EmailData): void => {
       },
       (error) => {
         console.log("FAILED...", error.text);
+        alert("Failed to send email")
       }
     );
 };

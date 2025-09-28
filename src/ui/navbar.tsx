@@ -5,8 +5,8 @@ import { EmailData, send_email } from "@/lib/email";
 import { FormEvent, useState } from "react";
 
 import Link from "next/link";
-import { Modal } from "./modal";
 import { MdBrightness4 } from "react-icons/md";
+import { Modal } from "./modal";
 
 const tabs = [
   { label: "Home", href: "/" },
@@ -125,7 +125,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         open={show_contact_form}
         onClose={() => set_show_contact_form(false)}
         sx={{
-          maxWidth: 450,
+          width: 450,
           borderRadius: 3,
           boxShadow: 10,
           p: 4,

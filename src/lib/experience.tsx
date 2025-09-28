@@ -12,7 +12,29 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/SS Logo.png",
     role: "CTO",
     timeline: "June 2025 - Present",
-    achievements: [],
+    achievements: [
+      <>
+        Led a cross-functional team of developers, mechanical engineers, and a
+        UI/UX designer to design and build an automated skate sharpening and
+        profiling system — a product now widely adopted by NHL teams and
+        recognized for transforming professional equipment maintenance.
+      </>,
+      <>
+        Tracked KPIs, analyzed performance, and developed actionable plans to
+        improve the marketing funnel. Increased website traffic by ... and
+        social media traffic by ...
+      </>,
+      <>
+        Completed a 6-month professional marketing program hosted by Toronto
+        Metropolitan University, taught by leading industry professionals, to
+        enhance strategic marketing knowledge and execution.
+      </>,
+      <>
+        Collaborated with stakeholders and equipment managers to define and
+        prioritize features, ensuring alignment with business goals and
+        improving project delivery timelines.
+      </>,
+    ],
   },
   {
     company: "Skatescribe",
@@ -21,20 +43,14 @@ export const work: ExperienceType[] = [
     timeline: "Oct 2023 - June 2025",
     achievements: [
       <>
-        Led a cross-functional team of developers, mechanical engineers, and a
-        UI/UX designer to design and implement an automated sharpening and
-        profiling machine that has transformed the hockey industry and is now
-        widely used by NHL players
-      </>,
-      <>
         Directed large-scale projects that increased sharpening efficiency by
         25%, enhanced user experience, improved data accuracy and reliability,
         and optimized code maintainability.
       </>,
       <>
-        Collaborated with stakeholders and equipment managers to define and
-        prioritize features, ensuring alignment with business goals and
-        improving project delivery timelines.
+        Reduced machine processing time from 15 seconds to 2 seconds through
+        advanced code optimization, asynchronous processing, and parallel
+        computation techniques.
       </>,
     ],
   },

@@ -1,12 +1,14 @@
 "use client";
-import React, { useState, useMemo } from "react";
+
 import {
-  ThemeProvider,
-  createTheme,
-  CssBaseline,
   Box,
   Container,
+  CssBaseline,
+  ThemeProvider,
+  createTheme,
 } from "@mui/material";
+import React, { useMemo, useState } from "react";
+
 import { Navbar } from "@/ui/navbar";
 
 export default function RootLayoutClientWrapper({

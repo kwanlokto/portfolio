@@ -2,9 +2,9 @@
 
 import { Box, Button, Grid2 as Grid, Stack, Typography } from "@mui/material";
 import { ProjectType, projects } from "@/lib/project";
+import React, { useState } from "react";
 
 import Image from "next/image";
-import React, { useState } from "react";
 import { handle_download } from "@/utils/download";
 
 interface ProjectParams {
