@@ -21,14 +21,14 @@ export default function Page() {
           About Me
         </Typography>
         <Typography pt={1}>
-          One of the biggest adventures I’ve taken on recently is learning
-          hockey as an adult. It hasn’t been easy—balancing on skates, taking a
+          One of the biggest adventures I&apos;ve taken on recently is learning
+          hockey as an adult. It hasn&apos;t been easy—balancing on skates, taking a
           few falls, and learning the pace of the game has been humbling—but
-          it’s also been incredibly rewarding. Every time I get back up and keep
-          going, I’m reminded how much persistence pays off.
+          it&apos;s also been incredibly rewarding. Every time I get back up and keep
+          going, I&apos;m reminded how much persistence pays off.
         </Typography>
         <Typography pt={2}>
-          Beyond the rink, I love hiking and traveling—whether it’s reaching the
+          Beyond the rink, I love hiking and traveling—whether it&apos;s reaching the
           top of a trail for an amazing view or exploring a new country. I enjoy
           experiencing different cultures, trying local foods, and taking in
           landscapes that are completely different from home. On quieter days, I
