@@ -61,15 +61,16 @@ export default function Home() {
         </Box>
         <Box pt={2}>
           <Typography pt={1}>
-            I&apos;m a Senior developer who is passionate about learning new technologies
-            and creating efficient, minimalistic applications. Most of my time lately
-            has been spent been developing software used by professional athletes in the NHL. 
+            I&apos;m a Senior Software Developer with experience leading
+            cross-functional teams and delivering high-precision,
+            performance-driven applications. Skilled in full-stack development,
+            software design, and collaborating with stakeholders to turn complex
+            problems into impactful solutions.
           </Typography>
           <Typography pt={2}>
-            When I&apos;m not coding, you&apos;ll probably find me lifting weights or at
-            the local rink – I recently started playing hockey and it&apos;s been a
-            humbling experience! I&apos;ve definitely learned the value of picking
-            yourself up and trying harder (and wearing good padding).
+            Recently, I&apos;ve been developing and enhancing a technology now
+            endorsed by numerous NHL teams and highly regarded for significantly
+            improving their workflow and efficiency.
           </Typography>
         </Box>
         <Box pt={1} display="flex" sx={{ gap: "clamp(1px, 8vw, 64px)" }}>
