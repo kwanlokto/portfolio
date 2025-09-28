@@ -3,7 +3,6 @@
 import {
   Box,
   Typography,
-  Avatar,
   CardContent,
   Divider,
   Grid2 as Grid,
@@ -15,43 +14,26 @@ import React from "react";
 export default function Page() {
   return (
     <Box>
-      {/* Profile Header */}
-      <Box mb={6}>
-        <Avatar
-          src="/profile.jpg" // Replace with your image
-          sx={{ width: 100, height: 100, mr: 3 }}
-        />
-        <Box>
-          <Typography variant="h4" fontWeight={500}>
-            Ray Kwan
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: (theme) =>
-                theme.palette.mode === "dark"
-                  ? theme.palette.grey[400]
-                  : theme.palette.grey[600],
-            }}
-          >
-            Software Engineer • Designer • Leader • Problem Solver • Explorer •
-            Innovator
-          </Typography>
-        </Box>
-      </Box>
 
       {/* About Section */}
       <Box>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           About Me
         </Typography>
-        <Typography
-          variant="body1"
-        >
-          I’m a passionate developer with experience in building scalable web
-          applications, crafting clean UI, and solving complex problems. I love
-          exploring new technologies, working in collaborative teams, and
-          turning ideas into real products.
+        <Typography pt={1}>
+          One of the biggest adventures I’ve taken on recently is learning
+          hockey as an adult. It hasn’t been easy—balancing on skates, taking a
+          few falls, and learning the pace of the game has been humbling—but
+          it’s also been incredibly rewarding. Every time I get back up and keep
+          going, I’m reminded how much persistence pays off.
+        </Typography>
+        <Typography pt={2}>
+          Beyond the rink, I love hiking and traveling—whether it’s reaching the
+          top of a trail for an amazing view or exploring a new country. I enjoy
+          experiencing different cultures, trying local foods, and taking in
+          landscapes that are completely different from home. On quieter days, I
+          wind down with video games. These hobbies keep me grounded, spark
+          fresh ideas, and recharge me so I can bring new energy into my work.
         </Typography>
       </Box>
 
