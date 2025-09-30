@@ -1,4 +1,12 @@
-import { Box, Modal as MuiModal, Paper, SxProps } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  Modal as MuiModal,
+  Paper,
+  SxProps,
+} from "@mui/material";
+
+import { MdClose } from "react-icons/md";
 
 interface ModalParams {
   open: boolean;
@@ -19,7 +27,7 @@ export const Modal = ({
     <MuiModal open={open} onClose={onClose} sx={{ zIndex: z_index }}>
       <Box
         component={Paper}
-        elevation={8} // You can adjust the elevation level (8 is a good starting point)
+        elevation={8}
         sx={{
           position: "absolute",
           top: "50%",
@@ -28,9 +36,23 @@ export const Modal = ({
           outline: "none",
           borderRadius: 2,
           p: 3,
+          width: "50%",
           ...sx,
         }}
       >
+        {/* Close button */}
+        <IconButton
+          aria-label="close"
+          onClick={onClose}
+          sx={{
+            position: "absolute",
+            top: 8,
+            right: 8,
+          }}
+        >
+          <MdClose />
+        </IconButton>
+
         {children}
       </Box>
     </MuiModal>

@@ -125,7 +125,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         open={show_contact_form}
         onClose={() => set_show_contact_form(false)}
         sx={{
-          maxWidth: 450,
+          width: 450,
           borderRadius: 3,
           boxShadow: 10,
           p: 4,
