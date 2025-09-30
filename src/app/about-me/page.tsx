@@ -3,6 +3,7 @@
 import {
   Box,
   Card,
+  CardActionArea,
   CardContent,
   Divider,
   Grid2 as Grid,
@@ -63,30 +64,28 @@ export default function Page() {
                 boxShadow: 1,
                 transition: "box-shadow 0.2s",
                 "&:hover": { boxShadow: 3 },
-                bgcolor: (theme: Theme) =>
-                  theme.palette.mode === "dark"
-                    ? theme.palette.grey[700]
-                    : theme.palette.grey[200],
-              }}
-              onClick={() => {
-                // TODO: Set the images based off the hobby
-                set_images([]);
-                set_open(true);
               }}
             >
-              <Box sx={{ width: "100%", height: 160, position: "relative" }}>
-                <Image
-                  src={hobby.img}
-                  alt={hobby.title}
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-              </Box>
-              <CardContent sx={{ textAlign: "center" }}>
-                <Typography variant="body1" fontWeight={500}>
-                  {hobby.title}
-                </Typography>
-              </CardContent>
+              <CardActionArea
+                onClick={() => {
+                  set_images([]);
+                  set_open(true);
+                }}
+              >
+                <Box sx={{ width: "100%", height: 160, position: "relative" }}>
+                  <Image
+                    src={hobby.img}
+                    alt={hobby.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                </Box>
+                <CardContent sx={{ textAlign: "center" }}>
+                  <Typography variant="body1" fontWeight={500}>
+                    {hobby.title}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
             </Card>
           </Grid>
         ))}
