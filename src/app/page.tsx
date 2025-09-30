@@ -22,8 +22,8 @@ import { PiHandWavingBold } from "react-icons/pi";
 import Projects from "@/ui/projects";
 import { TechStack } from "@/ui/tech_stack";
 import { grey } from "@mui/material/colors";
-import { useState } from "react";
 import { handle_download } from "@/utils/download";
+import { useState } from "react";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
