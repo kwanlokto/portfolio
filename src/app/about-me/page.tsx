@@ -113,7 +113,18 @@ export default function Page() {
       </Box>
 
       {/* Masonry Modal */}
-      <Modal open={open} onClose={() => set_open(false)}>
+      <Modal
+        open={open}
+        onClose={() => set_open(false)}
+        sx={{
+          borderRadius: 3,
+          boxShadow: 10,
+          p: 4,
+        }}
+      >
+        <Typography variant="h5" fontWeight="bold" mb={2}>
+          Pictures
+        </Typography>
         <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} spacing={2}>
           {images.map((src: string, idx: number) => (
             <Box
