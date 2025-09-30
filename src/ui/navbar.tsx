@@ -5,8 +5,8 @@ import { EmailData, send_email } from "@/lib/email";
 import { FormEvent, useState } from "react";
 
 import Link from "next/link";
-import { Modal } from "./modal";
 import { MdBrightness4 } from "react-icons/md";
+import { Modal } from "./modal";
 
 const tabs = [
   { label: "Home", href: "/" },
