@@ -68,6 +68,7 @@ export default function Page() {
             >
               <CardActionArea
                 onClick={() => {
+                  // TODO: update this
                   set_images([]);
                   set_open(true);
                 }}
