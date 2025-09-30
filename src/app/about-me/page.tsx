@@ -18,6 +18,7 @@ import { Theme } from "@mui/material/styles";
 export default function Page() {
   const [open, set_open] = useState(false);
   const [images, set_images] = useState([]);
+
   return (
     <Box>
       {/* About Section */}
@@ -105,6 +106,8 @@ export default function Page() {
           </Typography>
         </Typography>
       </Box>
+
+      {/* Masonry Modal */}
       <Modal open={open} onClose={() => set_open(false)}>
         <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} spacing={2}>
           {images.map((src: string, idx: number) => (
