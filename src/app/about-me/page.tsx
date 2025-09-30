@@ -1,17 +1,19 @@
 "use client";
 
-import { Modal } from "@/ui/modal";
-import { Masonry } from "@mui/lab";
 import {
   Box,
-  Typography,
+  Card,
   CardContent,
   Divider,
   Grid2 as Grid,
-  Card,
+  Typography,
 } from "@mui/material";
-import Image from "next/image";
 import React, { useState } from "react";
+
+import Image from "next/image";
+import { Masonry } from "@mui/lab";
+import { Modal } from "@/ui/modal";
+import { Theme } from "@mui/material/styles";
 
 export default function Page() {
   const [open, set_open] = useState(false);
@@ -60,7 +62,7 @@ export default function Page() {
                 boxShadow: 1,
                 transition: "box-shadow 0.2s",
                 "&:hover": { boxShadow: 3 },
-                bgcolor: (theme) =>
+                bgcolor: (theme: Theme) =>
                   theme.palette.mode === "dark"
                     ? theme.palette.grey[700]
                     : theme.palette.grey[200],
