@@ -68,6 +68,11 @@ export default function Page() {
                     ? theme.palette.grey[700]
                     : theme.palette.grey[200],
               }}
+              onClick={() => {
+                // TODO: Set the images based off the hobby
+                set_images([]);
+                set_open(true);
+              }}
             >
               <Box sx={{ width: "100%", height: 160, position: "relative" }}>
                 <Image
