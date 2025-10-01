@@ -14,7 +14,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
-import { Theme } from "@mui/material/styles";
 
 export default function Page() {
   const [open, set_open] = useState(false);
