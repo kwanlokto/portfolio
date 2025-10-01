@@ -12,7 +12,14 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/SS Logo.png",
     role: "CTO",
     timeline: "June 2025 - Present",
-    achievements: [],
+    achievements: [
+      <>
+        Led a cross-functional team of developers, mechanical engineers, and a
+        UI/UX designer to design and implement an automated sharpening and
+        profiling machine that has transformed the hockey industry and is now
+        widely used by NHL players
+      </>,
+    ],
   },
   {
     company: "Skatescribe",
@@ -21,10 +28,8 @@ export const work: ExperienceType[] = [
     timeline: "Oct 2023 - June 2025",
     achievements: [
       <>
-        Led a cross-functional team of developers, mechanical engineers, and a
-        UI/UX designer to design and implement an automated sharpening and
-        profiling machine that has transformed the hockey industry and is now
-        widely used by NHL players
+        Decreased machine processing time down from 15 seconds down to 2 seconds through
+        code optimizations and parallel processing
       </>,
       <>
         Directed large-scale projects that increased sharpening efficiency by
