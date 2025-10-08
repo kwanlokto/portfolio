@@ -23,7 +23,11 @@ export const work: ExperienceType[] = [
         Directed a marketing team to monitor our KPIs and see our next plan for
         attack
       </>,
-      <>Participated in marketing classes to improve our marketing efforts</>,
+      <>
+        Participated in marketing classes for 6 months to improve our marketing
+        efforts. Classes were hosted by industry leading professionals and
+        organized by Toronto Metropolitan University.
+      </>,
       <>
         Collaborated with stakeholders and equipment managers to define and
         prioritize features, ensuring alignment with business goals and
