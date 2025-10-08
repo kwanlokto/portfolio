@@ -17,9 +17,15 @@ export const work: ExperienceType[] = [
         Led a cross-functional team of developers, mechanical engineers, and a
         UI/UX designer to design and implement an automated sharpening and
         profiling machine that has transformed the hockey industry and is now
-        widely used by NHL players. Directed a marketing team to monitor our KPIs and see our next plan for attack
+        widely used by NHL players. Directed a marketing team to monitor our
+        KPIs and see our next plan for attack
       </>,
       <>Participated in marketing classes to improve our marketing efforts</>,
+      <>
+        Collaborated with stakeholders and equipment managers to define and
+        prioritize features, ensuring alignment with business goals and
+        improving project delivery timelines.
+      </>,
     ],
   },
   {
@@ -36,11 +42,6 @@ export const work: ExperienceType[] = [
         Directed large-scale projects that increased sharpening efficiency by
         25%, enhanced user experience, improved data accuracy and reliability,
         and optimized code maintainability.
-      </>,
-      <>
-        Collaborated with stakeholders and equipment managers to define and
-        prioritize features, ensuring alignment with business goals and
-        improving project delivery timelines.
       </>,
     ],
   },
