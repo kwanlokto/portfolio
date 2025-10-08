@@ -17,7 +17,7 @@ export const work: ExperienceType[] = [
         Led a cross-functional team of developers, mechanical engineers, and a
         UI/UX designer to design and implement an automated sharpening and
         profiling machine that has transformed the hockey industry and is now
-        widely used by NHL players
+        widely used by NHL players. Directed a marketing team to monitor our KPIs and see our next plan for attack
       </>,
       <>Participated in marketing classes to improve our marketing efforts</>,
     ],
