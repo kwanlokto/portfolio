@@ -19,6 +19,7 @@ export const work: ExperienceType[] = [
         profiling machine that has transformed the hockey industry and is now
         widely used by NHL players
       </>,
+      <>Participated in marketing classes to improve our marketing efforts</>,
     ],
   },
   {
