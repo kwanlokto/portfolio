@@ -43,13 +43,14 @@ export const work: ExperienceType[] = [
     timeline: "Oct 2023 - June 2025",
     achievements: [
       <>
-        Decreased machine processing time down from 15 seconds down to 2 seconds
-        through code optimizations and parallel processing
-      </>,
-      <>
         Directed large-scale projects that increased sharpening efficiency by
         25%, enhanced user experience, improved data accuracy and reliability,
         and optimized code maintainability.
+      </>,
+      <>
+        Reduced machine processing time from 15 seconds to 2 seconds through
+        advanced code optimization, asynchronous processing, and parallel
+        computation techniques.
       </>,
     ],
   },
