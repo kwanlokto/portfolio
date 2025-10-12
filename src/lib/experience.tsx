@@ -21,8 +21,8 @@ export const work: ExperienceType[] = [
       </>,
       <>
         Directed a marketing team to track KPIs, analyze performance, and
-        develop actionable plans to improve the marketing funnel
-        reach.
+        develop actionable plans to improve the marketing funnel. Increased
+        website traffic by ... and social media traffic by ...
       </>,
       <>
         Completed a 6-month professional marketing program hosted by Toronto
