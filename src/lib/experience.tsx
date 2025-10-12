@@ -15,9 +15,9 @@ export const work: ExperienceType[] = [
     achievements: [
       <>
         Led a cross-functional team of developers, mechanical engineers, and a
-        UI/UX designer to design and implement an automated skate sharpening and
-        profiling machine that has transformed the hockey industry and is now
-        widely used by NHL teams.
+        UI/UX designer to design and build an automated skate sharpening and
+        profiling system — a product now widely adopted by NHL teams and
+        recognized for transforming professional equipment maintenance.
       </>,
       <>
         Directed a marketing team to monitor our KPIs and see our next plan for
