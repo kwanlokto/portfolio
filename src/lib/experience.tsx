@@ -20,13 +20,14 @@ export const work: ExperienceType[] = [
         recognized for transforming professional equipment maintenance.
       </>,
       <>
-        Directed a marketing team to monitor our KPIs and see our next plan for
-        attack
+        Directed a marketing team to track KPIs, analyze performance, and
+        develop actionable plans to strengthen brand presence and customer
+        reach.
       </>,
       <>
-        Participated in marketing classes for 6 months to improve our marketing
-        efforts. Classes were hosted by industry leading professionals and
-        organized by Toronto Metropolitan University.
+        Completed a 6-month professional marketing program hosted by Toronto
+        Metropolitan University, taught by leading industry professionals, to
+        enhance strategic marketing knowledge and execution.
       </>,
       <>
         Collaborated with stakeholders and equipment managers to define and
