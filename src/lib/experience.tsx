@@ -114,6 +114,22 @@ export const work: ExperienceType[] = [
 
 export const education: ExperienceType[] = [
   {
+    company: "Toronto Metropolitan University",
+    icon_url: "/portfolio/TMU Talent Accelerator.png",
+    role: "Digital Growth Marketing Talent Accelerator",
+    timeline: "July 2025 - Nov 2025",
+    achievements: [
+      <>
+        Learned and applied different SEO optimizations to real world
+        applications
+      </>,
+      <>
+        Understood how to monitor different metrics to determine the next steps
+        forward to promote growth
+      </>,
+    ],
+  },
+  {
     company: "University of Toronto",
     icon_url: "/portfolio/University of Toronto.png",
     role: "BSc. in Computer Science",
