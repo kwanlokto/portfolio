@@ -7,7 +7,6 @@
     "predeploy": "next build && next export",
     "deploy": "gh-pages -d out",
     "dev": "next dev --turbopack",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
