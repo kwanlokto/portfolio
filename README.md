@@ -40,6 +40,7 @@ npm run build
 Deploy to GitHub Pages (or your hosting of choice):
 
 ```bash
+npm run predeploy
 npm run deploy
 ```
 
