@@ -18,7 +18,7 @@ export const TechStack = () => {
             `1px solid ${
               theme.palette.mode === "dark"
                 ? theme.palette.grey[800]
-                : theme.palette.grey[300]
+                : theme.palette.grey[400]
             }`,
           borderRadius: 2,
         }}
@@ -34,7 +34,7 @@ export const TechStack = () => {
               bgcolor: (theme) =>
                 theme.palette.mode === "dark"
                   ? theme.palette.grey[700]
-                  : theme.palette.grey[200],
+                  : theme.palette.grey[300],
             }}
           >
             {tech.icon}

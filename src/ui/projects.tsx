@@ -23,7 +23,7 @@ const Project = ({ project }: ProjectParams) => {
           `1px solid ${
             theme.palette.mode === "dark"
               ? theme.palette.grey[800]
-              : theme.palette.grey[300]
+              : theme.palette.grey[400]
           }`,
         borderRadius: 2,
         display: "flex",
@@ -112,8 +112,8 @@ const Project = ({ project }: ProjectParams) => {
                   : theme.palette.common.black,
               bgcolor: (theme) =>
                 theme.palette.mode === "dark"
-                  ? theme.palette.grey[400]
-                  : theme.palette.grey[300],
+                  ? theme.palette.grey[500]
+                  : theme.palette.grey[400],
             }}
           >
             {item}

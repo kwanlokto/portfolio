@@ -52,6 +52,12 @@ export default function Page() {
               sx={{
                 borderRadius: 4,
                 boxShadow: 1,
+                border: (theme) =>
+                  `1px solid ${
+                    theme.palette.mode === "dark"
+                      ? theme.palette.grey[800]
+                      : theme.palette.grey[400]
+                  }`,
                 transition: "box-shadow 0.2s",
                 "&:hover": { boxShadow: 3 },
               }}
