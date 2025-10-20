@@ -7,6 +7,7 @@ import {
   Tab,
   Tabs,
   Typography,
+  useTheme,
 } from "@mui/material";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 import { education, work } from "@/lib/experience";
@@ -27,6 +28,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
+  const theme = useTheme();
 
   return (
     <Grid container spacing={2}>
@@ -111,17 +113,21 @@ export default function Home() {
             <Tab
               label="Work"
               sx={{
-                color: "gray",
-                "&:hover": { color: grey[400] },
-                "&.Mui-selected": { color: "white" },
+                color: "grey",
+                "&:hover": { color: theme.palette.text.primary },
+                "&.Mui-selected": {
+                  color: theme.palette.text.primary,
+                },
               }}
             />
             <Tab
               label="Education"
               sx={{
-                color: "gray",
-                "&:hover": { color: grey[400] },
-                "&.Mui-selected": { color: "white" },
+                color: "grey",
+                "&:hover": { color: theme.palette.text.primary },
+                "&.Mui-selected": {
+                  color: theme.palette.text.primary,
+                },
               }}
             />
           </Tabs>
@@ -134,7 +140,7 @@ export default function Home() {
       </Grid>
       <Grid size={12} pt={2}>
         <Box display="flex" justifyContent="space-between">
-          <Typography variant="h6" className="dark:white" mb={1} pl={3.5}>
+          <Typography variant="h6" mb={1} pl={3.5}>
             Featured Projects
           </Typography>
           <Link href="/project">
