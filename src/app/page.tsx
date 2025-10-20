@@ -22,7 +22,6 @@ import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
 import Projects from "@/ui/projects";
 import { TechStack } from "@/ui/tech_stack";
-import { grey } from "@mui/material/colors";
 import { handle_download } from "@/utils/download";
 import { useState } from "react";
 
