@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
+import { hobby_images } from "@/lib/hobby_images";
 
 export default function Page() {
   const [open, set_open] = useState<boolean>(false);
@@ -26,15 +27,17 @@ export default function Page() {
       </Typography>
       <Typography pt={1}>
         One of the coolest (and toughest) things I&apos;ve taken on lately is
-        learning hockey as an adult. It&apos;s been a mix of falling, getting back
-        up, and slowly figuring things out—but it&apos;s been a blast. Every time I
-        make a little progress, it reminds me why I love learning new things.
+        learning hockey as an adult. It&apos;s been a mix of falling, getting
+        back up, and slowly figuring things out—but it&apos;s been a blast.
+        Every time I make a little progress, it reminds me why I love learning
+        new things.
       </Typography>
       <Typography pt={2}>
-        Outside the rink, I&apos;m usually hiking, traveling, or checking out new
-        places to eat. I love exploring different cultures and taking in new
-        views, but I&apos;m just as happy having a chill day playing video games.
-        Those moments keep me balanced and recharged for whatever&apos;s next.
+        Outside the rink, I&apos;m usually hiking, traveling, or checking out
+        new places to eat. I love exploring different cultures and taking in new
+        views, but I&apos;m just as happy having a chill day playing video
+        games. Those moments keep me balanced and recharged for whatever&apos;s
+        next.
       </Typography>
 
       <Divider sx={{ my: 3 }} />
@@ -55,11 +58,15 @@ export default function Page() {
             >
               <CardActionArea
                 onClick={async () => {
-                  const res = await fetch(
-                    `/portfolio/api/images/${hobby.title.toLowerCase()}`
+                  const hobby_title = hobby.title.toLowerCase();
+                  const image_titles = hobby_images[hobby_title];
+
+                  set_images(
+                    image_titles.map(
+                      (image_title) =>
+                        `/portfolio/${hobby_title}/${image_title}`
+                    )
                   );
-                  const data = await res.json();
-                  set_images(data);
                   set_open(true);
                 }}
               >
