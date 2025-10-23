@@ -26,21 +26,16 @@ export default function Page() {
           About Me
         </Typography>
         <Typography pt={1}>
-          One of the biggest adventures I&apos;ve taken on recently is learning
-          hockey as an adult. It hasn&apos;t been easy—balancing on skates,
-          taking a few falls, and learning the pace of the game has been
-          humbling—but it&apos;s also been incredibly rewarding. Every time I
-          get back up and keep going, I&apos;m reminded how much persistence
-          pays off.
+          One of the coolest (and toughest) things I’ve taken on lately is
+          learning hockey as an adult. It’s been a mix of falling, getting back
+          up, and slowly figuring things out—but it’s been a blast. Every time I
+          make a little progress, it reminds me why I love learning new things.
         </Typography>
         <Typography pt={2}>
-          Beyond the rink, I love hiking and traveling—whether it&apos;s
-          reaching the top of a trail for an amazing view or exploring a new
-          country. I enjoy experiencing different cultures, trying local foods,
-          and taking in landscapes that are completely different from home. On
-          quieter days, I wind down with video games. These hobbies keep me
-          grounded, spark fresh ideas, and recharge me so I can bring new energy
-          into my work.
+          Outside the rink, I’m usually hiking, traveling, or checking out new
+          places to eat. I love exploring different cultures and taking in new
+          views, but I’m just as happy having a chill day playing video games.
+          Those moments keep me balanced and recharged for whatever’s next.
         </Typography>
       </Grid>
 
@@ -66,7 +61,9 @@ export default function Page() {
             >
               <CardActionArea
                 onClick={async () => {
-                  const res = await fetch(`/portfolio/api/images/${hobby.title.toLowerCase()}`);
+                  const res = await fetch(
+                    `/portfolio/api/images/${hobby.title.toLowerCase()}`
+                  );
                   const data = await res.json();
                   set_images(data);
                   set_open(true);
@@ -152,6 +149,6 @@ export default function Page() {
           ))}
         </Masonry>
       </Modal>
-    </Box>
+    </Grid>
   );
 }
