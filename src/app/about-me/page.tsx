@@ -46,8 +46,6 @@ export default function Page() {
         {[
           { title: "Traveling", img: "/travel.jpg" },
           { title: "Sports", img: "/sports.jpg" },
-          { title: "Photography", img: "/camera.jpg" },
-          { title: "Music", img: "/music.jpg" },
         ].map((hobby, index) => (
           <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
             <Card
