@@ -26,16 +26,16 @@ export default function Page() {
           About Me
         </Typography>
         <Typography pt={1}>
-          One of the coolest (and toughest) things I&apos;ve taken on lately is
-          learning hockey as an adult. It&apos;s been a mix of falling, getting back
-          up, and slowly figuring things out—but it&apos;s been a blast. Every time I
+          One of the coolest (and toughest) things I’ve taken on lately is
+          learning hockey as an adult. It’s been a mix of falling, getting back
+          up, and slowly figuring things out—but it’s been a blast. Every time I
           make a little progress, it reminds me why I love learning new things.
         </Typography>
         <Typography pt={2}>
-          Outside the rink, I&apos;m usually hiking, traveling, or checking out new
+          Outside the rink, I’m usually hiking, traveling, or checking out new
           places to eat. I love exploring different cultures and taking in new
-          views, but I&apos;m just as happy having a chill day playing video games.
-          Those moments keep me balanced and recharged for whatever&apos;s next.
+          views, but I’m just as happy having a chill day playing video games.
+          Those moments keep me balanced and recharged for whatever’s next.
         </Typography>
       </Grid>
 
