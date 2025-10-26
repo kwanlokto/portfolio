@@ -24,6 +24,7 @@
 html {
   display: flex;
   justify-content: center;
+  scrollbar-gutter: stable;
 }
 
 body {
