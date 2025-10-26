@@ -20,9 +20,9 @@ export const work: ExperienceType[] = [
         recognized for transforming professional equipment maintenance.
       </>,
       <>
-        Tracked KPIs, analyzed performance, and developed actionable plans to
-        improve the marketing funnel. Increased website traffic by ... and
-        social media traffic by ...
+        Analyzed KPIs and executed data-informed marketing strategies, boosting
+        website traffic by 10% and social media engagement by 15% in three
+        months.
       </>,
       <>
         Completed a 6-month professional marketing program hosted by Toronto
