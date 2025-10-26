@@ -29,11 +29,6 @@ export const work: ExperienceType[] = [
         Metropolitan University, taught by leading industry professionals, to
         enhance strategic marketing knowledge and execution.
       </>,
-      <>
-        Collaborated with stakeholders and equipment managers to define and
-        prioritize features, ensuring alignment with business goals and
-        improving project delivery timelines.
-      </>,
     ],
   },
   {
