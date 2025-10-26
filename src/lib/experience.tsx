@@ -14,12 +14,6 @@ export const work: ExperienceType[] = [
     timeline: "June 2025 - Present",
     achievements: [
       <>
-        Led a cross-functional team of developers, mechanical engineers, and a
-        UI/UX designer to design and build an automated skate sharpening and
-        profiling system — a product now widely adopted by NHL teams and
-        recognized for transforming professional equipment maintenance.
-      </>,
-      <>
         Analyzed KPIs and executed data-informed marketing strategies, boosting
         website traffic by 10% and social media engagement by 15% in three
         months.
@@ -34,9 +28,15 @@ export const work: ExperienceType[] = [
   {
     company: "Skatescribe",
     icon_url: "/portfolio/SS Logo.png",
-    role: "Senior Software Developer & Team Lead",
+    role: "Lead Software Engineer",
     timeline: "Oct 2023 - June 2025",
     achievements: [
+      <>
+        Led a cross-functional team of developers, mechanical engineers, and a
+        UI/UX designer to design and build an automated skate sharpening and
+        profiling system — a product now widely adopted by NHL teams and
+        recognized for transforming professional equipment maintenance.
+      </>,
       <>
         Directed large-scale projects that increased sharpening efficiency by
         25%, enhanced user experience, improved data accuracy and reliability,
