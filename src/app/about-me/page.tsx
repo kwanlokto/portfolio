@@ -41,8 +41,7 @@ export default function Page() {
 
       <Divider sx={{ my: 3 }} />
 
-      {/* Hobbies Section */}
-      <Grid size={12} container spacing={4}>
+      <Grid container spacing={4}>
         {[
           { title: "Traveling", img: "/travel.jpg" },
           { title: "Sports", img: "/sports.jpg" },
@@ -88,7 +87,6 @@ export default function Page() {
 
       <Divider sx={{ my: 3 }} />
 
-      {/* Contact Section */}
       <Box textAlign="center">
         <Typography
           variant="body1"
@@ -147,6 +145,6 @@ export default function Page() {
           ))}
         </Masonry>
       </Modal>
-    </Grid>
+    </Box>
   );
 }
