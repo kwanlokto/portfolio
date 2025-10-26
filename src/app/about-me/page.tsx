@@ -19,9 +19,9 @@ export default function Page() {
   const [images, set_images] = useState<string[]>([]);
 
   return (
-    <Grid container spacing={2}>
+    <Box>
       {/* About Section */}
-      <Grid size={12}>
+      <Box>
         <Typography variant="h5" gutterBottom>
           About Me
         </Typography>
@@ -37,7 +37,7 @@ export default function Page() {
           views, but I’m just as happy having a chill day playing video games.
           Those moments keep me balanced and recharged for whatever’s next.
         </Typography>
-      </Grid>
+      </Box>
 
       <Divider sx={{ my: 3 }} />
 
