@@ -31,7 +31,7 @@ const Project = ({ project }: ProjectParams) => {
       }}
     >
       {/* Project Image */}
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ width: "100%" }}>
         <Box
           sx={{
             position: "relative",
