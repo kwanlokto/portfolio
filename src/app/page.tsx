@@ -68,9 +68,9 @@ export default function Home() {
             problems into impactful solutions.
           </Typography>
           <Typography pt={2}>
-            Recently, I&apos;ve been developing and enhancing a technology now
-            endorsed by numerous NHL teams and highly regarded for significantly
-            improving their workflow and efficiency.
+            Recently, I&apos;ve been developing an automated skate sharpening
+            and profiling technology now endorsed by multiple NHL teams and
+            recognized for greatly improving workflow efficiency and accuracy
           </Typography>
         </Box>
         <Box pt={1} display="flex" sx={{ gap: "clamp(1px, 8vw, 64px)" }}>
