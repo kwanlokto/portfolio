@@ -42,7 +42,7 @@ export default function Page() {
       <Grid container spacing={4}>
         {[
           { title: "Traveling", img: "/portfolio/travel.png" },
-          { title: "Sports", img: "/sports.jpg" },
+          { title: "Sports", img: "/portfolio/sport.png" },
         ].map((hobby, index) => (
           <Grid size={6} key={index}>
             <Card
