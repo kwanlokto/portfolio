@@ -1,12 +1,13 @@
+import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-import { NextResponse } from "next/server";
 
 export async function GET(
-  _: Request,
-  { params }: { params: { hobby: string } }
+  _: NextRequest,
+  context: { params: Promise<{ hobby: string }> }
 ) {
-  const hobby = params.hobby;
+  const { params } = context;
+  const { hobby } = await params;
   const dir = path.join(process.cwd(), "public", hobby);
 
   let images: string[] = [];
