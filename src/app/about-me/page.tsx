@@ -152,17 +152,18 @@ export default function Page() {
         sx={{
           borderRadius: 3,
           boxShadow: 10,
-          pt: 5.5,
-          pl: 4.5,
+          pt: 6,
+          pl: 3,
+          pr: 1,
         }}
       >
-        <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} spacing={2}>
+        <Masonry columns={{ xs: 2, sm: 2, md: 3, lg: 4 }} spacing={2}>
           {images.map((image: HobbyImageType, idx: number) => (
             <Box
               key={idx}
               sx={{
                 position: "relative",
-                width: 160,
+                width: "100%",
                 aspectRatio: image.aspect_ratio,
                 borderRadius: 3,
                 overflow: "hidden",

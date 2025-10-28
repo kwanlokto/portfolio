@@ -36,9 +36,14 @@ export const Modal = ({
           outline: "none",
           borderRadius: 2,
           p: 3,
-          width: "50%",
+          width: {
+            xs: "90%", // mobile
+            sm: "80%", // small tablets
+            md: "60%", // desktop
+            lg: "50%", // large screens
+          },
           maxHeight: "75vh",
-          overflow: "scroll",
+          overflow: "auto",
           ...sx,
         }}
       >
