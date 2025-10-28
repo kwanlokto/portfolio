@@ -16,5 +16,5 @@ export const hobby_images: Record<string, HobbyImageType[]> = {
     { src: "Whistler.jpg", aspect_ratio: "4/3" },
     { src: "Vancouver Canucks.jpg", aspect_ratio: "1" },
   ],
-  sport: [],
+  sports: [],
 };
