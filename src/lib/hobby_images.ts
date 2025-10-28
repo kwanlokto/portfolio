@@ -5,13 +5,13 @@ export type HobbyImageType = {
 
 export const hobby_images: Record<string, HobbyImageType[]> = {
   traveling: [
-    { src: "Lynn Canyon.jpg", aspect_ratio: "4/3" },
-    { src: "Minoh Waterfalls.jpg", aspect_ratio: "4/3" },
+    { src: "Lynn Canyon.jpg", aspect_ratio: "3/4" },
+    { src: "Minoh Waterfalls.jpg", aspect_ratio: "9/16" },
     { src: "Mt Fuji.jpg", aspect_ratio: "16/9" },
-    { src: "Osaka Castle.jpg", aspect_ratio: "4/3" },
-    { src: "Rural Japan.jpg", aspect_ratio: "3/2" },
-    { src: "The Crack.jpg", aspect_ratio: "4/3" },
-    { src: "Vancouver Canucks.jpg", aspect_ratio: "16/9" },
+    { src: "Osaka Castle.jpg", aspect_ratio: "16/9" },
+    { src: "Rural Japan.jpg", aspect_ratio: "16/9" },
+    { src: "The Crack.jpg", aspect_ratio: "1" },
+    { src: "Vancouver Canucks.jpg", aspect_ratio: "4/3" },
     { src: "Whistler.jpg", aspect_ratio: "4/3" },
   ],
   sport: [],
