@@ -22,23 +22,59 @@ export default function Page() {
   return (
     <Box>
       {/* About Section */}
-      <Typography mb={2} variant="h5">
-        About Me
-      </Typography>
-      <Typography pt={1}>
-        One of the coolest (and toughest) things I&apos;ve taken on lately is
-        learning hockey as an adult. It&apos;s been a mix of falling, getting
-        back up, and slowly figuring things out—but it&apos;s been a blast.
-        Every time I make a little progress, it reminds me why I love learning
-        new things.
-      </Typography>
-      <Typography pt={2}>
-        Outside the rink, I&apos;m usually hiking, traveling, or checking out
-        new places to eat. I love exploring different cultures and taking in new
-        views, but I&apos;m just as happy having a chill day playing video
-        games. Those moments keep me balanced and recharged for whatever&apos;s
-        next.
-      </Typography>
+      <Box>
+        <Typography
+          variant="h5"
+          fontWeight="bold"
+          gutterBottom
+          sx={{ color: "text.primary" }}
+        >
+          About Me
+        </Typography>
+        <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 3 }} />
+        <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+          I’m a developer who loves building clean, efficient, and user-friendly
+          web applications. My work focuses on creating meaningful digital
+          experiences that are both technically sound and visually polished.
+        </Typography>
+      </Box>
+
+      <Box>
+        <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, mt: 3 }}>
+          My Journey
+        </Typography>
+        <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+          I started coding by tinkering with small scripts to automate daily
+          tasks — and quickly realized how much I enjoyed turning ideas into
+          functional tools. Over time, that curiosity evolved into a career
+          focused on crafting scalable web solutions and intuitive UIs.
+        </Typography>
+      </Box>
+
+      <Box>
+        <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, mt: 3 }}>
+          How I Work
+        </Typography>
+        <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+          I enjoy solving complex problems by breaking them into small, testable
+          parts. My development style emphasizes clarity, maintainability, and
+          thoughtful design — both in code and user experience. Collaboration is
+          also a key part of my process: I love learning from teammates, sharing
+          ideas, and refining solutions together.
+        </Typography>
+      </Box>
+
+      <Box>
+        <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, mt: 3 }}>
+          Outside of Work
+        </Typography>
+        <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+          When I’m not coding, you’ll probably find me traveling, photographing
+          landscapes, or exploring new hiking trails. These experiences often
+          influence how I approach problem-solving — I like finding new
+          perspectives and creative routes to reach a goal.
+        </Typography>
+      </Box>
 
       <Divider sx={{ my: 3 }} />
 
