@@ -126,9 +126,6 @@ export default function Page() {
           p: 4,
         }}
       >
-        <Typography variant="h5" fontWeight="bold" mb={2}>
-          Pictures
-        </Typography>
         <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} spacing={2}>
           {images.map((image: HobbyImageType, idx: number) => (
             <Box
