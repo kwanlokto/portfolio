@@ -135,8 +135,8 @@ export default function Page() {
               key={idx}
               sx={{
                 position: "relative",
-                width: 160, // fixed width
-                aspectRatio: image.aspect_ratio, // default placeholder ratio
+                width: 160,
+                aspectRatio: image.aspect_ratio,
                 borderRadius: 3,
                 overflow: "hidden",
                 boxShadow: 1,
