@@ -13,11 +13,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
-import { hobby_images } from "@/lib/hobby_images";
+import { hobby_images, HobbyImageType } from "@/lib/hobby_images";
 
 export default function Page() {
   const [open, set_open] = useState<boolean>(false);
-  const [images, set_images] = useState<string[]>([]);
+  const [images, set_images] = useState<HobbyImageType[]>([]);
 
   return (
     <Box>
@@ -65,13 +65,15 @@ export default function Page() {
               <CardActionArea
                 onClick={async () => {
                   const hobby_title = hobby.title.toLowerCase();
-                  const image_titles = hobby_images[hobby_title];
+                  const loading_images = hobby_images[hobby_title];
 
                   set_images(
-                    image_titles.map(
-                      (image_title) =>
-                        `/portfolio/${hobby_title}/${image_title}`
-                    )
+                    loading_images.map((image: HobbyImageType) => {
+                      return {
+                        src: `/portfolio/${hobby_title}/${image.src}`,
+                        aspect_ratio: image.aspect_ratio,
+                      };
+                    })
                   );
                   set_open(true);
                 }}
@@ -128,7 +130,7 @@ export default function Page() {
           Pictures
         </Typography>
         <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} spacing={2}>
-          {images.map((image_src: string, idx: number) => (
+          {images.map((image: HobbyImageType, idx: number) => (
             <Box
               key={idx}
               sx={{
@@ -140,7 +142,7 @@ export default function Page() {
               }}
             >
               <img
-                src={image_src}
+                src={image.src}
                 alt={`collage-${idx}`}
                 style={{
                   width: "100%", // fills the fixed width
