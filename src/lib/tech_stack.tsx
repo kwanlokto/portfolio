@@ -1,4 +1,13 @@
-import { FaBitbucket, FaGit, FaGithub, FaJava, FaNodeJs, FaPython, FaReact } from "react-icons/fa";
+import {
+  FaBitbucket,
+  FaDocker,
+  FaGit,
+  FaGithub,
+  FaJava,
+  FaNodeJs,
+  FaPython,
+  FaReact,
+} from "react-icons/fa";
 import {
   SiAdobeillustrator,
   SiAdobephotoshop,
@@ -15,13 +24,18 @@ export interface TechStackType {
   icon: React.ReactNode;
 }
 
+// TODO: update this to have different sections.
+// Languages – Python, Java, JavaScript, TypeScript
+// Frameworks / Libraries – Node.js, React, Next.js, Tailwind CSS, Pandas, Numpy,
+// Databases / Platforms – MongoDB, PostgreSQL
+// Version Control / DevOps – Git, GitHub, Bitbucket, Docker
+// Design / Creative Tools – Photoshop, Illustrator
 export const tech_stack: TechStackType[] = [
   {
     name: "Python",
     icon: <FaPython size={22} />,
   },
   { name: "Java", icon: <FaJava size={22} /> },
-
   {
     name: "Javascript",
     icon: <SiJavascript size={22} />,
@@ -38,6 +52,10 @@ export const tech_stack: TechStackType[] = [
   {
     name: "Next.js",
     icon: <SiNextdotjs size={22} />,
+  },
+  {
+    name: "Docker",
+    icon: <FaDocker size={22} />,
   },
   {
     name: "Tailwind CSS",
