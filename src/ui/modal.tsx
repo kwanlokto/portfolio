@@ -37,6 +37,8 @@ export const Modal = ({
           borderRadius: 2,
           p: 3,
           width: "50%",
+          maxHeight: "75vh",
+          overflow: "scroll",
           ...sx,
         }}
       >
