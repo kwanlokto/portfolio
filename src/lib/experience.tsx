@@ -125,7 +125,11 @@ export const education: ExperienceType[] = [
       </>,
       <>
         Understood how to monitor different metrics to determine the next steps
-        forward to promote growth
+        forward in improving the marketing funnel.
+      </>,
+      <>
+        Implemented A/B testing strategies to evaluate campaign performance and
+        drive data-informed decisions.
       </>,
     ],
   },
