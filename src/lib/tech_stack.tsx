@@ -18,58 +18,57 @@ export interface TechStackType {
 export const tech_stack: TechStackType[] = [
   {
     name: "Python",
-    icon: <FaPython className="dark:text-white" size={22} />,
+    icon: <FaPython size={22} />,
   },
-  { name: "Java", icon: <FaJava className="dark:text-white" size={22} /> },
+  { name: "Java", icon: <FaJava size={22} /> },
 
   {
     name: "Javascript",
-    icon: <SiJavascript className="dark:text-white" size={22} />,
+    icon: <SiJavascript size={22} />,
   },
-
   {
     name: "Typescript",
-    icon: <SiTypescript className="dark:text-white" size={22} />,
+    icon: <SiTypescript size={22} />,
   },
   {
     name: "Node.js",
-    icon: <FaNodeJs className="dark:text-white" size={22} />,
+    icon: <FaNodeJs size={22} />,
   },
-  { name: "React", icon: <FaReact className="dark:text-white" size={22} /> },
+  { name: "React", icon: <FaReact size={22} /> },
   {
     name: "Next.js",
-    icon: <SiNextdotjs className="dark:text-white" size={22} />,
+    icon: <SiNextdotjs size={22} />,
   },
   {
     name: "Tailwind CSS",
-    icon: <SiTailwindcss className="dark:text-white" size={22} />,
+    icon: <SiTailwindcss size={22} />,
   },
   {
     name: "MongoDB",
-    icon: <SiMongodb className="dark:text-white" size={22} />,
+    icon: <SiMongodb size={22} />,
   },
   {
     name: "PostgreSQL",
-    icon: <SiPostgresql className="dark:text-white" size={22} />,
+    icon: <SiPostgresql size={22} />,
   },
   {
     name: "Git",
-    icon: <FaGit className="dark:text-white" size={22} />,
+    icon: <FaGit size={22} />,
   },
   {
     name: "Github",
-    icon: <FaGithub className="dark:text-white" size={22} />,
+    icon: <FaGithub size={22} />,
   },
   {
     name: "Bitbucket",
-    icon: <FaBitbucket className="dark:text-white" size={22} />,
+    icon: <FaBitbucket size={22} />,
   },
   {
     name: "Photoshop",
-    icon: <SiAdobephotoshop className="dark:text-white" size={22} />,
+    icon: <SiAdobephotoshop size={22} />,
   },
   {
     name: "Illustrator",
-    icon: <SiAdobeillustrator className="dark:text-white" size={22} />,
+    icon: <SiAdobeillustrator size={22} />,
   },
 ];
