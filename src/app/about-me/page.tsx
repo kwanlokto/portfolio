@@ -17,6 +17,8 @@ import { hobby_images, HobbyImageType } from "@/lib/hobby_images";
 import { TextSection } from "@/ui/text_section";
 
 export default function Page() {
+  const current_year = new Date().getFullYear();
+
   const [open, set_open] = useState<boolean>(false);
   const [images, set_images] = useState<HobbyImageType[]>([]);
 
@@ -34,10 +36,9 @@ export default function Page() {
         </Typography>
         <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
         <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-          I&apos;m a developer who loves building clean, efficient, and
-          user-friendly web applications. My work focuses on creating meaningful
-          digital experiences that are both technically sound and visually
-          polished.
+          I&apos;m love building clean, efficient, and user-friendly web
+          applications. My work focuses on creating meaningful digital
+          experiences that are both technically sound and visually polished.
         </Typography>
       </Box>
       <Divider />
@@ -59,10 +60,12 @@ export default function Page() {
 
       <TextSection
         title="Outside of Work"
-        content="When I'm not coding, you'll probably find me traveling, photographing
-          landscapes, or exploring new hiking trails. These experiences often
-          influence how I approach problem-solving — I like finding new
-          perspectives and creative routes to reach a goal."
+        content={`When I'm not coding, I'm often out playing hockey,
+          which was something I picked up ${current_year - 2022} years ago.
+          It's been fun, frustrating, and humbling. I've spent plenty of time falling,
+          but every fall has been a small reminder to get back up to keep trying and
+          improving. I also love traveling and exploring new places. These experiences
+          keep me curious and help me bring a fresh perspective to my work.`}
       />
 
       <Divider sx={{ my: 1 }} />
