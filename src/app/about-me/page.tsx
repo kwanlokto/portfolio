@@ -14,6 +14,7 @@ import Image from "next/image";
 import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
 import { hobby_images, HobbyImageType } from "@/lib/hobby_images";
+import { TextSection } from "@/ui/text_section";
 
 export default function Page() {
   const [open, set_open] = useState<boolean>(false);
@@ -33,48 +34,35 @@ export default function Page() {
         </Typography>
         <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 3 }} />
         <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-          I’m a developer who loves building clean, efficient, and user-friendly
+          I&apos;m a developer who loves building clean, efficient, and user-friendly
           web applications. My work focuses on creating meaningful digital
           experiences that are both technically sound and visually polished.
         </Typography>
       </Box>
 
-      <Box>
-        <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, mt: 3 }}>
-          My Journey
-        </Typography>
-        <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-          I started coding by tinkering with small scripts to automate daily
+      <TextSection
+        title="My Journey"
+        content="I started coding by tinkering with small scripts to automate daily
           tasks — and quickly realized how much I enjoyed turning ideas into
           functional tools. Over time, that curiosity evolved into a career
-          focused on crafting scalable web solutions and intuitive UIs.
-        </Typography>
-      </Box>
-
-      <Box>
-        <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, mt: 3 }}>
-          How I Work
-        </Typography>
-        <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-          I enjoy solving complex problems by breaking them into small, testable
+          focused on crafting scalable web solutions and intuitive UIs."
+      />
+      <TextSection
+        title="How I Work"
+        content="I enjoy solving complex problems by breaking them into small, testable
           parts. My development style emphasizes clarity, maintainability, and
           thoughtful design — both in code and user experience. Collaboration is
           also a key part of my process: I love learning from teammates, sharing
-          ideas, and refining solutions together.
-        </Typography>
-      </Box>
+          ideas, and refining solutions together."
+      />
 
-      <Box>
-        <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, mt: 3 }}>
-          Outside of Work
-        </Typography>
-        <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-          When I’m not coding, you’ll probably find me traveling, photographing
+      <TextSection
+        title="Outside of Work"
+        content="When I'm not coding, you'll probably find me traveling, photographing
           landscapes, or exploring new hiking trails. These experiences often
           influence how I approach problem-solving — I like finding new
-          perspectives and creative routes to reach a goal.
-        </Typography>
-      </Box>
+          perspectives and creative routes to reach a goal."
+      />
 
       <Divider sx={{ my: 3 }} />
 
