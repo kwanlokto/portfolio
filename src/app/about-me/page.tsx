@@ -21,7 +21,7 @@ export default function Page() {
   const [images, set_images] = useState<HobbyImageType[]>([]);
 
   return (
-    <Box>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       {/* About Section */}
       <Box>
         <Typography
@@ -32,14 +32,15 @@ export default function Page() {
         >
           About Me
         </Typography>
-        <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 3 }} />
+        <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
         <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-          I&apos;m a developer who loves building clean, efficient, and user-friendly
-          web applications. My work focuses on creating meaningful digital
-          experiences that are both technically sound and visually polished.
+          I&apos;m a developer who loves building clean, efficient, and
+          user-friendly web applications. My work focuses on creating meaningful
+          digital experiences that are both technically sound and visually
+          polished.
         </Typography>
       </Box>
-
+      <Divider />
       <TextSection
         title="My Journey"
         content="I started coding by tinkering with small scripts to automate daily
@@ -64,7 +65,7 @@ export default function Page() {
           perspectives and creative routes to reach a goal."
       />
 
-      <Divider sx={{ my: 3 }} />
+      <Divider sx={{ my: 1 }} />
 
       <Grid container spacing={4}>
         {[
@@ -121,7 +122,7 @@ export default function Page() {
         ))}
       </Grid>
 
-      <Divider sx={{ my: 3 }} />
+      <Divider sx={{ my: 1 }} />
 
       <Box textAlign="center">
         <Typography
