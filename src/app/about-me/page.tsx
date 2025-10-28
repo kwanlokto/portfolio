@@ -44,10 +44,10 @@ export default function Page() {
       <Divider />
       <TextSection
         title="My Journey"
-        content="I started coding by tinkering with small scripts to automate daily
-          tasks — and quickly realized how much I enjoyed turning ideas into
+        content="I started coding by tinkering with small scripts to automate mundane
+          tasks and quickly realized how much I enjoyed turning ideas into
           functional tools. Over time, that curiosity evolved into a career
-          focused on crafting scalable web solutions and intuitive UIs."
+          focused on crafting scalable solutions and intuitive UIs."
       />
       <TextSection
         title="How I Work"
@@ -61,11 +61,12 @@ export default function Page() {
       <TextSection
         title="Outside of Work"
         content={`When I'm not coding, I'm often out playing hockey,
-          which was something I picked up ${current_year - 2022} years ago.
+          which was something I picked up ${current_year - 2021} years ago.
           It's been fun, frustrating, and humbling. I've spent plenty of time falling,
           but every fall has been a small reminder to get back up to keep trying and
-          improving. I also love traveling and exploring new places. These experiences
-          keep me curious and help me bring a fresh perspective to my work.`}
+          improving. I also exploring different cultures and taking in new views.
+          These experiences keep me curious and help me bring a fresh perspective
+          to my work.`}
       />
 
       <Divider sx={{ my: 1 }} />
