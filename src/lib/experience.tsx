@@ -11,7 +11,7 @@ export const work: ExperienceType[] = [
     company: "Skatescribe",
     icon_url: "/portfolio/SS Logo.png",
     role: "CTO",
-    timeline: "June 2025 - Present",
+    timeline: "June 2025 – Present",
     achievements: [
       <>
         Analyzed KPIs and executed data-informed marketing strategies, boosting
@@ -29,7 +29,7 @@ export const work: ExperienceType[] = [
     company: "Skatescribe",
     icon_url: "/portfolio/SS Logo.png",
     role: "Lead Software Engineer",
-    timeline: "Oct 2023 - June 2025",
+    timeline: "Oct 2023 – June 2025",
     achievements: [
       <>
         Led a cross-functional team of developers, mechanical engineers, and a
@@ -117,7 +117,7 @@ export const education: ExperienceType[] = [
     company: "Toronto Metropolitan University",
     icon_url: "/portfolio/TMU Talent Accelerator.png",
     role: "Digital Growth Marketing Talent Accelerator",
-    timeline: "July 2025 - Nov 2025",
+    timeline: "July 2025 – Nov 2025",
     achievements: [
       <>
         Learned and applied different SEO optimizations to real world
@@ -137,7 +137,7 @@ export const education: ExperienceType[] = [
     company: "University of Toronto",
     icon_url: "/portfolio/University of Toronto.png",
     role: "BSc. in Computer Science",
-    timeline: "Sept 2016 - April 2021",
+    timeline: "Sept 2016 – April 2021",
     achievements: [
       <>Computer Science Specialist</>,
       <>Graduated with high distinction</>,
