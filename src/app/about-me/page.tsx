@@ -134,22 +134,20 @@ export default function Page() {
             <Box
               key={idx}
               sx={{
+                position: "relative",
                 width: 160, // fixed width
+                aspectRatio: image.aspect_ratio, // default placeholder ratio
                 borderRadius: 3,
                 overflow: "hidden",
                 boxShadow: 1,
                 "&:hover": { boxShadow: 3 },
               }}
             >
-              <img
+              <Image
                 src={image.src}
                 alt={`collage-${idx}`}
-                style={{
-                  width: "100%", // fills the fixed width
-                  height: "auto", // adjusts height automatically
-                  display: "block",
-                  objectFit: "cover",
-                }}
+                fill
+                style={{ objectFit: "cover" }}
                 loading="lazy"
               />
             </Box>
