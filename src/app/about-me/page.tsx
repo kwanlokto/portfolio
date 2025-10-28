@@ -123,7 +123,8 @@ export default function Page() {
         sx={{
           borderRadius: 3,
           boxShadow: 10,
-          p: 4,
+          pt: 5.5,
+          pl: 4.5,
         }}
       >
         <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} spacing={2}>
