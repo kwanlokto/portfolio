@@ -56,12 +56,7 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
               <Typography
                 variant="body2"
                 fontWeight="bold"
-                sx={{
-                  color: (theme) =>
-                    theme.palette.mode === "dark"
-                      ? theme.palette.grey[500]
-                      : theme.palette.text.secondary,
-                }}
+                sx={{ color: "text.secondary" }}
               >
                 {experience.timeline}
               </Typography>
@@ -76,14 +71,10 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
               </Typography>
 
               <Typography
-                fontSize="0.75rem"
+                fontSize={12}
+                textTransform="uppercase"
                 fontWeight="bold"
-                sx={{
-                  color: (theme) =>
-                    theme.palette.mode === "dark"
-                      ? theme.palette.grey[500]
-                      : theme.palette.text.secondary,
-                }}
+                sx={{ color: "text.secondary" }}
               >
                 {experience.role}
               </Typography>
@@ -100,8 +91,8 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
                           sx={{
                             color: (theme) =>
                               theme.palette.mode === "dark"
-                                ? theme.palette.grey[300]
-                                : theme.palette.text.secondary,
+                                ? theme.palette.grey[100]
+                                : theme.palette.grey[900],
                           }}
                         >
                           {achievement}
