@@ -3,11 +3,10 @@
 import {
   Box,
   Button,
-  Grid2 as Grid,
+  Divider,
   Tab,
   Tabs,
   Typography,
-  useTheme,
 } from "@mui/material";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 import { education, work } from "@/lib/experience";
@@ -27,11 +26,11 @@ import { useState } from "react";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
-  const theme = useTheme();
 
   return (
-    <Grid container spacing={2}>
-      <Grid size={12}>
+    <Box>
+      {/* Header Section */}
+      <Box>
         <Image
           src="/portfolio/Profile Picture.jpg"
           alt="Ray's Picture"
@@ -61,7 +60,7 @@ export default function Home() {
           />
         </Box>
         <Box pt={2}>
-          <Typography pt={1}>
+          <Typography>
             I&apos;m a Senior Software Developer with experience leading
             cross-functional teams and delivering high-precision,
             performance-driven applications. Skilled in full-stack development,
@@ -71,10 +70,11 @@ export default function Home() {
           <Typography pt={2}>
             Recently, I&apos;ve been developing an automated skate sharpening
             and profiling technology now endorsed by multiple NHL teams and
-            recognized for greatly improving workflow efficiency and accuracy
+            recognized for greatly improving workflow efficiency and accuracy.
           </Typography>
         </Box>
-        <Box pt={1} display="flex" sx={{ gap: "clamp(1px, 8vw, 64px)" }}>
+
+        <Box pt={2} display="flex" flexWrap="wrap" gap={2}>
           <Button
             variant="outlined"
             onClick={() =>
@@ -85,12 +85,7 @@ export default function Home() {
             <MdOutlineCloudDownload style={{ marginLeft: "4px" }} size={25} />
           </Button>
 
-          <Box
-            display="flex"
-            alignItems="center"
-            gap={2}
-            sx={{ gap: "clamp(1px, 2vw, 16px)" }}
-          >
+          <Box display="flex" alignItems="center" gap={2}>
             <HRefButton url="https://www.linkedin.com/in/loktokwan/">
               <SlSocialLinkedin size={23} className="text-gray-400" />
             </HRefButton>
@@ -100,54 +95,56 @@ export default function Home() {
             <EmailButton />
           </Box>
         </Box>
-      </Grid>
-      <Grid size={12}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs
-            value={tab_idx}
-            onChange={(event: React.SyntheticEvent, new_idx: number) => {
-              set_tab_idx(new_idx);
+      </Box>
+
+      {/* Tabs Section */}
+      <Box pt={2} sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={tab_idx}
+          onChange={(e: React.SyntheticEvent, new_idx: number) =>
+            set_tab_idx(new_idx)
+          }
+        >
+          <Tab
+            label="Work"
+            sx={{
+              color: "grey",
+              "&:hover": { color: "text.primary" },
+              "&.Mui-selected": { color: "text.primary" },
             }}
-          >
-            <Tab
-              label="Work"
-              sx={{
-                color: "grey",
-                "&:hover": { color: theme.palette.text.primary },
-                "&.Mui-selected": {
-                  color: theme.palette.text.primary,
-                },
-              }}
-            />
-            <Tab
-              label="Education"
-              sx={{
-                color: "grey",
-                "&:hover": { color: theme.palette.text.primary },
-                "&.Mui-selected": {
-                  color: theme.palette.text.primary,
-                },
-              }}
-            />
-          </Tabs>
-        </Box>
-        {tab_idx == 0 && <Experience experience_list={work} />}
-        {tab_idx == 1 && <Experience experience_list={education} />}
-      </Grid>
-      <Grid size={12}>
-        <TechStack />
-      </Grid>
-      <Grid size={12} pt={2}>
-        <Box display="flex" justifyContent="space-between">
+          />
+          <Tab
+            label="Education"
+            sx={{
+              color: "grey",
+              "&:hover": { color: "text.primary" },
+              "&.Mui-selected": { color: "text.primary" },
+            }}
+          />
+        </Tabs>
+      </Box>
+      {tab_idx === 0 && <Experience experience_list={work} />}
+      {tab_idx === 1 && <Experience experience_list={education} />}
+
+      <Divider sx={{ my: 1 }} />
+
+      {/* Tech Stack Section */}
+      <TechStack />
+
+      <Divider sx={{ my: 1 }} />
+
+      {/* Featured Projects */}
+      <Box pt={2}>
+        <Box display="flex" justifyContent="space-between" alignItems="center">
           <Typography variant="h6" mb={1} pl={3.5}>
             Featured Projects
           </Typography>
           <Link href="/project">
-            <Button> view more </Button>
+            <Button>View More</Button>
           </Link>
         </Box>
         <Projects total_featured_projects={2} />
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 }
