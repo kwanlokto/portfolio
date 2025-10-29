@@ -136,7 +136,7 @@ export default function Home() {
       {/* Featured Projects */}
       <Box pt={2}>
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Typography variant="h6" mb={1} pl={3.5}>
+          <Typography variant="h6" fontWeight="bold" mb={1} pl={3.5}>
             Featured Projects
           </Typography>
           <Link href="/project">

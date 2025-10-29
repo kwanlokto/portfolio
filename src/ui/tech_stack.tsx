@@ -4,7 +4,7 @@ import { TechStackType, tech_stack } from "@/lib/tech_stack";
 export const TechStack = () => {
   return (
     <Box pt={2}>
-      <Typography variant="h6" mb={2} pl={3.5}>
+      <Typography variant="h6" fontWeight="bold" mb={1} pl={3.5}>
         Tech Stack
       </Typography>
 
