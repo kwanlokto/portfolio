@@ -113,7 +113,7 @@ const Project = ({ project }: ProjectParams) => {
               bgcolor: (theme) =>
                 theme.palette.mode === "dark"
                   ? theme.palette.grey[500]
-                  : theme.palette.grey[400],
+                  : theme.palette.grey[300],
             }}
           >
             {item}
