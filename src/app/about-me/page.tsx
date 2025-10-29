@@ -94,6 +94,7 @@ export default function Page() {
                 onClick={async () => {
                   const hobby_title = hobby.title.toLowerCase();
                   const loading_images = hobby_images[hobby_title];
+                  // If the images we have isn't empty then continue
                   if (loading_images.length > 0) {
                     set_images(
                       loading_images.map((image: HobbyImageType) => {
