@@ -14,79 +14,64 @@ import {
   SiJavascript,
   SiMongodb,
   SiNextdotjs,
+  SiNumpy,
+  SiPandas,
   SiPostgresql,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
 
 export interface TechStackType {
+  category: string;
+  items: TechStackItemType[];
+}
+export interface TechStackItemType {
   name: string;
   icon: React.ReactNode;
 }
 
-// TODO: update this to have different sections.
-// Languages – Python, Java, JavaScript, TypeScript
-// Frameworks / Libraries – Node.js, React, Next.js, Tailwind CSS, Pandas, Numpy,
-// Databases / Platforms – MongoDB, PostgreSQL
-// Version Control / DevOps – Git, GitHub, Bitbucket, Docker
-// Design / Creative Tools – Photoshop, Illustrator
 export const tech_stack: TechStackType[] = [
   {
-    name: "Python",
-    icon: <FaPython size={22} />,
-  },
-  { name: "Java", icon: <FaJava size={22} /> },
-  {
-    name: "Javascript",
-    icon: <SiJavascript size={22} />,
-  },
-  {
-    name: "Typescript",
-    icon: <SiTypescript size={22} />,
+    category: "Languages",
+    items: [
+      { name: "Python", icon: <FaPython size={22} /> },
+      { name: "Java", icon: <FaJava size={22} /> },
+      { name: "JavaScript", icon: <SiJavascript size={22} /> },
+      { name: "TypeScript", icon: <SiTypescript size={22} /> },
+    ],
   },
   {
-    name: "Node.js",
-    icon: <FaNodeJs size={22} />,
-  },
-  { name: "React", icon: <FaReact size={22} /> },
-  {
-    name: "Next.js",
-    icon: <SiNextdotjs size={22} />,
-  },
-  {
-    name: "Docker",
-    icon: <FaDocker size={22} />,
+    category: "Frameworks / Libraries",
+    items: [
+      { name: "Node.js", icon: <FaNodeJs size={22} /> },
+      { name: "React", icon: <FaReact size={22} /> },
+      { name: "Next.js", icon: <SiNextdotjs size={22} /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss size={22} /> },
+      { name: "Pandas", icon: <SiPandas size={22} /> },
+      { name: "NumPy", icon: <SiNumpy size={22} /> },
+    ],
   },
   {
-    name: "Tailwind CSS",
-    icon: <SiTailwindcss size={22} />,
+    category: "Databases / Platforms",
+    items: [
+      { name: "MongoDB", icon: <SiMongodb size={22} /> },
+      { name: "PostgreSQL", icon: <SiPostgresql size={22} /> },
+    ],
   },
   {
-    name: "MongoDB",
-    icon: <SiMongodb size={22} />,
+    category: "Version Control / DevOps",
+    items: [
+      { name: "Git", icon: <FaGit size={22} /> },
+      { name: "GitHub", icon: <FaGithub size={22} /> },
+      { name: "Bitbucket", icon: <FaBitbucket size={22} /> },
+      { name: "Docker", icon: <FaDocker size={22} /> },
+    ],
   },
   {
-    name: "PostgreSQL",
-    icon: <SiPostgresql size={22} />,
-  },
-  {
-    name: "Git",
-    icon: <FaGit size={22} />,
-  },
-  {
-    name: "Github",
-    icon: <FaGithub size={22} />,
-  },
-  {
-    name: "Bitbucket",
-    icon: <FaBitbucket size={22} />,
-  },
-  {
-    name: "Photoshop",
-    icon: <SiAdobephotoshop size={22} />,
-  },
-  {
-    name: "Illustrator",
-    icon: <SiAdobeillustrator size={22} />,
+    category: "Design / Creative Tools",
+    items: [
+      { name: "Photoshop", icon: <SiAdobephotoshop size={22} /> },
+      { name: "Illustrator", icon: <SiAdobeillustrator size={22} /> },
+    ],
   },
 ];
