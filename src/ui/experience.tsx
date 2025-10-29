@@ -87,29 +87,30 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
               >
                 {experience.role}
               </Typography>
-
-              <List sx={{ listStyleType: "disc", pl: 2 }}>
-                {experience.achievements.map(
-                  (achievement: React.ReactNode, achievement_idx: number) => (
-                    <ListItem
-                      key={achievement_idx}
-                      sx={{ display: "list-item", p: 0 }}
-                    >
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          color: (theme) =>
-                            theme.palette.mode === "dark"
-                              ? theme.palette.grey[300]
-                              : theme.palette.text.secondary,
-                        }}
+              {experience.achievements.length > 0 && (
+                <List sx={{ listStyleType: "disc", pl: 2 }}>
+                  {experience.achievements.map(
+                    (achievement: React.ReactNode, achievement_idx: number) => (
+                      <ListItem
+                        key={achievement_idx}
+                        sx={{ display: "list-item", p: 0 }}
                       >
-                        {achievement}
-                      </Typography>
-                    </ListItem>
-                  )
-                )}
-              </List>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: (theme) =>
+                              theme.palette.mode === "dark"
+                                ? theme.palette.grey[300]
+                                : theme.palette.text.secondary,
+                          }}
+                        >
+                          {achievement}
+                        </Typography>
+                      </ListItem>
+                    )
+                  )}
+                </List>
+              )}
             </TimelineContent>
           </TimelineItem>
         );
