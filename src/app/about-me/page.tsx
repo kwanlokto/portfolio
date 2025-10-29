@@ -34,8 +34,7 @@ export default function Page() {
         >
           About Me
         </Typography>
-        <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
-        <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+        <Typography variant="body1" sx={{ lineHeight: 1.8, mb: 2 }}>
           I&apos;m love building clean, efficient, and user-friendly web
           applications. My work focuses on creating meaningful digital
           experiences that are both technically sound and visually polished.
@@ -61,11 +60,11 @@ export default function Page() {
       <TextSection
         title="Outside of Work"
         content={`When I'm not coding, I'm often out playing hockey,
-          which was something I picked up ${current_year - 2021} years ago.
+          which is something I picked up ${current_year - 2021} years ago.
           It's been fun, frustrating, and humbling. I've spent plenty of time falling,
           but every fall has been a small reminder to get back up to keep trying and
-          improving. I also exploring different cultures and taking in new views.
-          These experiences keep me curious and help me bring a fresh perspective
+          improving. I also love exploring different cultures and taking in new views.
+          These experiences keep me curious and help bring a fresh perspective
           to my work.`}
       />
 
@@ -95,16 +94,17 @@ export default function Page() {
                 onClick={async () => {
                   const hobby_title = hobby.title.toLowerCase();
                   const loading_images = hobby_images[hobby_title];
-
-                  set_images(
-                    loading_images.map((image: HobbyImageType) => {
-                      return {
-                        src: `/portfolio/${hobby_title}/${image.src}`,
-                        aspect_ratio: image.aspect_ratio,
-                      };
-                    })
-                  );
-                  set_open(true);
+                  if (loading_images.length > 0) {
+                    set_images(
+                      loading_images.map((image: HobbyImageType) => {
+                        return {
+                          src: `/portfolio/${hobby_title}/${image.src}`,
+                          aspect_ratio: image.aspect_ratio,
+                        };
+                      })
+                    );
+                    set_open(true);
+                  }
                 }}
               >
                 <Box sx={{ width: "100%", height: 160, position: "relative" }}>
