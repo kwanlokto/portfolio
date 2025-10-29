@@ -16,7 +16,7 @@ export const TechStack = () => {
                 <Typography
                   variant="subtitle2"
                   sx={{
-                    mb: 2,
+                    mb: 0.5,
                     letterSpacing: 0.6,
                     fontWeight: 600,
                     textTransform: "uppercase",
@@ -78,7 +78,7 @@ export const TechStack = () => {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        mb: tech_item.name ? 1.25 : 0,
+                        mb: 0,
                         // neutral icon color via currentColor; let icons define their own fill when appropriate
                         color: "text.primary",
                       }}
@@ -90,7 +90,7 @@ export const TechStack = () => {
                       <Typography
                         variant="body2"
                         sx={{
-                          mt: 0.25,
+                          mt: 0,
                           textAlign: "center",
                           fontWeight: 500,
                           color: "text.primary",
