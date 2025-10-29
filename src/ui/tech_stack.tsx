@@ -4,7 +4,7 @@ import { TechStackType, tech_stack } from "@/lib/tech_stack";
 export const TechStack = () => {
   return (
     <Box pt={2}>
-      <Typography variant="h6" fontWeight="bold" mb={1} pl={3.5}>
+      <Typography variant="h6" fontWeight="bold" mb={2} pl={3.5}>
         Tech Stack
       </Typography>
 
@@ -29,11 +29,11 @@ export const TechStack = () => {
               )}
 
               <Box
+                columnGap={2}
                 sx={{
                   display: "flex",
                   flexWrap: "wrap",
-                  gap: { xs: 3, md: 4 },
-                  mb: 3,
+                  mb: 2,
                 }}
               >
                 {tech.items.map((tech_item, tech_item_index) => (
@@ -42,6 +42,7 @@ export const TechStack = () => {
                     role="button"
                     tabIndex={0}
                     sx={{
+                      p: 1,
                       // card-like tile but very subtle
                       display: "flex",
                       flexDirection: "column",
@@ -73,8 +74,8 @@ export const TechStack = () => {
                     <Box
                       sx={{
                         // icon container sized consistently
-                        width: { xs: 36, md: 44 },
-                        height: { xs: 36, md: 44 },
+                        width: 44,
+                        height: 44,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
