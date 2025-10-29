@@ -11,7 +11,7 @@ import { Modal } from "./modal";
 const tabs = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/project" },
-  { label: "About Me", href: "/about-me" },
+  { label: "About", href: "/about-me" },
 ];
 
 interface NavButtonProps {
@@ -112,7 +112,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
       ))}
       <Link href="_blank" onClick={(e) => e.preventDefault()}>
         <NavButton
-          label="Contact Me"
+          label="Contact"
           onClick={() => set_show_contact_form(true)}
         />
       </Link>
