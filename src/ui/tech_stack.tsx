@@ -4,11 +4,11 @@ import { TechStackType, tech_stack } from "@/lib/tech_stack";
 export const TechStack = () => {
   return (
     <Box pt={2}>
-      <Typography variant="h6" fontWeight="bold" mb={2} pl={3.5}>
+      <Typography variant="h6" fontWeight="bold" mb={2}>
         Tech Stack
       </Typography>
 
-      <Box component="section" aria-label="Tech stack" pl={3.5}>
+      <Box component="section" aria-label="Tech stack">
         <Grid container spacing={1}>
           {tech_stack.map((tech: TechStackType, index: number) => (
             <Grid size={12} key={index}>
