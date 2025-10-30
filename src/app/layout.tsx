@@ -6,7 +6,7 @@ import RootLayoutClientWrapper from "@/ui/root_client_wrapper";
 
 export const metadata: Metadata = {
   title: "Ray's Portfolio",
-  description: "Ray's Porfolio",
+  description: "Ray's Portfolio",
 };
 
 export default function RootLayout({

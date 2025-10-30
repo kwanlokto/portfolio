@@ -15,7 +15,7 @@ First, clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/kwanlokto/portfolio.git
-cd porfolio
+cd portfolio
 npm install
 ```
 
@@ -25,7 +25,7 @@ Then, run the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000/porfolio](http://localhost:3000/porfolio) in your browser to see the result.
+Open [http://localhost:3000/portfolio](http://localhost:3000/portfolio) in your browser to see the result.
 
 ## 📦 Build
 

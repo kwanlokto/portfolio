@@ -54,7 +54,7 @@ export const projects: ProjectType[] = [
     source_url: "https://github.com/kwanlokto/wordle",
   },
   {
-    title: "Porfolio",
+    title: "Portfolio",
     description: (
       <>
         An interactive portfolio built with Next.js and TailwindCSS to showcase
