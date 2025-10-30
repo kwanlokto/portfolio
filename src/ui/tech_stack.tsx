@@ -56,31 +56,19 @@ export const TechStack = () => {
                       transition: "transform 160ms ease, box-shadow 160ms ease",
                       transform: "translateY(0)",
                       boxShadow: "none",
-
                       "&:hover, &:focus-visible": {
                         transform: "translateY(-6px)",
-                        boxShadow:
-                          "0 8px 24px rgba(16,24,40,0.06), 0 1px 2px rgba(16,24,40,0.04)",
-                        outline: "none",
-                      },
-
-                      // focus ring for keyboard users
-                      "&:focus-visible": {
-                        boxShadow:
-                          "0 0 0 4px rgba(0, 120, 212, 0.08), 0 8px 24px rgba(16,24,40,0.06)",
                       },
                     }}
                   >
                     <Box
                       sx={{
-                        // icon container sized consistently
                         width: 44,
                         height: 44,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         mb: 0,
-                        // neutral icon color via currentColor; let icons define their own fill when appropriate
                         color: "text.primary",
                       }}
                     >
