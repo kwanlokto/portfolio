@@ -1,12 +1,5 @@
 import * as React from "react";
-import {
-  Box,
-  Button,
-  Icon,
-  List,
-  ListItem,
-  Divider,
-} from "@mui/material";
+import { Box, Button, Icon, List, ListItem, Divider } from "@mui/material";
 import Image from "next/image";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
@@ -18,7 +11,6 @@ import Typography from "@mui/material/Typography";
 import { timelineOppositeContentClasses } from "@mui/lab/TimelineOppositeContent";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
 import { ExperienceType, Role } from "@/lib/experience";
-
 
 interface ExperienceParams {
   experience_list: ExperienceType[];
@@ -44,7 +36,9 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
             {/* --- Timeline Icon / Logo --- */}
             <TimelineSeparator>
               {idx !== 0 && <TimelineConnector />}
-              <TimelineDot sx={{ bgcolor: "background.paper", p: 0.5, pt: 0.75 }}>
+              <TimelineDot
+                sx={{ bgcolor: "background.paper", p: 0.5, pt: 0.75 }}
+              >
                 <Icon sx={{ position: "relative", width: 30, height: 30 }}>
                   <Image
                     src={exp.icon_url}
@@ -90,24 +84,29 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
               >
                 {exp.roles?.map((role: Role, role_idx: number) => (
                   <TimelineItem key={role_idx} position="right">
-                    <TimelineSeparator>
-                      {role_idx !== 0 && <TimelineConnector sx={{ ml: -5.5}}/>}
-                      <TimelineDot
-                        color={
-                          role_idx === 0
-                            ? "primary"
-                            : role_idx === exp.roles.length - 1
-                            ? "grey"
-                            : "secondary"
-                        }
-                        sx={{ p: 0.5, ml: -3.5 }}
-                      />
-                      {role_idx !== exp.roles.length - 1 && <TimelineConnector sx={{ ml: -5.5 }} />}
-                    </TimelineSeparator>
-
+                    {/* {exp.roles.length > 1 && (
+                      <TimelineSeparator>
+                        {role_idx !== 0 && (
+                          <TimelineConnector sx={{ ml: -5.5 }} />
+                        )}
+                        <TimelineDot
+                          color={
+                            role_idx === 0
+                              ? "primary"
+                              : role_idx === exp.roles.length - 1
+                              ? "grey"
+                              : "secondary"
+                          }
+                          sx={{ p: 0.5, ml: -3.5 }}
+                        />
+                        {role_idx !== exp.roles.length - 1 && (
+                          <TimelineConnector sx={{ ml: -5.5 }} />
+                        )}
+                      </TimelineSeparator>
+                    )} */}
                     <TimelineContent>
                       <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-                        {role.role}
+                        {role.name}
                       </Typography>
                       <Typography
                         variant="body2"
@@ -119,24 +118,26 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
 
                       {role.achievements.length > 0 && (
                         <List sx={{ listStyleType: "disc", pl: 2 }}>
-                          {role.achievements.map((achievement, achievement_idx) => (
-                            <ListItem
-                              key={achievement_idx}
-                              sx={{ display: "list-item", p: 0 }}
-                            >
-                              <Typography
-                                variant="body2"
-                                sx={{
-                                  color: (theme) =>
-                                    theme.palette.mode === "dark"
-                                      ? theme.palette.grey[100]
-                                      : theme.palette.grey[900],
-                                }}
+                          {role.achievements.map(
+                            (achievement, achievement_idx) => (
+                              <ListItem
+                                key={achievement_idx}
+                                sx={{ display: "list-item", p: 0 }}
                               >
-                                {achievement}
-                              </Typography>
-                            </ListItem>
-                          ))}
+                                <Typography
+                                  variant="body2"
+                                  sx={{
+                                    color: (theme) =>
+                                      theme.palette.mode === "dark"
+                                        ? theme.palette.grey[100]
+                                        : theme.palette.grey[900],
+                                  }}
+                                >
+                                  {achievement}
+                                </Typography>
+                              </ListItem>
+                            )
+                          )}
                         </List>
                       )}
 

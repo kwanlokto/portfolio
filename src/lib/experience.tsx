@@ -1,5 +1,5 @@
 export interface Role {
-  role: string;
+  name: string;
   timeline: string;
   achievements: React.ReactElement[];
 }
@@ -15,7 +15,7 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/SS Logo.png",
     roles: [
       {
-        role: "CTO",
+        name: "CTO",
         timeline: "June 2025 – Present",
         achievements: [
           <>
@@ -31,7 +31,7 @@ export const work: ExperienceType[] = [
         ],
       },
       {
-        role: "Lead Software Engineer",
+        name: "Lead Software Engineer",
         timeline: "Oct 2023 – June 2025",
         achievements: [
           <>
@@ -53,7 +53,7 @@ export const work: ExperienceType[] = [
         ],
       },
       {
-        role: "Full Stack Software Developer",
+        name: "Full Stack Software Developer",
         timeline: "May 2021 – Oct 2023",
         achievements: [
           <>
@@ -76,7 +76,7 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/Cognitive Centivizer.png",
     roles: [
       {
-        role: "Full Stack Software Developer",
+        name: "Full Stack Software Developer",
         timeline: "Sept 2020 – May 2021",
         achievements: [
           <>
@@ -98,7 +98,7 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/Autocase.jpeg",
     roles: [
       {
-        role: "Full Stack Software Developer",
+        name: "Full Stack Software Developer",
         timeline: " May 2019 – April 2020",
         achievements: [
           <>
@@ -121,7 +121,7 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/Town of Richmond Hill.png",
     roles: [
       {
-        role: "Swim Instructor",
+        name: "Swim Instructor",
         timeline: "Sept 2015 – May 2016",
         achievements: [],
       },
@@ -135,7 +135,7 @@ export const education: ExperienceType[] = [
     icon_url: "/portfolio/TMU Talent Accelerator.png",
     roles: [
       {
-        role: "Digital Growth Marketing Talent Accelerator",
+        name: "Digital Growth Marketing Talent Accelerator",
         timeline: "July 2025 – Nov 2025",
         achievements: [
           <>
@@ -159,7 +159,7 @@ export const education: ExperienceType[] = [
     icon_url: "/portfolio/University of Toronto.png",
     roles: [
       {
-        role: "BSc. in Computer Science",
+        name: "BSc. in Computer Science",
         timeline: "Sept 2016 – April 2021",
         achievements: [
           <>Computer Science Specialist</>,
