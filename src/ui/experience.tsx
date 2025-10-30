@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Box, Icon, List, ListItem } from "@mui/material";
+import { Box, Button, Icon, List, ListItem } from "@mui/material";
 
 import { ExperienceType } from "@/lib/experience";
 import Image from "next/image";
@@ -12,6 +12,7 @@ import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import Typography from "@mui/material/Typography";
 import { timelineOppositeContentClasses } from "@mui/lab/TimelineOppositeContent";
+import { MdExpandLess, MdExpandMore } from "react-icons/md";
 
 interface ExperienceParams {
   experience_list: ExperienceType[];
@@ -40,7 +41,9 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
             >
               <TimelineSeparator>
                 {idx !== 0 && <TimelineConnector />}
-                <TimelineDot>
+                <TimelineDot
+                  sx={{ bgcolor: "background.paper", p: 0.5, boxShadow: 0 }}
+                >
                   <Icon sx={{ position: "relative", width: 24, height: 24 }}>
                     <Image
                       src={experience.icon_url}
@@ -54,29 +57,33 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
                 {idx !== experience_list.length - 1 && <TimelineConnector />}
               </TimelineSeparator>
 
-              <TimelineContent sx={{ py: "12px", px: 2 }}>
+              <TimelineContent
+                sx={{
+                  py: 2,
+                  px: 2,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
                 <Typography
                   variant="body2"
-                  fontWeight="bold"
-                  sx={{ color: "text.secondary" }}
+                  fontWeight={500}
+                  sx={{ color: "text.secondary", mb: 0.5 }}
                 >
                   {experience.timeline}
                 </Typography>
 
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: (theme) => theme.palette.text.primary,
-                  }}
-                >
+                <Typography variant="h6" sx={{ color: "text.primary" }}>
                   {experience.company}
                 </Typography>
 
                 <Typography
-                  fontSize={12}
-                  textTransform="uppercase"
-                  fontWeight="bold"
-                  sx={{ color: "text.secondary" }}
+                  variant="subtitle2"
+                  fontWeight={500}
+                  sx={{
+                    color: "text.secondary",
+                    textTransform: "uppercase",
+                  }}
                 >
                   {experience.role}
                 </Typography>
@@ -116,19 +123,29 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
       {/* Show more / less button */}
       {experience_list.length > 2 && (
         <Box textAlign="center" mb={1}>
-          <Typography
-            variant="body2"
+          <Button
+            size="small"
+            endIcon={
+              show_all ? (
+                <MdExpandLess fontSize="small" />
+              ) : (
+                <MdExpandMore fontSize="small" />
+              )
+            }
             onClick={() => set_show_all(!show_all)}
             sx={{
-              cursor: "pointer",
+              textTransform: "none",
               color: "primary.main",
               fontSize: "0.8125rem",
               fontWeight: 500,
-              "&:hover": { textDecoration: "underline" }, // subtle hover effect
+              "&:hover": {
+                backgroundColor: "transparent",
+                textDecoration: "underline",
+              },
             }}
           >
             {show_all ? "Show less" : "Show more"}
-          </Typography>
+          </Button>
         </Box>
       )}
     </Box>
