@@ -19,14 +19,17 @@ export const work: ExperienceType[] = [
         timeline: "June 2025 – Present",
         achievements: [
           <>
-            Analyzed KPIs and executed data-informed marketing strategies,
-            boosting website traffic by 10% and social media engagement by 15%
-            in three months.
+            Lead company-wide technology vision, engineering operations, and R&D
+            strategy to drive Skatescribe&apos;s growth and innovation in hockey technology.
           </>,
           <>
-            Completed a 6-month professional marketing program hosted by Toronto
-            Metropolitan University, taught by leading industry professionals,
-            to enhance strategic marketing knowledge and execution.
+            Defined long-term product architecture and technical direction to
+            ensure scalability, reliability, and data integrity across all
+            deployed systems.
+          </>,
+          <>
+            Directed growth marketing initiatives that increased website
+            traffic by 10% and social engagement by 15% within three months.
           </>,
         ],
       },
@@ -35,20 +38,13 @@ export const work: ExperienceType[] = [
         timeline: "Oct 2023 – June 2025",
         achievements: [
           <>
-            Led a cross-functional team of developers, mechanical engineers, and
-            a UI/UX designer to design and build an automated skate sharpening
-            and profiling system — a product now widely adopted by NHL teams and
-            recognized for transforming professional equipment maintenance.
+            Led the design and production of Skatescribe&apos;s automated skate
+            profiling and sharpening system — now used by professional teams
+            worldwide.
           </>,
           <>
-            Directed large-scale projects that increased sharpening efficiency
-            by 25%, enhanced user experience, improved data accuracy and
-            reliability, and optimized code maintainability.
-          </>,
-          <>
-            Reduced machine processing time from 15 seconds to 2 seconds through
-            advanced code optimization, asynchronous processing, and parallel
-            computation techniques.
+            Reduced end-to-end machine processing time from 15 seconds to 2
+            seconds using concurrency, profiling, and optimized algorithms.
           </>,
         ],
       },
@@ -57,15 +53,23 @@ export const work: ExperienceType[] = [
         timeline: "May 2021 – Oct 2023",
         achievements: [
           <>
-            Developed the first functional prototype integrating a
-            high-precision laser system with a CNC machine, achieving 0.5μm
-            accuracy in blade geometry capture and sharpening precision within a
-            0.1μm tolerance.
+            Developed Skatescribe&apos;s first integrated laser profiling + CNC
+            sharpening prototype with ±0.1μm precision — a key milestone toward
+            commercial viability.
           </>,
           <>
-            Researched and implemented advanced signal processing techniques to
-            enhance laser profiler images, increasing accuracy by 0.5mm,
-            reducing costs by $2 per sharpen, and cutting runtime by 20%.
+            Implemented advanced signal-processing algorithms that enhanced
+            measurement accuracy and reduced cost per sharpen by 20%.
+          </>,
+          <>
+            Built full-stack systems, including embedded control firmware,
+            backend APIs (Node.js, Python, C++), and modern React/MUI frontends
+            for real-time machine interaction.
+          </>,
+          <>
+            Contributed to early-stage product R&D by bridging mechanical,
+            optical, and software components into a cohesive production-ready
+            platform.
           </>,
         ],
       },
