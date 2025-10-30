@@ -1,10 +1,21 @@
 "use client";
 
-import { Box, Button, Grid2 as Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid2 as Grid,
+  Stack,
+  Typography,
+  Card,
+  CardContent,
+  CardActions,
+  Divider,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import { ProjectType, projects } from "@/lib/project";
-import React, { useState } from "react";
-
 import Image from "next/image";
+import React, { useState } from "react";
 import { handle_download } from "@/utils/download";
 
 interface ProjectParams {
@@ -15,156 +26,181 @@ const Project = ({ project }: ProjectParams) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <Grid
-      size={6}
-      sx={{
-        p: 3,
-        border: (theme) =>
-          `1px solid ${
-            theme.palette.mode === "dark"
-              ? theme.palette.grey[800]
-              : theme.palette.grey[400]
-          }`,
-        borderRadius: 2,
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      {/* Project Image */}
-      <Box sx={{ width: "100%" }}>
-        <Box
-          sx={{
-            position: "relative",
-            width: "100%",
-            height: 150,
-            mb: 2,
-          }}
-        >
+    <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+      <Card
+        variant="outlined"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100%",
+          borderRadius: 3,
+          overflow: "hidden",
+          transition: "transform 0.25s ease, box-shadow 0.25s ease",
+          "&:hover": { transform: "translateY(-4px)", boxShadow: 4 },
+        }}
+      >
+        <Box sx={{ position: "relative", height: 180 }}>
           <Image
             src={
-              project.picture_url !== null
-                ? project.picture_url
-                : `https://api.microlink.io/?url=${encodeURIComponent(
-                    project.source_url
-                  )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=880`
+              project.picture_url ||
+              `https://api.microlink.io/?url=${encodeURIComponent(
+                project.source_url
+              )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=880`
             }
-            alt={`${project.title} Logo`}
+            alt={project.title}
             fill
-            style={{ objectFit: "cover", borderRadius: 8 }}
-            priority
+            style={{
+              objectFit: "cover",
+              objectPosition: "center", // ✅ centers the image
+            }}
           />
         </Box>
 
-        {/* Title & Description */}
-        <Typography variant="h6" fontWeight={700} gutterBottom>
-          {project.title}
-        </Typography>
-        <Box
-          sx={{
-            mb: 1,
-            overflow: "hidden",
-            ...(expanded
-              ? {}
-              : {
-                  display: "-webkit-box",
-                  WebkitLineClamp: 3,
-                  WebkitBoxOrient: "vertical",
-                }),
-          }}
-        >
-          <Typography variant="body2" component="div">
+        <CardContent sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" fontWeight={600} gutterBottom>
+            {project.title}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: expanded ? "unset" : 3,
+              overflow: "hidden",
+            }}
+          >
             {project.description}
           </Typography>
-        </Box>
-
-        <Box display="flex" justifyContent="flex-end">
-          <Button
-            size="small"
-            onClick={() => setExpanded((prev) => !prev)}
-            sx={{ textTransform: "none", py: 0.25, px: 1, mb: 2 }}
+          <Typography
+            variant="body2"
+            onClick={() => setExpanded(!expanded)}
+            sx={{
+              mt: 1,
+              cursor: "pointer",
+              color: "primary.main",
+              fontSize: "0.8125rem",
+              fontWeight: 500,
+              "&:hover": { textDecoration: "underline" }, // subtle hover effect
+            }}
           >
             {expanded ? "Show less" : "Show more"}
-          </Button>
-        </Box>
-      </Box>
-
-      {/* Tech Stack */}
-      <Stack
-        direction="row"
-        flexWrap="wrap"
-        justifyContent="center"
-        gap={1}
-        mb={2}
-      >
-        {project.tech_stack.map((item, idx) => (
-          <Typography
-            key={idx}
-            variant="caption"
-            sx={{
-              px: 1.25,
-              pt: 0.5,
-              pb: 0.25,
-              borderRadius: 1,
-              fontWeight: 500,
-              color: (theme) =>
-                theme.palette.mode === "dark"
-                  ? theme.palette.common.black
-                  : theme.palette.common.black,
-              bgcolor: (theme) =>
-                theme.palette.mode === "dark"
-                  ? theme.palette.grey[500]
-                  : theme.palette.grey[300],
-            }}
-          >
-            {item}
           </Typography>
-        ))}
-      </Stack>
+        </CardContent>
+        <Stack direction="row" flexWrap="wrap" gap={1} px={2} pb={1}>
+          {project.tech_stack.map((tech, i) => (
+            <Typography
+              key={i}
+              variant="caption"
+              sx={{
+                px: 1.3,
+                pt: 0.5,
+                pb: 0.25,
+                bgcolor: "action.hover",
+                borderRadius: 1,
+              }}
+            >
+              {tech}
+            </Typography>
+          ))}
+        </Stack>
 
-      {/* Action Buttons */}
-      <Stack direction="row" justifyContent="center" spacing={2}>
-        {project.download_url && (
+        <Divider sx={{ my: 1 }} />
+
+        <CardActions sx={{ justifyContent: "center", pb: 2 }}>
+          {project.download_url && (
+            <Button
+              variant="contained"
+              onClick={() => {
+                if (project.download_url) {
+                  handle_download(
+                    project.download_url,
+                    project.download_url.split("/").pop() || ""
+                  );
+                }
+              }}
+              sx={{ py: 0.25 }}
+            >
+              Download
+            </Button>
+          )}
+          {project.deployed_url && (
+            <Button
+              variant="contained"
+              href={project.deployed_url}
+              target="_blank"
+              sx={{ py: 0.25 }}
+            >
+              Visit
+            </Button>
+          )}
           <Button
-            variant="contained"
-            onClick={() => {
-              if (project.download_url) {
-                const file_name = project.download_url.split("/").pop() || "";
-                handle_download(project.download_url, file_name);
-              }
-            }}
-          >
-            Download
-          </Button>
-        )}
-        {project.deployed_url && (
-          <Button
-            variant="contained"
-            href={project.deployed_url}
+            variant="outlined"
+            href={project.source_url}
             target="_blank"
+            sx={{ py: 0.25 }}
           >
-            Visit
+            Code
           </Button>
-        )}
-        <Button variant="outlined" href={project.source_url} target="_blank">
-          Code
-        </Button>
-      </Stack>
+        </CardActions>
+      </Card>
     </Grid>
   );
 };
 
+type ResponsiveCount =
+  | number
+  | { xs?: number; sm?: number; md?: number; lg?: number; xl?: number };
+
 interface ProjectsParams {
-  total_featured_projects?: number;
+  total_featured_projects?: ResponsiveCount;
 }
 
 export default function Projects({ total_featured_projects }: ProjectsParams) {
+  const theme = useTheme();
+
+  // Detect breakpoints from smallest to largest
+  const isXl = useMediaQuery(theme.breakpoints.up("xl"));
+  const isLg = useMediaQuery(theme.breakpoints.up("lg"));
+  const isMd = useMediaQuery(theme.breakpoints.up("md"));
+  const isSm = useMediaQuery(theme.breakpoints.up("sm"));
+
+  const getVisibleCount = (): number => {
+    // If undefined, show all projects
+    if (total_featured_projects === undefined) return projects.length;
+
+    // If it's a simple number
+    if (typeof total_featured_projects === "number")
+      return total_featured_projects;
+
+    // Determine the active breakpoint and pick the appropriate value
+    let count: number | undefined;
+
+    if (isXl) count = total_featured_projects.xl;
+    else if (isLg) count = total_featured_projects.lg;
+    else if (isMd) count = total_featured_projects.md;
+    else if (isSm) count = total_featured_projects.sm;
+    else count = total_featured_projects.xs;
+
+    // Fallback if none defined
+    return (
+      count ??
+      total_featured_projects.md ??
+      total_featured_projects.sm ??
+      total_featured_projects.xs ??
+      total_featured_projects.lg ??
+      total_featured_projects.xl ??
+      projects.length
+    );
+  };
+
+  const visibleCount = getVisibleCount();
+
   return (
-    <Grid container spacing={2}>
-      {projects
-        .slice(0, total_featured_projects)
-        .map((project: ProjectType, idx: number) => {
-          return <Project project={project} key={idx} />;
-        })}
+    <Grid container spacing={3}>
+      {projects.slice(0, visibleCount).map((project, index) => (
+        <Project key={index} project={project} />
+      ))}
     </Grid>
   );
 }

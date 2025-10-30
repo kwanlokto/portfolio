@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Divider,
-  Tab,
-  Tabs,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Divider, Tab, Tabs, Typography } from "@mui/material";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 import { education, work } from "@/lib/experience";
 
@@ -143,7 +136,7 @@ export default function Home() {
             <Button>View More</Button>
           </Link>
         </Box>
-        <Projects total_featured_projects={2} />
+        <Projects total_featured_projects={{ xs: 1, sm: 2, md: 3 }} />
       </Box>
     </Box>
   );
