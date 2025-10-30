@@ -12,7 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
-import Projects from "@/ui/projects";
+import { ProjectGrid } from "@/ui/project_grid";
 import { TechStack } from "@/ui/tech_stack";
 import { handle_download } from "@/utils/download";
 import { useState } from "react";
@@ -136,7 +136,7 @@ export default function Home() {
             <Button>View More</Button>
           </Link>
         </Box>
-        <Projects total_featured_projects={{ xs: 1, sm: 2, md: 3 }} />
+        <ProjectGrid total_featured_projects={{ xs: 1, sm: 2, md: 3 }} />
       </Box>
     </Box>
   );

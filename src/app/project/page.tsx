@@ -1,6 +1,6 @@
 import { Box, Divider, Typography } from "@mui/material";
 
-import Projects from "@/ui/projects";
+import { ProjectGrid } from "@/ui/project_grid";
 import React from "react";
 
 export default function Page() {
@@ -15,7 +15,7 @@ export default function Page() {
         My Projects
       </Typography>
       <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
-      <Projects />
+      <ProjectGrid />
     </Box>
   );
 }
