@@ -14,11 +14,12 @@ import { ExperienceType, Role } from "@/lib/experience";
 
 interface ExperienceParams {
   experience_list: ExperienceType[];
+  collapsed_item_count: number;
 }
 
-export const Experience = ({ experience_list }: ExperienceParams) => {
+export const Experience = ({ experience_list, collapsed_item_count }: ExperienceParams) => {
   const [show_all, set_show_all] = React.useState(false);
-  const visible_count = show_all ? experience_list.length : 2;
+  const visible_count = show_all ? experience_list.length : collapsed_item_count;
 
   return (
     <Box>
@@ -161,7 +162,7 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
       </Timeline>
 
       {/* Show more / less button */}
-      {experience_list.length > 2 && (
+      {experience_list.length > collapsed_item_count && (
         <Box textAlign="center" mb={1}>
           <Button
             size="small"

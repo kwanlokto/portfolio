@@ -120,8 +120,8 @@ export default function Home() {
           />
         </Tabs>
       </Box>
-      {tab_idx === 0 && <Experience experience_list={work} />}
-      {tab_idx === 1 && <Experience experience_list={education} />}
+      {tab_idx === 0 && <Experience experience_list={work} collapsed_item_count={1}/>}
+      {tab_idx === 1 && <Experience experience_list={education} collapsed_item_count={2}/>}
 
       <Divider sx={{ my: 1 }} />
 
