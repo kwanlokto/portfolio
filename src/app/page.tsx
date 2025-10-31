@@ -41,7 +41,12 @@ export default function Home() {
         />
         <Box display="flex">
           <PiHandWavingBold
-            style={{ display: "inline", marginRight: "8px" }}
+            style={{
+              display: "inline",
+              marginRight: "8px",
+              animation: "wave 3s infinite",
+              transformOrigin: "70% 70%",
+            }}
             size={30}
           />
           <Typography variant="h6" pl={1}>
