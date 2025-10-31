@@ -45,8 +45,8 @@ export const work: ExperienceType[] = [
             pro shops across North America.
           </>,
           <>
-            Reduced machine processing time from 15 seconds to 2 seconds through
-            concurrency, and algorithmic refinement.
+            Reduced scan processing time by 75% through concurrency and algorithmic
+            refinement.
           </>,
         ],
       },
@@ -57,8 +57,9 @@ export const work: ExperienceType[] = [
           <>
             Built Skatescribe&apos;s first integrated laser profiling and CNC
             sharpening prototype using an <strong>LJ V7080</strong> laser,{" "}
-            <strong>Tormach 1100MX</strong> CNC, <strong>Python</strong> backend, a{" "}
-            <strong>React + Electron</strong> frontend, and <strong>Docker</strong> for deployment.
+            <strong>Tormach 1100MX</strong> CNC, <strong>Python</strong>{" "}
+            backend, a <strong>React + Electron</strong> frontend, and{" "}
+            <strong>Docker</strong> for deployment.
           </>,
           <>
             Pioneered signal-processing and least square-fitting algorithms,

@@ -62,7 +62,7 @@ export default function Home() {
             I&apos;m a Senior Software Developer with experience leading
             cross-functional teams and delivering high-precision,
             performance-driven applications. Skilled in full-stack development,
-            software design, and collaborating with stakeholders to turn complex
+            systems design, and collaborating with stakeholders to turn complex
             problems into impactful solutions.
           </Typography>
           <Typography pt={2}>
