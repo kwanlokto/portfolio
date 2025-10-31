@@ -59,18 +59,31 @@ export const Project = ({ project }: ProjectParams) => {
           <Typography variant="h6" fontWeight={600} gutterBottom>
             {project.title}
           </Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
+          <Box
             sx={{
-              display: "-webkit-box",
-              WebkitBoxOrient: "vertical",
-              WebkitLineClamp: expanded ? "unset" : 3,
+              position: "relative",
               overflow: "hidden",
+              WebkitMaskImage: expanded
+                ? "none"
+                : "linear-gradient(to bottom, black 60%, transparent 100%)",
+              maskImage: expanded
+                ? "none"
+                : "linear-gradient(to bottom, black 60%, transparent 100%)",
+              transition: "all 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
+              maxHeight: expanded ? 500 : 64, // ≈3 lines
             }}
           >
-            {project.description}
-          </Typography>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{
+                whiteSpace: "pre-wrap",
+                lineHeight: 1.5,
+              }}
+            >
+              {project.description}
+            </Typography>
+          </Box>
           <Typography
             variant="body2"
             onClick={() => setExpanded(!expanded)}
