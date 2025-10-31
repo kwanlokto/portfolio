@@ -37,7 +37,12 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
             <TimelineSeparator>
               {idx !== 0 && <TimelineConnector />}
               <TimelineDot
-                sx={{ bgcolor: "background.paper", boxShadow: 0, p: 0.5, pt: 0.75 }}
+                sx={{
+                  bgcolor: "background.paper",
+                  boxShadow: 0,
+                  p: 0.5,
+                  pt: 0.75,
+                }}
               >
                 <Icon sx={{ position: "relative", width: 30, height: 30 }}>
                   <Image
@@ -127,6 +132,7 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
                               >
                                 <Typography
                                   variant="body2"
+                                  pl={1}
                                   sx={{
                                     color: (theme) =>
                                       theme.palette.mode === "dark"
