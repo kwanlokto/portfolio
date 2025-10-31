@@ -133,11 +133,11 @@ export default function Home() {
       {/* Featured Projects */}
       <Box pt={2}>
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Typography variant="h6" fontWeight="bold" mb={1}>
+          <Typography variant="h6" fontWeight="bold" mb={2}>
             Featured Projects
           </Typography>
           <Link href="/project">
-            <Button>View More</Button>
+            <Button sx={{mb: 1}}>View More</Button>
           </Link>
         </Box>
         <ProjectGrid total_featured_projects={{ xs: 1, sm: 2, md: 3 }} />
