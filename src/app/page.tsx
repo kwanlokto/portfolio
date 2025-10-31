@@ -120,8 +120,12 @@ export default function Home() {
           />
         </Tabs>
       </Box>
-      {tab_idx === 0 && <Experience experience_list={work} collapsed_item_count={1}/>}
-      {tab_idx === 1 && <Experience experience_list={education} collapsed_item_count={2}/>}
+      {tab_idx === 0 && (
+        <Experience experience_list={work} collapsed_item_count={1} />
+      )}
+      {tab_idx === 1 && (
+        <Experience experience_list={education} collapsed_item_count={2} />
+      )}
 
       <Divider sx={{ my: 1 }} />
 
@@ -137,7 +141,7 @@ export default function Home() {
             Featured Projects
           </Typography>
           <Link href="/project">
-            <Button sx={{mb: 1}}>View More</Button>
+            <Button sx={{ mb: 1 }}>View More</Button>
           </Link>
         </Box>
         <ProjectGrid total_featured_projects={{ xs: 1, sm: 2, md: 3 }} />

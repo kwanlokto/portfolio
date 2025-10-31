@@ -19,18 +19,19 @@ export const work: ExperienceType[] = [
         timeline: "June 2025 – Present",
         achievements: [
           <>
-            Led engineering operations, and R&amp;D roadmap, ensuring every
-            technical decision drives our long-term mission to revolutionize the
-            hockey industry
+            Drove technical vision and R&D strategy for precise skate profiler
+            and sharpener trusted by 5+ NHL teams, AHL affiliates, and 10+ pro
+            shops across North America.
           </>,
           <>
-            Directed a cross-functional team of mechanical, software engineers,
-            and designers — aligning diverse disciplines to deliver integrated,
-            production-ready skate profiling technology.
+            Led cross-functional team of 5 engineers and designers through rapid
+            iteration cycles, shipping features that directly expanded market
+            penetration and earned recognition from NHL equipment managers.
           </>,
           <>
-            Directed growth marketing initiatives that increased website traffic
-            by 10% and social engagement by 15% within three months.
+            Directed McMaster PhD students to prototype Gen 2 machine with
+            compact design fitting through standard doorways, proprietary
+            software integration, and 0.1 μm loading repeatability.
           </>,
         ],
       },
@@ -39,14 +40,25 @@ export const work: ExperienceType[] = [
         timeline: "Oct 2023 – June 2025",
         achievements: [
           <>
-            Oversaw the development of the automated skate profiling and
-            sharpening machine, advancing it from a prototype to a
-            production-ready machine trusted by NHL teams, AHL affiliates, and
-            pro shops across North America.
+            Designed and led implementation of full-stack architecture
+            coordinating firmware, state management, and real-time hardware
+            control across CNC and laser subsystems—managing 2 engineers through
+            complex integration challenges.
           </>,
           <>
-            Reduced scan processing time by 75% through concurrency and algorithmic
-            refinement.
+            Architected system-wide refactor from monolith to microservices
+            architecture, integrating the ordering system into the main
+            interface and increasing sharpening efficiency by 25% while
+            improving customer data accuracy by 70%.
+          </>,
+          <>
+            Improved scanning repeatability from 80% to 98% while reducing
+            processing time by 75% through redesigning smoothing and joining
+            algorithms, greatly increasing throughput.
+          </>,
+          <>
+            Deployed diagnostic tooling that cut support resolution time in half
+            by surfacing CNC and laser controller state to support team.
           </>,
         ],
       },
@@ -55,16 +67,21 @@ export const work: ExperienceType[] = [
         timeline: "May 2021 – Oct 2023",
         achievements: [
           <>
-            Built Skatescribe&apos;s first integrated laser profiling and CNC
-            sharpening prototype using an <strong>LJ V7080</strong> laser,{" "}
-            <strong>Tormach 1100MX</strong> CNC, <strong>Python</strong>{" "}
-            backend, a <strong>React + Electron</strong> frontend, and{" "}
-            <strong>Docker</strong> for deployment.
+            Prototyped a skate profiling and sharpening system using an LJ V7080
+            laser profiler with Tormach 1100MX CNC mill through custom Python
+            (Flask, SQLAlchemy, Pandas, NumPy) backend, React + Electron UI, and
+            PostgreSQL database.
           </>,
           <>
-            Pioneered signal-processing and least square-fitting algorithms,
-            achieving ±1 μm measurement precision and establishing the
-            foundation for all future development.
+            Invented proprietary algorithms for smoothing and joining noisy scan
+            data, achieving ±1 μm precision by applying signal processing and
+            least-squares optimizations, creating the technical foundation
+            powering every machine built today.
+          </>,
+          <>
+            Designed and managed secure, scalable cloud infrastructure on
+            Linode, deploying production and staging environments using Docker
+            and NGINX to ensure high availability and performance.
           </>,
         ],
       },
