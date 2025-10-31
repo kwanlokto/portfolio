@@ -37,12 +37,7 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
             <TimelineSeparator>
               {idx !== 0 && <TimelineConnector />}
               <TimelineDot
-                sx={{
-                  bgcolor: "background.paper",
-                  boxShadow: 0,
-                  p: 0.5,
-                  pt: 0.75,
-                }}
+                sx={{ bgcolor: "background.paper", boxShadow: 0, p: 0.5, pt: 0.75 }}
               >
                 <Icon sx={{ position: "relative", width: 30, height: 30 }}>
                   <Image
@@ -78,47 +73,82 @@ export const Experience = ({ experience_list }: ExperienceParams) => {
                 </Typography>
               </Box>
 
-              {exp.roles?.map((role: Role, role_idx: number) => (
-                <Box key={role_idx}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-                    {role.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ mb: 1 }}
-                  >
-                    {role.timeline}
-                  </Typography>
+              {/* Nested Roles Timeline */}
+              <Timeline
+                sx={{
+                  mt: -1,
+                  ml: -2,
+                  pl: 0,
+                  [`& .${timelineOppositeContentClasses.root}`]: { flex: 0 },
+                }}
+              >
+                {exp.roles?.map((role: Role, role_idx: number) => (
+                  <TimelineItem key={role_idx} position="right">
+                    {/* TODO: This doesn't work as intended for some reason? */}
+                    {/* {exp.roles.length > 1 && (
+                      <TimelineSeparator>
+                        {role_idx !== 0 && (
+                          <TimelineConnector sx={{ ml: -5.5 }} />
+                        )}
+                        <TimelineDot
+                          color={
+                            role_idx === 0
+                              ? "primary"
+                              : role_idx === exp.roles.length - 1
+                              ? "grey"
+                              : "secondary"
+                          }
+                          sx={{ p: 0.25, ml: -3.25 }}
+                        />
+                        {role_idx !== exp.roles.length - 1 && (
+                          <TimelineConnector sx={{ ml: -5.5 }} />
+                        )}
+                      </TimelineSeparator>
+                    )} */}
+                    <TimelineContent>
+                      <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                        {role.name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ mb: 1 }}
+                      >
+                        {role.timeline}
+                      </Typography>
 
-                  {role.achievements.length > 0 && (
-                    <List sx={{ listStyleType: "disc", pl: 2 }}>
-                      {role.achievements.map((achievement, achievement_idx) => (
-                        <ListItem
-                          key={achievement_idx}
-                          sx={{ display: "list-item", p: 0 }}
-                        >
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              color: (theme) =>
-                                theme.palette.mode === "dark"
-                                  ? theme.palette.grey[100]
-                                  : theme.palette.grey[900],
-                            }}
-                          >
-                            {achievement}
-                          </Typography>
-                        </ListItem>
-                      ))}
-                    </List>
-                  )}
+                      {role.achievements.length > 0 && (
+                        <List sx={{ listStyleType: "disc", pl: 2 }}>
+                          {role.achievements.map(
+                            (achievement, achievement_idx) => (
+                              <ListItem
+                                key={achievement_idx}
+                                sx={{ display: "list-item", p: 0 }}
+                              >
+                                <Typography
+                                  variant="body2"
+                                  sx={{
+                                    color: (theme) =>
+                                      theme.palette.mode === "dark"
+                                        ? theme.palette.grey[100]
+                                        : theme.palette.grey[900],
+                                  }}
+                                >
+                                  {achievement}
+                                </Typography>
+                              </ListItem>
+                            )
+                          )}
+                        </List>
+                      )}
 
-                  {role_idx < exp.roles.length - 1 && (
-                    <Divider sx={{ my: 1 }} />
-                  )}
-                </Box>
-              ))}
+                      {role_idx < exp.roles.length - 1 && (
+                        <Divider sx={{ my: 1 }} />
+                      )}
+                    </TimelineContent>
+                  </TimelineItem>
+                ))}
+              </Timeline>
             </TimelineContent>
           </TimelineItem>
         ))}
