@@ -39,6 +39,16 @@ export default function RootLayoutClientWrapper({
           <Box sx={{ pt: 5, pb: 10 }}>{children}</Box>
         </Container>
       </Box>
+      <Box
+        style={{
+          animation: "rgbPulse 5s infinite",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: 5,
+        }}
+      />
     </ThemeProvider>
   );
 }
