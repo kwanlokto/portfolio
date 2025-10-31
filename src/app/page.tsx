@@ -62,8 +62,7 @@ export default function Home() {
           </Typography>
           <Typography pt={2}>
             Recently, I&apos;ve been developing an automated skate sharpening
-            and profiling technology now endorsed by multiple NHL teams and
-            recognized for greatly improving workflow efficiency and accuracy.
+            and profiling technology endorsed by multiple NHL teams.
           </Typography>
         </Box>
 
