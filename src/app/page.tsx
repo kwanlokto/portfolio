@@ -77,6 +77,7 @@ export default function Home() {
             onClick={() =>
               handle_download("/portfolio/Resume.pdf", "ray_resume.pdf")
             }
+            sx={{ borderWidth: 2 }}
           >
             Resume
             <MdOutlineCloudDownload style={{ marginLeft: "4px" }} size={25} />
