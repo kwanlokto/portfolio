@@ -47,12 +47,12 @@ export const work: ExperienceType[] = [
           </>,
           <>
             Architected system-wide refactor from monolith to microservices
-            architecture, integrating the ordering system into the main
-            interface and increasing sharpening efficiency by 25% while
-            improving customer data accuracy by 70%.
+            architecture by integrating the ordering system into the main
+            interface, increasing operational efficiency by 25% and improving
+            data accuracy by 70%
           </>,
           <>
-            Improved scanning repeatability from 80% to 98% while reducing
+            Improved scanning repeatability by 22% while reducing
             processing time by 75% through redesigning smoothing and joining
             algorithms, greatly increasing throughput.
           </>,
