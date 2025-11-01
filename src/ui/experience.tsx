@@ -58,7 +58,7 @@ export const Experience = ({
                 {experience_idx !== 0 && <TimelineConnector />}
                 <TimelineDot
                   sx={{
-                    bgcolor: "background.paper",
+                    bgcolor: "background.default",
                     boxShadow: 0,
                     p: 0.5,
                     pt: 0.75,

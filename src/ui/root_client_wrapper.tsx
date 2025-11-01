@@ -20,40 +20,42 @@ export default function RootLayoutClientWrapper({
 
   const theme = useMemo(
     () =>
-      createTheme({
-        palette: {
-          mode,
-          background: {
-            default: mode === "light" ? "#fcf5e4" : "#1a1a1a",
-            paper: mode === "light" ? "#ffffff" : "#242424",
+      createTheme(
+        createTheme({
+          palette: {
+            mode,
+            background: {
+              default: mode === "light" ? "#fef8e7" : "#1a1a1a",
+              paper: mode === "light" ? "#ffffff" : "#242424",
+            },
+            text: {
+              primary: mode === "light" ? "#0a1f2a" : "#e8e8e8",
+              secondary: mode === "light" ? "#2d4450" : "#a8a8a8",
+            },
+            primary: {
+              main: mode === "light" ? "#1a4d6b" : "#5aa5ff",
+              light: mode === "light" ? "#2c6b8f" : "#85c0ff",
+              dark: mode === "light" ? "#0d3449" : "#3a8eef",
+            },
+            secondary: {
+              main: mode === "light" ? "#c8944d" : "#f0c595",
+              light: mode === "light" ? "#ddb073" : "#ffdbba",
+              dark: mode === "light" ? "#a67535" : "#d9a870",
+            },
+            divider: mode === "light" ? "#c9b895" : "#333333",
+            action: {
+              hover:
+                mode === "light"
+                  ? "rgba(26, 77, 107, 0.10)"
+                  : "rgba(90, 165, 255, 0.12)",
+              selected:
+                mode === "light"
+                  ? "rgba(26, 77, 107, 0.16)"
+                  : "rgba(90, 165, 255, 0.16)",
+            },
           },
-          text: {
-            primary: mode === "light" ? "#132934" : "#e8e8e8",
-            secondary: mode === "light" ? "#4a5c66" : "#a8a8a8",
-          },
-          primary: {
-            main: mode === "light" ? "#2c5f7f" : "#5aa5ff",
-            light: mode === "light" ? "#4a8aaf" : "#85c0ff",
-            dark: mode === "light" ? "#1a4560" : "#3a8eef",
-          },
-          secondary: {
-            main: mode === "light" ? "#d4a574" : "#f0c595",
-            light: mode === "light" ? "#e6c399" : "#ffdbba",
-            dark: mode === "light" ? "#b8864f" : "#d9a870",
-          },
-          divider: mode === "light" ? "#d9cbb0" : "#333333",
-          action: {
-            hover:
-              mode === "light"
-                ? "rgba(44, 95, 127, 0.08)"
-                : "rgba(90, 165, 255, 0.12)",
-            selected:
-              mode === "light"
-                ? "rgba(44, 95, 127, 0.12)"
-                : "rgba(90, 165, 255, 0.16)",
-          },
-        },
-      }),
+        })
+      ),
     [mode]
   );
 
