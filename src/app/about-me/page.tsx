@@ -47,6 +47,7 @@ export default function Page() {
           tasks and quickly realized how much I enjoyed turning ideas into
           functional tools. Over time, that curiosity evolved into a career
           focused on crafting scalable solutions and intuitive UIs."
+        mb={1}
       />
       <TextSection
         title="How I Work"
@@ -55,6 +56,7 @@ export default function Page() {
           thoughtful design — both in code and user experience. Collaboration is
           also a key part of my process: I love learning from teammates, sharing
           ideas, and refining solutions together."
+        mb={1}
       />
 
       <TextSection
