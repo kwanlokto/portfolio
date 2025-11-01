@@ -82,8 +82,9 @@ export const Experience = ({
               {/* --- Company Content --- */}
               <TimelineContent
                 sx={{
-                  py: 2,
+                  pt: 2,
                   px: 2,
+                  mb: 0,
                   display: "flex",
                   flexDirection: "column",
                 }}
