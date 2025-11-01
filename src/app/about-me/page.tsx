@@ -88,8 +88,8 @@ export default function Page() {
                       ? theme.palette.grey[800]
                       : theme.palette.grey[400]
                   }`,
-                transition: "box-shadow 0.2s",
-                "&:hover": { boxShadow: 3 },
+                transition: "transform 0.25s ease, box-shadow 0.25s ease",
+                "&:hover": { transform: "translateY(-4px)", boxShadow: 4 },
               }}
             >
               <CardActionArea

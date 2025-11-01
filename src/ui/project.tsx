@@ -30,6 +30,7 @@ export const Project = ({ project }: ProjectParams) => {
         variant="outlined"
         sx={{
           display: "flex",
+          boxShadow: 1,
           flexDirection: "column",
           height: "100%",
           borderRadius: 3,
