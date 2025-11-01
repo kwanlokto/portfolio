@@ -52,9 +52,9 @@ export const work: ExperienceType[] = [
             data accuracy by 70%
           </>,
           <>
-            Improved scanning repeatability by 22% while reducing
-            processing time by 75% through redesigning smoothing and joining
-            algorithms, greatly increasing throughput.
+            Improved scanning repeatability by 22% while reducing processing
+            time by 75% through redesigning smoothing and joining algorithms,
+            greatly increasing throughput.
           </>,
           <>
             Deployed diagnostic tooling that cut support resolution time in half
@@ -114,19 +114,24 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/Autocase.jpeg",
     roles: [
       {
-        name: "Full Stack Software Developer",
+        name: "Full Stack Software Developer (Internship)",
         timeline: " May 2019 – April 2020",
         achievements: [
           <>
-            Translated economic research models into a comprehensive
-            cost-benefit analysis tool for builders and governments to determine
-            impact of design decisions on community, tenant and owner
-            stakeholders.
+            Developed a full-stack cost-benefit analysis platform (AngularJS &
+            Python) that transformed complex economic research models into
+            interactive visualizations, enabling real-time assessment of
+            environmental, economic, and social impacts from design decisions
           </>,
           <>
-            Built a custom tool in Python to aggregate and convert over 150GB of
-            statistical data into a pandas dataframe for benchmarking model
-            performance.
+            Automated aggregation of 150+ GB of NetCDF government data using
+            Pandas, reducing processing time from 5 days to 8 hours and enabling
+            faster benchmarking of model performance
+          </>,
+          <>
+            Designed and implemented comprehensive unit and integration tests
+            using PyTest and Jest increasing test coverage from 50% to 95%+ and
+            significantly reducing post-deployment issues by 30%.
           </>,
         ],
       },
