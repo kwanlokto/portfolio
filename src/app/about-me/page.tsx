@@ -35,27 +35,27 @@ export default function Page() {
           About Me
         </Typography>
         <Typography variant="body1" sx={{ lineHeight: 1.8, mb: 2 }}>
-          I&apos;m love building clean, efficient, and user-friendly web
-          applications. My work focuses on creating meaningful digital
-          experiences that are both technically sound and visually polished.
+          I&apos;m a Senior Software Developer focused on React and modern web
+          technologies. I care about writing code that&apos;s maintainable and
+          building interfaces that feel natural to use.
         </Typography>
       </Box>
       <Divider />
       <TextSection
         title="My Journey"
-        content="I started coding by tinkering with small scripts to automate mundane
-          tasks and quickly realized how much I enjoyed turning ideas into
-          functional tools. Over time, that curiosity evolved into a career
-          focused on crafting scalable solutions and intuitive UIs."
+        content="My first project in high school was a recommendation program with O(m^n) 
+          complexity. It barely worked, but I loved the feeling of making 
+          something useful. Years later, I'm still chasing that same feeling—just 
+          with less complexity and fewer bugs."
         mb={1}
       />
       <TextSection
         title="How I Work"
-        content="I enjoy solving complex problems by breaking them into small, testable
-          parts. My development style emphasizes clarity, maintainability, and
-          thoughtful design — both in code and user experience. Collaboration is
-          also a key part of my process: I love learning from teammates, sharing
-          ideas, and refining solutions together."
+        content="I'm convinced that the best code is boring code. When I'm building 
+          something, I'd rather spend time making it obvious than clever. I've 
+          learned that the real challenge isn't solving the problem once—it's 
+          building something that the next person (usually future me) can understand 
+          six months later."
         mb={1}
       />
 
@@ -65,7 +65,7 @@ export default function Page() {
           which is something I picked up ${current_year - 2021} years ago.
           It's been fun, frustrating, and humbling. I've spent plenty of time falling,
           but every fall has been a small reminder to get back up to keep trying and
-          improving. I also love exploring different cultures and taking in new views.
+          improving. I also love trying new cuisines and experiencing different cultures.
           These experiences keep me curious and help bring a fresh perspective
           to my work.`}
       />
