@@ -80,7 +80,8 @@ export default function RootLayoutClientWrapper({
       </Box>
       <Box
         style={{
-          animation: "rgbPulse 5s infinite",
+          animation:
+            mode === "light" ? "shadowGlow 5s infinite" : "lightGlow 5s infinite",
           position: "fixed",
           top: 0,
           left: 0,

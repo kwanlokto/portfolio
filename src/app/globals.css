@@ -16,31 +16,58 @@
   }
 }
 
-@keyframes rgbPulse {
+@keyframes lightGlow {
   0%,
   100% {
     background: linear-gradient(
-      to top,
-      #0a0a0a 0%,
-      rgba(255, 255, 255, 0.6) 30%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0.6) 70%,
-      #0a0a0a 100%
+      to bottom,
+      #cfc5ba 0%,
+      #fef8e7 30%,
+      #cfc5ba 50%,
+      #9f958f 70%,
+      #706866 100%
     );
-    box-shadow: 0 0 2px rgba(255, 255, 255, 0.4),
-      0 0 6px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 2px #9f958f, 0 0 6px rgba(255, 255, 255, 0.3),
+      0 0 10px rgba(255, 255, 255, 0.2);
   }
   50% {
     background: linear-gradient(
-      to top,
-      #0a0a0a 0%,
-      rgba(255, 255, 255, 0.6) 30%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0.6) 70%,
-      #0a0a0a 100%
+      to bottom,
+      #cfc5ba 0%,
+      #fef8e7 30%,
+      #cfc5ba 50%,
+      #9f958f 70%,
+      #706866 100%
     );
-    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6),
-      0 0 12px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 4px #9f958f, 0 0 12px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes shadowGlow {
+  0%,
+  100% {
+    background: linear-gradient(
+      to bottom,
+      #1a1a1a 0%,
+      #433f3f 30%,
+      #706866 50%,
+      #9f958f 70%,
+      #cfc5ba 100%
+    );
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  50% {
+    background: linear-gradient(
+      to bottom,
+      #1a1a1a 0%,
+      #433f3f 30%,
+      #706866 50%,
+      #9f958f 70%,
+      #cfc5ba 100%
+    );
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.08);
   }
 }
 
