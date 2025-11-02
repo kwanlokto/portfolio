@@ -30,7 +30,7 @@ export default function RootLayoutClientWrapper({
             },
             text: {
               primary: mode === "light" ? "#0a1f2a" : "#e8e8e8",
-              secondary: mode === "light" ? "#2d4450" : "#a8a8a8",
+              secondary: mode === "light" ? "#577683" : "#a8a8a8",
             },
             primary: {
               main: mode === "light" ? "#1a4d6b" : "#5aa5ff",
