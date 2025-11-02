@@ -34,6 +34,7 @@ export default function Page() {
         >
           About Me
         </Typography>
+        <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
         <Typography variant="body1" sx={{ lineHeight: 1.8, mb: 2 }}>
           I&apos;m a Senior Software Developer focused on React and modern web
           technologies. I care about writing code that&apos;s maintainable and
