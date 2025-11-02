@@ -160,6 +160,7 @@ export default function Home() {
         </Box>
         <ProjectGrid total_featured_projects={{ xs: 1, sm: 2, md: 3 }} />
       </Box>
+      {/* TODO: showcase github graph */}
     </Box>
   );
 }
