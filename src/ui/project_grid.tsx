@@ -60,4 +60,4 @@ export const ProjectGrid = ({ total_featured_projects }: ProjectsParams) => {
       ))}
     </Grid>
   );
-}
+};

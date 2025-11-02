@@ -81,7 +81,9 @@ export default function RootLayoutClientWrapper({
       <Box
         style={{
           animation:
-            mode === "light" ? "shadowGlow 5s infinite" : "lightGlow 5s infinite",
+            mode === "light"
+              ? "shadowGlow 5s infinite"
+              : "lightGlow 5s infinite",
           position: "fixed",
           top: 0,
           left: 0,
