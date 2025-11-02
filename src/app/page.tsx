@@ -1,6 +1,14 @@
 "use client";
 
-import { Box, Button, Divider, Tab, Tabs, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  Tab,
+  Tabs,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 import { education, work } from "@/lib/experience";
 
@@ -19,6 +27,8 @@ import { useState } from "react";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
+
+  const theme = useTheme();
 
   return (
     <Box>
@@ -85,10 +95,13 @@ export default function Home() {
 
           <Box display="flex" alignItems="center" gap={2}>
             <HRefButton url="https://www.linkedin.com/in/loktokwan/">
-              <SlSocialLinkedin size={23} className="text-gray-400" />
+              <SlSocialLinkedin
+                size={23}
+                color={theme.palette.text.secondary}
+              />
             </HRefButton>
             <HRefButton url="https://github.com/kwanlokto">
-              <SlSocialGithub size={23} className="text-gray-400" />
+              <SlSocialGithub size={23} color={theme.palette.text.secondary} />
             </HRefButton>
             <EmailButton />
           </Box>
