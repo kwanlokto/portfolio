@@ -42,7 +42,7 @@ export const TechStack = () => {
                     role="button"
                     tabIndex={0}
                     sx={{
-                      p: 1,
+                      px: 1,
                       // card-like tile but very subtle
                       display: "flex",
                       flexDirection: "column",
