@@ -92,7 +92,7 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/Cognitive Centivizer.png",
     roles: [
       {
-        name: "Full Stack Software Developer",
+        name: "Full Stack Software Developer (Part-Time)",
         timeline: "Sept 2020 – May 2021",
         achievements: [
           <>
