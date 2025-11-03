@@ -9,6 +9,7 @@ import {
   FaReact,
 } from "react-icons/fa";
 import {
+  SiC,
   SiFlask,
   SiGithubactions,
   SiJavascript,
@@ -40,6 +41,7 @@ export const tech_stack: TechStackType[] = [
       { name: "Java", icon: <FaJava size={22} /> },
       { name: "JavaScript", icon: <SiJavascript size={22} /> },
       { name: "TypeScript", icon: <SiTypescript size={22} /> },
+      { name: "C", icon: <SiC size={22} /> },
       { name: "MongoDB", icon: <SiMongodb size={22} /> },
       { name: "PostgreSQL", icon: <SiPostgresql size={22} /> },
     ],
