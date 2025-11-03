@@ -96,14 +96,15 @@ export const work: ExperienceType[] = [
         timeline: "Sept 2020 – May 2021",
         achievements: [
           <>
-            Created key components and CRUD endpoints to collect and structure
-            data on participants&apos; cognitive functions, enabling psychology
-            students to conduct further analysis.
+            Built reaction time and memory assessment games in React and Node.js
+            that collected cognitive performance data on 100+ participants,
+            enabling psychology students to conduct behavioral research through
+            engaging gameplay instead of traditional testing methods.
           </>,
           <>
-            Established best software practices in a dynamic team environment to
-            maintain a consistent, scalable codebase, enabling future developers
-            to contribute with ease.
+            Refactored redundant code across the codebase and established PR
+            review standards and development workflow, improving code
+            consistency and reducing technical debt for a team of 10 developers.
           </>,
         ],
       },
