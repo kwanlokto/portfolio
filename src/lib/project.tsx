@@ -20,7 +20,7 @@ export const projects: ProjectType[] = [
         listening experience.
       </>
     ),
-    picture_url: null,
+    picture_url: "/portfolio/music_player.jpg",
     tech_stack: ["React Native", "Expo"],
     download_url: "/portfolio/Music Player.apk",
     source_url: "https://github.com/kwanlokto/MusicPlayerApp",
