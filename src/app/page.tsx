@@ -161,6 +161,8 @@ export default function Home() {
         <ProjectGrid total_featured_projects={{ xs: 1, sm: 2, md: 3 }} />
       </Box>
       {/* TODO: showcase github graph */}
+      <img src="https://github-readme-activity-graph.vercel.app/graph?username=kwanlokto&theme=github" />
+
     </Box>
   );
 }
