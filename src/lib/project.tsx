@@ -36,7 +36,7 @@ export const projects: ProjectType[] = [
       </>
     ),
     picture_url: "/portfolio/graphing_library.png",
-    tech_stack: ["Next.JS"],
+    tech_stack: ["Next.JS", "MUI"],
     deployed_url: "https://graphing-library.vercel.app/",
     source_url: "https://github.com/kwanlokto/graphing_library",
   },
@@ -50,7 +50,7 @@ export const projects: ProjectType[] = [
       </>
     ),
     picture_url: "/portfolio/wordle.png",
-    tech_stack: ["Next.JS"],
+    tech_stack: ["Next.JS", "MUI"],
     deployed_url: "https://wordle-three-gules.vercel.app/",
     source_url: "https://github.com/kwanlokto/wordle",
   },
@@ -77,7 +77,7 @@ export const projects: ProjectType[] = [
       </>
     ),
     picture_url: "/portfolio/atm.png",
-    tech_stack: ["Python", "React", "Docker"],
+    tech_stack: ["Python", "React", "Docker", "Alembic", "Flask"],
     source_url: "https://github.com/kwanlokto/atm",
   },
   {
