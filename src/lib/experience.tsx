@@ -28,11 +28,6 @@ export const work: ExperienceType[] = [
             iteration cycles, shipping features that directly expanded market
             penetration and earned recognition from NHL equipment managers.
           </>,
-          <>
-            Directed McMaster PhD students to prototype Gen 2 machine with
-            compact design fitting through standard doorways, proprietary
-            software integration, and 0.1 μm loading repeatability.
-          </>,
         ],
       },
       {
@@ -40,25 +35,10 @@ export const work: ExperienceType[] = [
         timeline: "Oct 2023 – June 2025",
         achievements: [
           <>
-            Designed and led implementation of full-stack architecture
-            coordinating firmware, state management, and real-time hardware
-            control across CNC and laser subsystems—managing 2 engineers through
-            complex integration challenges.
-          </>,
-          <>
             Architected system-wide refactor from monolith to microservices
             architecture by integrating the ordering system into the main
             interface, increasing operational efficiency by 25% and improving
             data accuracy by 70%
-          </>,
-          <>
-            Improved scanning repeatability by 22% while reducing processing
-            time by 75% through redesigning smoothing and joining algorithms,
-            greatly increasing throughput.
-          </>,
-          <>
-            Deployed diagnostic tooling that cut support resolution time in half
-            by surfacing CNC and laser controller state to support team.
           </>,
         ],
       },
@@ -73,15 +53,10 @@ export const work: ExperienceType[] = [
             PostgreSQL database.
           </>,
           <>
-            Invented proprietary algorithms for smoothing and joining noisy scan
-            data, achieving ±1 μm precision by applying signal processing and
-            least-squares optimizations, creating the technical foundation
-            powering every machine built today.
-          </>,
-          <>
-            Designed and managed secure, scalable cloud infrastructure on
-            Linode, deploying production and staging environments using Docker
-            and NGINX to ensure high availability and performance.
+            Invented proprietary algorithms achieving ±1 μm precision through
+            signal processing and regression, and designed scalable cloud
+            infrastructure on Linode using Docker and NGINX for high
+            availability
           </>,
         ],
       },
