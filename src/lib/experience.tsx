@@ -25,8 +25,8 @@ export const work: ExperienceType[] = [
           </>,
           <>
             Led cross-functional team of 5 engineers and designers through rapid
-            iteration cycles, shipping features that directly expanded market
-            penetration and earned recognition from NHL equipment managers.
+            iteration cycles, shipping features that drove adoption across new
+            NHL teams and proshops.
           </>,
         ],
       },
