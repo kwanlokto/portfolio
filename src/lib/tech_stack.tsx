@@ -9,6 +9,7 @@ import {
   FaReact,
 } from "react-icons/fa";
 import {
+  SiAkamai,
   SiC,
   SiFlask,
   SiGithubactions,
@@ -68,6 +69,7 @@ export const tech_stack: TechStackType[] = [
       { name: "Bitbucket", icon: <FaBitbucket size={22} /> },
       { name: "Docker", icon: <FaDocker size={22} /> },
       { name: "GitHub Actions", icon: <SiGithubactions size={22} /> },
+      { name: "Linode", icon: <SiAkamai size={22} /> },
     ],
   },
 ];
