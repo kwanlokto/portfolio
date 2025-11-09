@@ -24,9 +24,13 @@ export const work: ExperienceType[] = [
             shops across North America.
           </>,
           <>
-            Led cross-functional team of 5 engineers and designers through rapid
-            iteration cycles, shipping features that drove adoption across new
-            NHL teams and proshops.
+            Implemented SEO and content strategies, achieving a 15% growth in
+            website and social media traffic in 3 months.
+          </>,
+          <>
+            Reviewed major partnership contracts for 47x expansion (17 to 700+
+            machines), identifying unfair contract terms and workload
+            imbalances.
           </>,
         ],
       },
