@@ -24,8 +24,9 @@ export const work: ExperienceType[] = [
             shops across North America.
           </>,
           <>
-            Implemented SEO and content strategies, achieving a 15% growth in
-            website and social media traffic in 3 months.
+            Developed and executed SEO optimization strategy that increased
+            organic website traffic by 40% (from 2K to 2.8K monthly visitors)
+            within 3 months.
           </>,
           <>
             Reviewed major partnership contracts for 47x expansion (17 to 700+
