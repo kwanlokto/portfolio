@@ -85,7 +85,7 @@ export default function Home() {
           <Button
             variant="outlined"
             onClick={() =>
-              handle_download("/portfolio/resume.pdf", "ray_resume.pdf")
+              handle_download("/portfolio/Resume.pdf", "ray_resume.pdf")
             }
             sx={{ borderWidth: 2 }}
           >
