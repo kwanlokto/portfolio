@@ -1,13 +1,17 @@
 import * as React from "react";
+
 import {
   Box,
   Button,
+  Collapse,
+  Divider,
   Icon,
   List,
   ListItem,
-  Divider,
-  Collapse,
 } from "@mui/material";
+import { ExperienceType, Role } from "@/lib/experience";
+import { MdExpandLess, MdExpandMore } from "react-icons/md";
+
 import Image from "next/image";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
@@ -17,8 +21,6 @@ import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import Typography from "@mui/material/Typography";
 import { timelineOppositeContentClasses } from "@mui/lab/TimelineOppositeContent";
-import { MdExpandLess, MdExpandMore } from "react-icons/md";
-import { ExperienceType, Role } from "@/lib/experience";
 
 interface ExperienceParams {
   experience_list: ExperienceType[];
@@ -175,7 +177,7 @@ export const Experience = ({
                         )}
 
                         {role_idx < experience.roles.length - 1 && (
-                          <Divider sx={{ my: 1 }} />
+                          <Divider sx={{ mt: 1 }} />
                         )}
                       </TimelineContent>
                     </TimelineItem>
