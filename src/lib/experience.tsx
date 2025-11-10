@@ -45,6 +45,12 @@ export const work: ExperienceType[] = [
             interface, increasing operational efficiency by 25% and improving
             data accuracy by 70%
           </>,
+          <>
+            Provided technical troubleshooting support for clients and internal
+            teams to resolve complex issues, and designed a streamlined machine
+            setup procedure that reduced deployment time by 62% (from 8 to 3
+            hours)
+          </>,
         ],
       },
       {
