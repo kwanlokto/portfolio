@@ -40,10 +40,9 @@ export const work: ExperienceType[] = [
         timeline: "Oct 2023 – June 2025",
         achievements: [
           <>
-            Architected system-wide refactor from monolith to microservices
-            architecture by integrating the ordering system into the main
-            interface, increasing operational efficiency by 25% and improving
-            data accuracy by 70%
+            Architected microservices refactor that introduced end-to-end order
+            management into the machine, reducing support calls by 10%,
+            increasing efficiency by 25%, and improving data accuracy by 70%.
           </>,
           <>
             Provided technical troubleshooting support for clients and internal
