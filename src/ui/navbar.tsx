@@ -7,6 +7,7 @@ import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { MdBrightness4 } from "react-icons/md";
 import { Modal } from "./modal";
+import { usePathname } from "next/navigation";
 
 const tabs = [
   { label: "Home", href: "/" },
@@ -17,9 +18,10 @@ const tabs = [
 interface NavButtonProps {
   label: string;
   onClick?: () => void;
+  active?: boolean;
 }
 
-const NavButton = ({ label, onClick }: NavButtonProps) => {
+const NavButton = ({ label, onClick, active }: NavButtonProps) => {
   return (
     <Button
       disableRipple
@@ -34,7 +36,11 @@ const NavButton = ({ label, onClick }: NavButtonProps) => {
         fontSize={14}
         sx={{
           color: (theme) =>
-            theme.palette.mode === "dark"
+            active
+              ? theme.palette.mode === "dark"
+                ? theme.palette.common.white
+                : theme.palette.common.black
+              : theme.palette.mode === "dark"
               ? theme.palette.grey[400]
               : theme.palette.grey[500],
           transition: "color 0.2s",
@@ -57,6 +63,8 @@ type NavbarProps = {
 };
 
 export const Navbar = ({ toggleTheme }: NavbarProps) => {
+  const pathname = usePathname();
+
   const [show_contact_form, set_show_contact_form] = useState(false);
   const [form_data, set_form_data] = useState({
     name: "",
@@ -107,7 +115,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
     >
       {tabs.map((tab) => (
         <Link key={tab.href} href={tab.href}>
-          <NavButton label={tab.label} />
+          <NavButton label={tab.label} active={pathname === tab.href}/>
         </Link>
       ))}
       <Link href="_blank" onClick={(e) => e.preventDefault()}>
