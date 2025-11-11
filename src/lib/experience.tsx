@@ -15,7 +15,7 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/SS Logo.png",
     roles: [
       {
-        name: "CTO",
+        name: "Chief Technology Officer",
         timeline: "June 2025 – Present",
         achievements: [
           <>
