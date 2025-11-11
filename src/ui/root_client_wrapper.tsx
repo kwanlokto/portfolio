@@ -16,15 +16,17 @@ export default function RootLayoutClientWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  const [mode, setMode] = useState<"light" | "dark">("dark");
+  const [mode, setMode] = useState<"light" | "dark">(() => {
+    if (typeof window !== "undefined") {
+      // Only run in the browser
+      return (localStorage.getItem("theme-mode") as "light" | "dark") ?? "dark";
+    }
+    return "dark"; // fallback for SSR
+  });
   const [mounted, setMounted] = useState(false);
 
   // Restore theme from localStorage on mount
   useEffect(() => {
-    const savedMode = localStorage.getItem("theme-mode") as "light" | "dark" | null;
-    if (savedMode) {
-      setMode(savedMode);
-    }
     setMounted(true);
   }, []);
 
