@@ -69,7 +69,7 @@ export default function Home() {
         </Box>
         <Box pt={2}>
           <Typography>
-            I&apos;m a Senior Software Developer with experience leading
+            I&apos;m a Senior Software Developer with 3+ experience leading
             cross-functional teams and delivering high-precision,
             performance-driven applications. Skilled in full-stack development,
             systems design, and collaborating with stakeholders to turn complex
@@ -77,7 +77,7 @@ export default function Home() {
           </Typography>
           <Typography pt={2}>
             Recently, I&apos;ve been developing an automated skate sharpening
-            and profiling technology endorsed by multiple NHL teams.
+            and profiling technology endorsed by 5+ NHL teams.
           </Typography>
         </Box>
 
