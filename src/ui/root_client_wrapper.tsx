@@ -7,7 +7,7 @@ import {
   ThemeProvider,
   createTheme,
 } from "@mui/material";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 
 import { Navbar } from "@/ui/navbar";
 
@@ -17,6 +17,23 @@ export default function RootLayoutClientWrapper({
   children: React.ReactNode;
 }) {
   const [mode, setMode] = useState<"light" | "dark">("dark");
+  const [mounted, setMounted] = useState(false);
+
+  // Restore theme from localStorage on mount
+  useEffect(() => {
+    const savedMode = localStorage.getItem("theme-mode") as "light" | "dark" | null;
+    if (savedMode) {
+      setMode(savedMode);
+    }
+    setMounted(true);
+  }, []);
+
+  // Save theme to localStorage whenever it changes
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem("theme-mode", mode);
+    }
+  }, [mode, mounted]);
 
   const theme = useMemo(
     () =>
