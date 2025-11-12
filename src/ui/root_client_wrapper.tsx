@@ -7,7 +7,7 @@ import {
   ThemeProvider,
   createTheme,
 } from "@mui/material";
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 import { Navbar } from "@/ui/navbar";
 
@@ -16,19 +16,18 @@ export default function RootLayoutClientWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  const [mode, setMode] = useState<"light" | "dark">(() => {
-    if (typeof window !== "undefined") {
-      // Only run in the browser
-      return (localStorage.getItem("theme-mode") as "light" | "dark") ?? "dark";
-    }
-    return "dark"; // fallback for SSR
-  });
+  const [mode, setMode] = useState<"light" | "dark">("dark");
   const [mounted, setMounted] = useState(false);
 
   // Restore theme from localStorage on mount
   useEffect(() => {
+    if (!mounted) {
+      setMode(
+        (localStorage.getItem("theme-mode") as "light" | "dark") ?? "dark"
+      );
+    }
     setMounted(true);
-  }, []);
+  }, [mounted]);
 
   // Save theme to localStorage whenever it changes
   useEffect(() => {
@@ -71,11 +70,11 @@ export default function RootLayoutClientWrapper({
                 ? "rgba(26, 77, 107, 0.16)"
                 : "rgba(90, 165, 255, 0.16)",
           },
-        }
+        },
       }),
     [mode]
   );
-
+  if (!mounted) return <></>;
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
