@@ -160,13 +160,8 @@ export const Experience = ({
                                 >
                                   <Typography
                                     variant="body2"
+                                    fontWeight="light"
                                     pl={1}
-                                    sx={{
-                                      color: (theme) =>
-                                        theme.palette.mode === "dark"
-                                          ? theme.palette.grey[100]
-                                          : theme.palette.grey[900],
-                                    }}
                                   >
                                     {achievement}
                                   </Typography>
