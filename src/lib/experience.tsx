@@ -59,15 +59,17 @@ export const work: ExperienceType[] = [
         achievements: [
           <>
             Prototyped a skate profiling and sharpening system using an LJ V7080
-            laser profiler with Tormach 1100MX CNC mill through custom Python
-            (Flask, SQLAlchemy, Pandas, NumPy) backend, React + Electron UI, and
-            PostgreSQL database.
+            laser profiler with Tormach 1100MX CNC mill through custom{" "}
+            <BoldText>Python (Flask, SQLAlchemy, Pandas, NumPy)</BoldText>{" "}
+            backend, <BoldText>React + Electron UI</BoldText>, and{" "}
+            <BoldText>PostgreSQL database</BoldText>.
           </>,
           <>
-            Invented proprietary algorithms achieving ±1 μm precision through
-            signal processing and regression, and designed scalable cloud
-            infrastructure on Linode using Docker and NGINX for high
-            availability
+            Invented proprietary algorithms achieving{" "}
+            <BoldText>±1 μm precision</BoldText> through signal processing and
+            regression, and designed scalable cloud infrastructure on{" "}
+            <BoldText>Linode</BoldText> using <BoldText>Docker</BoldText> and{" "}
+            <BoldText>NGINX</BoldText> for high availability.
           </>,
         ],
       },
@@ -82,15 +84,16 @@ export const work: ExperienceType[] = [
         timeline: "Sept 2020 – May 2021",
         achievements: [
           <>
-            Built reaction time and memory assessment games in React and Node.js
-            that collected cognitive performance data on 100+ participants,
-            enabling psychology students to conduct behavioral research through
-            engaging gameplay instead of traditional testing methods.
+            Built reaction time and memory assessment games in{" "}
+            <BoldText>React</BoldText> and <BoldText>Node.js</BoldText> that
+            collected cognitive performance data on 100+ participants, enabling
+            psychology students to conduct behavioral research through engaging
+            gameplay instead of traditional testing.
           </>,
           <>
             Refactored redundant code across the codebase and established PR
             review standards and development workflow, improving code
-            consistency and reducing technical debt for a team of 10 developers.
+            consistency and reducing technical debt for a team of 10.
           </>,
         ],
       },
@@ -102,23 +105,25 @@ export const work: ExperienceType[] = [
     roles: [
       {
         name: "Full Stack Software Developer (Internship)",
-        timeline: " May 2019 – April 2020",
+        timeline: "May 2019 – April 2020",
         achievements: [
           <>
-            Developed a full-stack cost-benefit analysis platform (AngularJS &
-            Python) that transformed complex economic research models into
-            interactive visualizations, enabling real-time assessment of
-            environmental, economic, and social impacts from design decisions
+            Developed a full-stack cost-benefit analysis platform (
+            <BoldText>AngularJS</BoldText> & <BoldText>Python</BoldText>) that
+            transformed complex economic research models into interactive
+            visualizations, enabling real-time assessment of environmental,
+            economic, and social impacts.
           </>,
           <>
-            Automated aggregation of 150+ GB of NetCDF government data using
-            Pandas, reducing processing time from 5 days to 8 hours and enabling
-            faster benchmarking of model performance
+            Automated aggregation of 150+ GB of NetCDF government data using{" "}
+            <BoldText>Pandas</BoldText>, reducing processing time from 5 days to
+            8 hours and enabling faster benchmarking of model performance.
           </>,
           <>
             Designed and implemented comprehensive unit and integration tests
-            using PyTest and Jest increasing test coverage from 50% to 95%+ and
-            significantly reducing post-deployment issues by 30%.
+            using <BoldText>PyTest</BoldText> and <BoldText>Jest</BoldText>,
+            increasing test coverage from 50% to 95%+ and reducing
+            post-deployment issues by 30%.
           </>,
         ],
       },
