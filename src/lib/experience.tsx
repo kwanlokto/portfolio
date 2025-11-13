@@ -1,3 +1,4 @@
+import { BoldText } from "@/ui/bold_text";
 export interface Role {
   name: string;
   timeline: string;
