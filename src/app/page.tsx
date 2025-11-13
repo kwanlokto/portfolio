@@ -27,6 +27,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
+  const current_year = new Date().getFullYear();
 
   const theme = useTheme();
 
@@ -69,7 +70,7 @@ export default function Home() {
         </Box>
         <Box pt={2}>
           <Typography>
-            I&apos;m a Senior Software Developer with 3+ experience leading
+            I&apos;m a Senior Software Developer with {current_year - 2019} experience leading
             cross-functional teams and delivering high-precision,
             performance-driven applications. Skilled in full-stack development,
             systems design, and collaborating with stakeholders to turn complex
