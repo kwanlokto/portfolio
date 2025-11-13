@@ -103,3 +103,7 @@ body {
   display: none !important;
   content: none !important;
 }
+
+body[style*="padding-right"] {
+  padding-right: 0 !important;
+}
