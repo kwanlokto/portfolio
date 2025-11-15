@@ -50,7 +50,7 @@ export const projects: ProjectType[] = [
       </>
     ),
     picture_url: "/portfolio/wordle.png",
-    tech_stack: ["Next.JS", "MUI"],
+    tech_stack: ["Next.JS", "Tailwind CSS"],
     deployed_url: "https://wordle-three-gules.vercel.app/",
     source_url: "https://github.com/kwanlokto/wordle",
   },
