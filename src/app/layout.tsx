@@ -7,6 +7,9 @@ import RootLayoutClientWrapper from "@/ui/root_client_wrapper";
 export const metadata: Metadata = {
   title: "Ray's Portfolio",
   description: "Ray's Portfolio",
+  icons: {
+    icon: "/portfolio/favicon.ico",
+  },
 };
 
 export default function RootLayout({
