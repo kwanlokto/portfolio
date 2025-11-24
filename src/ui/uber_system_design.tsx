@@ -1,34 +1,33 @@
-import React, { useState } from "react";
 import {
-  Box,
-  Paper,
-  Grid2 as Grid,
-  Tabs,
-  Tab,
-  Typography,
-  Divider,
   Avatar,
+  Box,
+  Divider,
+  Grid2 as Grid,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
+  Paper,
   Stack,
+  Tab,
+  Tabs,
+  Typography,
 } from "@mui/material";
-
 import {
-  MdDriveEta,
   MdAccessTime,
-  MdPlace,
-  MdNotifications,
   MdCheckCircle,
+  MdDriveEta,
+  MdGpsFixed,
+  MdGridOn,
+  MdMemory,
+  MdNotifications,
+  MdPlace,
+  MdQueryBuilder,
   MdReportProblem,
   MdStorage,
-  MdMemory,
   MdSyncAlt,
-  MdGridOn,
-  MdGpsFixed,
-  MdQueryBuilder,
 } from "react-icons/md";
+import React, { useState } from "react";
 
 export default function RideHailingSystem() {
   const [activeTab, setActiveTab] = useState(0);
