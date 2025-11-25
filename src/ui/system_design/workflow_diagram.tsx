@@ -3,11 +3,15 @@ import { Avatar, Box, Paper, Stack, Typography } from "@mui/material";
 import { MdReportProblem } from "react-icons/md";
 import { WorkFlowItem } from "@/lib/system_design";
 
-export const WorkflowDiagram = (steps: WorkFlowItem[]) => {
+interface WorkFlowDiagramInteface {
+  title: string;
+  steps: WorkFlowItem[];
+}
+export const WorkflowDiagram = ({ title, steps }: WorkFlowDiagramInteface) => {
   return (
     <Stack spacing={3}>
       <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>
-        Ride Request Workflow
+        {title}
       </Typography>
 
       <Paper

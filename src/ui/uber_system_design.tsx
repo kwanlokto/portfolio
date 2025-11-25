@@ -30,6 +30,7 @@ import {
 import React, { useState } from "react";
 
 import ArchitectureDiagram from "./system_design/architecture_diagram";
+import { DataModels } from "@/ui/system_design/data_models";
 import { NotificationSystem } from "./system_design/notification_system";
 import { WorkflowDiagram } from "./system_design/workflow_diagram";
 
@@ -61,126 +62,6 @@ export default function RideHailingSystem() {
     border: 2,
     borderColor: color,
   });
-
-
-  const DataModels = () => (
-    <Stack spacing={3}>
-      <Typography variant="h5" sx={sectionTitleSx}>
-        Core Data Models
-      </Typography>
-
-      <Stack spacing={2}>
-        <Paper sx={{ ...cardSx, p: 2 }}>
-          <Typography
-            variant="subtitle1"
-            color="secondary.main"
-            sx={{ fontWeight: 700, mb: 1 }}
-          >
-            Ride
-          </Typography>
-          <Paper
-            variant="outlined"
-            sx={{ p: 2, borderRadius: 1, bgcolor: "grey.50" }}
-          >
-            <Typography
-              component="pre"
-              variant="body2"
-              sx={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}
-            >
-              {`{
-  ride_id: UUID,
-  customer_id: UUID,
-  driver_id: UUID (nullable),
-  status: ENUM [
-    'REQUESTED',
-    'DRIVER_ASSIGNED',
-    'DRIVER_EN_ROUTE',
-    'DRIVER_ARRIVED',
-    'IN_PROGRESS',
-    'COMPLETED',
-    'CANCELLED'
-  ],
-  pickup_location: { latitude, longitude, address },
-  dropoff_location: { latitude, longitude, address },
-  estimated_arrival_time: TIMESTAMP,
-  actual_arrival_time: TIMESTAMP,
-  estimated_fare: DECIMAL,
-  actual_fare: DECIMAL,
-  requested_at: TIMESTAMP,
-  completed_at: TIMESTAMP,
-  cancelled_at: TIMESTAMP,
-  cancellation_reason: STRING
-}`}
-            </Typography>
-          </Paper>
-        </Paper>
-
-        <Paper sx={{ ...cardSx, p: 2 }}>
-          <Typography
-            variant="subtitle1"
-            color="primary.main"
-            sx={{ fontWeight: 700, mb: 1 }}
-          >
-            User (Customer / Driver)
-          </Typography>
-          <Paper
-            variant="outlined"
-            sx={{ p: 2, borderRadius: 1, bgcolor: "grey.50" }}
-          >
-            <Typography
-              component="pre"
-              variant="body2"
-              sx={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}
-            >
-              {`{
-  user_id: UUID,
-  email: STRING,
-  phone: STRING,
-  name: STRING,
-  user_type: ENUM ['CUSTOMER', 'DRIVER'],
-  rating: DECIMAL,
-  notification_preferences: { push_enabled, sms_enabled, email_enabled },
-  created_at: TIMESTAMP,
-  last_active: TIMESTAMP
-}`}
-            </Typography>
-          </Paper>
-        </Paper>
-
-        <Paper sx={{ ...cardSx, p: 2 }}>
-          <Typography
-            variant="subtitle1"
-            color="success.main"
-            sx={{ fontWeight: 700, mb: 1 }}
-          >
-            Location Update
-          </Typography>
-          <Paper
-            variant="outlined"
-            sx={{ p: 2, borderRadius: 1, bgcolor: "grey.50" }}
-          >
-            <Typography
-              component="pre"
-              variant="body2"
-              sx={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}
-            >
-              {`{
-  location_id: UUID,
-  user_id: UUID,
-  ride_id: UUID,
-  latitude: DECIMAL,
-  longitude: DECIMAL,
-  heading: INTEGER (0-359),
-  speed: DECIMAL,
-  accuracy: DECIMAL,
-  timestamp: TIMESTAMP
-}`}
-            </Typography>
-          </Paper>
-        </Paper>
-      </Stack>
-    </Stack>
-  );
 
 
 
