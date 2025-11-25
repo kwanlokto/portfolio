@@ -3,7 +3,6 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Paper,
   Stack,
   Typography,
 } from "@mui/material";
@@ -15,42 +14,8 @@ import {
   MdSyncAlt,
 } from "react-icons/md";
 
-// ------------------------------
-// Reusable Components
-// ------------------------------
-const Section = ({ title, titleColor, children, cardSx }) => (
-  <Paper sx={{ ...cardSx, p: 2 }}>
-    <Typography
-      variant="subtitle1"
-      color={titleColor}
-      sx={{ fontWeight: 700, mb: 1 }}
-    >
-      {title}
-    </Typography>
-    {children}
-  </Paper>
-);
-
-const SubCard = ({ title, children }) => (
-  <Paper variant="outlined" sx={{ p: 1 }}>
-    <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 0.5 }}>
-      {title}
-    </Typography>
-    {children}
-  </Paper>
-);
-
-const CodeBlock = ({ children }) => (
-  <Paper variant="outlined" sx={{ p: 1 }}>
-    <Typography
-      component="code"
-      variant="caption"
-      sx={{ fontFamily: "monospace" }}
-    >
-      {children}
-    </Typography>
-  </Paper>
-);
+import { CodeBlock } from "../code_block";
+import { Section } from "../section";
 
 // ------------------------------
 // Data-Driven Configuration
@@ -135,12 +100,17 @@ export const TechnicalDetails = ({ cardSx, sectionTitleSx }) => (
         >
           <Stack spacing={1}>
             {section.items.map((item) => (
-              <SubCard key={item.title} title={item.title}>
+              <Section
+                key={item.title}
+                title={item.title}
+                cardSx={{ variant: "outlined" }}
+                titleVariant="subtitle2"
+              >
                 <Typography variant="body2" color="text.secondary">
                   {item.text}
                 </Typography>
                 {item.code && <CodeBlock>{item.code}</CodeBlock>}
-              </SubCard>
+              </Section>
             ))}
           </Stack>
         </Section>
