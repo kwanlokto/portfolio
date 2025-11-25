@@ -54,6 +54,13 @@ export interface ChannelItem {
   icon: React.ReactNode;
 }
 
+export interface WorkFlowItem {
+  step: number;
+  title: string;
+  desc: string;
+  color: string;
+}
+
 export const system_design_blog = [
   {
     name: "Uber System Design Case Study",
@@ -175,5 +182,50 @@ export const system_design_blog = [
         },
       ],
     },
+
+    steps: [
+      {
+        step: 1,
+        title: "Customer Requests Ride",
+        desc: "Customer enters pickup/dropoff, confirms request",
+        color: "primary.main",
+      },
+      {
+        step: 2,
+        title: "Ride Created & Matching",
+        desc: "System finds nearby available drivers using geospatial queries",
+        color: "secondary.main",
+      },
+      {
+        step: 3,
+        title: "Driver Assignment",
+        desc: "Driver accepts ride, customer notified with driver details + ETA",
+        color: "success.main",
+      },
+      {
+        step: 4,
+        title: "Real-time Tracking",
+        desc: "Driver location updates every 3-5 seconds via WebSocket",
+        color: "info.main",
+      },
+      {
+        step: 5,
+        title: "ETA Monitoring",
+        desc: "System continuously calculates ETA, triggers alert if delayed",
+        color: "warning.main",
+      },
+      {
+        step: 6,
+        title: "Arrival Detection",
+        desc: "When driver within 50m, send 'Driver Arrived' notification",
+        color: "success.main",
+      },
+      {
+        step: 7,
+        title: "Ride Completion",
+        desc: "Customer dropped off, payment processed, rating requested",
+        color: "primary.main",
+      },
+    ],
   },
 ];
