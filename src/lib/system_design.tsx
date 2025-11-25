@@ -67,12 +67,13 @@ export interface TechnicalSection {
 
 export interface SchemaDefinition {
   title: string;
-  color: string;   // e.g. "secondary.main"
-  schema: string;  // raw formatted string block
+  color: string; // e.g. "secondary.main"
+  schema: string; // raw formatted string block
 }
 
 export const system_design_blog = [
   {
+    id: "uber",
     name: "Uber System Design Case Study",
     description: (
       <>
@@ -140,58 +141,56 @@ export const system_design_blog = [
       },
     ],
 
-    notification_system: {
-      alerts: [
-        {
-          title: "Driver Arrived",
-          description: "Triggered when driver is within 50m of pickup location",
-          color: "success",
-          icon: <MdCheckCircle />,
-          messages: [
-            `Push: "Your driver has arrived!"`,
-            `SMS: "Driver John in Toyota Camry (ABC123) is here"`,
-          ],
-        },
-        {
-          title: "Driver Running Late",
-          description:
-            "Triggered when ETA exceeds original estimate by 5+ minutes",
-          color: "warning",
-          icon: <MdAccessTime />,
-          messages: [
-            `Push: "Your driver is running 7 minutes late"`,
-            `In-app: Updated ETA with option to cancel`,
-          ],
-        },
-        {
-          title: "Driver En Route",
-          description: "Continuous updates as driver approaches",
-          color: "primary",
-          icon: <MdDriveEta />,
-          messages: [
-            `Push: "Driver is 2 minutes away"`,
-            "Real-time map tracking in app",
-          ],
-        },
-      ],
-      channels: [
-        {
-          title: "Push Notifications",
-          description: "Primary channel via FCM / APNs",
-          icon: <MdNotifications />,
-        },
-        {
-          title: "In-App Updates",
-          description: "WebSocket for real-time tracking",
-          icon: <MdPlace />,
-        },
-        {
-          title: "SMS Fallback",
-          description: "Critical alerts via Twilio",
-          icon: <MdReportProblem />,
-        },
-      ],
-    },
+    alerts: [
+      {
+        title: "Driver Arrived",
+        description: "Triggered when driver is within 50m of pickup location",
+        color: "success",
+        icon: <MdCheckCircle />,
+        messages: [
+          `Push: "Your driver has arrived!"`,
+          `SMS: "Driver John in Toyota Camry (ABC123) is here"`,
+        ],
+      },
+      {
+        title: "Driver Running Late",
+        description:
+          "Triggered when ETA exceeds original estimate by 5+ minutes",
+        color: "warning",
+        icon: <MdAccessTime />,
+        messages: [
+          `Push: "Your driver is running 7 minutes late"`,
+          `In-app: Updated ETA with option to cancel`,
+        ],
+      },
+      {
+        title: "Driver En Route",
+        description: "Continuous updates as driver approaches",
+        color: "primary",
+        icon: <MdDriveEta />,
+        messages: [
+          `Push: "Driver is 2 minutes away"`,
+          "Real-time map tracking in app",
+        ],
+      },
+    ],
+    channels: [
+      {
+        title: "Push Notifications",
+        description: "Primary channel via FCM / APNs",
+        icon: <MdNotifications />,
+      },
+      {
+        title: "In-App Updates",
+        description: "WebSocket for real-time tracking",
+        icon: <MdPlace />,
+      },
+      {
+        title: "SMS Fallback",
+        description: "Critical alerts via Twilio",
+        icon: <MdReportProblem />,
+      },
+    ],
 
     steps: [
       {

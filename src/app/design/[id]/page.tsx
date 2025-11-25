@@ -1,13 +1,18 @@
+import { system_design_blog } from "@/lib/system_design";
+import ArchitectureDiagram from "@/ui/system_design/architecture_diagram";
+import { DataModels } from "@/ui/system_design/data_models";
+import { NotificationSystem } from "@/ui/system_design/notification_system";
+import { TechnicalDetails } from "@/ui/system_design/technical_details";
+import { WorkflowDiagram } from "@/ui/system_design/workflow_diagram";
 import { Box, Paper, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
 
-import ArchitectureDiagram from "./system_design/architecture_diagram";
-import { DataModels } from "@/ui/system_design/data_models";
-import { NotificationSystem } from "./system_design/notification_system";
-import { WorkflowDiagram } from "./system_design/workflow_diagram";
+export default function Page({ params }: { params: { id: string } }) {
+  const { id } = params;
 
-export default function RideHailingSystem() {
   const [activeTab, setActiveTab] = useState(0);
+
+  const post = system_design_blog.find((post) => post.id === id);
 
   const handleTabChange = (e: React.SyntheticEvent, value: number) => {
     setActiveTab(value);
@@ -58,11 +63,26 @@ export default function RideHailingSystem() {
         </Paper>
 
         <Box>
-          {activeTab === 0 && <ArchitectureDiagram />}
-          {activeTab === 1 && <WorkflowDiagram />}
-          {activeTab === 2 && <NotificationSystem />}
-          {activeTab === 3 && <DataModels />}
-          {activeTab === 4 && <TechnicalDetails />}
+          {activeTab === 0 && (
+            <ArchitectureDiagram layers={post?.architecture_diagram} />
+          )}
+          {activeTab === 1 && <WorkflowDiagram title="" steps={post?.steps} />}
+          {activeTab === 2 && (
+            <NotificationSystem
+              title=""
+              alerts={post?.alerts}
+              channels={post?.channels}
+            />
+          )}
+          {activeTab === 3 && (
+            <DataModels schema_definitions={post?.schema_definitions} />
+          )}
+          {activeTab === 4 && (
+            <TechnicalDetails
+              scalability_items={post?.scalability_items}
+              technical_sections={post?.technical_sections}
+            />
+          )}
         </Box>
       </Box>
     </Box>
