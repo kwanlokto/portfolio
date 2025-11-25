@@ -6,84 +6,20 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import {
-  MdGpsFixed,
-  MdGridOn,
-  MdMemory,
-  MdQueryBuilder,
-  MdSyncAlt,
-} from "react-icons/md";
+import { ScalabilityItem, TechnicalSection } from "@/lib/system_design";
 
 import { CodeBlock } from "../code_block";
 import { Section } from "../section";
 
-// ------------------------------
-// Data-Driven Configuration
-// ------------------------------
-const technicalSections = [
-  {
-    title: "ETA Calculation & Delay Detection",
-    color: "info.main",
-    items: [
-      {
-        title: "Initial ETA",
-        text: "Use Google Maps / Mapbox routing API for accurate drive time based on real-time traffic",
-      },
-      {
-        title: "Continuous Monitoring",
-        text: "Recalculate ETA every 30 seconds using current location and traffic conditions",
-      },
-      {
-        title: "Delay Threshold",
-        text: `If new ETA exceeds original by 5+ minutes, trigger "running late" notification`,
-      },
-    ],
-  },
-  {
-    title: "Geospatial & Proximity Detection",
-    color: "success.main",
-    items: [
-      {
-        title: "Driver Matching",
-        text: "Use PostGIS or MongoDB geospatial index for finding nearby drivers:",
-        code: `SELECT * FROM drivers 
-WHERE ST_DWithin(location, customer_location, 5000)`,
-      },
-      {
-        title: "Arrival Detection",
-        text: "Calculate distance between driver and pickup using Haversine formula, trigger notification at 50m threshold",
-      },
-    ],
-  },
-];
+interface TechnicalDetailsInterface {
+  scalability_items: ScalabilityItem[];
+  technical_sections: TechnicalSection[];
+}
 
-const scalabilityItems = [
-  {
-    icon: <MdMemory color="error" />,
-    text: "Use Redis for caching driver locations and active ride states",
-  },
-  {
-    icon: <MdGridOn color="error" />,
-    text: "Implement database sharding by geographic region",
-  },
-  {
-    icon: <MdSyncAlt color="error" />,
-    text: "Use message queues (Kafka/RabbitMQ) for asynchronous notification delivery",
-  },
-  {
-    icon: <MdGpsFixed color="error" />,
-    text: "WebSocket servers for real-time location updates with horizontal scaling",
-  },
-  {
-    icon: <MdQueryBuilder color="error" />,
-    text: "CDN for static assets, separate read replicas for analytics",
-  },
-];
-
-// ------------------------------
-// MAIN COMPONENT
-// ------------------------------
-export const TechnicalDetails = () => (
+export const TechnicalDetails = ({
+  technical_sections,
+  scalability_items,
+}: TechnicalDetailsInterface) => (
   <Stack spacing={3}>
     <Typography variant="h5" sx={{ textAlign: "center", mb: 4 }}>
       Technical Implementation
@@ -91,7 +27,7 @@ export const TechnicalDetails = () => (
 
     <Stack spacing={2}>
       {/* Render dynamic sections */}
-      {technicalSections.map((section) => (
+      {technical_sections.map((section) => (
         <Section
           key={section.title}
           title={section.title}
@@ -124,10 +60,10 @@ export const TechnicalDetails = () => (
       <Section
         title="Scalability Considerations"
         titleColor="error.main"
-        cardSx={cardSx}
+        cardSx={{ borderRadius: 2, boxShadow: 3, bgcolor: "background.paper" }}
       >
         <List dense>
-          {scalabilityItems.map((item, i) => (
+          {scalability_items.map((item, i) => (
             <ListItem key={i}>
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />

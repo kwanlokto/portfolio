@@ -61,6 +61,23 @@ export interface WorkFlowItem {
   color: string;
 }
 
+export interface ScalabilityItem {
+  icon: React.ReactNode;
+  text: string;
+}
+
+export interface TechnicalSectionItem {
+  title: string;
+  text: string;
+  code?: string; // optional because not all items have code
+}
+
+export interface TechnicalSection {
+  title: string;
+  color: string; // e.g. "info.main", "success.main"
+  items: TechnicalSectionItem[];
+}
+
 export const system_design_blog = [
   {
     name: "Uber System Design Case Study",
@@ -225,6 +242,66 @@ export const system_design_blog = [
         title: "Ride Completion",
         desc: "Customer dropped off, payment processed, rating requested",
         color: "primary.main",
+      },
+    ],
+
+    scalability_items: [
+      {
+        icon: <MdMemory color="error" />,
+        text: "Use Redis for caching driver locations and active ride states",
+      },
+      {
+        icon: <MdGridOn color="error" />,
+        text: "Implement database sharding by geographic region",
+      },
+      {
+        icon: <MdSyncAlt color="error" />,
+        text: "Use message queues (Kafka/RabbitMQ) for asynchronous notification delivery",
+      },
+      {
+        icon: <MdGpsFixed color="error" />,
+        text: "WebSocket servers for real-time location updates with horizontal scaling",
+      },
+      {
+        icon: <MdQueryBuilder color="error" />,
+        text: "CDN for static assets, separate read replicas for analytics",
+      },
+    ],
+
+    technical_sections: [
+      {
+        title: "ETA Calculation & Delay Detection",
+        color: "info.main",
+        items: [
+          {
+            title: "Initial ETA",
+            text: "Use Google Maps / Mapbox routing API for accurate drive time based on real-time traffic",
+          },
+          {
+            title: "Continuous Monitoring",
+            text: "Recalculate ETA every 30 seconds using current location and traffic conditions",
+          },
+          {
+            title: "Delay Threshold",
+            text: `If new ETA exceeds original by 5+ minutes, trigger "running late" notification`,
+          },
+        ],
+      },
+      {
+        title: "Geospatial & Proximity Detection",
+        color: "success.main",
+        items: [
+          {
+            title: "Driver Matching",
+            text: "Use PostGIS or MongoDB geospatial index for finding nearby drivers:",
+            code: `SELECT * FROM drivers 
+WHERE ST_DWithin(location, customer_location, 5000)`,
+          },
+          {
+            title: "Arrival Detection",
+            text: "Calculate distance between driver and pickup using Haversine formula, trigger notification at 50m threshold",
+          },
+        ],
       },
     ],
   },
