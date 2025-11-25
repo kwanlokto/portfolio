@@ -32,6 +32,7 @@ interface ArchitectureContent {
   title: string;
   body?: string;
   desc?: string;
+  icon?: React.ReactNode;
 }
 export interface ArchitectureLayer {
   title: string;

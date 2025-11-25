@@ -1,4 +1,11 @@
-import { Box, Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Grid2 as Grid,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
 
 import { ArchitectureLayer } from "@/lib/system_design";
 import CardSection from "./card_section";
@@ -36,27 +43,37 @@ export default function ArchitectureDiagram({
               </Typography>
 
               <Grid container spacing={2}>
-                {layer.content.map(({ title, body, desc }, idx) => (
+                {layer.content.map(({ title, body, desc, icon }, idx) => (
                   <Grid key={idx} size={{ xs: 12, sm: 6, md: 4 }}>
                     {body || desc ? (
                       <Paper sx={{ p: 1.5, borderRadius: 1 }}>
-                        <Typography
-                          variant="subtitle2"
-                          sx={{ fontWeight: 600 }}
-                        >
-                          {title}
-                        </Typography>
+                        <Stack direction="row" spacing={1} alignItems="center">
+                          {icon && (
+                            <Avatar sx={{ bgcolor: "transparent" }}>
+                              {icon}
+                            </Avatar>
+                          )}
+                          <Typography
+                            variant="subtitle2"
+                            sx={{ fontWeight: 600 }}
+                          >
+                            {title}
+                          </Typography>
 
-                        {body && (
-                          <Typography variant="body2" color="text.secondary">
-                            {body}
-                          </Typography>
-                        )}
-                        {desc && (
-                          <Typography variant="caption" color="text.secondary">
-                            {desc}
-                          </Typography>
-                        )}
+                          {body && (
+                            <Typography variant="body2" color="text.secondary">
+                              {body}
+                            </Typography>
+                          )}
+                          {desc && (
+                            <Typography
+                              variant="caption"
+                              color="text.secondary"
+                            >
+                              {desc}
+                            </Typography>
+                          )}
+                        </Stack>
                       </Paper>
                     ) : (
                       <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
