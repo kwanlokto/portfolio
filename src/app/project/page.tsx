@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Divider, Typography } from "@mui/material";
 
 import { ItemGrid } from "@/ui/item_grid";

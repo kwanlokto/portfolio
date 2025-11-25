@@ -1,89 +1,26 @@
-import { system_design_studies } from "@/lib/system_design";
-import ArchitectureDiagram from "@/ui/system_design/architecture_diagram";
-import { DataModels } from "@/ui/system_design/data_models";
-import { NotificationSystem } from "@/ui/system_design/notification_system";
-import { TechnicalDetails } from "@/ui/system_design/technical_details";
-import { WorkflowDiagram } from "@/ui/system_design/workflow_diagram";
-import { Box, Paper, Tab, Tabs, Typography } from "@mui/material";
-import React, { useState } from "react";
+// src/app/system-design/[id]/page.tsx
+import { system_design_studies, SystemDesignStudy } from "@/lib/system_design";
+import SystemDesignClient from "@/ui/system_design";
 
-export default function Page({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: { id: string };
+}
+
+// Server component
+export default function Page({ params }: PageProps) {
   const { id } = params;
+  const system_design_study = system_design_studies.find((p) => p.id === id);
 
-  const [activeTab, setActiveTab] = useState(0);
+  if (!system_design_study) return <div>Not found</div>;
 
-  const post = system_design_studies.find((post) => post.id === id);
+  return <SystemDesignClient system_design_study={system_design_study} />;
+}
 
-  const handleTabChange = (e: React.SyntheticEvent, value: number) => {
-    setActiveTab(value);
-  };
-
-  /* ---------------------------
-     Tabs & Layout
-     --------------------------- */
-
-  const tabConfig = [
-    { id: 0, label: "Architecture" },
-    { id: 1, label: "Workflow" },
-    { id: 2, label: "Notifications" },
-    { id: 3, label: "Data Models" },
-    { id: 4, label: "Technical" },
-  ];
-
-  return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        p: { xs: 2, md: 6 },
-        bgcolor: "background.default",
-      }}
-    >
-      <Box maxWidth="1200px" mx="auto">
-        <Box sx={{ textAlign: "center", mb: 4 }}>
-          <Typography variant="h3" sx={{ fontWeight: 800, mb: 1 }}>
-            Ride-Hailing System Design
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Uber-like platform with customer notifications
-          </Typography>
-        </Box>
-
-        <Paper sx={{ mb: 3 }}>
-          <Tabs
-            value={activeTab}
-            onChange={handleTabChange}
-            variant="scrollable"
-            scrollButtons="auto"
-            aria-label="ride-hailing tabs"
-          >
-            {tabConfig.map((t) => (
-              <Tab key={t.id} label={t.label} />
-            ))}
-          </Tabs>
-        </Paper>
-
-        <Box>
-          {activeTab === 0 && (
-            <ArchitectureDiagram layers={post?.architecture_diagram} />
-          )}
-          {activeTab === 1 && <WorkflowDiagram steps={post?.steps} />}
-          {activeTab === 2 && (
-            <NotificationSystem
-              alerts={post?.alerts}
-              notification_channels={post?.notification_channels}
-            />
-          )}
-          {activeTab === 3 && (
-            <DataModels schema_definitions={post?.schema_definitions} />
-          )}
-          {activeTab === 4 && (
-            <TechnicalDetails
-              scalability_items={post?.scalability_items}
-              technical_sections={post?.technical_sections}
-            />
-          )}
-        </Box>
-      </Box>
-    </Box>
+// Static paths for export
+export async function generateStaticParams() {
+  return system_design_studies.map(
+    (system_design_study: SystemDesignStudy) => ({
+      id: system_design_study.id,
+    })
   );
 }

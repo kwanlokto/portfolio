@@ -13,6 +13,7 @@ const tabs = [
   { label: "Home", href: "/" },
   { label: "Projects", href: "/project" },
   { label: "About", href: "/about-me" },
+  { label: "Design", href: "/system-design"}
 ];
 
 interface NavButtonProps {
