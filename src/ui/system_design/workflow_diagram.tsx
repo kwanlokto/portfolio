@@ -4,14 +4,13 @@ import { MdReportProblem } from "react-icons/md";
 import { WorkFlowItem } from "@/lib/system_design";
 
 interface WorkFlowDiagramInteface {
-  title: string;
   steps: WorkFlowItem[];
 }
-export const WorkflowDiagram = ({ title, steps }: WorkFlowDiagramInteface) => {
+export const WorkflowDiagram = ({ steps }: WorkFlowDiagramInteface) => {
   return (
     <Stack spacing={3}>
       <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>
-        {title}
+        Workflow
       </Typography>
 
       <Paper

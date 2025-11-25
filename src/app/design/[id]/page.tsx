@@ -66,10 +66,9 @@ export default function Page({ params }: { params: { id: string } }) {
           {activeTab === 0 && (
             <ArchitectureDiagram layers={post?.architecture_diagram} />
           )}
-          {activeTab === 1 && <WorkflowDiagram title="" steps={post?.steps} />}
+          {activeTab === 1 && <WorkflowDiagram steps={post?.steps} />}
           {activeTab === 2 && (
             <NotificationSystem
-              title=""
               alerts={post?.alerts}
               channels={post?.channels}
             />

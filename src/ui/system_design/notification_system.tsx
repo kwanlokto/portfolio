@@ -2,13 +2,11 @@ import { AlertItem, ChannelItem } from "@/lib/system_design";
 import { Box, Divider, Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
 
 interface NotificationSystemProps {
-  title: string;
   alerts: AlertItem[];
   channels: ChannelItem[];
 }
 
 export const NotificationSystem = ({
-  title,
   alerts,
   channels,
 }: NotificationSystemProps) => {
@@ -16,7 +14,7 @@ export const NotificationSystem = ({
     <Stack spacing={3}>
       {/* Title */}
       <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
-        {title}
+        Notification System
       </Typography>
 
       <Paper sx={{ p: 3, borderRadius: 2 }}>
