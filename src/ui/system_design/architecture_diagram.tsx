@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 
 import { ArchitectureLayer } from "@/lib/system_design";
-import CardSection from "./card_section";
+import CardSection from "../card_section";
 
 interface ArchitectureDiagramInterface {
   layers: ArchitectureLayer[];
