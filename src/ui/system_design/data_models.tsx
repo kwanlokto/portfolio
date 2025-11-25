@@ -1,67 +1,12 @@
 import { Paper, Stack, Typography } from "@mui/material";
 
-export const DataModels = () => {
-  const models = [
-    {
-      title: "Ride",
-      color: "secondary.main",
-      schema: `{
-  ride_id: UUID,
-  customer_id: UUID,
-  driver_id: UUID (nullable),
-  status: ENUM [
-    'REQUESTED',
-    'DRIVER_ASSIGNED',
-    'DRIVER_EN_ROUTE',
-    'DRIVER_ARRIVED',
-    'IN_PROGRESS',
-    'COMPLETED',
-    'CANCELLED'
-  ],
-  pickup_location: { latitude, longitude, address },
-  dropoff_location: { latitude, longitude, address },
-  estimated_arrival_time: TIMESTAMP,
-  actual_arrival_time: TIMESTAMP,
-  estimated_fare: DECIMAL,
-  actual_fare: DECIMAL,
-  requested_at: TIMESTAMP,
-  completed_at: TIMESTAMP,
-  cancelled_at: TIMESTAMP,
-  cancellation_reason: STRING
-}`,
-    },
-    {
-      title: "User (Customer / Driver)",
-      color: "primary.main",
-      schema: `{
-  user_id: UUID,
-  email: STRING,
-  phone: STRING,
-  name: STRING,
-  user_type: ENUM ['CUSTOMER', 'DRIVER'],
-  rating: DECIMAL,
-  notification_preferences: { push_enabled, sms_enabled, email_enabled },
-  created_at: TIMESTAMP,
-  last_active: TIMESTAMP
-}`,
-    },
-    {
-      title: "Location Update",
-      color: "success.main",
-      schema: `{
-  location_id: UUID,
-  user_id: UUID,
-  ride_id: UUID,
-  latitude: DECIMAL,
-  longitude: DECIMAL,
-  heading: INTEGER (0-359),
-  speed: DECIMAL,
-  accuracy: DECIMAL,
-  timestamp: TIMESTAMP
-}`,
-    },
-  ];
+import { SchemaDefinition } from "@/lib/system_design";
 
+interface DataModelsInterface {
+  schema_definitions: SchemaDefinition[];
+}
+
+export const DataModels = ({ schema_definitions }: DataModelsInterface) => {
   return (
     <Stack spacing={3}>
       <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>
@@ -69,7 +14,7 @@ export const DataModels = () => {
       </Typography>
 
       <Stack spacing={2}>
-        {models.map(({ title, color, schema }, i) => (
+        {schema_definitions.map(({ title, color, schema }, i) => (
           <Paper
             key={i}
             sx={{

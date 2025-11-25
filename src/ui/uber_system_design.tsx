@@ -1,32 +1,4 @@
-import {
-  Avatar,
-  Box,
-  Divider,
-  Grid2 as Grid,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Paper,
-  Stack,
-  Tab,
-  Tabs,
-  Typography,
-} from "@mui/material";
-import {
-  MdAccessTime,
-  MdCheckCircle,
-  MdDriveEta,
-  MdGpsFixed,
-  MdGridOn,
-  MdMemory,
-  MdNotifications,
-  MdPlace,
-  MdQueryBuilder,
-  MdReportProblem,
-  MdStorage,
-  MdSyncAlt,
-} from "react-icons/md";
+import { Box, Paper, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 import ArchitectureDiagram from "./system_design/architecture_diagram";
@@ -42,168 +14,6 @@ export default function RideHailingSystem() {
   };
 
   /* ---------------------------
-     Styles helpers (sx)
-     --------------------------- */
-  const containerSx = {
-    minHeight: "100vh",
-    p: { xs: 2, md: 6 },
-    bgcolor: "background.default",
-  };
-
-  const headerSx = { textAlign: "center", mb: 4 };
-
-  const cardSx = { borderRadius: 2, boxShadow: 3, bgcolor: "background.paper" };
-
-  const sectionTitleSx = { mb: 2, fontWeight: 700 };
-
-  const borderedSx = (color = "primary.main") => ({
-    p: 2,
-    borderRadius: 2,
-    border: 2,
-    borderColor: color,
-  });
-
-
-
-  const TechnicalDetails = () => (
-    <Stack spacing={3}>
-      <Typography variant="h5" sx={sectionTitleSx}>
-        Technical Implementation
-      </Typography>
-
-      <Stack spacing={2}>
-        <Paper sx={{ ...cardSx, p: 2 }}>
-          <Typography
-            variant="subtitle1"
-            color="info.main"
-            sx={{ fontWeight: 700, mb: 1 }}
-          >
-            ETA Calculation & Delay Detection
-          </Typography>
-          <Stack spacing={1}>
-            <Paper variant="outlined" sx={{ p: 1 }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                Initial ETA
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Use Google Maps / Mapbox routing API for accurate drive time
-                based on real-time traffic
-              </Typography>
-            </Paper>
-
-            <Paper variant="outlined" sx={{ p: 1 }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                Continuous Monitoring
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Recalculate ETA every 30 seconds using current location and
-                traffic conditions
-              </Typography>
-            </Paper>
-
-            <Paper variant="outlined" sx={{ p: 1 }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                Delay Threshold
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                If new ETA exceeds original by 5+ minutes, trigger &quot;running
-                late&quot; notification
-              </Typography>
-            </Paper>
-          </Stack>
-        </Paper>
-
-        <Paper sx={{ ...cardSx, p: 2 }}>
-          <Typography
-            variant="subtitle1"
-            color="success.main"
-            sx={{ fontWeight: 700, mb: 1 }}
-          >
-            Geospatial & Proximity Detection
-          </Typography>
-          <Stack spacing={1}>
-            <Paper variant="outlined" sx={{ p: 1 }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                Driver Matching
-              </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                Use PostGIS or MongoDB geospatial index for finding nearby
-                drivers:
-              </Typography>
-              <Paper variant="outlined" sx={{ p: 1 }}>
-                <Typography
-                  component="code"
-                  variant="caption"
-                  sx={{ fontFamily: "monospace" }}
-                >
-                  SELECT * FROM drivers WHERE ST_DWithin(location,
-                  customer_location, 5000)
-                </Typography>
-              </Paper>
-            </Paper>
-
-            <Paper variant="outlined" sx={{ p: 1 }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                Arrival Detection
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Calculate distance between driver and pickup using Haversine
-                formula, trigger notification at 50m threshold
-              </Typography>
-            </Paper>
-          </Stack>
-        </Paper>
-
-        <Paper sx={{ ...cardSx, p: 2 }}>
-          <Typography
-            variant="subtitle1"
-            color="error.main"
-            sx={{ fontWeight: 700, mb: 1 }}
-          >
-            Scalability Considerations
-          </Typography>
-          <List dense>
-            <ListItem>
-              <ListItemIcon>
-                <MdMemory color="error" />
-              </ListItemIcon>
-              <ListItemText primary="Use Redis for caching driver locations and active ride states" />
-            </ListItem>
-
-            <ListItem>
-              <ListItemIcon>
-                <MdGridOn color="error" />
-              </ListItemIcon>
-              <ListItemText primary="Implement database sharding by geographic region" />
-            </ListItem>
-
-            <ListItem>
-              <ListItemIcon>
-                <MdSyncAlt color="error" />
-              </ListItemIcon>
-              <ListItemText primary="Use message queues (Kafka/RabbitMQ) for asynchronous notification delivery" />
-            </ListItem>
-
-            <ListItem>
-              <ListItemIcon>
-                <MdGpsFixed color="error" />
-              </ListItemIcon>
-              <ListItemText primary="WebSocket servers for real-time location updates with horizontal scaling" />
-            </ListItem>
-
-            <ListItem>
-              <ListItemIcon>
-                <MdQueryBuilder color="error" />
-              </ListItemIcon>
-              <ListItemText primary="CDN for static assets, separate read replicas for analytics" />
-            </ListItem>
-          </List>
-        </Paper>
-      </Stack>
-    </Stack>
-  );
-
-  /* ---------------------------
      Tabs & Layout
      --------------------------- */
 
@@ -216,9 +26,15 @@ export default function RideHailingSystem() {
   ];
 
   return (
-    <Box sx={containerSx}>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        p: { xs: 2, md: 6 },
+        bgcolor: "background.default",
+      }}
+    >
       <Box maxWidth="1200px" mx="auto">
-        <Box sx={headerSx}>
+        <Box sx={{ textAlign: "center", mb: 4 }}>
           <Typography variant="h3" sx={{ fontWeight: 800, mb: 1 }}>
             Ride-Hailing System Design
           </Typography>

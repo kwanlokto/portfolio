@@ -1,12 +1,4 @@
 import {
-  Avatar,
-  Box,
-  Grid2 as Grid,
-  Paper,
-  Stack,
-  Typography,
-} from "@mui/material";
-import {
   MdAccessTime,
   MdCheckCircle,
   MdDriveEta,
@@ -21,12 +13,7 @@ import {
   MdSyncAlt,
 } from "react-icons/md";
 
-const borderedSx = (color = "primary.main") => ({
-  p: 2,
-  borderRadius: 2,
-  border: 2,
-  borderColor: color,
-});
+import { Typography } from "@mui/material";
 
 interface ArchitectureContent {
   title: string;
@@ -76,6 +63,12 @@ export interface TechnicalSection {
   title: string;
   color: string; // e.g. "info.main", "success.main"
   items: TechnicalSectionItem[];
+}
+
+export interface SchemaDefinition {
+  title: string;
+  color: string;   // e.g. "secondary.main"
+  schema: string;  // raw formatted string block
 }
 
 export const system_design_blog = [
@@ -302,6 +295,67 @@ WHERE ST_DWithin(location, customer_location, 5000)`,
             text: "Calculate distance between driver and pickup using Haversine formula, trigger notification at 50m threshold",
           },
         ],
+      },
+    ],
+
+    schema_definitions: [
+      {
+        title: "Ride",
+        color: "secondary.main",
+        schema: `{
+  ride_id: UUID,
+  customer_id: UUID,
+  driver_id: UUID (nullable),
+  status: ENUM [
+    'REQUESTED',
+    'DRIVER_ASSIGNED',
+    'DRIVER_EN_ROUTE',
+    'DRIVER_ARRIVED',
+    'IN_PROGRESS',
+    'COMPLETED',
+    'CANCELLED'
+  ],
+  pickup_location: { latitude, longitude, address },
+  dropoff_location: { latitude, longitude, address },
+  estimated_arrival_time: TIMESTAMP,
+  actual_arrival_time: TIMESTAMP,
+  estimated_fare: DECIMAL,
+  actual_fare: DECIMAL,
+  requested_at: TIMESTAMP,
+  completed_at: TIMESTAMP,
+  cancelled_at: TIMESTAMP,
+  cancellation_reason: STRING
+}`,
+      },
+      {
+        title: "User (Customer / Driver)",
+        color: "primary.main",
+        schema: `{
+  user_id: UUID,
+  email: STRING,
+  phone: STRING,
+  name: STRING,
+  user_type: ENUM ['CUSTOMER', 'DRIVER'],
+  rating: DECIMAL,
+  notification_preferences: { push_enabled, sms_enabled, email_enabled },
+  created_at: TIMESTAMP,
+  last_active: TIMESTAMP
+}`,
+      },
+      {
+        title: "Location Update",
+        color: "success.main",
+        schema: `{
+  location_id: UUID,
+  user_id: UUID,
+  ride_id: UUID,
+  latitude: DECIMAL,
+  longitude: DECIMAL,
+  heading: INTEGER (0-359),
+  speed: DECIMAL,
+  accuracy: DECIMAL,
+  timestamp: TIMESTAMP
+}`,
       },
     ],
   },
