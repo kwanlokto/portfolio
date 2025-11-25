@@ -83,9 +83,9 @@ const scalabilityItems = [
 // ------------------------------
 // MAIN COMPONENT
 // ------------------------------
-export const TechnicalDetails = ({ cardSx, sectionTitleSx }) => (
+export const TechnicalDetails = () => (
   <Stack spacing={3}>
-    <Typography variant="h5" sx={sectionTitleSx}>
+    <Typography variant="h5" sx={{ textAlign: "center", mb: 4 }}>
       Technical Implementation
     </Typography>
 
@@ -96,7 +96,11 @@ export const TechnicalDetails = ({ cardSx, sectionTitleSx }) => (
           key={section.title}
           title={section.title}
           titleColor={section.color}
-          cardSx={cardSx}
+          cardSx={{
+            borderRadius: 2,
+            boxShadow: 3,
+            bgcolor: "background.paper",
+          }}
         >
           <Stack spacing={1}>
             {section.items.map((item) => (
