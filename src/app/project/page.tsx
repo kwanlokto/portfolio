@@ -3,7 +3,7 @@ import { Box, Divider, Typography } from "@mui/material";
 import { ItemGrid } from "@/ui/item_grid";
 import React from "react";
 import { projects } from "@/lib/project";
-import { Project } from "@/ui/project";
+import { Project } from "@/ui/project_card";
 
 export default function Page() {
   return (

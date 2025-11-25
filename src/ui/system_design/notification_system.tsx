@@ -1,14 +1,14 @@
-import { AlertItem, ChannelItem } from "@/lib/system_design";
+import { AlertItem, NotificationChannel } from "@/lib/system_design";
 import { Box, Divider, Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
 
 interface NotificationSystemProps {
   alerts: AlertItem[];
-  channels: ChannelItem[];
+  notification_channels: NotificationChannel[];
 }
 
 export const NotificationSystem = ({
   alerts,
-  channels,
+  notification_channels,
 }: NotificationSystemProps) => {
   return (
     <Stack spacing={3}>
@@ -78,13 +78,13 @@ export const NotificationSystem = ({
 
         <Divider sx={{ my: 3 }} />
 
-        {/* Notification Channels */}
+        {/* Notification notification_channels */}
         <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
-          Notification Channels
+          Notification notification_channels
         </Typography>
 
         <Grid container spacing={2}>
-          {channels.map((channel, idx) => (
+          {notification_channels.map((channel, idx) => (
             <Grid key={idx} size={{ xs: 12, md: 4 }}>
               <Paper sx={{ p: 2, borderRadius: 1 }}>
                 <Stack spacing={1} alignItems="flex-start">

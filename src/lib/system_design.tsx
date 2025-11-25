@@ -13,8 +13,6 @@ import {
   MdSyncAlt,
 } from "react-icons/md";
 
-import { Typography } from "@mui/material";
-
 interface ArchitectureContent {
   title: string;
   body?: string;
@@ -25,6 +23,7 @@ export interface ArchitectureLayer {
   title: string;
   color: string;
   content: ArchitectureContent[];
+  content_bg?: string;
 }
 
 export interface AlertItem {
@@ -35,7 +34,7 @@ export interface AlertItem {
   messages: string[];
 }
 
-export interface ChannelItem {
+export interface NotificationChannel {
   title: string;
   description: string;
   icon: React.ReactNode;
@@ -71,7 +70,21 @@ export interface SchemaDefinition {
   schema: string; // raw formatted string block
 }
 
-export const system_design_blog = [
+export interface SystemDesignStudy {
+  id: string;
+  name: string;
+  description: React.ReactNode;
+
+  architecture_diagram?: ArchitectureLayer[];
+  alerts?: AlertItem[];
+  notification_channels?: NotificationChannel[];
+  steps?: WorkFlowItem[];
+  scalability_items?: ScalabilityItem[];
+  technical_sections?: TechnicalSection[];
+  schema_definitions?: SchemaDefinition[];
+}
+
+export const system_design_studies: SystemDesignStudy[] = [
   {
     id: "uber",
     name: "Uber System Design Case Study",
@@ -103,11 +116,12 @@ export const system_design_blog = [
       {
         title: "API Gateway / Load Balancer",
         color: "success.main",
-        content: (
-          <Typography variant="body2" color="text.secondary">
-            Route requests, authentication, rate limiting
-          </Typography>
-        ),
+        content: [{ title: "Route requests, authentication, rate limiting" }],
+        // content: (
+        //   <Typography variant="body2" color="text.secondary">
+
+        //   </Typography>
+        // ),
       },
 
       // ---------------------------------------------------------
@@ -174,7 +188,7 @@ export const system_design_blog = [
         ],
       },
     ],
-    channels: [
+    notification_channels: [
       {
         title: "Push Notifications",
         description: "Primary channel via FCM / APNs",

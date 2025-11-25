@@ -25,7 +25,7 @@ import { TechStack } from "@/ui/tech_stack";
 import { handle_download } from "@/utils/download";
 import { useState } from "react";
 import { projects } from "@/lib/project";
-import { Project } from "@/ui/project";
+import { Project } from "@/ui/project_card";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);

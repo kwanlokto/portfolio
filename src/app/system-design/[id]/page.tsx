@@ -1,4 +1,4 @@
-import { system_design_blog } from "@/lib/system_design";
+import { system_design_studies } from "@/lib/system_design";
 import ArchitectureDiagram from "@/ui/system_design/architecture_diagram";
 import { DataModels } from "@/ui/system_design/data_models";
 import { NotificationSystem } from "@/ui/system_design/notification_system";
@@ -12,7 +12,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   const [activeTab, setActiveTab] = useState(0);
 
-  const post = system_design_blog.find((post) => post.id === id);
+  const post = system_design_studies.find((post) => post.id === id);
 
   const handleTabChange = (e: React.SyntheticEvent, value: number) => {
     setActiveTab(value);
@@ -70,7 +70,7 @@ export default function Page({ params }: { params: { id: string } }) {
           {activeTab === 2 && (
             <NotificationSystem
               alerts={post?.alerts}
-              channels={post?.channels}
+              notification_channels={post?.notification_channels}
             />
           )}
           {activeTab === 3 && (
