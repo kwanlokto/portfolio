@@ -1,7 +1,9 @@
 import { Box, Divider, Typography } from "@mui/material";
 
-import { ProjectGrid } from "@/ui/project_grid";
+import { ItemGrid } from "@/ui/item_grid";
 import React from "react";
+import { projects } from "@/lib/project";
+import { Project } from "@/ui/project";
 
 export default function Page() {
   return (
@@ -15,7 +17,12 @@ export default function Page() {
         My Projects
       </Typography>
       <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
-      <ProjectGrid />
+      <ItemGrid
+        items={projects}
+        render_item={(project, index) => (
+          <Project key={index} project={project} />
+        )}
+      />
     </Box>
   );
 }

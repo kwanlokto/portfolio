@@ -20,10 +20,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
-import { ProjectGrid } from "@/ui/project_grid";
+import { ItemGrid } from "@/ui/item_grid";
 import { TechStack } from "@/ui/tech_stack";
 import { handle_download } from "@/utils/download";
 import { useState } from "react";
+import { projects } from "@/lib/project";
+import { Project } from "@/ui/project";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
@@ -70,11 +72,11 @@ export default function Home() {
         </Box>
         <Box pt={2}>
           <Typography>
-            I&apos;m a Senior Software Developer with {current_year - 2019} experience leading
-            cross-functional teams and delivering high-precision,
-            performance-driven applications. Skilled in full-stack development,
-            systems design, and collaborating with stakeholders to turn complex
-            problems into impactful solutions.
+            I&apos;m a Senior Software Developer with {current_year - 2019}{" "}
+            experience leading cross-functional teams and delivering
+            high-precision, performance-driven applications. Skilled in
+            full-stack development, systems design, and collaborating with
+            stakeholders to turn complex problems into impactful solutions.
           </Typography>
           <Typography pt={2}>
             Recently, I&apos;ve been developing an automated skate sharpening
@@ -159,11 +161,16 @@ export default function Home() {
             <Button sx={{ mb: 1 }}>View More</Button>
           </Link>
         </Box>
-        <ProjectGrid total_featured_projects={{ xs: 1, sm: 2, md: 3 }} />
+        <ItemGrid
+          items={projects}
+          total_featured_items={{ xs: 1, sm: 2, md: 3 }}
+          render_item={(project, index) => (
+            <Project key={index} project={project} />
+          )}
+        />
       </Box>
       {/* TODO: showcase github graph */}
       {/* <img src="https://github-readme-activity-graph.vercel.app/graph?username=kwanlokto&theme=github" /> */}
-
     </Box>
   );
 }
