@@ -43,7 +43,7 @@ export default function RootLayoutClientWrapper({
           mode,
           background: {
             default: mode === "light" ? "#fef8e7" : "#1a1a1a",
-            paper: mode === "light" ? "#ffffff" : "#242424",
+            paper: mode === "light" ? "#fffaf2" : "#242424",
           },
           text: {
             primary: mode === "light" ? "#0a1f2a" : "#e8e8e8",

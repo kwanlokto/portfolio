@@ -1,4 +1,3 @@
-// src/app/system-design/[id]/SystemDesignClient.tsx
 "use client";
 
 import { SystemDesignStudy } from "@/lib/system_design";
@@ -7,7 +6,7 @@ import { DataModels } from "@/ui/system_design/data_models";
 import { NotificationSystem } from "@/ui/system_design/notification_system";
 import { TechnicalDetails } from "@/ui/system_design/technical_details";
 import { WorkflowDiagram } from "@/ui/system_design/workflow_diagram";
-import { Box, Paper, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Divider, Paper, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 export default function SystemDesignClient({
@@ -30,64 +29,65 @@ export default function SystemDesignClient({
   ];
 
   return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        p: { xs: 2, md: 6 },
-        bgcolor: "background.default",
-      }}
-    >
-      <Box maxWidth="1200px" mx="auto">
-        <Box sx={{ textAlign: "center", mb: 4 }}>
-          <Typography variant="h3" sx={{ fontWeight: 800, mb: 1 }}>
-            {system_design_study.name}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {system_design_study.description}
-          </Typography>
-        </Box>
+    <Box>
+      <Box mb={2}>
+        <Typography
+          variant="h5"
+          fontWeight="bold"
+          gutterBottom
+          sx={{ color: "text.primary" }}
+        >
+          {system_design_study.name}
+        </Typography>
+        <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 1 }} />
 
-        <Paper sx={{ mb: 3 }}>
-          <Tabs
-            value={activeTab}
-            onChange={handleTabChange}
-            variant="scrollable"
-            scrollButtons="auto"
-            aria-label="system design tabs"
-          >
-            {tabConfig.map((t) => (
-              <Tab key={t.id} label={t.label} />
-            ))}
-          </Tabs>
-        </Paper>
+        <Typography variant="body1" color="text.secondary">
+          {system_design_study.description}
+        </Typography>
+      </Box>
 
-        <Box>
-          {activeTab === 0 && (
-            <ArchitectureDiagram
-              layers={system_design_study.architecture_diagram || []}
-            />
-          )}
-          {activeTab === 1 && (
-            <WorkflowDiagram steps={system_design_study.steps || []} />
-          )}
-          {activeTab === 2 && (
-            <NotificationSystem
-              alerts={system_design_study.alerts || []}
-              notification_channels={system_design_study.notification_channels || []}
-            />
-          )}
-          {activeTab === 3 && (
-            <DataModels
-              schema_definitions={system_design_study.schema_definitions || []}
-            />
-          )}
-          {activeTab === 4 && (
-            <TechnicalDetails
-              scalability_items={system_design_study.scalability_items || []}
-              technical_sections={system_design_study.technical_sections || []}
-            />
-          )}
-        </Box>
+      <Paper sx={{ mb: 2 }}>
+        <Tabs
+          value={activeTab}
+          onChange={handleTabChange}
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="system design tabs"
+        >
+          {tabConfig.map((t) => (
+            <Tab key={t.id} label={t.label} />
+          ))}
+        </Tabs>
+      </Paper>
+
+      <Box>
+        {activeTab === 0 && (
+          <ArchitectureDiagram
+            layers={system_design_study.architecture_diagram || []}
+          />
+        )}
+        {activeTab === 1 && (
+          <WorkflowDiagram steps={system_design_study.steps || []} />
+        )}
+        {activeTab === 2 && (
+          <NotificationSystem
+            alerts={system_design_study.alerts || []}
+            notification_channels={
+              system_design_study.notification_channels || []
+            }
+          />
+        )}
+        {activeTab === 3 && (
+          <DataModels
+            schema_definitions={system_design_study.schema_definitions || []}
+          />
+        )}
+        {activeTab === 4 && (
+          <TechnicalDetails
+            scalability_items={system_design_study.scalability_items || []}
+            technical_sections={system_design_study.technical_sections || []}
+          />
+        )}
       </Box>
     </Box>
   );
