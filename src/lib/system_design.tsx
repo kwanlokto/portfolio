@@ -38,7 +38,7 @@ export const system_design_blog = [
         considerations.
       </>
     ),
-    system_architecture: [
+    architecture_diagram: [
       {
         title: "Client Layer",
         color: "primary.main",
