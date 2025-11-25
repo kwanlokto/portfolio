@@ -1,4 +1,11 @@
-import { Avatar, Box, Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Grid2 as Grid,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
 import {
   MdAccessTime,
   MdCheckCircle,
@@ -32,117 +39,104 @@ export const system_design_blog = [
       </>
     ),
     system_architecture: [
-      // Client Layer
-      <Box key="client" sx={borderedSx("primary.main")}>
-        <Typography
-          variant="subtitle1"
-          color="primary"
-          sx={{ fontWeight: 700, mb: 1 }}
-        >
-          Client Layer
-        </Typography>
-        <Grid container spacing={2}>
-          <Grid size={{ xs: 12, sm: 6 }}>
-            <Paper sx={{ p: 2, borderRadius: 1, bgcolor: "primary.lighter" }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
-                Customer App
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                iOS / Android / Web
-              </Typography>
-            </Paper>
-          </Grid>
-          <Grid size={{ xs: 12, sm: 6 }}>
-            <Paper sx={{ p: 2, borderRadius: 1, bgcolor: "primary.lighter" }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
-                Driver App
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                iOS / Android
-              </Typography>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Box>,
-      //API Gateway
-      <Box key="api_gateway" sx={borderedSx("success.main")}>
-        <Typography
-          variant="subtitle1"
-          color="success.main"
-          sx={{ fontWeight: 700, mb: 1 }}
-        >
-          API Gateway / Load Balancer
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Route requests, authentication, rate limiting
-        </Typography>
-      </Box>,
-      // Core Services
-      <Box key="core_services" sx={borderedSx("secondary.main")}>
-        <Typography
-          variant="subtitle1"
-          color="secondary.main"
-          sx={{ fontWeight: 700, mb: 1 }}
-        >
-          Core Services
-        </Typography>
+      {
+        title: "Client Layer",
+        color: "primary.main",
+        content: (
+          <Grid container spacing={2}>
+            <Grid size={{ xs: 12, sm: 6 }}>
+              <Paper sx={{ p: 2, borderRadius: 1, bgcolor: "primary.lighter" }}>
+                <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
+                  Customer App
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  iOS / Android / Web
+                </Typography>
+              </Paper>
+            </Grid>
 
-        <Grid container spacing={2}>
-          {[
-            ["User Service", "Authentication, profiles"],
-            ["Ride Service", "Request, cancel, status"],
-            ["Matching Service", "Driver-customer pairing"],
-            ["Location Service", "Real-time tracking"],
-            ["Notification Service", "Push, SMS, email"],
-            ["Payment Service", "Transactions, billing"],
-          ].map(([title, desc], idx) => (
-            <Grid key={idx} size={{ xs: 12, sm: 6, md: 4 }}>
-              <Paper sx={{ p: 1.5, borderRadius: 1 }}>
-                <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                  {title}
+            <Grid size={{ xs: 12, sm: 6 }}>
+              <Paper sx={{ p: 2, borderRadius: 1, bgcolor: "primary.lighter" }}>
+                <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
+                  Driver App
                 </Typography>
-                <Typography variant="caption" color="text.secondary">
-                  {desc}
+                <Typography variant="body2" color="text.secondary">
+                  iOS / Android
                 </Typography>
               </Paper>
             </Grid>
-          ))}
-        </Grid>
-      </Box>,
-      // Data Layer
-      <Box key="data" sx={borderedSx("warning.main")}>
-        <Typography
-          variant="subtitle1"
-          color="warning.main"
-          sx={{ fontWeight: 700, mb: 1 }}
-        >
-          Data & Storage Layer
-        </Typography>
-        <Grid container spacing={2}>
-          {[
-            ["PostgreSQL", "User, ride data", <MdStorage key="psql" />],
-            ["Redis", "Caching, sessions", <MdMemory key="redis" />],
-            ["MongoDB", "Location history", <MdGridOn key="mongoDB" />],
-            ["Kafka", "Event streaming", <MdSyncAlt key="kafka" />],
-          ].map(([title, desc, icon], idx) => (
-            <Grid key={idx} size={{ xs: 12, sm: 4, md: 3 }}>
-              <Paper sx={{ p: 1.5, borderRadius: 1 }}>
-                <Stack direction="row" spacing={1} alignItems="center">
-                  <Avatar sx={{ bgcolor: "transparent" }}>{icon}</Avatar>
-                  <Box>
-                    <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                      {title}
-                    </Typography>
-                    <Typography variant="caption" color="text.secondary">
-                      {desc}
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>,
+          </Grid>
+        ),
+      },
+
+      {
+        title: "API Gateway / Load Balancer",
+        color: "success.main",
+        content: (
+          <Typography variant="body2" color="text.secondary">
+            Route requests, authentication, rate limiting
+          </Typography>
+        ),
+      },
+
+      {
+        title: "Core Services",
+        color: "secondary.main",
+        content: (
+          <Grid container spacing={2}>
+            {[
+              ["User Service", "Authentication, profiles"],
+              ["Ride Service", "Request, cancel, status"],
+              ["Matching Service", "Driver-customer pairing"],
+              ["Location Service", "Real-time tracking"],
+              ["Notification Service", "Push, SMS, email"],
+              ["Payment Service", "Transactions, billing"],
+            ].map(([title, desc], idx) => (
+              <Grid key={idx} size={{ xs: 12, sm: 6, md: 4 }}>
+                <Paper sx={{ p: 1.5, borderRadius: 1 }}>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+                    {title}
+                  </Typography>
+                  <Typography variant="caption" color="text.secondary">
+                    {desc}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        ),
+      },
+
+      {
+        title: "Data & Storage Layer",
+        color: "warning.main",
+        content: (
+          <Grid container spacing={2}>
+            {[
+              ["PostgreSQL", "User, ride data", <MdStorage key="psql" />],
+              ["Redis", "Caching, sessions", <MdMemory key="redis" />],
+              ["MongoDB", "Location history", <MdGridOn key="mongoDB" />],
+              ["Kafka", "Event streaming", <MdSyncAlt key="kafka" />],
+            ].map(([title, desc, icon], idx) => (
+              <Grid key={idx} size={{ xs: 12, sm: 4, md: 3 }}>
+                <Paper sx={{ p: 1.5, borderRadius: 1 }}>
+                  <Stack direction="row" spacing={1} alignItems="center">
+                    <Avatar sx={{ bgcolor: "transparent" }}>{icon}</Avatar>
+                    <Box>
+                      <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+                        {title}
+                      </Typography>
+                      <Typography variant="caption" color="text.secondary">
+                        {desc}
+                      </Typography>
+                    </Box>
+                  </Stack>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        ),
+      },
     ],
   },
 ];
