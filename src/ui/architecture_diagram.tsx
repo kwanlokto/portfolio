@@ -1,13 +1,10 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
 
+import { ArchitectureLayer } from "@/lib/system_design";
 import CardSection from "./card_section";
 
 interface ArchitectureDiagramInterface {
-  layers: {
-    title: string;
-    color: string;
-    content: React.ReactNode;
-  }[];
+  layers: ArchitectureLayer[];
 }
 
 export default function ArchitectureDiagram({
@@ -38,7 +35,38 @@ export default function ArchitectureDiagram({
                 {layer.title}
               </Typography>
 
-              {layer.content}
+              <Grid container spacing={2}>
+                {layer.content.map(({ title, body, desc }, idx) => (
+                  <Grid key={idx} size={{ xs: 12, sm: 6, md: 4 }}>
+                    {body || desc ? (
+                      <Paper sx={{ p: 1.5, borderRadius: 1 }}>
+                        <Typography
+                          variant="subtitle2"
+                          sx={{ fontWeight: 600 }}
+                        >
+                          {title}
+                        </Typography>
+
+                        {body && (
+                          <Typography variant="body2" color="text.secondary">
+                            {body}
+                          </Typography>
+                        )}
+                        {desc && (
+                          <Typography variant="caption" color="text.secondary">
+                            {desc}
+                          </Typography>
+                        )}
+                      </Paper>
+                    ) : (
+                      <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
+                        {title}
+                      </Typography>
+                    )}
+                  </Grid>
+                ))}
+              </Grid>
+              {}
             </Box>
           ))}
         </Stack>

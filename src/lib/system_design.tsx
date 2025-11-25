@@ -28,6 +28,17 @@ const borderedSx = (color = "primary.main") => ({
   borderColor: color,
 });
 
+interface ArchitectureContent {
+  title: string;
+  body?: string;
+  desc?: string;
+}
+export interface ArchitectureLayer {
+  title: string;
+  color: string;
+  content: ArchitectureContent[];
+}
+
 export const system_design_blog = [
   {
     name: "Uber System Design Case Study",
@@ -38,37 +49,24 @@ export const system_design_blog = [
         considerations.
       </>
     ),
+
     architecture_diagram: [
+      // ---------------------------------------------------------
+      // Client Layer
+      // ---------------------------------------------------------
       {
         title: "Client Layer",
         color: "primary.main",
-        content: (
-          <Grid container spacing={2}>
-            <Grid size={{ xs: 12, sm: 6 }}>
-              <Paper sx={{ p: 2, borderRadius: 1, bgcolor: "primary.lighter" }}>
-                <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
-                  Customer App
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  iOS / Android / Web
-                </Typography>
-              </Paper>
-            </Grid>
-
-            <Grid size={{ xs: 12, sm: 6 }}>
-              <Paper sx={{ p: 2, borderRadius: 1, bgcolor: "primary.lighter" }}>
-                <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
-                  Driver App
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  iOS / Android
-                </Typography>
-              </Paper>
-            </Grid>
-          </Grid>
-        ),
+        content: [
+          { title: "Customer App", body: "iOS / Android / Web" },
+          { title: "Driver App", body: "iOS / Android" },
+        ],
+        content_bg: "primary.lighter",
       },
 
+      // ---------------------------------------------------------
+      // API Gateway
+      // ---------------------------------------------------------
       {
         title: "API Gateway / Load Balancer",
         color: "success.main",
@@ -79,63 +77,34 @@ export const system_design_blog = [
         ),
       },
 
+      // ---------------------------------------------------------
+      // Core Services
+      // ---------------------------------------------------------
       {
         title: "Core Services",
         color: "secondary.main",
-        content: (
-          <Grid container spacing={2}>
-            {[
-              ["User Service", "Authentication, profiles"],
-              ["Ride Service", "Request, cancel, status"],
-              ["Matching Service", "Driver-customer pairing"],
-              ["Location Service", "Real-time tracking"],
-              ["Notification Service", "Push, SMS, email"],
-              ["Payment Service", "Transactions, billing"],
-            ].map(([title, desc], idx) => (
-              <Grid key={idx} size={{ xs: 12, sm: 6, md: 4 }}>
-                <Paper sx={{ p: 1.5, borderRadius: 1 }}>
-                  <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                    {title}
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary">
-                    {desc}
-                  </Typography>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
-        ),
+        content: [
+          { title: "User Service", desc: "Authentication, profiles" },
+          { title: "Ride Service", desc: "Request, cancel, status" },
+          { title: "Matching Service", desc: "Driver-customer pairing" },
+          { title: "Location Service", desc: "Real-time tracking" },
+          { title: "Notification Service", desc: "Push, SMS, email" },
+          { title: "Payment Service", desc: "Transactions, billing" },
+        ],
       },
 
+      // ---------------------------------------------------------
+      // Data & Storage
+      // ---------------------------------------------------------
       {
         title: "Data & Storage Layer",
         color: "warning.main",
-        content: (
-          <Grid container spacing={2}>
-            {[
-              ["PostgreSQL", "User, ride data", <MdStorage key="psql" />],
-              ["Redis", "Caching, sessions", <MdMemory key="redis" />],
-              ["MongoDB", "Location history", <MdGridOn key="mongoDB" />],
-              ["Kafka", "Event streaming", <MdSyncAlt key="kafka" />],
-            ].map(([title, desc, icon], idx) => (
-              <Grid key={idx} size={{ xs: 12, sm: 4, md: 3 }}>
-                <Paper sx={{ p: 1.5, borderRadius: 1 }}>
-                  <Stack direction="row" spacing={1} alignItems="center">
-                    <Avatar sx={{ bgcolor: "transparent" }}>{icon}</Avatar>
-                    <Box>
-                      <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-                        {title}
-                      </Typography>
-                      <Typography variant="caption" color="text.secondary">
-                        {desc}
-                      </Typography>
-                    </Box>
-                  </Stack>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
-        ),
+        content: [
+          { title: "PostgreSQL", desc: "User, ride data", icon: <MdStorage /> },
+          { title: "Redis", desc: "Caching, sessions", icon: <MdMemory /> },
+          { title: "MongoDB", desc: "Location history", icon: <MdGridOn /> },
+          { title: "Kafka", desc: "Event streaming", icon: <MdSyncAlt /> },
+        ],
       },
     ],
   },
