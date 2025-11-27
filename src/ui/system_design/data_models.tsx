@@ -1,5 +1,6 @@
 import { Paper, Stack, Typography } from "@mui/material";
 
+import { CodeBlock } from "../code_block";
 import { SchemaDefinition } from "@/lib/system_design";
 
 interface DataModelsInterface {
@@ -26,7 +27,7 @@ export const DataModels = ({ schema_definitions }: DataModelsInterface) => {
             {title}
           </Typography>
 
-          <Paper variant="outlined" sx={{ p: 2, borderRadius: 1 }}>
+          <CodeBlock>
             <Typography
               component="pre"
               variant="body2"
@@ -34,7 +35,7 @@ export const DataModels = ({ schema_definitions }: DataModelsInterface) => {
             >
               {schema}
             </Typography>
-          </Paper>
+          </CodeBlock>
         </Paper>
       ))}
     </Stack>

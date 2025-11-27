@@ -7,7 +7,7 @@ interface CodeBlockInterface {
 }
 
 export const CodeBlock = ({ children }: CodeBlockInterface) => (
-  <Paper variant="outlined" sx={{ p: 1 }}>
+  <Paper variant="outlined" sx={{ p: 2 }}>
     <Typography
       component="code"
       variant="caption"
