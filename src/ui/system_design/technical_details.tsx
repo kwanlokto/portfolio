@@ -37,8 +37,8 @@ export const TechnicalDetails = ({
             <Section
               key={item.title}
               title={item.title}
-              sx={{ variant: "outlined" }}
               titleVariant="subtitle2"
+              variant="outlined"
             >
               <Typography variant="body2" color="text.secondary">
                 {item.text}

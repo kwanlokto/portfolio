@@ -1,23 +1,20 @@
 import {
   Avatar,
   Paper,
+  PaperProps,
   Stack,
-  SxProps,
-  Theme,
   Typography,
   TypographyProps,
 } from "@mui/material";
 
 import { ReactNode } from "react";
 
-interface SectionInterface {
+interface SectionInterface extends PaperProps {
   icon?: ReactNode;
   title: string;
   titleColor?: string;
   children: ReactNode;
-  sx?: SxProps<Theme>;
   titleVariant?: TypographyProps["variant"];
-  paperProps?: React.ComponentProps<typeof Paper>;
 }
 
 export const Section = ({
