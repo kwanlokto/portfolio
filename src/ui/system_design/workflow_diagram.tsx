@@ -1,6 +1,7 @@
 import { Avatar, Box, Paper, Stack, Typography } from "@mui/material";
 
 import { MdReportProblem } from "react-icons/md";
+import { Section } from "../section";
 import { WorkFlowItem } from "@/lib/system_design";
 
 interface WorkFlowDiagramInteface {
@@ -20,7 +21,7 @@ export const WorkflowDiagram = ({ steps }: WorkFlowDiagramInteface) => {
         {steps.map((item: WorkFlowItem) => (
           <Stack
             key={item.step}
-            direction="column"
+            direction="row"
             spacing={2}
             alignItems="flex-start"
           >
@@ -45,8 +46,10 @@ export const WorkflowDiagram = ({ steps }: WorkFlowDiagramInteface) => {
           </Stack>
         ))}
 
-        <Paper
-          sx={{
+        <Section
+          title="Cancellation Handling"
+          icon={<MdReportProblem />}
+          cardSx={{
             mt: 2,
             p: 2,
             bgcolor: "warning.lighter",
@@ -54,18 +57,12 @@ export const WorkflowDiagram = ({ steps }: WorkFlowDiagramInteface) => {
             borderColor: "warning.main",
           }}
         >
-          <Stack direction="column" spacing={1} alignItems="center">
-            <MdReportProblem />
-            <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-              Cancellation Flow
-            </Typography>
-          </Stack>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
             Customer can cancel at any time before pickup. After driver
             assignment, cancellation fee may apply. Driver notified immediately,
             ride marked as cancelled, driver returns to available pool.
           </Typography>
-        </Paper>
+        </Section>
       </Stack>
     </Paper>
   );
