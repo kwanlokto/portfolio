@@ -48,7 +48,7 @@ export const WorkflowDiagram = ({ steps }: WorkFlowDiagramInteface) => {
         <Section
           title="Cancellation Handling"
           icon={<MdReportProblem />}
-          cardSx={{
+          sx={{
             mt: 2,
             p: 2,
             bgcolor: "warning.lighter",

@@ -15,8 +15,9 @@ interface SectionInterface {
   title: string;
   titleColor?: string;
   children: ReactNode;
-  cardSx?: SxProps<Theme>;
+  sx?: SxProps<Theme>;
   titleVariant?: TypographyProps["variant"];
+  paperProps?: React.ComponentProps<typeof Paper>;
 }
 
 export const Section = ({
@@ -24,10 +25,11 @@ export const Section = ({
   title,
   titleColor = "info.main",
   children,
-  cardSx,
   titleVariant = "subtitle1",
+  sx,
+  ...paperProps
 }: SectionInterface) => (
-  <Paper sx={{ p: 2, ...cardSx }}>
+  <Paper sx={{ p: 2, ...sx }} {...paperProps}>
     <Stack spacing={1}>
       <Stack direction="row" spacing={1} alignItems="center">
         {icon && (

@@ -27,7 +27,7 @@ export const TechnicalDetails = ({
         key={section.title}
         title={section.title}
         titleColor={section.color}
-        cardSx={{
+        sx={{
           borderRadius: 2,
           boxShadow: 3,
         }}
@@ -37,7 +37,7 @@ export const TechnicalDetails = ({
             <Section
               key={item.title}
               title={item.title}
-              cardSx={{ variant: "outlined" }}
+              sx={{ variant: "outlined" }}
               titleVariant="subtitle2"
             >
               <Typography variant="body2" color="text.secondary">
@@ -54,7 +54,7 @@ export const TechnicalDetails = ({
     <Section
       title="Scalability Considerations"
       titleColor="error.main"
-      cardSx={{ borderRadius: 2, boxShadow: 3 }}
+      sx={{ borderRadius: 2, boxShadow: 3 }}
     >
       <List dense>
         {scalability_items.map((item, i) => (

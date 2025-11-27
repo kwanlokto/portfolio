@@ -32,7 +32,7 @@ export const NotificationSystem = ({
             icon={alert.icon}
             title={alert.title}
             titleColor={`${alert.color}.main`}
-            cardSx={{ borderLeft: 4, borderColor: `${alert.color}.main` }}
+            sx={{ borderLeft: 4, borderColor: `${alert.color}.main` }}
             titleVariant="subtitle2"
           >
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>

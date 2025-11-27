@@ -40,7 +40,7 @@ export default function ArchitectureDiagram({
                       icon={icon}
                       title={title}
                       titleVariant="subtitle2"
-                      cardSx={{ p: 1.5, borderRadius: 1 }}
+                      sx={{ p: 1.5, borderRadius: 1 }}
                     >
                       <>
                         {body && (
