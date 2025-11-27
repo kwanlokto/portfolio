@@ -13,7 +13,6 @@ export const WorkflowDiagram = ({ steps }: WorkFlowDiagramInteface) => {
       sx={{
         borderRadius: 2,
         boxShadow: 3,
-        bgcolor: "background.paper",
         p: 3,
       }}
     >

@@ -67,7 +67,6 @@ export default function ArchitectureDiagram({
                 )
               )}
             </Grid>
-            {}
           </Box>
         ))}
       </Stack>

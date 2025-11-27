@@ -30,7 +30,6 @@ export const TechnicalDetails = ({
         cardSx={{
           borderRadius: 2,
           boxShadow: 3,
-          bgcolor: "background.paper",
         }}
       >
         <Stack spacing={1}>
@@ -55,7 +54,7 @@ export const TechnicalDetails = ({
     <Section
       title="Scalability Considerations"
       titleColor="error.main"
-      cardSx={{ borderRadius: 2, boxShadow: 3, bgcolor: "background.paper" }}
+      cardSx={{ borderRadius: 2, boxShadow: 3 }}
     >
       <List dense>
         {scalability_items.map((item, i) => (

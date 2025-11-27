@@ -15,7 +15,6 @@ export const DataModels = ({ schema_definitions }: DataModelsInterface) => {
           sx={{
             borderRadius: 2,
             boxShadow: 3,
-            bgcolor: "background.paper",
             p: 2,
           }}
         >
@@ -27,10 +26,7 @@ export const DataModels = ({ schema_definitions }: DataModelsInterface) => {
             {title}
           </Typography>
 
-          <Paper
-            variant="outlined"
-            sx={{ p: 2, borderRadius: 1 }}
-          >
+          <Paper variant="outlined" sx={{ p: 2, borderRadius: 1 }}>
             <Typography
               component="pre"
               variant="body2"
