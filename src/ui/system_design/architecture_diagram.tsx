@@ -41,6 +41,7 @@ export default function ArchitectureDiagram({
                       title={title}
                       titleVariant="subtitle2"
                       sx={{ p: 1.5, borderRadius: 1 }}
+                      variant="outlined"
                     >
                       <>
                         {body && (
