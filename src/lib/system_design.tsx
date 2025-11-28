@@ -16,7 +16,6 @@ import {
 interface ArchitectureContent {
   title: string;
   body?: string;
-  desc?: string;
   icon?: React.ReactNode;
 }
 export interface ArchitectureLayer {
@@ -131,12 +130,12 @@ export const system_design_studies: SystemDesignStudy[] = [
         title: "Core Services",
         color: "secondary.main",
         content: [
-          { title: "User Service", desc: "Authentication, profiles" },
-          { title: "Ride Service", desc: "Request, cancel, status" },
-          { title: "Matching Service", desc: "Driver-customer pairing" },
-          { title: "Location Service", desc: "Real-time tracking" },
-          { title: "Notification Service", desc: "Push, SMS, email" },
-          { title: "Payment Service", desc: "Transactions, billing" },
+          { title: "User Service", body: "Authentication, profiles" },
+          { title: "Ride Service", body: "Request, cancel, status" },
+          { title: "Matching Service", body: "Driver-customer pairing" },
+          { title: "Location Service", body: "Real-time tracking" },
+          { title: "Notification Service", body: "Push, SMS, email" },
+          { title: "Payment Service", body: "Transactions, billing" },
         ],
       },
 
@@ -147,10 +146,10 @@ export const system_design_studies: SystemDesignStudy[] = [
         title: "Data & Storage Layer",
         color: "warning.main",
         content: [
-          { title: "PostgreSQL", desc: "User, ride data", icon: <MdStorage /> },
-          { title: "Redis", desc: "Caching, sessions", icon: <MdMemory /> },
-          { title: "MongoDB", desc: "Location history", icon: <MdGridOn /> },
-          { title: "Kafka", desc: "Event streaming", icon: <MdSyncAlt /> },
+          { title: "PostgreSQL", body: "User, ride data", icon: <MdStorage /> },
+          { title: "Redis", body: "Caching, sessions", icon: <MdMemory /> },
+          { title: "MongoDB", body: "Location history", icon: <MdGridOn /> },
+          { title: "Kafka", body: "Event streaming", icon: <MdSyncAlt /> },
         ],
       },
     ],

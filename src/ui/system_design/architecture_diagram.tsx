@@ -27,8 +27,8 @@ export default function ArchitectureDiagram({
             sx={{ borderLeft: 4, borderColor: layer.color || "primary.main" }}
           >
             <Grid container spacing={2}>
-              {layer.content.map(({ title, body, desc, icon }, idx) =>
-                body || desc ? (
+              {layer.content.map(({ title, body, icon }, idx) =>
+                body ? (
                   <Grid key={idx} size={{ xs: 12, sm: 6, md: 4 }}>
                     <Section
                       icon={icon}
@@ -41,11 +41,6 @@ export default function ArchitectureDiagram({
                         {body && (
                           <Typography variant="body2" color="text.secondary">
                             {body}
-                          </Typography>
-                        )}
-                        {desc && (
-                          <Typography variant="body2" color="text.secondary">
-                            {desc}
                           </Typography>
                         )}
                       </>
