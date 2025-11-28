@@ -47,7 +47,8 @@ export const TechnicalDetails = ({
                 key={item.title}
                 title={item.title}
                 titleVariant="subtitle2"
-                variant="outlined"
+                sx={{ bgcolor: "paper.background" }}
+                // variant="outlined"
               >
                 <Typography variant="body2" color="text.secondary">
                   {item.text}

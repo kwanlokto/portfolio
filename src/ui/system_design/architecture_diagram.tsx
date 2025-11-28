@@ -34,8 +34,8 @@ export default function ArchitectureDiagram({
                       icon={icon}
                       title={title}
                       titleVariant="subtitle2"
-                      sx={{ p: 1.5, borderRadius: 1 }}
-                      variant="outlined"
+                      sx={{ bgcolor: "paper.background" }}
+                      // variant="outlined"
                     >
                       <>
                         {body && (
@@ -44,7 +44,7 @@ export default function ArchitectureDiagram({
                           </Typography>
                         )}
                         {desc && (
-                          <Typography variant="caption" color="text.secondary">
+                          <Typography variant="body2" color="text.secondary">
                             {desc}
                           </Typography>
                         )}
@@ -55,7 +55,7 @@ export default function ArchitectureDiagram({
                   <Typography
                     key={idx}
                     variant="subtitle2"
-                    sx={{ fontWeight: 600 }}
+                    color="text.secondary"
                   >
                     {title}
                   </Typography>

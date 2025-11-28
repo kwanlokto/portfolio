@@ -26,7 +26,7 @@ export const Section = ({
   sx,
   ...paperProps
 }: SectionInterface) => (
-  <Paper sx={{ p: 2, ...sx }} {...paperProps}>
+  <Paper sx={{ p: 2, bgcolor: "action.hover", ...sx }} {...paperProps}>
     <Stack spacing={1}>
       <Stack direction="row" spacing={1} alignItems="center">
         {icon && (
