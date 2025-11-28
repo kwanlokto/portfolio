@@ -1,5 +1,5 @@
-// src/app/system-design/[id]/page.tsx
-import { system_design_studies, SystemDesignStudy } from "@/lib/system_design";
+import { SystemDesignStudy, system_design_studies } from "@/lib/system_design";
+
 import SystemDesignClient from "@/ui/system_design";
 
 interface PageProps {
@@ -7,8 +7,8 @@ interface PageProps {
 }
 
 // Server component
-export default function Page({ params }: PageProps) {
-  const { id } = params;
+export default async function Page({ params }: PageProps) {
+  const { id } = await params;
   const system_design_study = system_design_studies.find((p) => p.id === id);
 
   if (!system_design_study) return <div>Not found</div>;
