@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid, Stack, Typography } from "@mui/material";
+import { Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
 
 import { ArchitectureLayer } from "@/lib/system_design";
 import CardSection from "../card_section";
@@ -8,25 +8,24 @@ interface ArchitectureDiagramInterface {
   layers: ArchitectureLayer[];
 }
 
-export default function ArchitectureDiagram({
-  layers,
-}: ArchitectureDiagramInterface) {
+export default function ArchitectureDiagram({ layers }: ArchitectureDiagramInterface) {
   return (
     <CardSection>
       <Stack spacing={3}>
         {layers.map((layer, i) => (
-          <Box
+          <Paper
             key={i}
+            elevation={2}
             sx={{
-              p: 2,
+              p: 3,
               borderRadius: 2,
-              border: 2,
+              borderLeft: 4,
               borderColor: layer.color || "primary.main",
             }}
           >
             <Typography
               variant="subtitle1"
-              sx={{ fontWeight: 700, mb: 1 }}
+              sx={{ fontWeight: 700, mb: 2 }}
               color={layer.color}
             >
               {layer.title}
@@ -36,26 +35,33 @@ export default function ArchitectureDiagram({
               {layer.content.map(({ title, body, desc, icon }, idx) =>
                 body || desc ? (
                   <Grid key={idx} size={{ xs: 12, sm: 6, md: 4 }}>
-                    <Section
-                      icon={icon}
-                      title={title}
-                      titleVariant="subtitle2"
-                      sx={{ p: 1.5, borderRadius: 1 }}
+                    <Paper
                       variant="outlined"
+                      sx={{
+                        p: 2,
+                        borderRadius: 2,
+                        height: "100%",
+                      }}
                     >
-                      <>
-                        {body && (
-                          <Typography variant="body2" color="text.secondary">
-                            {body}
-                          </Typography>
-                        )}
-                        {desc && (
-                          <Typography variant="caption" color="text.secondary">
-                            {desc}
-                          </Typography>
-                        )}
-                      </>
-                    </Section>
+                      <Section
+                        icon={icon}
+                        title={title}
+                        titleVariant="subtitle2"
+                      >
+                        <>
+                          {body && (
+                            <Typography variant="body2" color="text.secondary">
+                              {body}
+                            </Typography>
+                          )}
+                          {desc && (
+                            <Typography variant="caption" color="text.secondary">
+                              {desc}
+                            </Typography>
+                          )}
+                        </>
+                      </Section>
+                    </Paper>
                   </Grid>
                 ) : (
                   <Typography
@@ -68,7 +74,7 @@ export default function ArchitectureDiagram({
                 )
               )}
             </Grid>
-          </Box>
+          </Paper>
         ))}
       </Stack>
     </CardSection>
