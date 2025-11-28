@@ -42,14 +42,9 @@ export const NotificationSystem = ({
               {alert.description}
             </Typography>
 
-            <Paper variant="outlined" sx={{ mt: 1, p: 1.5, borderRadius: 2 }}>
+            <Paper variant="outlined" sx={{ p: 2, borderRadius: 2 }}>
               {alert.messages.map((msg, i) => (
-                <Typography
-                  key={i}
-                  component="code"
-                  variant="caption"
-                  display="block"
-                >
+                <Typography key={i} variant="body2" color="text.secondary">
                   {msg}
                 </Typography>
               ))}
