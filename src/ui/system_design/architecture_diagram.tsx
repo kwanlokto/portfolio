@@ -8,7 +8,9 @@ interface ArchitectureDiagramInterface {
   layers: ArchitectureLayer[];
 }
 
-export default function ArchitectureDiagram({ layers }: ArchitectureDiagramInterface) {
+export default function ArchitectureDiagram({
+  layers,
+}: ArchitectureDiagramInterface) {
   return (
     <CardSection>
       <Stack spacing={3}>
@@ -35,33 +37,26 @@ export default function ArchitectureDiagram({ layers }: ArchitectureDiagramInter
               {layer.content.map(({ title, body, desc, icon }, idx) =>
                 body || desc ? (
                   <Grid key={idx} size={{ xs: 12, sm: 6, md: 4 }}>
-                    <Paper
+                    <Section
+                      icon={icon}
+                      title={title}
+                      titleVariant="subtitle2"
+                      sx={{ p: 1.5, borderRadius: 1 }}
                       variant="outlined"
-                      sx={{
-                        p: 2,
-                        borderRadius: 2,
-                        height: "100%",
-                      }}
                     >
-                      <Section
-                        icon={icon}
-                        title={title}
-                        titleVariant="subtitle2"
-                      >
-                        <>
-                          {body && (
-                            <Typography variant="body2" color="text.secondary">
-                              {body}
-                            </Typography>
-                          )}
-                          {desc && (
-                            <Typography variant="caption" color="text.secondary">
-                              {desc}
-                            </Typography>
-                          )}
-                        </>
-                      </Section>
-                    </Paper>
+                      <>
+                        {body && (
+                          <Typography variant="body2" color="text.secondary">
+                            {body}
+                          </Typography>
+                        )}
+                        {desc && (
+                          <Typography variant="caption" color="text.secondary">
+                            {desc}
+                          </Typography>
+                        )}
+                      </>
+                    </Section>
                   </Grid>
                 ) : (
                   <Typography
