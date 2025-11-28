@@ -16,7 +16,6 @@ export default function ArchitectureDiagram({
         p: 3,
         borderRadius: 2,
         boxShadow: 3,
-        bgcolor: "background.paper",
       }}
     >
       <Stack spacing={3}>
