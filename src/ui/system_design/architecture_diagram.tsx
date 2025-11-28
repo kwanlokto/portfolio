@@ -20,24 +20,12 @@ export default function ArchitectureDiagram({
     >
       <Stack spacing={3}>
         {layers.map((layer, i) => (
-          <Paper
+          <Section
+            title={layer.title}
             key={i}
-            elevation={2}
-            sx={{
-              p: 3,
-              borderRadius: 2,
-              borderLeft: 4,
-              borderColor: layer.color || "primary.main",
-            }}
+            titleColor={layer.color}
+            sx={{ borderLeft: 4, borderColor: layer.color || "primary.main" }}
           >
-            <Typography
-              variant="subtitle1"
-              sx={{ fontWeight: 700, mb: 2 }}
-              color={layer.color}
-            >
-              {layer.title}
-            </Typography>
-
             <Grid container spacing={2}>
               {layer.content.map(({ title, body, desc, icon }, idx) =>
                 body || desc ? (
@@ -74,7 +62,7 @@ export default function ArchitectureDiagram({
                 )
               )}
             </Grid>
-          </Paper>
+          </Section>
         ))}
       </Stack>
     </Paper>
