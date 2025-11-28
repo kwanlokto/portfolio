@@ -1,7 +1,6 @@
 import { Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
 
 import { ArchitectureLayer } from "@/lib/system_design";
-import CardSection from "../card_section";
 import { Section } from "../section";
 
 interface ArchitectureDiagramInterface {
@@ -12,7 +11,14 @@ export default function ArchitectureDiagram({
   layers,
 }: ArchitectureDiagramInterface) {
   return (
-    <CardSection>
+    <Paper
+      sx={{
+        p: 3,
+        borderRadius: 2,
+        boxShadow: 3,
+        bgcolor: "background.paper",
+      }}
+    >
       <Stack spacing={3}>
         {layers.map((layer, i) => (
           <Paper
@@ -72,6 +78,6 @@ export default function ArchitectureDiagram({
           </Paper>
         ))}
       </Stack>
-    </CardSection>
+    </Paper>
   );
 }
