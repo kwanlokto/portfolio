@@ -36,8 +36,6 @@ export const TechnicalDetails = ({
           title={section.title}
           titleColor={section.color}
           sx={{
-            borderRadius: 2,
-            boxShadow: 3,
             borderLeft: 4,
             borderColor: section.color || "primary.main",
           }}

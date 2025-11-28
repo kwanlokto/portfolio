@@ -33,7 +33,7 @@ export const Section = ({
           <Avatar
             sx={{
               bgcolor: "transparent",
-              color: "text.primary",
+              color: titleColor,
             }}
           >
             {icon}

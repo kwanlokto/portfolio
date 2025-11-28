@@ -47,16 +47,15 @@ export const WorkflowDiagram = ({ steps }: WorkFlowDiagramInteface) => {
 
         <Section
           title="Cancellation Handling"
+          titleColor="warning.main"
           icon={<MdReportProblem />}
           sx={{
             mt: 2,
             p: 2,
-            bgcolor: "warning.lighter",
             border: 0,
             borderLeft: 4,
             borderColor: "warning.main",
           }}
-          variant="outlined"
         >
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
             Customer can cancel at any time before pickup. After driver

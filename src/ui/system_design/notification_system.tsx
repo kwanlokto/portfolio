@@ -26,45 +26,35 @@ export const NotificationSystem = ({
       </Typography>
 
       <Stack spacing={2}>
-        {alerts.map((alert, idx) => (
-          <Paper
-            key={idx}
-            variant="outlined"
+        {alerts.map((alert) => (
+          <Section
+            key={alert.title}
+            icon={alert.icon}
+            title={alert.title}
+            titleColor={`${alert.color}.main`}
             sx={{
-              p: 2,
-              borderRadius: 2,
               borderLeft: 4,
-              borderColor: `${alert.color}.main`,
+              borderColor: `${alert.color}.main` || "primary.main",
             }}
+            titleVariant="subtitle2"
           >
-            <Section
-              icon={alert.icon}
-              title={alert.title}
-              titleColor={`${alert.color}.main`}
-              titleVariant="subtitle2"
-            >
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ mt: 0.5 }}
-              >
-                {alert.description}
-              </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+              {alert.description}
+            </Typography>
 
-              <Paper variant="outlined" sx={{ mt: 1, p: 1.5, borderRadius: 2 }}>
-                {alert.messages.map((msg, i) => (
-                  <Typography
-                    key={i}
-                    component="code"
-                    variant="caption"
-                    display="block"
-                  >
-                    {msg}
-                  </Typography>
-                ))}
-              </Paper>
-            </Section>
-          </Paper>
+            <Paper variant="outlined" sx={{ mt: 1, p: 1.5, borderRadius: 2 }}>
+              {alert.messages.map((msg, i) => (
+                <Typography
+                  key={i}
+                  component="code"
+                  variant="caption"
+                  display="block"
+                >
+                  {msg}
+                </Typography>
+              ))}
+            </Paper>
+          </Section>
         ))}
       </Stack>
 
@@ -78,16 +68,18 @@ export const NotificationSystem = ({
       <Grid container spacing={2}>
         {notification_channels.map((channel, idx) => (
           <Grid key={idx} size={{ xs: 12, md: 4 }}>
-            <Paper
-              variant="outlined"
-              sx={{ p: 2, borderRadius: 2, height: "100%" }}
+            <Section
+              title={channel.title}
+              titleColor="info.main"
+              sx={{
+                borderLeft: 4,
+                borderColor: "info.main",
+              }}
             >
-              <Section title={channel.title}>
-                <Typography variant="body2" color="text.secondary">
-                  {channel.description}
-                </Typography>
-              </Section>
-            </Paper>
+              <Typography variant="body2" color="text.secondary">
+                {channel.description}
+              </Typography>
+            </Section>
           </Grid>
         ))}
       </Grid>
