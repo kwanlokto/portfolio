@@ -1,6 +1,5 @@
 import { AlertItem, NotificationChannel } from "@/lib/system_design";
 import {
-  Divider,
   Grid2 as Grid,
   Paper,
   Stack,
@@ -25,7 +24,7 @@ export const NotificationSystem = ({
         Key Alert Scenarios
       </Typography>
 
-      <Stack spacing={2}>
+      <Stack spacing={2} mb={3}>
         {alerts.map((alert) => (
           <Section
             key={alert.title}
@@ -36,7 +35,6 @@ export const NotificationSystem = ({
               borderLeft: 4,
               borderColor: `${alert.color}.main` || "primary.main",
             }}
-            titleVariant="subtitle2"
           >
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
               {alert.description}
@@ -52,8 +50,6 @@ export const NotificationSystem = ({
           </Section>
         ))}
       </Stack>
-
-      <Divider sx={{ my: 3 }} />
 
       {/* Notification Channels */}
       <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
