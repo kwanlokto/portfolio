@@ -6,7 +6,7 @@ import { MdArrowBack } from "react-icons/md";
 import SystemDesignClient from "@/ui/system_design";
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 // Server component
