@@ -28,10 +28,11 @@ export const Section = ({
 }: SectionInterface) => (
   <Paper sx={{ p: 2, bgcolor: "action.hover", ...sx }} {...paperProps}>
     <Stack spacing={1}>
-      <Stack direction="row" spacing={1} alignItems="center">
+      <Stack direction="row" alignItems="center">
         {icon && (
           <Avatar
             sx={{
+              ml: -1,
               bgcolor: "transparent",
               color: titleColor,
             }}
@@ -44,7 +45,6 @@ export const Section = ({
           variant={titleVariant}
           color={titleColor}
           fontWeight={700}
-          mb={1}
         >
           {title}
         </Typography>
