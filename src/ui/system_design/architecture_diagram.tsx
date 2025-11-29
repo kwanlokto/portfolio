@@ -34,16 +34,12 @@ export default function ArchitectureDiagram({
                       icon={icon}
                       title={title}
                       titleVariant="subtitle2"
-                      sx={{ bgcolor: "paper.background" }}
-                      // variant="outlined"
+                      sx={{ bgcolor: "paper.background", borderRadius: 2 }}
+                      variant="outlined"
                     >
-                      <>
-                        {body && (
-                          <Typography variant="body2" color="text.secondary">
-                            {body}
-                          </Typography>
-                        )}
-                      </>
+                      <Typography variant="body2" color="text.secondary">
+                        {body}
+                      </Typography>
                     </Section>
                   </Grid>
                 ) : (

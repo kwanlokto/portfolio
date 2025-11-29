@@ -47,8 +47,8 @@ export const TechnicalDetails = ({
                 key={item.title}
                 title={item.title}
                 titleVariant="subtitle2"
-                sx={{ bgcolor: "paper.background" }}
-                // variant="outlined"
+                sx={{ bgcolor: "paper.background", borderRadius: 2 }}
+                variant="outlined"
               >
                 <Typography variant="body2" color="text.secondary">
                   {item.text}
@@ -62,35 +62,24 @@ export const TechnicalDetails = ({
       ))}
 
       {/* Scalability Section */}
-      <Paper
-        elevation={2}
-        sx={{
-          p: 3,
-          borderRadius: 2,
-          borderLeft: 4,
-          borderColor: "error.main",
-        }}
+
+      <Section
+        title="Scalability Considerations"
+        titleColor="error.main"
+        titleVariant="subtitle1"
+        sx={{ borderLeft: 4, borderColor: "error.main" }}
       >
-        <Section
-          title="Scalability Considerations"
-          titleColor="error.main"
-          titleVariant="subtitle1"
-        >
-          <Paper variant="outlined" sx={{ p: 2, borderRadius: 2 }}>
-            <List dense>
-              {scalability_items.map((item, i) => (
-                <ListItem key={i}>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText
-                    primaryTypographyProps={{ variant: "body2" }}
-                    primary={item.text}
-                  />
-                </ListItem>
-              ))}
-            </List>
-          </Paper>
-        </Section>
-      </Paper>
+        <Paper variant="outlined" sx={{ p: 2, borderRadius: 2 }}>
+          <List dense>
+            {scalability_items.map((item, i) => (
+              <ListItem key={i}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItem>
+            ))}
+          </List>
+        </Paper>
+      </Section>
     </Stack>
   </Paper>
 );

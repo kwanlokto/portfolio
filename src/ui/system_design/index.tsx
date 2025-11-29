@@ -1,13 +1,14 @@
 "use client";
 
-import { SystemDesignStudy } from "@/lib/system_design";
+import { Box, Divider, Paper, Tab, Tabs, Typography } from "@mui/material";
+import React, { useState } from "react";
+
 import ArchitectureDiagram from "@/ui/system_design/architecture_diagram";
 import { DataModels } from "@/ui/system_design/data_models";
 import { NotificationSystem } from "@/ui/system_design/notification_system";
+import { SystemDesignStudy } from "@/lib/system_design";
 import { TechnicalDetails } from "@/ui/system_design/technical_details";
 import { WorkflowDiagram } from "@/ui/system_design/workflow_diagram";
-import { Box, Divider, Paper, Tab, Tabs, Typography } from "@mui/material";
-import React, { useState } from "react";
 
 export default function SystemDesignClient({
   system_design_study,
