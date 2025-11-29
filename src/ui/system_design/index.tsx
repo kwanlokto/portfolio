@@ -1,6 +1,13 @@
 "use client";
 
-import { Box, Divider, Paper, Tab, Tabs, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  Divider,
+  Tab,
+  Tabs,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 
 import ArchitectureDiagram from "@/ui/system_design/architecture_diagram";
@@ -47,55 +54,60 @@ export default function SystemDesignClient({
         </Typography>
       </Box>
 
-      <Paper sx={{ mb: 2 }}>
-        <Tabs
-          value={activeTab}
-          onChange={handleTabChange}
-          variant="scrollable"
-          scrollButtons="auto"
-          aria-label="system design tabs"
-        >
-          {tabConfig.map((t) => (
-            <Tab key={t.id} label={t.label} />
-          ))}
-        </Tabs>
-      </Paper>
+      <Card variant="outlined" sx={{ mb: 3, borderRadius: 2 }}>
+        <>
+          <Tabs
+            value={activeTab}
+            onChange={handleTabChange}
+            variant="scrollable"
+            scrollButtons="auto"
+            aria-label="system design tabs"
+            sx={{ borderBottom: 1, borderColor: "divider" }}
+          >
+            {tabConfig.map((t) => (
+              <Tab key={t.id} label={t.label} />
+            ))}
+          </Tabs>
 
-      <Paper
-        sx={{
-          p: 3,
-          borderRadius: 2,
-          boxShadow: 3,
-        }}
-      >
-        {activeTab === 0 && (
-          <ArchitectureDiagram
-            layers={system_design_study.architecture_diagram || []}
-          />
-        )}
-        {activeTab === 1 && (
-          <WorkflowDiagram steps={system_design_study.steps || []} />
-        )}
-        {activeTab === 2 && (
-          <NotificationSystem
-            alerts={system_design_study.alerts || []}
-            notification_channels={
-              system_design_study.notification_channels || []
-            }
-          />
-        )}
-        {activeTab === 3 && (
-          <SchemaDesign
-            schema_definitions={system_design_study.schema_definitions || []}
-          />
-        )}
-        {activeTab === 4 && (
-          <TechnicalDetails
-            scalability_items={system_design_study.scalability_items || []}
-            technical_sections={system_design_study.technical_sections || []}
-          />
-        )}
-      </Paper>
+          <Card
+            sx={{
+              p: 3,
+            }}
+          >
+            {activeTab === 0 && (
+              <ArchitectureDiagram
+                layers={system_design_study.architecture_diagram || []}
+              />
+            )}
+            {activeTab === 1 && (
+              <WorkflowDiagram steps={system_design_study.steps || []} />
+            )}
+            {activeTab === 2 && (
+              <NotificationSystem
+                alerts={system_design_study.alerts || []}
+                notification_channels={
+                  system_design_study.notification_channels || []
+                }
+              />
+            )}
+            {activeTab === 3 && (
+              <SchemaDesign
+                schema_definitions={
+                  system_design_study.schema_definitions || []
+                }
+              />
+            )}
+            {activeTab === 4 && (
+              <TechnicalDetails
+                scalability_items={system_design_study.scalability_items || []}
+                technical_sections={
+                  system_design_study.technical_sections || []
+                }
+              />
+            )}
+          </Card>
+        </>
+      </Card>
     </Box>
   );
 }
