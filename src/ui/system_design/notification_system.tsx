@@ -1,10 +1,5 @@
 import { AlertItem, NotificationChannel } from "@/lib/system_design";
-import {
-  Grid2 as Grid,
-  Paper,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
 
 import { Section } from "../section";
 
@@ -36,7 +31,11 @@ export const NotificationSystem = ({
               borderColor: `${alert.color}.main` || "primary.main",
             }}
           >
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ mb: 1 }}
+            >
               {alert.description}
             </Typography>
 

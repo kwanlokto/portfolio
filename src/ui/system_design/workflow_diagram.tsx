@@ -57,7 +57,7 @@ export const WorkflowDiagram = ({ steps }: WorkFlowDiagramInteface) => {
             borderColor: "warning.main",
           }}
         >
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+          <Typography variant="body2" color="text.secondary">
             Customer can cancel at any time before pickup. After driver
             assignment, cancellation fee may apply. Driver notified immediately,
             ride marked as cancelled, driver returns to available pool.
