@@ -22,10 +22,10 @@ export default function SystemDesignClient({
   };
 
   const tabConfig = [
-    { id: 0, label: "Architecture" },
-    { id: 1, label: "Workflow" },
+    { id: 0, label: "Workflow" },
+    { id: 1, label: "Architecture" },
     { id: 2, label: "Notifications" },
-    { id: 3, label: "Data Models" },
+    { id: 3, label: "Schema Design" },
     { id: 4, label: "Technical" },
   ];
 
