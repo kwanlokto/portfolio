@@ -8,7 +8,7 @@ interface DataModelsInterface {
   schema_definitions: SchemaDefinition[];
 }
 
-export const DataModels = ({ schema_definitions }: DataModelsInterface) => {
+export const SchemaDesign = ({ schema_definitions }: DataModelsInterface) => {
   return (
     <Paper
       sx={{
