@@ -19,7 +19,7 @@ export const NotificationSystem = ({
         Key Alert Scenarios
       </Typography>
 
-      <Stack spacing={2} mb={3}>
+      <Stack spacing={3} mb={3}>
         {alerts.map((alert) => (
           <Section
             key={alert.title}
@@ -31,11 +31,7 @@ export const NotificationSystem = ({
               borderColor: `${alert.color}.main` || "primary.main",
             }}
           >
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              sx={{ mb: 1 }}
-            >
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
               {alert.description}
             </Typography>
 
@@ -55,7 +51,7 @@ export const NotificationSystem = ({
         Notification Channels
       </Typography>
 
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         {notification_channels.map((channel, idx) => (
           <Grid key={idx} size={{ xs: 12, md: 4 }}>
             <Section

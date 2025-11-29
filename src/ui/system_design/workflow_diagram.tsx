@@ -9,7 +9,7 @@ interface WorkFlowDiagramInteface {
 }
 export const WorkflowDiagram = ({ steps }: WorkFlowDiagramInteface) => {
   return (
-    <Stack spacing={2}>
+    <Stack spacing={3}>
       {steps.map((item: WorkFlowItem) => (
         <Stack
           key={item.step}

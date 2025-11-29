@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Card,
-  Divider,
-  Tab,
-  Tabs,
-  Typography,
-} from "@mui/material";
+import { Box, Card, Divider, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 import ArchitectureDiagram from "@/ui/system_design/architecture_diagram";
