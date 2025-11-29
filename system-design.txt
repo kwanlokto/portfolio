@@ -1,0 +1,21 @@
+1:"$Sreact.fragment"
+2:I[7778,["479","static/chunks/795d4814-b46ac2aa289f9ee1.js","599","static/chunks/599-7dbbdf715dbafd75.js","857","static/chunks/857-fb6a4dbcb23f5a13.js","8","static/chunks/8-8cc0b5984cc54459.js","874","static/chunks/874-edc7e51a2916c912.js","609","static/chunks/609-2d8388b8656857d3.js","314","static/chunks/314-abcbc940b8768546.js","812","static/chunks/812-4efa42f9fd51d0be.js","245","static/chunks/245-a900a60e8c1c2055.js","177","static/chunks/app/layout-0fa9831d4c91f73f.js"],"default"]
+3:I[7555,[],""]
+4:I[1295,[],""]
+5:I[2269,["599","static/chunks/599-7dbbdf715dbafd75.js","857","static/chunks/857-fb6a4dbcb23f5a13.js","345","static/chunks/app/not-found-42adf131acdba9ef.js"],"default"]
+6:I[9670,["599","static/chunks/599-7dbbdf715dbafd75.js","857","static/chunks/857-fb6a4dbcb23f5a13.js","345","static/chunks/app/not-found-42adf131acdba9ef.js"],"default"]
+7:I[5857,["599","static/chunks/599-7dbbdf715dbafd75.js","857","static/chunks/857-fb6a4dbcb23f5a13.js","345","static/chunks/app/not-found-42adf131acdba9ef.js"],"default"]
+8:I[894,[],"ClientPageRoot"]
+9:I[529,["479","static/chunks/795d4814-b46ac2aa289f9ee1.js","599","static/chunks/599-7dbbdf715dbafd75.js","857","static/chunks/857-fb6a4dbcb23f5a13.js","8","static/chunks/8-8cc0b5984cc54459.js","167","static/chunks/167-635dc990e7f00b24.js","874","static/chunks/874-edc7e51a2916c912.js","518","static/chunks/518-e78844229f36dcf3.js","295","static/chunks/app/system-design/page-0f33eeda5454728a.js"],"default"]
+c:I[9665,[],"OutletBoundary"]
+f:I[9665,[],"ViewportBoundary"]
+11:I[9665,[],"MetadataBoundary"]
+13:I[6614,[],""]
+:HL["/portfolio/_next/static/css/17b98d549b58b75f.css","style"]
+0:{"P":null,"b":"Oy9BQNLQI9OnOz6suuHvU","p":"/portfolio","c":["","system-design"],"i":false,"f":[[["",{"children":["system-design",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/portfolio/_next/static/css/17b98d549b58b75f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L5",null,{"display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center","height":"100vh","children":[["$","$L6",null,{"variant":"h4","fontWeight":"bold","children":"404 - Page Not Found"}],["$","$L6",null,{"variant":"body1","mt":2,"children":"The page you're looking for doesn't exist."}],["$","$L7",null,{"variant":"contained","color":"primary","href":"/","sx":{"mt":4},"children":"Go Back Home"}]]}],"$undefined",[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["system-design",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L8",null,{"Component":"$9","searchParams":{},"params":{},"promises":["$@a","$@b"]}],"$undefined",null,["$","$Lc",null,{"children":["$Ld","$Le",null]}]]}],{},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","Fg0Ac1uSsr4g4LyPE6-_w",{"children":[["$","$Lf",null,{"children":"$L10"}],null]}],["$","$L11",null,{"children":"$L12"}]]}],false]],"m":"$undefined","G":["$13","$undefined"],"s":false,"S":true}
+a:{}
+b:{}
+10:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+d:null
+e:null
+12:[["$","title","0",{"children":"Ray's Portfolio"}],["$","meta","1",{"name":"description","content":"Ray's Portfolio"}],["$","link","2",{"rel":"icon","href":"/portfolio/favicon.ico"}]]
