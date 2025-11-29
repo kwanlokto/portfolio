@@ -13,7 +13,7 @@ export const NotificationSystem = ({
   notification_channels,
 }: NotificationSystemProps) => {
   return (
-    <Paper elevation={2} sx={{ p: 3, borderRadius: 2 }}>
+    <>
       {/* Alerts Section */}
       <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 2 }}>
         Key Alert Scenarios
@@ -73,6 +73,6 @@ export const NotificationSystem = ({
           </Grid>
         ))}
       </Grid>
-    </Paper>
+    </>
   );
 };

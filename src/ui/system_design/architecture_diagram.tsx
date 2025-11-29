@@ -1,4 +1,4 @@
-import { Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
+import { Grid2 as Grid, Stack, Typography } from "@mui/material";
 
 import { ArchitectureLayer } from "@/lib/system_design";
 import { Section } from "../section";
@@ -11,13 +11,7 @@ export default function ArchitectureDiagram({
   layers,
 }: ArchitectureDiagramInterface) {
   return (
-    <Paper
-      sx={{
-        p: 3,
-        borderRadius: 2,
-        boxShadow: 3,
-      }}
-    >
+
       <Stack spacing={3}>
         {layers.map((layer, i) => (
           <Section
@@ -56,6 +50,5 @@ export default function ArchitectureDiagram({
           </Section>
         ))}
       </Stack>
-    </Paper>
   );
 }

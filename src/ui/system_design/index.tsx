@@ -61,7 +61,13 @@ export default function SystemDesignClient({
         </Tabs>
       </Paper>
 
-      <Box>
+      <Paper
+        sx={{
+          p: 3,
+          borderRadius: 2,
+          boxShadow: 3,
+        }}
+      >
         {activeTab === 0 && (
           <ArchitectureDiagram
             layers={system_design_study.architecture_diagram || []}
@@ -89,7 +95,7 @@ export default function SystemDesignClient({
             technical_sections={system_design_study.technical_sections || []}
           />
         )}
-      </Box>
+      </Paper>
     </Box>
   );
 }
