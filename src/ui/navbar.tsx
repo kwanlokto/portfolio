@@ -179,8 +179,8 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
 
             <ListItemButton
               onClick={() => {
+                set_show_contact_form(true);
                 setDrawerOpen(false);
-                console.log("Contact Clicked");
               }}
             >
               <ListItemIcon sx={{ minWidth: 32 }}>
