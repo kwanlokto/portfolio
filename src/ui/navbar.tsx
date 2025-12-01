@@ -1,19 +1,38 @@
 "use client";
 
-import { Box, Button, IconButton, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  Typography,
+  Drawer,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  TextField,
+} from "@mui/material";
+import Link from "next/link";
+import {
+  MdBrightness4,
+  MdMenu,
+  MdHome,
+  MdInfo,
+  MdWork,
+  MdDesignServices,
+  MdContactMail,
+} from "react-icons/md";
 import { EmailData, send_email } from "@/lib/email";
 import { FormEvent, useState } from "react";
 
-import Link from "next/link";
-import { MdBrightness4 } from "react-icons/md";
 import { Modal } from "./modal";
 import { usePathname } from "next/navigation";
 
 const tabs = [
-  { label: "Home", href: "/" },
-  { label: "Projects", href: "/project" },
-  { label: "About", href: "/about-me" },
-  { label: "Design", href: "/system-design"}
+  { label: "Home", href: "/", icon: <MdHome /> },
+  { label: "Projects", href: "/project", icon: <MdWork /> },
+  { label: "About", href: "/about-me", icon: <MdInfo /> },
+  { label: "Design", href: "/system-design", icon: <MdDesignServices /> },
 ];
 
 interface NavButtonProps {
@@ -66,6 +85,8 @@ type NavbarProps = {
 export const Navbar = ({ toggleTheme }: NavbarProps) => {
   const pathname = usePathname();
 
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   const [show_contact_form, set_show_contact_form] = useState(false);
   const [form_data, set_form_data] = useState({
     name: "",
@@ -110,26 +131,78 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         borderBottom: 1,
         borderColor: "divider",
         display: "flex",
-        justifyContent: "flex-end",
+        justifyContent: { xs: "none", sm: "flex-end" },
         gap: 2,
       }}
     >
-      {tabs.map((tab) => (
-        <Link key={tab.href} href={tab.href}>
-          <NavButton label={tab.label} active={pathname === tab.href}/>
+      <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+        {tabs.map((tab) => (
+          <Link key={tab.href} href={tab.href}>
+            <NavButton label={tab.label} active={pathname === tab.href} />
+          </Link>
+        ))}
+        <Link href="_blank" onClick={(e) => e.preventDefault()}>
+          <NavButton
+            label="Contact"
+            onClick={() => set_show_contact_form(true)}
+          />
         </Link>
-      ))}
-      <Link href="_blank" onClick={(e) => e.preventDefault()}>
-        <NavButton
-          label="Contact"
-          onClick={() => set_show_contact_form(true)}
-        />
-      </Link>
 
-      <IconButton color="inherit" onClick={toggleTheme}>
-        {/* you can conditionally show dark/light icons here */}
-        <MdBrightness4 style={{ marginTop: -2 }} size={18} />
+        <IconButton color="inherit" onClick={toggleTheme}>
+          {/* you can conditionally show dark/light icons here */}
+          <MdBrightness4 style={{ marginTop: -2 }} size={18} />
+        </IconButton>
+      </Box>
+
+      {/* Hamburger for small screens */}
+      <IconButton
+        sx={{ display: { xs: "flex", sm: "none" } }}
+        onClick={() => setDrawerOpen(true)}
+      >
+        <MdMenu />
       </IconButton>
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+      >
+        <Box sx={{ width: 250, p: 1, pt: 2 }}>
+          <List disablePadding>
+            {tabs.map((tab) => (
+              <Link key={tab.href} href={tab.href} passHref>
+                <ListItemButton onClick={() => setDrawerOpen(false)}>
+                  <ListItemIcon sx={{ minWidth: 32 }}>{tab.icon}</ListItemIcon>
+                  <ListItemText primary={tab.label} />
+                </ListItemButton>
+              </Link>
+            ))}
+
+            <ListItemButton
+              onClick={() => {
+                setDrawerOpen(false);
+                console.log("Contact Clicked");
+              }}
+            >
+              <ListItemIcon sx={{ minWidth: 32 }}>
+                <MdContactMail />
+              </ListItemIcon>
+              <ListItemText primary="Contact" />
+            </ListItemButton>
+
+            <ListItemButton
+              onClick={() => {
+                toggleTheme();
+                setDrawerOpen(false);
+              }}
+            >
+              <ListItemIcon sx={{ minWidth: 32 }}>
+                <MdBrightness4 />
+              </ListItemIcon>
+              <ListItemText primary="Toggle Theme" />
+            </ListItemButton>
+          </List>
+        </Box>
+      </Drawer>
       <Modal
         open={show_contact_form}
         onClose={() => set_show_contact_form(false)}
