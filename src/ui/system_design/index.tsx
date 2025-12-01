@@ -1,6 +1,22 @@
 "use client";
 
-import { Box, Card, Divider, Tab, Tabs, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  Divider,
+  Tab,
+  Tabs,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import {
+  MdArchitecture,
+  MdBuild,
+  MdNotifications,
+  MdSchema,
+  MdWork,
+} from "react-icons/md";
 import React, { useState } from "react";
 
 import ArchitectureDiagram from "@/ui/system_design/architecture_diagram";
@@ -16,17 +32,19 @@ export default function SystemDesignClient({
   system_design_study: SystemDesignStudy;
 }) {
   const [activeTab, setActiveTab] = useState(0);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // small screens
 
   const handleTabChange = (e: React.SyntheticEvent, value: number) => {
     setActiveTab(value);
   };
 
   const tabConfig = [
-    { id: 0, label: "Workflow" },
-    { id: 1, label: "Architecture" },
-    { id: 2, label: "Notifications" },
-    { id: 3, label: "Schema Design" },
-    { id: 4, label: "Technical" },
+    { id: 0, label: "Workflow", icon: <MdWork /> },
+    { id: 1, label: "Architecture", icon: <MdArchitecture /> },
+    { id: 2, label: "Notifications", icon: <MdNotifications /> },
+    { id: 3, label: "Schema Design", icon: <MdSchema /> },
+    { id: 4, label: "Technical", icon: <MdBuild /> },
   ];
 
   return (
@@ -54,23 +72,32 @@ export default function SystemDesignClient({
         <Tabs
           value={activeTab}
           onChange={handleTabChange}
-          variant="fullWidth" // ⭐ force full responsive layout
+          variant="fullWidth"
           aria-label="system design tabs"
           sx={{
             borderBottom: 1,
             borderColor: "divider",
-            display: "flex",
+            minHeight: 48,
+            ".MuiTab-root": {
+              flex: 1,
+              minWidth: 0,
+              py: 1,
+              fontSize: { xs: "1.25rem", sm: "0.9rem" },
+              textTransform: "none",
+            },
           }}
         >
-          {tabConfig.map((t) => (
+          {tabConfig.map((tab, index) => (
             <Tab
-              key={t.id}
-              label={t.label}
+              key={index}
+              icon={isMobile ? tab.icon : undefined} // render icon on mobile
+              label={!isMobile ? tab.label : undefined} // render text on desktop
               sx={{
-                flex: 1, // ⭐ tabs shrink evenly
-                minWidth: 0, // allow compression
-                padding: "6px 0", // reduce mobile height
-                fontSize: "0.8rem", // optional: smaller text on mobile
+                "& .MuiTab-wrapper": {
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                },
               }}
             />
           ))}
