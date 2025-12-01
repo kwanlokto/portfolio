@@ -3,27 +3,27 @@
 import {
   Box,
   Button,
-  IconButton,
-  Typography,
   Drawer,
+  IconButton,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
   TextField,
+  Typography,
 } from "@mui/material";
-import Link from "next/link";
-import {
-  MdBrightness4,
-  MdMenu,
-  MdHome,
-  MdInfo,
-  MdWork,
-  MdDesignServices,
-} from "react-icons/md";
 import { EmailData, send_email } from "@/lib/email";
 import { FormEvent, useState } from "react";
+import {
+  MdBrightness4,
+  MdDesignServices,
+  MdHome,
+  MdInfo,
+  MdMenu,
+  MdWork,
+} from "react-icons/md";
 
+import Link from "next/link";
 import { Modal } from "./modal";
 import { usePathname } from "next/navigation";
 
@@ -131,10 +131,9 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         borderColor: "divider",
         display: "flex",
         justifyContent: { xs: "none", sm: "flex-end" },
-        gap: 2,
       }}
     >
-      <Box sx={{ display: { xs: "none", sm: "flex" } }}>
+      <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
         {tabs.map((tab) => (
           <Link key={tab.href} href={tab.href}>
             <NavButton label={tab.label} active={pathname === tab.href} />
@@ -162,14 +161,14 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         }}
       >
         <IconButton onClick={() => setDrawerOpen(true)}>
-          <MdMenu />
+          <MdMenu size={18}/>
         </IconButton>
         {/* Right side: Contact + Theme */}
-        <Box sx={{ display: "flex", columnGap: 1 }}>
+        <Box sx={{ display: "flex", gap: 1 }}>
           <Link
             href="_blank"
             onClick={(e) => e.preventDefault()}
-            style={{ marginTop: "4px" }}
+            style={{ marginRight: "12px" }}
           >
             <NavButton
               label="Contact"
@@ -178,7 +177,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
           </Link>
 
           <IconButton onClick={toggleTheme}>
-            <MdBrightness4 style={{ marginTop: -2 }} size={18} />
+            <MdBrightness4 size={16} />
           </IconButton>
         </Box>
         <Drawer

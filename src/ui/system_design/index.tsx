@@ -104,7 +104,7 @@ export default function SystemDesignClient({
         </Tabs>
 
         {/* Switched to Box instead of nested Card to prevent overflow on mobile */}
-        <Box sx={{ p: { xs: 2, sm: 3 } }}>
+        <Box sx={{ p: { xs: 2, sm: 3 }, pt: 3 }}>
           {activeTab === 0 && (
             <WorkflowDiagram steps={system_design_study.steps || []} />
           )}
