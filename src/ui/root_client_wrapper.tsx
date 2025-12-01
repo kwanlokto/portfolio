@@ -84,7 +84,7 @@ export default function RootLayoutClientWrapper({
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          px: { xs: 2, md: 4, lg: 8 },
+          px: { xs: 1, sm: 2, md: 4, lg: 8 },
         }}
       >
         <Container maxWidth="md" sx={{ pt: 4 }}>
