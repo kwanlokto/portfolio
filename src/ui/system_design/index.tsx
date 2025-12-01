@@ -54,12 +54,12 @@ export default function SystemDesignClient({
         <Tabs
           value={activeTab}
           onChange={handleTabChange}
-          variant="scrollable"
-          scrollButtons="auto"
+          variant="fullWidth" // ⭐ force full responsive layout
           aria-label="system design tabs"
           sx={{
             borderBottom: 1,
             borderColor: "divider",
+            display: "flex",
           }}
         >
           {tabConfig.map((t) => (
@@ -67,8 +67,10 @@ export default function SystemDesignClient({
               key={t.id}
               label={t.label}
               sx={{
-                minWidth: 0, // MOBILE FIX
-                flexShrink: 0,
+                flex: 1, // ⭐ tabs shrink evenly
+                minWidth: 0, // allow compression
+                padding: "6px 0", // reduce mobile height
+                fontSize: "0.8rem", // optional: smaller text on mobile
               }}
             />
           ))}
