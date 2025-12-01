@@ -87,11 +87,11 @@ export default function RootLayoutClientWrapper({
           px: { xs: 1, sm: 2, md: 4, lg: 8 },
         }}
       >
-        <Container maxWidth="md" sx={{ pt: 4 }}>
+        <Container maxWidth="md" sx={{ pt: { xs: 2, sm: 4 } }}>
           <Navbar
             toggleTheme={() => setMode(mode === "light" ? "dark" : "light")}
           />
-          <Box sx={{ pt: 5, pb: 10 }}>{children}</Box>
+          <Box sx={{ pt: { xs: 2, sm: 5 }, pb: 10 }}>{children}</Box>
         </Container>
       </Box>
       <Box
