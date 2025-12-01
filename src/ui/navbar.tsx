@@ -155,54 +155,55 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
       </Box>
 
       {/* Hamburger for small screens */}
-      <IconButton
-        sx={{ display: { xs: "flex", sm: "none" } }}
-        onClick={() => setDrawerOpen(true)}
+      <Box
+        sx={{
+          display: { xs: "flex", sm: "none" },
+          width: "100%",
+          justifyContent: "space-between",
+        }}
       >
-        <MdMenu />
-      </IconButton>
-      <Drawer
-        anchor="left"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-      >
-        <Box sx={{ width: 250, p: 1, pt: 2 }}>
-          <List disablePadding>
-            {tabs.map((tab) => (
-              <Link key={tab.href} href={tab.href} passHref>
-                <ListItemButton onClick={() => setDrawerOpen(false)}>
-                  <ListItemIcon sx={{ minWidth: 32 }}>{tab.icon}</ListItemIcon>
-                  <ListItemText primary={tab.label} />
-                </ListItemButton>
-              </Link>
-            ))}
+        <IconButton onClick={() => setDrawerOpen(true)}>
+          <MdMenu />
+        </IconButton>
+        {/* Right side: Contact + Theme */}
+        <Box sx={{ display: "flex", columnGap: 1 }}>
+          <Link
+            href="_blank"
+            onClick={(e) => e.preventDefault()}
+            style={{ marginTop: "4px" }}
+          >
+            <NavButton
+              label="Contact"
+              onClick={() => set_show_contact_form(true)}
+            />
+          </Link>
 
-            <ListItemButton
-              onClick={() => {
-                set_show_contact_form(true);
-                setDrawerOpen(false);
-              }}
-            >
-              <ListItemIcon sx={{ minWidth: 32 }}>
-                <MdContactMail />
-              </ListItemIcon>
-              <ListItemText primary="Contact" />
-            </ListItemButton>
-
-            <ListItemButton
-              onClick={() => {
-                toggleTheme();
-                setDrawerOpen(false);
-              }}
-            >
-              <ListItemIcon sx={{ minWidth: 32 }}>
-                <MdBrightness4 />
-              </ListItemIcon>
-              <ListItemText primary="Toggle Theme" />
-            </ListItemButton>
-          </List>
+          <IconButton onClick={toggleTheme}>
+            <MdBrightness4 style={{ marginTop: -2 }} size={18} />
+          </IconButton>
         </Box>
-      </Drawer>
+        <Drawer
+          anchor="left"
+          open={drawerOpen}
+          onClose={() => setDrawerOpen(false)}
+        >
+          <Box sx={{ width: 250, p: 1, pt: 2 }}>
+            <List disablePadding>
+              {tabs.map((tab) => (
+                <Link key={tab.href} href={tab.href} passHref>
+                  <ListItemButton onClick={() => setDrawerOpen(false)}>
+                    <ListItemIcon sx={{ minWidth: 32 }}>
+                      {tab.icon}
+                    </ListItemIcon>
+                    <ListItemText primary={tab.label} />
+                  </ListItemButton>
+                </Link>
+              ))}
+            </List>
+          </Box>
+        </Drawer>
+      </Box>
+
       <Modal
         open={show_contact_form}
         onClose={() => set_show_contact_form(false)}
