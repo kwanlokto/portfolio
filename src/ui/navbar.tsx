@@ -20,7 +20,6 @@ import {
   MdInfo,
   MdWork,
   MdDesignServices,
-  MdContactMail,
 } from "react-icons/md";
 import { EmailData, send_email } from "@/lib/email";
 import { FormEvent, useState } from "react";
