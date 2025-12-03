@@ -23,6 +23,7 @@ import {
   MdWork,
 } from "react-icons/md";
 
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import Link from "next/link";
 import { Modal } from "./modal";
 import { usePathname } from "next/navigation";
@@ -161,20 +162,13 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         }}
       >
         <IconButton onClick={() => setDrawerOpen(true)}>
-          <MdMenu size={24}/>
+          <MdMenu size={24} />
         </IconButton>
         {/* Right side: Contact + Theme */}
         <Box sx={{ display: "flex", gap: 1 }}>
-          <Link
-            href="_blank"
-            onClick={(e) => e.preventDefault()}
-            style={{ marginRight: "12px" }}
-          >
-            <NavButton
-              label="Contact"
-              onClick={() => set_show_contact_form(true)}
-            />
-          </Link>
+          <IconButton onClick={() => set_show_contact_form(true)}>
+            <IoChatbubbleEllipsesOutline size={24} />
+          </IconButton>
 
           <IconButton onClick={toggleTheme}>
             <MdBrightness4 size={24} />
