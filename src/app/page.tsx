@@ -17,15 +17,15 @@ import { Experience } from "@/ui/experience";
 import { FaExclamation } from "react-icons/fa";
 import { HRefButton } from "@/ui/href_button";
 import Image from "next/image";
+import { ItemGrid } from "@/ui/item_grid";
 import Link from "next/link";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
-import { ItemGrid } from "@/ui/item_grid";
+import { Project } from "@/ui/project_card";
 import { TechStack } from "@/ui/tech_stack";
 import { handle_download } from "@/utils/download";
-import { useState } from "react";
 import { projects } from "@/lib/project";
-import { Project } from "@/ui/project_card";
+import { useState } from "react";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
@@ -48,7 +48,7 @@ export default function Home() {
             marginLeft: "24px",
             marginBottom: "24px",
             borderRadius: "24px",
-            maxWidth: "40vw",
+            maxWidth: "35vw",
             maxHeight: "24vh",
           }}
         />
