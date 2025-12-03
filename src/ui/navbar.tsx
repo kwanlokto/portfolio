@@ -29,10 +29,14 @@ import { Modal } from "./modal";
 import { usePathname } from "next/navigation";
 
 const tabs = [
-  { label: "Home", href: "/", icon: <MdHome /> },
-  { label: "Projects", href: "/project", icon: <MdWork /> },
-  { label: "About", href: "/about-me", icon: <MdInfo /> },
-  { label: "Design", href: "/system-design", icon: <MdDesignServices /> },
+  { label: "Home", href: "/", icon: <MdHome size={20} /> },
+  { label: "Projects", href: "/project", icon: <MdWork size={20} /> },
+  { label: "About", href: "/about-me", icon: <MdInfo size={20} /> },
+  {
+    label: "Design",
+    href: "/system-design",
+    icon: <MdDesignServices size={20} />,
+  },
 ];
 
 interface NavButtonProps {
@@ -184,7 +188,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
               {tabs.map((tab) => (
                 <Link key={tab.href} href={tab.href} passHref>
                   <ListItemButton onClick={() => setDrawerOpen(false)}>
-                    <ListItemIcon sx={{ minWidth: 32 }}>
+                    <ListItemIcon sx={{ minWidth: 36 }}>
                       {tab.icon}
                     </ListItemIcon>
                     <ListItemText primary={tab.label} />
