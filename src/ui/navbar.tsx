@@ -183,7 +183,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
           open={drawerOpen}
           onClose={() => setDrawerOpen(false)}
         >
-          <Box sx={{ width: 175, p: 0.5, pt: 2 }}>
+          <Box sx={{ width: 175, p: 0.75, pt: 2.5 }}>
             <List disablePadding>
               {tabs.map((tab) => (
                 <Link key={tab.href} href={tab.href} passHref>
