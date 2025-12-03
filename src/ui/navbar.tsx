@@ -161,7 +161,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         }}
       >
         <IconButton onClick={() => setDrawerOpen(true)}>
-          <MdMenu size={18}/>
+          <MdMenu size={24}/>
         </IconButton>
         {/* Right side: Contact + Theme */}
         <Box sx={{ display: "flex", gap: 1 }}>
@@ -177,7 +177,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
           </Link>
 
           <IconButton onClick={toggleTheme}>
-            <MdBrightness4 size={16} />
+            <MdBrightness4 size={24} />
           </IconButton>
         </Box>
         <Drawer
