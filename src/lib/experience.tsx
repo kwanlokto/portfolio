@@ -1,4 +1,5 @@
 import { BoldText } from "@/ui/bold_text";
+
 export interface Role {
   name: string;
   timeline: string;
@@ -156,8 +157,8 @@ export const education: ExperienceType[] = [
             applications
           </>,
           <>
-            Understood how to monitor different metrics to determine the next
-            steps forward in improving the marketing funnel.
+            Understood different metrics to determine the next steps forward in
+            improving the marketing funnel.
           </>,
           <>
             Implemented A/B testing strategies to evaluate campaign performance
