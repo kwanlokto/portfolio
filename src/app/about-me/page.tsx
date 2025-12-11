@@ -9,12 +9,13 @@ import {
   Grid2 as Grid,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import { HobbyImageType, hobby_images } from "@/lib/hobby_images";
+
 import Image from "next/image";
 import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
-import { hobby_images, HobbyImageType } from "@/lib/hobby_images";
 import { TextSection } from "@/ui/text_section";
+import { useState } from "react";
 
 export default function Page() {
   const current_year = new Date().getFullYear();
