@@ -11,11 +11,11 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
 
 import Link from "next/link";
 import { MdLaunch } from "react-icons/md";
 import { SystemDesignStudy } from "@/lib/system_design";
+import { useState } from "react";
 
 interface SystemDesignCardProps {
   system_design_study: SystemDesignStudy; // you can type this as SystemDesignsystem_design_study if you have the type
