@@ -12,11 +12,11 @@ import {
   Typography,
 } from "@mui/material";
 import { MdCode, MdGetApp, MdLaunch } from "react-icons/md";
-import React, { useState } from "react";
 
 import Image from "next/image";
 import { ProjectType } from "@/lib/project";
 import { handle_download } from "@/utils/download";
+import { useState } from "react";
 
 interface ProjectParams {
   project: ProjectType;
