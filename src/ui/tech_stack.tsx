@@ -1,4 +1,4 @@
-import { Box, Typography, Grid2 as Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { TechStackType, tech_stack } from "@/lib/tech_stack";
 
 export const TechStack = () => {

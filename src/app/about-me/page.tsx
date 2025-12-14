@@ -6,7 +6,7 @@ import {
   CardActionArea,
   CardContent,
   Divider,
-  Grid2 as Grid,
+  Grid,
   Typography,
 } from "@mui/material";
 import { HobbyImageType, hobby_images } from "@/lib/hobby_images";

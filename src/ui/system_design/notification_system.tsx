@@ -1,5 +1,5 @@
 import { AlertItem, NotificationChannel } from "@/lib/system_design";
-import { Grid2 as Grid, Paper, Stack, Typography } from "@mui/material";
+import { Grid, Paper, Stack, Typography } from "@mui/material";
 
 import { Section } from "../section";
 

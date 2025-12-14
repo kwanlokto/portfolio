@@ -1,6 +1,7 @@
 "use client";
 
-import { Grid2 as Grid, useTheme, useMediaQuery } from "@mui/material";
+import { Grid, useMediaQuery, useTheme } from "@mui/material";
+
 import React from "react";
 
 type ResponsiveCount =

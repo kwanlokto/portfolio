@@ -3,19 +3,20 @@
 import {
   Box,
   Button,
-  Grid2 as Grid,
+  Card,
+  CardActions,
+  CardContent,
+  Divider,
+  Grid,
   Stack,
   Typography,
-  Card,
-  CardContent,
-  CardActions,
-  Divider,
 } from "@mui/material";
-import { ProjectType } from "@/lib/project";
-import Image from "next/image";
-import React, { useState } from "react";
-import { handle_download } from "@/utils/download";
 import { MdCode, MdGetApp, MdLaunch } from "react-icons/md";
+import React, { useState } from "react";
+
+import Image from "next/image";
+import { ProjectType } from "@/lib/project";
+import { handle_download } from "@/utils/download";
 
 interface ProjectParams {
   project: ProjectType;

@@ -3,15 +3,16 @@
 import {
   Box,
   Button,
-  Grid2 as Grid,
+  Card,
+  CardActions,
+  CardContent,
+  Divider,
+  Grid,
   Stack,
   Typography,
-  Card,
-  CardContent,
-  CardActions,
-  Divider,
 } from "@mui/material";
 import React, { useState } from "react";
+
 import Link from "next/link";
 import { MdLaunch } from "react-icons/md";
 import { SystemDesignStudy } from "@/lib/system_design";
