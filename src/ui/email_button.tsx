@@ -1,6 +1,6 @@
-import { CiMail } from "react-icons/ci";
 import { IconButton, useTheme } from "@mui/material";
-import React from "react";
+
+import { CiMail } from "react-icons/ci";
 
 export const EmailButton = () => {
   const theme = useTheme();
