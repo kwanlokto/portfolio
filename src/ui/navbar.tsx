@@ -16,7 +16,6 @@ import { EmailData, send_email } from "@/lib/email";
 import { FormEvent, useState } from "react";
 import {
   MdBrightness4,
-  MdDesignServices,
   MdHome,
   MdInfo,
   MdMenu,
