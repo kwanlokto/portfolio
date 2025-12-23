@@ -31,9 +31,9 @@ export const work: ExperienceType[] = [
             within 3 months.
           </>,
           <>
-            Reviewed major partnership contracts for 47x expansion (17 to 700+
-            machines), identifying unfair contract terms and workload
-            imbalances.
+            Reviewed major contracts critical for 47x expansion (17 to 700+
+            machines), identifying and negotiating resolution of unfair terms
+            and workload imbalances
           </>,
         ],
       },
