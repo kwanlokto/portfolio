@@ -42,9 +42,10 @@ export const work: ExperienceType[] = [
         timeline: "Oct 2023 – June 2025",
         achievements: [
           <>
-            Architected microservices refactor that introduced end-to-end order
-            management into the machine, reducing support calls by 10%,
-            increasing efficiency by 25%, and improving data accuracy by 70%.
+            Architected microservices refactor that decoupled order management
+            into independent services, enabling order tracking within machines
+            and reducing support calls by 10%, increasing efficiency by 25%, and
+            improving data accuracy by 70%.
           </>,
           <>
             Provided technical troubleshooting support for clients and internal
