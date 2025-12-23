@@ -38,7 +38,7 @@ export default function Page() {
         </Typography>
         <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
         <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-          I'm a Senior Software Developer specializing in
+          I&apos;m a Senior Software Developer specializing in
           <BoldText> React</BoldText> and <BoldText>Python</BoldText>, with a
           focus on building maintainable systems and intuitive user interfaces.
           <br />
@@ -46,7 +46,7 @@ export default function Page() {
           My first project in high school was a recommendation program with
           O(m^n) space complexity — it barely worked, but I was hooked. That
           feeling of building something useful has stuck with me ever since.
-          These days, I'm still chasing it, just with better algorithms and
+          These days, I&apos;m still chasing it, just with better algorithms and
           (hopefully) fewer bugs.
         </Typography>
       </Box>
@@ -54,9 +54,9 @@ export default function Page() {
       <Divider />
 
       <TextSection title="How I Work" mb={1}>
-        I'm convinced that the best code is boring code. When I'm building
-        something, I'd rather spend time making it obvious than clever. I've
-        learned that the real challenge isn't solving the problem once, it's
+        I&apos;m convinced that the best code is boring code. When I&apos;m building
+        something, I&apos;d rather spend time making it obvious than clever. I&apos;ve
+        learned that the real challenge isn&apos;t solving the problem once, it&apos;s
         building something that the next person (usually future me) can
         understand six months later.
       </TextSection>
@@ -64,9 +64,9 @@ export default function Page() {
       <Divider />
 
       <TextSection title="Outside of Work">
-        When I'm not coding, I'm often out playing hockey, which is something I
-        picked up {current_year - 2021} years ago. It's been fun, frustrating,
-        and humbling. I've spent plenty of time falling, but every fall has been
+        When I&apos;m not coding, I&apos;m often out playing hockey, which is something I
+        picked up {current_year - 2021} years ago. It&apos;s been fun, frustrating,
+        and humbling. I&apos;ve spent plenty of time falling, but every fall has been
         a small reminder to get back up to keep trying and improving.
         <br />
         <br />I also love trying new cuisines and experiencing different
