@@ -49,7 +49,7 @@ export const work: ExperienceType[] = [
           <>
             Provided technical troubleshooting support for clients and internal
             teams to resolve complex issues, and designed a streamlined machine
-            setup procedure that reduced deployment time by 62% (from 8 to 3
+            setup procedure that reduced installation time by 62% (from 8 to 3
             hours)
           </>,
         ],
