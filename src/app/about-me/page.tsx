@@ -46,8 +46,8 @@ export default function Page() {
       <TextSection
         title="My Journey"
         content="My first project in high school was a recommendation program with O(m^n) 
-          complexity. It barely worked, but I loved the feeling of making 
-          something useful. Years later, I'm still chasing that same feeling—just 
+          space complexity. It barely worked, but I loved the feeling of making 
+          something useful. Years later, I'm still chasing that same feeling — just 
           with less complexity and fewer bugs."
         mb={1}
       />
@@ -55,11 +55,12 @@ export default function Page() {
         title="How I Work"
         content="I'm convinced that the best code is boring code. When I'm building 
           something, I'd rather spend time making it obvious than clever. I've 
-          learned that the real challenge isn't solving the problem once—it's 
+          learned that the real challenge isn't solving the problem once, it's 
           building something that the next person (usually future me) can understand 
           six months later."
         mb={1}
       />
+      <Divider />
 
       <TextSection
         title="Outside of Work"
@@ -71,8 +72,6 @@ export default function Page() {
           These experiences keep me curious and help bring a fresh perspective
           to my work.`}
       />
-
-      <Divider sx={{ my: 1 }} />
 
       <Grid container spacing={4}>
         {[
