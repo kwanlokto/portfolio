@@ -43,16 +43,14 @@ export const work: ExperienceType[] = [
         timeline: "Oct 2023 – June 2025",
         achievements: [
           <>
-            Architected <BoldText>microservices refactor</BoldText> that
-            decoupled order management into independent services, enabling order
-            tracking within machines and reducing support calls by 10%,
-            increasing efficiency by 25%, and improving data accuracy by 70%.
+            Architected <BoldText>microservices refactor</BoldText> to decouple
+            order management into independent services, decreasing cycle time by
+            25%, and improving data accuracy by 70%.
           </>,
           <>
-            Provided technical troubleshooting support for clients and internal
-            teams to resolve complex issues, and designed a streamlined machine
-            setup procedure that reduced installation time by 62% (from 8 to 3
-            hours)
+            Provided technical support for critical hardware and software issues
+            and developed a comprehensive troubleshooting workflow to reduce
+            support calls by 10%
           </>,
         ],
       },
