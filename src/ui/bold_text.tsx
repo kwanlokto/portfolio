@@ -4,7 +4,7 @@ export const BoldText = ({ children }: { children: React.ReactNode }) => {
   return (
     <Typography
       component="span"
-      fontWeight="900"
+      fontWeight="700"
       variant="inherit"
       color="text.primary"
     >
