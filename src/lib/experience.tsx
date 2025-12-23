@@ -22,8 +22,8 @@ export const work: ExperienceType[] = [
         achievements: [
           <>
             Led R&D strategy for improving our precision skate profiler and
-            sharpener trusted by 5+ NHL teams, AHL affiliates, and 10+ pro shops
-            across North America.
+            sharpener trusted by <BoldText>5+ NHL teams</BoldText>, AHL
+            affiliates, and 10+ pro shops across North America.
           </>,
           // <>
           //   Developed and executed SEO optimization strategy that increased
@@ -31,9 +31,10 @@ export const work: ExperienceType[] = [
           //   within 3 months.
           // </>,
           <>
-            Reviewed major contracts critical for 47x expansion (17 to 700+
-            machines), identifying and negotiating resolution of unfair terms
-            and workload imbalances
+            Reviewed major contracts critical for{" "}
+            <BoldText>47x expansion (17 to 700+ machines)</BoldText>,
+            identifying and negotiating resolution of unfair terms and workload
+            imbalances
           </>,
         ],
       },
@@ -42,10 +43,10 @@ export const work: ExperienceType[] = [
         timeline: "Oct 2023 – June 2025",
         achievements: [
           <>
-            Architected microservices refactor that decoupled order management
-            into independent services, enabling order tracking within machines
-            and reducing support calls by 10%, increasing efficiency by 25%, and
-            improving data accuracy by 70%.
+            Architected <BoldText>microservices refactor</BoldText> that
+            decoupled order management into independent services, enabling order
+            tracking within machines and reducing support calls by 10%,
+            increasing efficiency by 25%, and improving data accuracy by 70%.
           </>,
           <>
             Provided technical troubleshooting support for clients and internal
