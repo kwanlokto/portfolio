@@ -26,6 +26,7 @@ import { TechStack } from "@/ui/tech_stack";
 import { handle_download } from "@/utils/download";
 import { projects } from "@/lib/project";
 import { useState } from "react";
+import { BoldText } from "@/ui/bold_text";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
@@ -72,7 +73,7 @@ export default function Home() {
         </Box>
         <Box pt={2}>
           <Typography>
-            I&apos;m a Senior Software Developer with {current_year - 2019}{" "}
+            I&apos;m a Senior Software Developer with <BoldText>{current_year - 2019} </BoldText>
             experience leading cross-functional teams and delivering
             high-precision, performance-driven applications. Skilled in
             full-stack development, systems design, and collaborating with
