@@ -2,7 +2,6 @@ import { Box, Typography } from "@mui/material";
 
 interface TextSectionInterface {
   title: string;
-  content: string;
   // Margin props
   m?: number | string;
   mt?: number | string;
@@ -19,11 +18,12 @@ interface TextSectionInterface {
   pr?: number | string;
   px?: number | string;
   py?: number | string;
+  children: React.ReactNode;
 }
 
 export const TextSection = ({
   title,
-  content,
+  children,
   ...spacingProps
 }: TextSectionInterface) => {
   return (
@@ -32,7 +32,7 @@ export const TextSection = ({
         {title}
       </Typography>
       <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-        {content}
+        {children}
       </Typography>
     </Box>
   );

@@ -16,6 +16,7 @@ import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
 import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
+import { BoldText } from "@/ui/bold_text";
 
 export default function Page() {
   const current_year = new Date().getFullYear();
@@ -36,42 +37,42 @@ export default function Page() {
           About Me
         </Typography>
         <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
-        <Typography variant="body1" sx={{ lineHeight: 1.8, mb: 2 }}>
-          I&apos;m a Senior Software Developer focused on React and modern web
-          technologies. I care about writing code that&apos;s maintainable and
-          building interfaces that feel natural to use.
+        <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+          I'm a Senior Software Developer specializing in
+          <BoldText> React</BoldText> and <BoldText>Python</BoldText>, with a
+          focus on building maintainable systems and intuitive user interfaces.
+          <br />
+          <br />
+          My first project in high school was a recommendation program with
+          O(m^n) space complexity — it barely worked, but I was hooked. That
+          feeling of building something useful has stuck with me ever since.
+          These days, I'm still chasing it, just with better algorithms and
+          (hopefully) fewer bugs.
         </Typography>
       </Box>
-      <Divider />
-      <TextSection
-        title="My Journey"
-        content="My first project in high school was a recommendation program with O(m^n) 
-          space complexity. It barely worked, but I loved the feeling of making 
-          something useful. Years later, I'm still chasing that same feeling — just 
-          with less complexity and fewer bugs."
-        mb={1}
-      />
-      <TextSection
-        title="How I Work"
-        content="I'm convinced that the best code is boring code. When I'm building 
-          something, I'd rather spend time making it obvious than clever. I've 
-          learned that the real challenge isn't solving the problem once, it's 
-          building something that the next person (usually future me) can understand 
-          six months later."
-        mb={1}
-      />
+
       <Divider />
 
-      <TextSection
-        title="Outside of Work"
-        content={`When I'm not coding, I'm often out playing hockey,
-          which is something I picked up ${current_year - 2021} years ago.
-          It's been fun, frustrating, and humbling. I've spent plenty of time falling,
-          but every fall has been a small reminder to get back up to keep trying and
-          improving. I also love trying new cuisines and experiencing different cultures.
-          These experiences keep me curious and help bring a fresh perspective
-          to my work.`}
-      />
+      <TextSection title="How I Work" mb={1}>
+        I'm convinced that the best code is boring code. When I'm building
+        something, I'd rather spend time making it obvious than clever. I've
+        learned that the real challenge isn't solving the problem once, it's
+        building something that the next person (usually future me) can
+        understand six months later.
+      </TextSection>
+
+      <Divider />
+
+      <TextSection title="Outside of Work">
+        When I'm not coding, I'm often out playing hockey, which is something I
+        picked up {current_year - 2021} years ago. It's been fun, frustrating,
+        and humbling. I've spent plenty of time falling, but every fall has been
+        a small reminder to get back up to keep trying and improving.
+        <br />
+        <br />I also love trying new cuisines and experiencing different
+        cultures. These experiences keep me curious and help bring a fresh
+        perspective to my work.
+      </TextSection>
 
       <Grid container spacing={4}>
         {[
