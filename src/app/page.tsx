@@ -79,8 +79,8 @@ export default function Home() {
             performance-driven applications. Skilled in full-stack development,
             systems design, and collaborating with stakeholders to turn complex
             problems into impactful solutions.
-          </Typography>
-          <Typography pt={2} variant="body2">
+            <br />
+            <br />
             Recently, I&apos;ve been developing an automated skate sharpening
             and profiling technology endorsed by 5+ NHL teams.
           </Typography>
