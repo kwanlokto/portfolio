@@ -37,7 +37,7 @@ export default function Page() {
           About Me
         </Typography>
         <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
-        <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+        <Typography variant="body2">
           I&apos;m a Senior Software Developer specializing in
           <BoldText> React</BoldText> and <BoldText>Python</BoldText>, with a
           focus on building maintainable systems and intuitive user interfaces.

@@ -31,7 +31,7 @@ export const TextSection = ({
       <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>
         {title}
       </Typography>
-      <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+      <Typography variant="body2">
         {children}
       </Typography>
     </Box>

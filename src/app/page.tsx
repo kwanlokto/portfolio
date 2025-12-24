@@ -72,14 +72,14 @@ export default function Home() {
           />
         </Box>
         <Box pt={2}>
-          <Typography>
+          <Typography variant="body2">
             I&apos;m a Senior Software Developer with <BoldText>{current_year - 2019} </BoldText>
             experience leading cross-functional teams and delivering
             high-precision, performance-driven applications. Skilled in
             full-stack development, systems design, and collaborating with
             stakeholders to turn complex problems into impactful solutions.
           </Typography>
-          <Typography pt={2}>
+          <Typography pt={2} variant="body2">
             Recently, I&apos;ve been developing an automated skate sharpening
             and profiling technology endorsed by 5+ NHL teams.
           </Typography>
