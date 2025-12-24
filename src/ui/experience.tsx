@@ -36,9 +36,7 @@ export const Experience = ({
   return (
     <Box>
       <Timeline
-        sx={{
-          [`& .${timelineOppositeContentClasses.root}`]: { flex: 0.2 },
-        }}
+        sx={{ width: "100%" }}
       >
         {experience_list.map((experience, experience_idx) => (
           <Collapse
