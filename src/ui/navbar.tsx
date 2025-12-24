@@ -14,13 +14,7 @@ import {
 } from "@mui/material";
 import { EmailData, send_email } from "@/lib/email";
 import { FormEvent, useState } from "react";
-import {
-  MdBrightness4,
-  MdHome,
-  MdInfo,
-  MdMenu,
-  MdWork,
-} from "react-icons/md";
+import { MdBrightness4, MdHome, MdInfo, MdMenu, MdWork } from "react-icons/md";
 
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import Link from "next/link";
