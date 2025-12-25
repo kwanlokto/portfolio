@@ -82,7 +82,8 @@ export default function Home() {
             <br />
             <br />
             Recently, I&apos;ve been developing an automated skate sharpening
-            and profiling technology endorsed by 5+ NHL teams.
+            and profiling technology endorsed by
+            <BoldText> 5+ NHL teams</BoldText>.
           </Typography>
         </Box>
 
