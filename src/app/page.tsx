@@ -15,7 +15,6 @@ import { education, work } from "@/lib/experience";
 import { BoldText } from "@/ui/bold_text";
 import { EmailButton } from "@/ui/email_button";
 import { Experience } from "@/ui/experience";
-import { FaExclamation } from "react-icons/fa";
 import { HRefButton } from "@/ui/href_button";
 import Image from "next/image";
 import { ItemGrid } from "@/ui/item_grid";
