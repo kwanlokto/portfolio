@@ -12,6 +12,7 @@ import {
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 import { education, work } from "@/lib/experience";
 
+import { BoldText } from "@/ui/bold_text";
 import { EmailButton } from "@/ui/email_button";
 import { Experience } from "@/ui/experience";
 import { FaExclamation } from "react-icons/fa";
@@ -26,7 +27,6 @@ import { TechStack } from "@/ui/tech_stack";
 import { handle_download } from "@/utils/download";
 import { projects } from "@/lib/project";
 import { useState } from "react";
-import { BoldText } from "@/ui/bold_text";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
@@ -63,7 +63,7 @@ export default function Home() {
             }}
             size={30}
           />
-          <Typography variant="h6" pl={1}>
+          <Typography variant="h6" pl={1} fontWeight="bold">
             Hi, I&apos;m Ray
           </Typography>
           <FaExclamation
