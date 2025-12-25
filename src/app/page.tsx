@@ -64,13 +64,9 @@ export default function Home() {
             }}
             size={30}
           />
-          <Typography variant="h6" pl={1} fontWeight="bold">
-            Hi, I&apos;m Ray
+          <Typography variant="h5" pl={1} fontWeight="bold">
+            Hi, I&apos;m Ray!
           </Typography>
-          <FaExclamation
-            style={{ marginTop: "6px", display: "inline" }}
-            size={20}
-          />
         </Box>
         <Box pt={2}>
           <Typography variant="body2">
