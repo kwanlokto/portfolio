@@ -23,6 +23,7 @@ import Link from "next/link";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
 import { Project } from "@/ui/project_card";
+import { SiLeetcode } from "react-icons/si";
 import { TechStack } from "@/ui/tech_stack";
 import { handle_download } from "@/utils/download";
 import { projects } from "@/lib/project";
@@ -108,6 +109,9 @@ export default function Home() {
             </HRefButton>
             <HRefButton url="https://github.com/kwanlokto">
               <SlSocialGithub size={23} color={theme.palette.text.secondary} />
+            </HRefButton>
+            <HRefButton url="https://leetcode.com/u/GyBaljomA8/">
+              <SiLeetcode size={23} color={theme.palette.text.secondary} />
             </HRefButton>
             <EmailButton />
           </Box>
