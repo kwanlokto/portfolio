@@ -69,7 +69,7 @@ export default function Home() {
         </Box>
         <Box pt={2}>
           <Typography variant="body2">
-            I&apos;m a Senior Software Developer with
+            I&apos;m a Senior Software Engineer with
             <BoldText> {current_year - 2019} years </BoldText> of experience
             leading cross-functional teams and delivering high-precision,
             performance-driven applications. Skilled in full-stack development,

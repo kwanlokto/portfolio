@@ -38,7 +38,7 @@ export default function Page() {
         </Typography>
         <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
         <Typography variant="body2">
-          I&apos;m a Senior Software Developer specializing in
+          I&apos;m a Senior Software Engineer specializing in
           <BoldText> React</BoldText> and <BoldText>Python</BoldText>, with a
           focus on building maintainable systems and intuitive user interfaces.
           <br />
