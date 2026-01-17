@@ -30,12 +30,17 @@ export const work: ExperienceType[] = [
           //   organic website traffic by 40% (from 2K to 2.8K monthly visitors)
           //   within 3 months.
           // </>,
+          // <>
+          //   Reviewed major contracts critical for{" "}
+          //   <BoldText>11x expansion (17+ to 200+ machines)</BoldText>,
+          //   identifying and negotiating resolution of unfair terms and workload
+          //   imbalances
+          // </>,
           <>
-            Reviewed major contracts critical for{" "}
-            <BoldText>11x expansion (17+ to 200+ machines)</BoldText>,
-            identifying and negotiating resolution of unfair terms and workload
-            imbalances
-          </>,
+            Collaborated closely with cross-functional teams including product
+            management, marketing, and operations to align technology initiatives
+            with business goals and drive company growth.
+          </>
         ],
       },
       {
