@@ -12,7 +12,7 @@ export interface EmailData {
 emailjs.init("Ovsh2GH6HQdpFOq27");
 
 // Function to send an email
-export const send_email = (template_params: EmailData): Promise<void> => {
+export const send_email = async (template_params: EmailData): Promise<void> => {
   const serviceID = "service_yuso8s3";
   const templateID = "template_1uup1dp";
 

@@ -114,10 +114,10 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
     return Object.keys(errors).length === 0;
   };
 
-  const handle_submit = (e: FormEvent<HTMLFormElement>) => {
+  const handle_submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
-      send_email(form_data);
+      await send_email(form_data);
       set_form_data({ name: "", email: "", message: "" });
     }
   };
