@@ -32,7 +32,7 @@ export const work: ExperienceType[] = [
           // </>,
           <>
             Reviewed major contracts critical for{" "}
-            <BoldText>11x expansion (17 to 200+ machines)</BoldText>,
+            <BoldText>11x expansion (17+ to 200+ machines)</BoldText>,
             identifying and negotiating resolution of unfair terms and workload
             imbalances
           </>,
