@@ -158,17 +158,6 @@ export default function PragmaticProgrammerArticle() {
                     </Typography>
                   )}
 
-                  <Typography
-                    variant="h2"
-                    sx={{
-                      fontSize: { xs: "1.75rem", md: "2.5rem" },
-                      mb: 2,
-                      mt: section.subtitle ? 1 : 0,
-                    }}
-                  >
-                    {section.title}
-                  </Typography>
-
                   {section.content.split("\n\n").map((para, pIndex) => (
                     <Typography
                       key={pIndex}
