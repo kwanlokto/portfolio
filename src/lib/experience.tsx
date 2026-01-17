@@ -22,7 +22,7 @@ export const work: ExperienceType[] = [
         achievements: [
           <>
             Led R&D strategy for improving our precision skate profiler and
-            sharpener trusted by <BoldText>6+ NHL teams</BoldText>, AHL
+            sharpener trusted by <BoldText>7+ NHL teams</BoldText>, AHL
             affiliates, and 10+ pro shops across North America.
           </>,
           // <>
