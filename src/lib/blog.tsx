@@ -1,6 +1,6 @@
 export const sections = [
   {
-    title: "What Does 'Pragmatic' Actually Mean?",
+    subtitle: "What Does 'Pragmatic' Actually Mean?",
     content: (
       <>
         <p>
@@ -17,8 +17,7 @@ export const sections = [
     ),
   },
   {
-    title: "Own Your Code",
-    subtitle: "The Big Ideas",
+    subtitle: "Own Your Code",
     content: (
       <>
         <p>
@@ -35,7 +34,7 @@ export const sections = [
     ),
   },
   {
-    title: "DRY: Don't Repeat Yourself",
+    subtitle: "DRY: Don't Repeat Yourself",
     content: (
       <>
         <p>
@@ -52,7 +51,7 @@ export const sections = [
     ),
   },
   {
-    title: "Design for Change",
+    subtitle: "Design for Change",
     content: (
       <>
         <p>
@@ -68,7 +67,7 @@ export const sections = [
     ),
   },
   {
-    title: "Master Your Tools",
+    subtitle: "Master Your Tools",
     content: (
       <>
         <p>
@@ -84,7 +83,7 @@ export const sections = [
     ),
   },
   {
-    title: "Test as You Go",
+    subtitle: "Test as You Go",
     content: (
       <>
         <p>
@@ -100,7 +99,7 @@ export const sections = [
     ),
   },
   {
-    title: "Communicate Like It Matters",
+    subtitle: "Communicate Like It Matters",
     content: (
       <>
         <p>
