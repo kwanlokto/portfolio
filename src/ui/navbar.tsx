@@ -25,6 +25,7 @@ const tabs = [
   { label: "Home", href: "/", icon: <MdHome size={20} /> },
   { label: "Projects", href: "/project", icon: <MdWork size={20} /> },
   { label: "About", href: "/about-me", icon: <MdInfo size={20} /> },
+  { label: "Blog", href: "/blog", icon: <MdInfo size={20} /> },
   // {
   //   label: "Design",
   //   href: "/system-design",
