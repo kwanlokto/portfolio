@@ -8,24 +8,21 @@ export interface EmailData {
   [key: string]: unknown;
 }
 
-// Function to send an email
-export const send_email = (template_params: EmailData): void => {
-  // Your EmailJS user ID and service template (you get this from the EmailJS dashboard)
-  const serviceID = "service_yuso8s3"; // Replace with your Service ID
-  const templateID = "template_1uup1dp"; // Replace with your Template ID
+// Initialize once (e.g., at module load)
+emailjs.init("Ovsh2GH6HQdpFOq27");
 
-  // Sending the email via EmailJS
-  emailjs
-    .send(serviceID, templateID, template_params, {
-      publicKey: "Ovsh2GH6HQdpFOq27",  // TODO: This should not be here
+// Function to send an email
+export const send_email = (template_params: EmailData): Promise<void> => {
+  const serviceID = "service_yuso8s3";
+  const templateID = "template_1uup1dp";
+
+  return emailjs
+    .send(serviceID, templateID, template_params)
+    .then((response) => {
+      console.log("SUCCESS!", response.status, response.text);
     })
-    .then(
-      (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-      },
-      (error) => {
-        console.log("FAILED...", error.text);
-        alert("Failed to send email")
-      }
-    );
+    .catch((error) => {
+      console.error("FAILED...", error);
+      alert("Failed to send email");
+    });
 };
