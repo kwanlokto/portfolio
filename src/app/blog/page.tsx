@@ -1,4 +1,3 @@
-import { Bookmark, BookmarkBorder, Share } from "@mui/icons-material";
 import {
   Box,
   Chip,
@@ -9,6 +8,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
+import { FiBookmark, FiShare2 } from "react-icons/fi";
 import React, { useState } from "react";
 
 export default function PragmaticProgrammerArticle() {
@@ -98,14 +98,16 @@ export default function PragmaticProgrammerArticle() {
                     onClick={() => setBookmarked(!bookmarked)}
                     size="small"
                   >
-                    {bookmarked ? (
-                      <Bookmark sx={{ color: "#d84315" }} />
-                    ) : (
-                      <BookmarkBorder />
-                    )}
+                    <FiBookmark
+                      size={18}
+                      style={{
+                        color: bookmarked ? "#d84315" : "inherit",
+                        fill: bookmarked ? "#d84315" : "none",
+                      }}
+                    />
                   </IconButton>
                   <IconButton size="small">
-                    <Share />
+                    <FiShare2 size={18} />
                   </IconButton>
                 </Box>
               </Box>
