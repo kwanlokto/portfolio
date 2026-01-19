@@ -23,6 +23,7 @@ export default function Page() {
         render_item={(project, index) => (
           <Project key={index} project={project} />
         )}
+        spacing={3}
       />
     </Box>
   );
