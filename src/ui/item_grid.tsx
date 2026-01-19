@@ -1,6 +1,6 @@
 "use client";
 
-import { Grid, useMediaQuery, useTheme } from "@mui/material";
+import { Grid, GridProps, useMediaQuery, useTheme } from "@mui/material";
 
 import React from "react";
 
@@ -8,7 +8,7 @@ type ResponsiveCount =
   | number
   | { xs?: number; sm?: number; md?: number; lg?: number; xl?: number };
 
-interface ItemGridProps<T> {
+interface ItemGridProps<T> extends Omit<GridProps, "container"> {
   items: T[];
   render_item: (item: T, index: number) => React.ReactNode;
   total_featured_items?: ResponsiveCount;
@@ -18,6 +18,7 @@ export const ItemGrid = <T,>({
   items,
   render_item,
   total_featured_items,
+  ...grid_props
 }: ItemGridProps<T>) => {
   const theme = useTheme();
 
@@ -51,7 +52,7 @@ export const ItemGrid = <T,>({
   const visible_count = get_visible_count();
 
   return (
-    <Grid container spacing={3}>
+    <Grid container {...grid_props}>
       {items
         .slice(0, visible_count)
         .map((item, index) => render_item(item, index))}
