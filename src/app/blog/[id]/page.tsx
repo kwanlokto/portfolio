@@ -11,11 +11,11 @@ export async function generateStaticParams() {
     .map((f) => ({ id: f.replace(".md", "") }));
 }
 
-export default async function Page({
-  params,
-}: {
+interface PageProps {
   params: Promise<{ id: string }>;
-}) {
-  const { id } = await params; // ✅ REQUIRED in Next 15+
+}
+
+export default async function Page({ params }: PageProps) {
+  const { id } = await params;
   return <BlogClient id={id} />;
 }
