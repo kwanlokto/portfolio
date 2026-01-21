@@ -21,7 +21,7 @@ import { ItemGrid } from "@/ui/item_grid";
 import Link from "next/link";
 import { MdOutlineCloudDownload } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
-import { Project } from "@/ui/project_card";
+import { Project } from "@/ui/card/project_card";
 import { SiLeetcode } from "react-icons/si";
 import { TechStack } from "@/ui/tech_stack";
 import { handle_download } from "@/utils/download";

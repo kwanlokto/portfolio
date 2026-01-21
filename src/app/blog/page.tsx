@@ -3,7 +3,7 @@
 import { Box, Divider, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
-import { BlogPreviewCard } from "@/ui/blog_preview_card";
+import { BlogPreviewCard } from "@/ui/card/blog_preview_card";
 import { ItemGrid } from "@/ui/item_grid";
 import matter from "gray-matter";
 

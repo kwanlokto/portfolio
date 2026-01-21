@@ -3,7 +3,7 @@
 import { Box, Divider, Typography } from "@mui/material";
 
 import { ItemGrid } from "@/ui/item_grid";
-import { SystemDesignCard } from "@/ui/system_design_card";
+import { SystemDesignCard } from "@/ui/card/system_design_card";
 import { system_design_studies } from "@/lib/system_design";
 
 export default function Page() {
