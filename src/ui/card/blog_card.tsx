@@ -8,14 +8,12 @@ import {
   CardContent,
   Divider,
   Grid,
-  Stack,
   Typography,
 } from "@mui/material";
-import { MdCode, MdGetApp, MdLaunch } from "react-icons/md";
 
 import { BlogType } from "@/lib/blog";
 import Image from "next/image";
-import { handle_download } from "@/utils/download";
+import { MdCode } from "react-icons/md";
 
 interface BlogCardParams {
   blog: BlogType;
@@ -59,7 +57,6 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
             {blog.title}
           </Typography>
         </CardContent>
-      
 
         <Divider sx={{ my: 1 }} />
 
