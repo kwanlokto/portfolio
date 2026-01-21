@@ -1,4 +1,4 @@
-import BlogClient from "@/ui/blog_client";
+import BlogClient from "@/ui/blog_content";
 import fs from "fs/promises";
 import path from "path";
 
