@@ -27,7 +27,7 @@ interface ExperienceParams {
   collapsed_item_count: number;
 }
 
-export const Experience = ({
+export const ExperienceTimeline = ({
   experience_list,
   collapsed_item_count,
 }: ExperienceParams) => {

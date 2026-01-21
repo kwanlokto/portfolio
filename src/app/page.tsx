@@ -14,7 +14,7 @@ import { education, work } from "@/lib/experience";
 
 import { BoldText } from "@/ui/bold_text";
 import { EmailButton } from "@/ui/email_button";
-import { Experience } from "@/ui/experience";
+import { ExperienceTimeline } from "@/ui/experience_timeline";
 import { HRefButton } from "@/ui/href_button";
 import Image from "next/image";
 import { ItemGrid } from "@/ui/item_grid";
@@ -140,10 +140,10 @@ export default function Home() {
         </Tabs>
       </Box>
       {tab_idx === 0 && (
-        <Experience experience_list={work} collapsed_item_count={1} />
+        <ExperienceTimeline experience_list={work} collapsed_item_count={1} />
       )}
       {tab_idx === 1 && (
-        <Experience experience_list={education} collapsed_item_count={2} />
+        <ExperienceTimeline experience_list={education} collapsed_item_count={2} />
       )}
 
       <Divider sx={{ my: 1 }} />
