@@ -4,7 +4,7 @@ export interface BlogType {
   source_url: string;
 }
 
-export const blog: BlogType[] = [
+export const blogs: BlogType[] = [
   {
     title: "The Pragmatic Programmer",
     picture_url: null,
