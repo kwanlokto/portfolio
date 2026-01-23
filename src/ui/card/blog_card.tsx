@@ -20,17 +20,21 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
           variant="outlined"
           sx={{
             display: "flex",
-            boxShadow: 1,
             flexDirection: "column",
             height: "100%",
-            borderRadius: 3,
+            borderRadius: 2,
             overflow: "hidden",
-            transition: "transform 0.25s ease, box-shadow 0.25s ease",
-            "&:hover": { transform: "translateY(-4px)", boxShadow: 4 },
+            cursor: "pointer",
+            boxShadow: 2,
+            transition: "all 0.25s ease",
+            "&:hover": {
+              transform: "translateY(-6px)",
+              boxShadow: 6,
+            },
           }}
           onClick={() => setExpanded(!expanded)}
         >
-          <Box sx={{ position: "relative", height: 60 }}>
+          <Box sx={{ position: "relative", height: 120 }}>
             <Image
               src={
                 blog.picture_url ||
@@ -40,20 +44,38 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
               }
               alt={blog.title}
               fill
-              style={{
-                objectFit: "cover",
-                objectPosition: "center", // ✅ centers the image
+              style={{ objectFit: "cover" }}
+            />
+
+            {/* subtle gradient overlay */}
+            <Box
+              sx={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,0.25), rgba(0,0,0,0))",
               }}
             />
           </Box>
 
-          <CardContent sx={{ flexGrow: 1 }}>
-            <Typography variant="h6" fontWeight={600} gutterBottom>
+          <CardContent sx={{ flexGrow: 1, px: 2.5, py: 2 }}>
+            <Typography
+              variant="subtitle1"
+              fontWeight={700}
+              lineHeight={1.3}
+              sx={{
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+              }}
+            >
               {blog.title}
             </Typography>
           </CardContent>
         </Card>
       </Grid>
+
       <Modal open={expanded} onClose={() => setExpanded(false)}>
         <Typography variant="body1" paragraph>
           {blog.title}
