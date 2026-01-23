@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   Card,
+  CardActionArea,
   CardActions,
   CardContent,
   Divider,
@@ -40,22 +41,30 @@ export const Project = ({ project }: ProjectParams) => {
           "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
         }}
       >
-        <Box sx={{ position: "relative", height: 180 }}>
-          <Image
-            src={
-              project.picture_url ||
-              `https://api.microlink.io/?url=${encodeURIComponent(
-                project.source_url
-              )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=880`
-            }
-            alt={project.title}
-            fill
-            style={{
-              objectFit: "cover",
-              objectPosition: "center", // ✅ centers the image
-            }}
-          />
-        </Box>
+        <CardActionArea
+          component="a"
+          href={project.source_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ height: "100%" }}
+        >
+          <Box sx={{ position: "relative", height: 180 }}>
+            <Image
+              src={
+                project.picture_url ||
+                `https://api.microlink.io/?url=${encodeURIComponent(
+                  project.source_url,
+                )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=880`
+              }
+              alt={project.title}
+              fill
+              style={{
+                objectFit: "cover",
+                objectPosition: "center", // ✅ centers the image
+              }}
+            />
+          </Box>
+        </CardActionArea>
 
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography variant="h6" fontWeight={600} gutterBottom>
@@ -130,7 +139,7 @@ export const Project = ({ project }: ProjectParams) => {
                 if (project.download_url) {
                   handle_download(
                     project.download_url,
-                    project.download_url.split("/").pop() || ""
+                    project.download_url.split("/").pop() || "",
                   );
                 }
               }}
