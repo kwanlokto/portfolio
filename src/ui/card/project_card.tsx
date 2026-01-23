@@ -10,6 +10,7 @@ import {
   Divider,
   Grid,
   Stack,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { MdCode, MdGetApp, MdLaunch } from "react-icons/md";
@@ -41,30 +42,32 @@ export const Project = ({ project }: ProjectParams) => {
           "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
         }}
       >
-        <CardActionArea
-          component="a"
-          href={project.source_url}
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{ height: "100%" }}
-        >
-          <Box sx={{ position: "relative", height: 180 }}>
-            <Image
-              src={
-                project.picture_url ||
-                `https://api.microlink.io/?url=${encodeURIComponent(
-                  project.source_url,
-                )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=880`
-              }
-              alt={project.title}
-              fill
-              style={{
-                objectFit: "cover",
-                objectPosition: "center", // ✅ centers the image
-              }}
-            />
-          </Box>
-        </CardActionArea>
+        <Tooltip title={`Open ${project.title} in new tab`} arrow placement="right">
+          <CardActionArea
+            component="a"
+            href={project.source_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ height: "100%" }}
+          >
+            <Box sx={{ position: "relative", height: 180 }}>
+              <Image
+                src={
+                  project.picture_url ||
+                  `https://api.microlink.io/?url=${encodeURIComponent(
+                    project.source_url,
+                  )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=400`
+                }
+                alt={project.title}
+                fill
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center", // ✅ centers the image
+                }}
+              />
+            </Box>
+          </CardActionArea>
+        </Tooltip>
 
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography variant="h6" fontWeight={600} gutterBottom>
