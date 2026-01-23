@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-export default function BlogClient({ id }: { id: string }) {
+export const BlogContent = ({ id }: { id: string }) => {
   const [content, setContent] = useState<string | null>(null);
 
   useEffect(() => {
@@ -35,38 +35,36 @@ export default function BlogClient({ id }: { id: string }) {
   }
 
   return (
-    <Box maxWidth="md" mx="auto" px={3} py={6}>
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        components={{
-          h1: ({ children }) => (
-            <Typography variant="h4" gutterBottom mt={4}>
-              {children}
-            </Typography>
-          ),
-          h2: ({ children }) => (
-            <Typography variant="h5" gutterBottom mt={3}>
-              {children}
-            </Typography>
-          ),
-          p: ({ children }) => (
-            <Typography variant="body1" paragraph>
-              {children}
-            </Typography>
-          ),
-          a: ({ href, children }) => (
-            <Link href={href as string} target="_blank" rel="noopener">
-              {children}
-            </Link>
-          ),
-          ul: ({ children }) => <List sx={{ pl: 3 }}>{children}</List>,
-          li: ({ children }) => (
-            <ListItem sx={{ display: "list-item" }}>{children}</ListItem>
-          ),
-        }}
-      >
-        {content}
-      </ReactMarkdown>
-    </Box>
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={{
+        h1: ({ children }) => (
+          <Typography variant="h4" gutterBottom>
+            {children}
+          </Typography>
+        ),
+        h2: ({ children }) => (
+          <Typography variant="h5" gutterBottom mt={3}>
+            {children}
+          </Typography>
+        ),
+        p: ({ children }) => (
+          <Typography variant="body1" paragraph>
+            {children}
+          </Typography>
+        ),
+        a: ({ href, children }) => (
+          <Link href={href as string} target="_blank" rel="noopener">
+            {children}
+          </Link>
+        ),
+        ul: ({ children }) => <List sx={{ pl: 3 }}>{children}</List>,
+        li: ({ children }) => (
+          <ListItem sx={{ display: "list-item" }}>{children}</ListItem>
+        ),
+      }}
+    >
+      {content}
+    </ReactMarkdown>
   );
-}
+};

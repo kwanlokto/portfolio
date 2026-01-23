@@ -1,4 +1,4 @@
-import BlogClient from "@/ui/blog_content";
+import { BlogContent } from "@/ui/blog_content";
 import fs from "fs/promises";
 import path from "path";
 
@@ -9,7 +9,7 @@ interface PageProps {
 // Server component
 export default async function Page({ params }: PageProps) {
   const { id } = await params;
-  return <BlogClient id={id} />;
+  return <BlogContent id={id} />;
 }
 
 // Static paths for export

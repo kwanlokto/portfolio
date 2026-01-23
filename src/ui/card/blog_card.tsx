@@ -2,6 +2,7 @@
 
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 
+import { BlogContent } from "@/ui/blog_content";
 import { BlogType } from "@/lib/blog";
 import Image from "next/image";
 import { Modal } from "../modal";
@@ -77,9 +78,7 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
       </Grid>
 
       <Modal open={expanded} onClose={() => setExpanded(false)}>
-        <Typography variant="body1" paragraph>
-          {blog.title}
-        </Typography>
+        <BlogContent id={blog.id} />
       </Modal>
     </>
   );
