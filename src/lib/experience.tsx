@@ -38,9 +38,9 @@ export const work: ExperienceType[] = [
           // </>,
           <>
             Collaborated closely with cross-functional teams including product
-            management, marketing, and operations to align technology initiatives
-            with business goals and drive company growth.
-          </>
+            management, marketing, and operations to align technology
+            initiatives with business goals and drive company growth.
+          </>,
         ],
       },
       {
