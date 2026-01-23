@@ -80,12 +80,12 @@ export default function RootLayoutClientWrapper({
       <CssBaseline />
       <Box
         sx={{
+          width: "100vw",
           minHeight: "100vh",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           px: { xs: 1, sm: 2, md: 4, lg: 8 },
-          width: "100vw",
         }}
       >
         <Container maxWidth="md" sx={{ pt: { xs: 2, sm: 4 } }}>
