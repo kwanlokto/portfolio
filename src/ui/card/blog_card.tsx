@@ -37,12 +37,7 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
         >
           <Box sx={{ position: "relative", height: 120 }}>
             <Image
-              src={
-                blog.picture_url ||
-                `https://api.microlink.io/?url=${encodeURIComponent(
-                  blog.source_url,
-                )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=880`
-              }
+              src={blog.picture_url || "/default_blog_image.jpg"}
               alt={blog.title}
               fill
               style={{ objectFit: "cover" }}
