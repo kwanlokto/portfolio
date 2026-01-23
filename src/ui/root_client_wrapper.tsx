@@ -23,7 +23,7 @@ export default function RootLayoutClientWrapper({
   useEffect(() => {
     if (!mounted) {
       setMode(
-        (localStorage.getItem("theme-mode") as "light" | "dark") ?? "dark"
+        (localStorage.getItem("theme-mode") as "light" | "dark") ?? "dark",
       );
     }
     setMounted(true);
@@ -72,7 +72,7 @@ export default function RootLayoutClientWrapper({
           },
         },
       }),
-    [mode]
+    [mode],
   );
   if (!mounted) return <></>;
   return (
@@ -85,6 +85,7 @@ export default function RootLayoutClientWrapper({
           flexDirection: "column",
           alignItems: "center",
           px: { xs: 1, sm: 2, md: 4, lg: 8 },
+          width: "100vw",
         }}
       >
         <Container maxWidth="md" sx={{ pt: { xs: 2, sm: 4 } }}>
