@@ -52,7 +52,7 @@ export const ItemGrid = <T,>({
   const visible_count = get_visible_count();
 
   return (
-    <Grid container {...grid_props}>
+    <Grid container spacing={3} {...grid_props}>
       {items
         .slice(0, visible_count)
         .map((item, index) => render_item(item, index))}

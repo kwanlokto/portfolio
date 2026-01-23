@@ -21,7 +21,6 @@ export default function Page() {
       <ItemGrid
         items={blogs}
         render_item={(blog, idx) => <BlogCard key={idx} blog={blog} />}
-        spacing={1}
       />
     </Box>
   );

@@ -23,7 +23,6 @@ export default function Page() {
         render_item={(project, index) => (
           <SystemDesignCard key={index} system_design_study={project} />
         )}
-        spacing={3}
       />
     </Box>
   );
