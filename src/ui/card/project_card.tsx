@@ -31,13 +31,13 @@ export const Project = ({ project }: ProjectParams) => {
         variant="outlined"
         sx={{
           display: "flex",
-          boxShadow: 1,
+          boxShadow: 2,
           flexDirection: "column",
           height: "100%",
           borderRadius: 3,
           overflow: "hidden",
           transition: "transform 0.25s ease, box-shadow 0.25s ease",
-          "&:hover": { transform: "translateY(-4px)", boxShadow: 4 },
+          "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
         }}
       >
         <Box sx={{ position: "relative", height: 180 }}>

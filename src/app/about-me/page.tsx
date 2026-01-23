@@ -11,12 +11,12 @@ import {
 } from "@mui/material";
 import { HobbyImageType, hobby_images } from "@/lib/hobby_images";
 
+import { BoldText } from "@/ui/bold_text";
 import Image from "next/image";
 import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
 import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
-import { BoldText } from "@/ui/bold_text";
 
 export default function Page() {
   const current_year = new Date().getFullYear();
@@ -84,7 +84,7 @@ export default function Page() {
             <Card
               sx={{
                 borderRadius: 4,
-                boxShadow: 1,
+                boxShadow: 2,
                 border: (theme) =>
                   `1px solid ${
                     theme.palette.mode === "dark"
@@ -92,7 +92,7 @@ export default function Page() {
                       : theme.palette.grey[400]
                   }`,
                 transition: "transform 0.25s ease, box-shadow 0.25s ease",
-                "&:hover": { transform: "translateY(-4px)", boxShadow: 4 },
+                "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
               }}
             >
               <CardActionArea
@@ -173,8 +173,7 @@ export default function Page() {
                 aspectRatio: image.aspect_ratio,
                 borderRadius: 3,
                 overflow: "hidden",
-                boxShadow: 1,
-                "&:hover": { boxShadow: 3 },
+                boxShadow: 2,
               }}
             >
               <Image
