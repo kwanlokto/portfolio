@@ -34,7 +34,7 @@ export const Project = ({ project }: ProjectParams) => {
           boxShadow: 2,
           flexDirection: "column",
           height: "100%",
-          borderRadius: 3,
+          borderRadius: 2,
           overflow: "hidden",
           transition: "transform 0.25s ease, box-shadow 0.25s ease",
           "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },

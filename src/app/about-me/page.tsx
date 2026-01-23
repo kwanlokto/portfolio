@@ -83,7 +83,7 @@ export default function Page() {
           <Grid size={6} key={index}>
             <Card
               sx={{
-                borderRadius: 4,
+                borderRadius: 2,
                 boxShadow: 2,
                 border: (theme) =>
                   `1px solid ${
