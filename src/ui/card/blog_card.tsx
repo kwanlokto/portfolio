@@ -16,7 +16,7 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
   const [expanded, setExpanded] = useState(false);
   return (
     <>
-      <Grid size={{ xs: 6, sm: 4, md: 3 }}>
+      <Grid size={{ xs: 12, sm: 4, md: 3 }}>
         <Card
           variant="outlined"
           sx={{
@@ -35,7 +35,7 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
           }}
           onClick={() => setExpanded(!expanded)}
         >
-          <Box sx={{ position: "relative", height: 120 }}>
+          <Box sx={{ position: "relative", height: 160 }}>
             <Image
               src={blog.picture_url || "/default_blog_image.jpg"}
               alt={blog.title}

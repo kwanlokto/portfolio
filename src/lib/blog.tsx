@@ -8,8 +8,8 @@ export interface BlogType {
 export const blogs: BlogType[] = [
   {
     id: "the-pragmatic-programmer",
-    title: "The Pragmatic Programmer",
-    picture_url: "/portfolio/blog/pragmatic_programmer.jpg",
+    title: "Why 'The Pragmatic Programmer' Still Matters.",
+    picture_url: "/portfolio/blog/photos/the_pragmatic_programmer.jfif",
     rating: 4.75,
   },
 ];
