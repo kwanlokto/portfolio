@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, Rating, Typography } from "@mui/material";
 
 import { BlogType } from "@/lib/blog";
 import Image from "next/image";
@@ -43,7 +43,6 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
               style={{ objectFit: "cover" }}
             />
 
-            {/* subtle gradient overlay */}
             <Box
               sx={{
                 position: "absolute",
@@ -54,7 +53,14 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
             />
           </Box>
 
-          <CardContent sx={{ flexGrow: 1, px: 2.5, py: 2 }}>
+          <CardContent
+            sx={{
+              flexGrow: 1,
+              p: 2,
+              pb: "32px !important",
+              position: "relative",
+            }}
+          >
             <Typography
               variant="subtitle1"
               fontWeight={700}
@@ -68,6 +74,16 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
             >
               {blog.title}
             </Typography>
+
+            {/* Rating pinned bottom-right */}
+            <Box sx={{ position: "absolute", bottom: 6, right: 8 }}>
+              <Rating
+                size="small"
+                value={blog.rating}
+                precision={0.25}
+                readOnly
+              />
+            </Box>
           </CardContent>
         </Card>
       </Grid>
