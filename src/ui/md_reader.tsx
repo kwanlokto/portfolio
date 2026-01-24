@@ -13,18 +13,18 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-export const BlogContent = ({ id }: { id: string }) => {
+export const MDReader = ({ path }: { path: string }) => {
   const [content, setContent] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch(`/portfolio/blog/${id}.md`)
+    fetch(path)
       .then((res) => {
         if (!res.ok) throw new Error("Not found");
         return res.text();
       })
       .then(setContent)
       .catch(() => setContent("# 404\nPost not found"));
-  }, [id]);
+  }, [path]);
 
   if (!content) {
     return (
