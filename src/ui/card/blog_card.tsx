@@ -63,8 +63,7 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
           >
             <Typography
               variant="subtitle1"
-              fontWeight={700}
-              lineHeight={1.3}
+              lineHeight={1.5}
               sx={{
                 display: "-webkit-box",
                 WebkitLineClamp: 2,
