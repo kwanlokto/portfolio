@@ -2,9 +2,9 @@
 
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 
-import { BlogContent } from "@/ui/blog_content";
 import { BlogType } from "@/lib/blog";
 import Image from "next/image";
+import { MDReader } from "@/ui/md_reader";
 import { Modal } from "../modal";
 import { useState } from "react";
 
@@ -73,7 +73,7 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
       </Grid>
 
       <Modal open={expanded} onClose={() => setExpanded(false)}>
-        <BlogContent id={blog.id} />
+        <MDReader path={`/portfolio/blog/${blog.id}.md`} />
       </Modal>
     </>
   );
