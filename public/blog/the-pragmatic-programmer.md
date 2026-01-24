@@ -1,4 +1,4 @@
-# Why *The Pragmatic Programmer* Still Matters (And Where It Doesn't)
+# Why *The Pragmatic Programmer* Still Matters
 
 **The Pragmatic Programmer: Your Journey to Mastery**  
 Andrew Hunt & David Thomas (1999, 20th Anniversary Edition 2019)
