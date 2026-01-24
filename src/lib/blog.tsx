@@ -8,6 +8,6 @@ export const blogs: BlogType[] = [
   {
     id: "the-pragmatic-programmer",
     title: "The Pragmatic Programmer",
-    picture_url: null,
+    picture_url: "/portfolio/blog/pragmatic_programmer.jpg",
   },
 ];
