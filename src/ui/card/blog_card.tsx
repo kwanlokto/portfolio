@@ -16,7 +16,7 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
   const [expanded, setExpanded] = useState(false);
   return (
     <>
-      <Grid size={12}>
+      <Grid size={{ xs: 6, sm: 4, md: 3 }}>
         <Card
           variant="outlined"
           sx={{
