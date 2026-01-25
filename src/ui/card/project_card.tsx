@@ -43,7 +43,7 @@ export const Project = ({ project }: ProjectParams) => {
       >
         <CardActionArea
           component="a"
-          href={project.source_url}
+          href={project.deployed_url ?? project.source_url}
           target="_blank"
           rel="noopener noreferrer"
         >
