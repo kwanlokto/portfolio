@@ -1,6 +1,13 @@
 "use client";
 
-import { Box, Card, CardContent, Grid, Rating, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Grid,
+  Rating,
+  Typography,
+} from "@mui/material";
 
 import { BlogType } from "@/lib/blog";
 import Image from "next/image";
@@ -37,7 +44,10 @@ export const BlogCard = ({ blog }: BlogCardParams) => {
         >
           <Box sx={{ position: "relative", height: 160 }}>
             <Image
-              src={blog.picture_url || "/default_blog_image.jpg"}
+              src={
+                `/portfolio/blog/photos/${blog.picture_url}` ||
+                "/default_blog_image.jpg"
+              }
               alt={blog.title}
               fill
               style={{ objectFit: "cover" }}

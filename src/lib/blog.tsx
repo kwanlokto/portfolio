@@ -9,7 +9,7 @@ export const blogs: BlogType[] = [
   {
     id: "the-pragmatic-programmer",
     title: "Why 'The Pragmatic Programmer' Still Matters.",
-    picture_url: "/portfolio/blog/photos/the_pragmatic_programmer.jfif",
+    picture_url: "the_pragmatic_programmer.jfif",
     rating: 4.75,
   },
 ];
