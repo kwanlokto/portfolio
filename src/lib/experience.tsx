@@ -17,6 +17,21 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/SS Logo.png",
     roles: [
       {
+        name: "Lead Tech Consultant",
+        timeline: "Jan 2026 – Present",
+        achievements: [
+          <>
+            Advised on technical strategy and architecture for a skate tuning
+            system used pro shops across the world
+          </>,
+          <>
+            Provided expertise on microservices architecture, cloud
+            infrastructure, and data analytics to support the company's growth
+            and product development.
+          </>,
+        ],
+      },
+      {
         name: "Chief Technology Officer",
         timeline: "June 2025 – Present",
         achievements: [
