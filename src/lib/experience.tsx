@@ -13,7 +13,7 @@ export interface ExperienceType {
 
 export const work: ExperienceType[] = [
   {
-    company: "Skatescribe",
+    company: "Bauer Hockey",
     icon_url: "/portfolio/SS Logo.png",
     roles: [
       {
@@ -31,6 +31,12 @@ export const work: ExperienceType[] = [
           </>,
         ],
       },
+    ],
+  },
+  {
+    company: "Skatescribe",
+    icon_url: "/portfolio/SS Logo.png",
+    roles: [
       {
         name: "Chief Technology Officer",
         timeline: "June 2025 – Present",
