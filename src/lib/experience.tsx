@@ -11,7 +11,7 @@ export interface ExperienceType {
   roles: Role[];
 }
 
-export const NUMBER_OF_PRO_SHOPS = 10;
+export const NUMBER_OF_PRO_SHOPS = 12;
 export const NUMBER_OF_NHL_TEAMS = 6;
 export const NUMBER_OF_AHL_TEAMS = 3;
 
@@ -25,8 +25,13 @@ export const work: ExperienceType[] = [
         timeline: "Jan 2026 – Present",
         achievements: [
           <>
-            Advised on technical strategy and architecture for a skate tuning
-            system used pro shops across the world
+            Supported the development of Bauer’s next-generation skate tuning
+            machine
+          </>,
+          <>
+            Evaluated and selected software solutions for machine vision,
+            ensuring seamless integration of Skatescribe software with new
+            hardware
           </>,
           <>
             Provided expertise on microservices architecture, cloud
@@ -34,8 +39,8 @@ export const work: ExperienceType[] = [
             growth and product development from{" "}
             <BoldText>
               {NUMBER_OF_NHL_TEAMS + NUMBER_OF_AHL_TEAMS + NUMBER_OF_PRO_SHOPS}
-            </BoldText>+{" "}
-            to <BoldText>200+ machines</BoldText>.
+            </BoldText>
+            + to <BoldText>700+ machines</BoldText>.
           </>,
         ],
       },
@@ -50,8 +55,8 @@ export const work: ExperienceType[] = [
         timeline: "June 2025 – Present",
         achievements: [
           <>
-            Led R&D strategy for improving our precision skate profiler and
-            sharpener trusted by{" "}
+            Managed a team of 7 engineers to develop advanced features on our
+            skate tuning machine, driving adoption among{" "}
             <BoldText>{NUMBER_OF_NHL_TEAMS}+ NHL teams</BoldText>,{" "}
             <BoldText>{NUMBER_OF_AHL_TEAMS}+ AHL affiliates</BoldText>, and{" "}
             <BoldText>{NUMBER_OF_PRO_SHOPS}+ pro shops</BoldText> across North
