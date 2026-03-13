@@ -75,12 +75,14 @@ export default function Page() {
         perspective to my work.
       </TextSection>
 
-      <Grid container spacing={4}>
+      <Grid container spacing={3}>
         {[
           { title: "Traveling", img: "/portfolio/travel.png" },
+          { title: "Reading", img: "/portfolio/reading.png" },
+          { title: "Gaming", img: "/portfolio/gaming.png" },
           { title: "Sports", img: "/portfolio/sport.png" },
         ].map((hobby, index) => (
-          <Grid size={6} key={index}>
+          <Grid size={4} key={index}>
             <Card
               sx={{
                 borderRadius: 2,
@@ -113,7 +115,7 @@ export default function Page() {
                   }
                 }}
               >
-                <Box sx={{ width: "100%", height: 160, position: "relative" }}>
+                <Box sx={{ width: "100%", height: 110, position: "relative" }}>
                   <Image
                     src={hobby.img}
                     alt={hobby.title}
@@ -121,7 +123,7 @@ export default function Page() {
                     style={{ objectFit: "cover" }}
                   />
                 </Box>
-                <CardContent sx={{ textAlign: "center" }}>
+                <CardContent sx={{ textAlign: "center", p: 0.5 }}>
                   <Typography variant="body1" fontWeight={500}>
                     {hobby.title}
                   </Typography>
