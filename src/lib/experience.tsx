@@ -11,8 +11,9 @@ export interface ExperienceType {
   roles: Role[];
 }
 
-export const NUMBER_OF_PRO_SHOPS = 10
-export const NUMBER_OF_NHL_TEAMS = 6
+export const NUMBER_OF_PRO_SHOPS = 10;
+export const NUMBER_OF_NHL_TEAMS = 6;
+export const NUMBER_OF_AHL_TEAMS = 3;
 
 export const work: ExperienceType[] = [
   {
@@ -29,8 +30,9 @@ export const work: ExperienceType[] = [
           </>,
           <>
             Provided expertise on microservices architecture, cloud
-            infrastructure, and data analytics to support the company&apos;s growth
-            and product development from <BoldText>20+ to 200+ machines</BoldText>.
+            infrastructure, and data analytics to support the company&apos;s
+            growth and product development from <BoldText>20+</BoldText> to{" "}
+            <BoldText>200+ machines</BoldText>.
           </>,
         ],
       },
@@ -46,8 +48,11 @@ export const work: ExperienceType[] = [
         achievements: [
           <>
             Led R&D strategy for improving our precision skate profiler and
-            sharpener trusted by <BoldText>{NUMBER_OF_NHL_TEAMS}+ NHL teams</BoldText>, AHL
-            affiliates, and {NUMBER_OF_PRO_SHOPS}+ pro shops across North America.
+            sharpener trusted by{" "}
+            <BoldText>{NUMBER_OF_NHL_TEAMS}+ NHL teams</BoldText>,{" "}
+            <BoldText>{NUMBER_OF_AHL_TEAMS}+ AHL teams</BoldText>, and{" "}
+            {NUMBER_OF_PRO_SHOPS}+ pro shops across North America. affiliates,
+            and {NUMBER_OF_PRO_SHOPS}+ pro shops across North America.
           </>,
           // <>
           //   Developed and executed SEO optimization strategy that increased
