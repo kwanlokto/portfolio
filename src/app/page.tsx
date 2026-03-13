@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
-import { education, work } from "@/lib/experience";
+import { education, NUMBER_OF_NHL_TEAMS, work } from "@/lib/experience";
 
 import { BoldText } from "@/ui/bold_text";
 import { EmailButton } from "@/ui/email_button";
@@ -79,7 +79,7 @@ export default function Home() {
             <br />
             Recently, I&apos;ve been developing an automated skate sharpening
             and profiling technology endorsed by
-            <BoldText> 7+ NHL teams</BoldText>.
+            <BoldText> {NUMBER_OF_NHL_TEAMS}+ NHL teams</BoldText>.
           </Typography>
         </Box>
 
@@ -140,7 +140,7 @@ export default function Home() {
         </Tabs>
       </Box>
       {tab_idx === 0 && (
-        <ExperienceTimeline experience_list={work} collapsed_item_count={1} />
+        <ExperienceTimeline experience_list={work} collapsed_item_count={2} />
       )}
       {tab_idx === 1 && (
         <ExperienceTimeline experience_list={education} collapsed_item_count={2} />

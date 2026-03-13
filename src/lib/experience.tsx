@@ -11,6 +11,9 @@ export interface ExperienceType {
   roles: Role[];
 }
 
+export const NUMBER_OF_PRO_SHOPS = 10
+export const NUMBER_OF_NHL_TEAMS = 6
+
 export const work: ExperienceType[] = [
   {
     company: "Bauer Hockey",
@@ -26,7 +29,7 @@ export const work: ExperienceType[] = [
           </>,
           <>
             Provided expertise on microservices architecture, cloud
-            infrastructure, and data analytics to support the company's growth
+            infrastructure, and data analytics to support the company&apos;s growth
             and product development from <BoldText>20+ to 200+ machines</BoldText>.
           </>,
         ],
@@ -43,8 +46,8 @@ export const work: ExperienceType[] = [
         achievements: [
           <>
             Led R&D strategy for improving our precision skate profiler and
-            sharpener trusted by <BoldText>7+ NHL teams</BoldText>, AHL
-            affiliates, and 10+ pro shops across North America.
+            sharpener trusted by <BoldText>{NUMBER_OF_NHL_TEAMS}+ NHL teams</BoldText>, AHL
+            affiliates, and {NUMBER_OF_PRO_SHOPS}+ pro shops across North America.
           </>,
           // <>
           //   Developed and executed SEO optimization strategy that increased
