@@ -31,8 +31,11 @@ export const work: ExperienceType[] = [
           <>
             Provided expertise on microservices architecture, cloud
             infrastructure, and data analytics to support the company&apos;s
-            growth and product development from <BoldText>20+</BoldText> to{" "}
-            <BoldText>200+ machines</BoldText>.
+            growth and product development from{" "}
+            <BoldText>
+              {NUMBER_OF_NHL_TEAMS + NUMBER_OF_AHL_TEAMS + NUMBER_OF_PRO_SHOPS}
+            </BoldText>+{" "}
+            to <BoldText>200+ machines</BoldText>.
           </>,
         ],
       },
@@ -50,9 +53,9 @@ export const work: ExperienceType[] = [
             Led R&D strategy for improving our precision skate profiler and
             sharpener trusted by{" "}
             <BoldText>{NUMBER_OF_NHL_TEAMS}+ NHL teams</BoldText>,{" "}
-            <BoldText>{NUMBER_OF_AHL_TEAMS}+ AHL teams</BoldText>, and{" "}
-            {NUMBER_OF_PRO_SHOPS}+ pro shops across North America. affiliates,
-            and {NUMBER_OF_PRO_SHOPS}+ pro shops across North America.
+            <BoldText>{NUMBER_OF_AHL_TEAMS}+ AHL affiliates</BoldText>, and{" "}
+            <BoldText>{NUMBER_OF_PRO_SHOPS}+ pro shops</BoldText> across North
+            America.
           </>,
           // <>
           //   Developed and executed SEO optimization strategy that increased
