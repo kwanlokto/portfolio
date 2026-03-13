@@ -21,7 +21,7 @@ export const work: ExperienceType[] = [
     icon_url: "/portfolio/Bauer.png",
     roles: [
       {
-        name: "Lead Tech Consultant",
+        name: "Software Engineer (Consultant)",
         timeline: "Jan 2026 – Present",
         achievements: [
           <>
