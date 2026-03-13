@@ -27,7 +27,7 @@ export const work: ExperienceType[] = [
           <>
             Provided expertise on microservices architecture, cloud
             infrastructure, and data analytics to support the company's growth
-            and product development from 20+ to 200+ machines.
+            and product development from <BoldText>20+ to 200+ machines</BoldText>.
           </>,
         ],
       },
