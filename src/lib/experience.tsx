@@ -14,7 +14,7 @@ export interface ExperienceType {
 export const work: ExperienceType[] = [
   {
     company: "Bauer Hockey",
-    icon_url: "/portfolio/SS Logo.png",
+    icon_url: "/portfolio/Bauer.png",
     roles: [
       {
         name: "Lead Tech Consultant",
@@ -27,7 +27,7 @@ export const work: ExperienceType[] = [
           <>
             Provided expertise on microservices architecture, cloud
             infrastructure, and data analytics to support the company's growth
-            and product development.
+            and product development from 20+ to 200+ machines.
           </>,
         ],
       },
