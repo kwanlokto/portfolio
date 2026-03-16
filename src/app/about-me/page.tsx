@@ -18,6 +18,15 @@ import { Modal } from "@/ui/modal";
 import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
 
+const HOBBIES = [
+  { title: "Traveling", img: "/portfolio/travel.png" },
+  { title: "Reading", img: "/portfolio/reading.png" },
+  { title: "Gaming", img: "/portfolio/gaming.png" },
+  { title: "Sports", img: "/portfolio/sport.png" },
+];
+
+const SCROLLING_HOBBIES = [...HOBBIES, ...HOBBIES];
+
 export default function Page() {
   const current_year = new Date().getFullYear();
 
@@ -75,68 +84,87 @@ export default function Page() {
         perspective to my work.
       </TextSection>
 
-      <Divider />
+      <Divider sx={{ mb: -1 }} />
 
-      <Grid container spacing={3} mt={1}>
-        {[
-          { title: "Traveling", img: "/portfolio/travel.png" },
-          { title: "Reading", img: "/portfolio/reading.png" },
-          { title: "Gaming", img: "/portfolio/gaming.png" },
-          { title: "Sports", img: "/portfolio/sport.png" },
-        ].map((hobby, index) => (
-          <Grid size={4} key={index}>
-            <Card
-              sx={{
-                borderRadius: 2,
-                boxShadow: 2,
-                border: (theme) =>
-                  `1px solid ${
-                    theme.palette.mode === "dark"
-                      ? theme.palette.grey[800]
-                      : theme.palette.grey[400]
-                  }`,
-                transition: "transform 0.25s ease, box-shadow 0.25s ease",
-                "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
-              }}
-            >
-              <CardActionArea
-                onClick={async () => {
-                  const hobby_title = hobby.title.toLowerCase();
-                  const loading_images = hobby_images[hobby_title];
-                  // If the images we have isn't empty then continue
-                  if (loading_images.length > 0) {
-                    set_images(
-                      loading_images.map((image: HobbyImageType) => {
-                        return {
-                          src: `/portfolio/${hobby_title}/${image.src}`,
-                          aspect_ratio: image.aspect_ratio,
-                        };
-                      }),
-                    );
-                    set_open(true);
-                  }
+      <Box
+        sx={{
+          overflow: "hidden",
+          width: "100%",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            width: "max-content",
+            animation: "scrollX 35s linear infinite",
+            "@keyframes scrollX": {
+              "0%": {
+                transform: "translateX(0)",
+              },
+              "100%": {
+                transform: "translateX(-50%)",
+              },
+            },
+          }}
+        >
+          {SCROLLING_HOBBIES.map((hobby, index) => (
+            <Box key={index} sx={{ width: 220, mx: 1, my: 2 }}>
+              <Card
+                sx={{
+                  borderRadius: 2,
+                  boxShadow: 2,
+                  border: (theme) =>
+                    `1px solid ${
+                      theme.palette.mode === "dark"
+                        ? theme.palette.grey[800]
+                        : theme.palette.grey[400]
+                    }`,
+                  transition: "transform 0.25s ease, box-shadow 0.1s ease",
+                  "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
                 }}
               >
-                <Box sx={{ width: "100%", height: 110, position: "relative" }}>
-                  <Image
-                    src={hobby.img}
-                    alt={hobby.title}
-                    fill
-                    style={{ objectFit: "cover" }}
-                  />
-                </Box>
-                <CardContent sx={{ textAlign: "center", p: 0.5 }}>
-                  <Typography variant="body1" fontWeight={500}>
-                    {hobby.title}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+                <CardActionArea
+                  onClick={async () => {
+                    const hobby_title = hobby.title.toLowerCase();
+                    const loading_images = hobby_images[hobby_title];
+                    // If the images we have isn't empty then continue
+                    if (loading_images.length > 0) {
+                      set_images(
+                        loading_images.map((image: HobbyImageType) => {
+                          return {
+                            src: `/portfolio/${hobby_title}/${image.src}`,
+                            aspect_ratio: image.aspect_ratio,
+                          };
+                        }),
+                      );
+                      set_open(true);
+                    }
+                  }}
+                >
+                  <Box
+                    sx={{ width: "100%", height: 110, position: "relative" }}
+                  >
+                    <Image
+                      src={hobby.img}
+                      alt={hobby.title}
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </Box>
 
-      <Divider sx={{ my: 1 }} />
+                  <CardContent sx={{ textAlign: "center", p: 0.5 }}>
+                    <Typography variant="body1" fontWeight={500}>
+                      {hobby.title}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Box>
+          ))}
+        </Box>
+      </Box>
+
+      <Divider sx={{ mb: 1, mt: -1 }} />
 
       <Box textAlign="center">
         <Typography
