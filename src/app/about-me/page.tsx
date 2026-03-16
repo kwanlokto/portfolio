@@ -63,7 +63,7 @@ export default function Page() {
 
       <Divider />
 
-      <TextSection title="Outside of Work">
+      <TextSection title="Outside of Work" mb={1}>
         When I&apos;m not coding, I&apos;m often out playing hockey, which is
         something I picked up {current_year - 2021} years ago. It&apos;s been
         fun, frustrating, and humbling. I&apos;ve spent plenty of time falling,
@@ -75,7 +75,9 @@ export default function Page() {
         perspective to my work.
       </TextSection>
 
-      <Grid container spacing={3}>
+      <Divider />
+
+      <Grid container spacing={3} mt={1}>
         {[
           { title: "Traveling", img: "/portfolio/travel.png" },
           { title: "Reading", img: "/portfolio/reading.png" },
@@ -109,7 +111,7 @@ export default function Page() {
                           src: `/portfolio/${hobby_title}/${image.src}`,
                           aspect_ratio: image.aspect_ratio,
                         };
-                      })
+                      }),
                     );
                     set_open(true);
                   }
