@@ -3,8 +3,8 @@
 import { Box, Divider, Typography } from "@mui/material";
 
 import { ItemGrid } from "@/ui/item_grid";
+import { PROJECTS } from "@/lib/project";
 import { Project } from "@/ui/card/project_card";
-import { projects } from "@/lib/project";
 
 export default function Page() {
   return (
@@ -19,7 +19,7 @@ export default function Page() {
       </Typography>
       <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
       <ItemGrid
-        items={projects}
+        items={PROJECTS}
         render_item={(project, index) => (
           <Project key={index} project={project} />
         )}

@@ -8,7 +8,7 @@ export interface ProjectType {
   source_url: string;
 }
 
-export const projects: ProjectType[] = [
+export const PROJECTS: ProjectType[] = [
   {
     title: "Music Player",
     description: (

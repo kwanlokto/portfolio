@@ -9,8 +9,8 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
+import { NUMBER_OF_NHL_TEAMS, education, work } from "@/lib/experience";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
-import { education, NUMBER_OF_NHL_TEAMS, work } from "@/lib/experience";
 
 import { BoldText } from "@/ui/bold_text";
 import { EmailButton } from "@/ui/email_button";
@@ -20,12 +20,12 @@ import Image from "next/image";
 import { ItemGrid } from "@/ui/item_grid";
 import Link from "next/link";
 import { MdOutlineCloudDownload } from "react-icons/md";
+import { PROJECTS } from "@/lib/project";
 import { PiHandWavingBold } from "react-icons/pi";
 import { Project } from "@/ui/card/project_card";
 import { SiLeetcode } from "react-icons/si";
 import { TechStack } from "@/ui/tech_stack";
 import { handle_download } from "@/utils/download";
-import { projects } from "@/lib/project";
 import { useState } from "react";
 
 export default function Home() {
@@ -164,7 +164,7 @@ export default function Home() {
           </Link>
         </Box>
         <ItemGrid
-          items={projects}
+          items={PROJECTS}
           total_featured_items={{ xs: 1, sm: 2, md: 3 }}
           render_item={(project, index) => (
             <Project key={index} project={project} />
