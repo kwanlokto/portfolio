@@ -8,7 +8,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import { HobbyImageType, hobby_images } from "@/lib/hobby_images";
+import { HOBBY_IMAGES, HobbyImageType, SCROLLING_HOBBIES } from "@/lib/hobby";
 
 import { BoldText } from "@/ui/bold_text";
 import Image from "next/image";
@@ -16,15 +16,6 @@ import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
 import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
-
-const HOBBIES = [
-  { title: "Traveling", img: "/portfolio/travel.png" },
-  { title: "Reading", img: "/portfolio/reading.png" },
-  { title: "Gaming", img: "/portfolio/gaming.png" },
-  { title: "Sports", img: "/portfolio/sport.png" },
-];
-
-const SCROLLING_HOBBIES = [...HOBBIES, ...HOBBIES];
 
 export default function Page() {
   const current_year = new Date().getFullYear();
@@ -125,7 +116,7 @@ export default function Page() {
                 <CardActionArea
                   onClick={async () => {
                     const hobby_title = hobby.title.toLowerCase();
-                    const loading_images = hobby_images[hobby_title];
+                    const loading_images = HOBBY_IMAGES[hobby_title];
                     // If the images we have isn't empty then continue
                     if (loading_images.length > 0) {
                       set_images(

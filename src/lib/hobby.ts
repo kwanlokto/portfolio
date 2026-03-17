@@ -3,7 +3,7 @@ export type HobbyImageType = {
   aspect_ratio: string; // format "width/height" e.g. "3/4"
 };
 
-export const hobby_images: Record<string, HobbyImageType[]> = {
+export const HOBBY_IMAGES: Record<string, HobbyImageType[]> = {
   traveling: [
     // Row 1
     { src: "Antelope Canyon.jpg", aspect_ratio: "3/4" },
@@ -20,3 +20,12 @@ export const hobby_images: Record<string, HobbyImageType[]> = {
   gaming: [],
   reading: [],
 };
+
+const HOBBIES = [
+  { title: "Traveling", img: "/portfolio/travel.png" },
+  { title: "Reading", img: "/portfolio/reading.png" },
+  { title: "Gaming", img: "/portfolio/gaming.png" },
+  { title: "Sports", img: "/portfolio/sport.png" },
+];
+
+export const SCROLLING_HOBBIES = [...HOBBIES, ...HOBBIES];
