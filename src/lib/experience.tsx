@@ -132,25 +132,21 @@ export const WORK: ExperienceType[] = [
           <>
             Pitched the concept at the UofT Hatchery and was accepted into the
             program, collaborating with four students to design and build a
-            running mobile app in <BoldText>Swift</BoldText>
+            mobile running app in <BoldText>Swift</BoldText>.
           </>,
           <>
             Implemented webhooks to track real-time running progress, enabling
-            live competition with friends. During a competition you would be
-            able to see how much time has elapsed and how much of the race is
-            left. You would also be able to emote and have friendly
-            conversations with your friends
+            users to compete live with friends while viewing elapsed time,
+            remaining race distance, and live race status.
           </>,
           <>
-            Utilized built in phones potitioning system to be able to track the
-            positioning of contestants.
+            Integrated the phone’s built-in positioning system to track and
+            display the real-time location of participants during races.
           </>,
           <>
-            Goal: Wanted to create a running app which allowed you to compete
-            with friends virtually. This was during COVID and interactions and
-            social interactions were limited. The inspiration for this was to
-            for another way for friends to keep in touch even during a hard
-            time.
+            Developed the app during COVID-19 to help friends stay connected
+            through virtual running competitions when in-person social
+            interaction was limited.
           </>,
         ],
       },
