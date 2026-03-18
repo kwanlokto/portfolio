@@ -8,6 +8,7 @@ export interface Role {
 export interface ExperienceType {
   company: string;
   icon_url: string;
+  dark_mode_icon_url?: string;
   roles: Role[];
 }
 
@@ -19,6 +20,7 @@ export const WORK: ExperienceType[] = [
   {
     company: "Bauer Hockey",
     icon_url: "/portfolio/Bauer.png",
+    dark_mode_icon_url: "/portfolio/Bauer Dark.png",
     roles: [
       {
         name: "Software Engineer (Consultant)",

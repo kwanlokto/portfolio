@@ -8,6 +8,7 @@ import {
   Icon,
   List,
   ListItem,
+  useTheme,
 } from "@mui/material";
 import { ExperienceType, Role } from "@/lib/experience";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
@@ -31,13 +32,13 @@ export const ExperienceTimeline = ({
   experience_list,
   collapsed_item_count,
 }: ExperienceParams) => {
+  const theme = useTheme();
+
   const [expanded, set_expanded] = React.useState(false);
 
   return (
     <Box>
-      <Timeline
-        sx={{ width: "100%" }}
-      >
+      <Timeline sx={{ width: "100%" }}>
         {experience_list.map((experience, experience_idx) => (
           <Collapse
             key={experience_idx}
@@ -66,7 +67,12 @@ export const ExperienceTimeline = ({
                 >
                   <Icon sx={{ position: "relative", width: 30, height: 30 }}>
                     <Image
-                      src={experience.icon_url}
+                      src={
+                        theme.palette.mode === "dark" &&
+                        experience.dark_mode_icon_url
+                          ? experience.dark_mode_icon_url
+                          : experience.icon_url
+                      }
                       alt={experience.company}
                       fill
                       style={{ objectFit: "contain" }}
@@ -164,7 +170,7 @@ export const ExperienceTimeline = ({
                                     {achievement}
                                   </Typography>
                                 </ListItem>
-                              )
+                              ),
                             )}
                           </List>
                         )}
