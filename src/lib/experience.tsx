@@ -135,13 +135,10 @@ export const WORK: ExperienceType[] = [
             mobile running app in <BoldText>Swift</BoldText>.
           </>,
           <>
-            Implemented webhooks to track real-time running progress, enabling
-            users to compete live with friends while viewing elapsed time,
-            remaining race distance, and live race status.
-          </>,
-          <>
-            Integrated the phone’s built-in positioning system to track and
-            display the real-time location of participants during races.
+            Implemented webhooks and utilized phone's built-in GPS to track
+            real-time running progress, enabling users to compete live with
+            friends while viewing elapsed time, remaining race distance, and
+            live race status.
           </>,
           <>
             Developed the app during COVID-19 to help friends stay connected
