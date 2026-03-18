@@ -34,7 +34,7 @@ export interface TechStackItemType {
   icon: React.ReactNode;
 }
 
-export const tech_stack: TechStackType[] = [
+export const TECH_STACK: TechStackType[] = [
   {
     category: "Languages / Databases",
     items: [

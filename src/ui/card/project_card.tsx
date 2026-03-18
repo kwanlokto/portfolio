@@ -110,7 +110,7 @@ export const Project = ({ project }: ProjectParams) => {
           </Typography>
         </CardContent>
         <Stack direction="row" flexWrap="wrap" gap={1} px={2} pb={1}>
-          {project.tech_stack.map((tech, i) => (
+          {project.TECH_STACK.map((tech, i) => (
             <Typography
               key={i}
               variant="caption"

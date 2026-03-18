@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { TechStackType, tech_stack } from "@/lib/tech_stack";
+import { TechStackType, TECH_STACK } from "@/lib/tech_stack";
 
 export const TechStack = () => {
   return (
@@ -10,7 +10,7 @@ export const TechStack = () => {
 
       <Box component="section" aria-label="Tech stack">
         <Grid container spacing={1}>
-          {tech_stack.map((tech: TechStackType, index: number) => (
+          {TECH_STACK.map((tech: TechStackType, index: number) => (
             <Grid size={12} key={index}>
               {tech.category && (
                 <Typography

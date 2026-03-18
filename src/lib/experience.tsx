@@ -15,7 +15,7 @@ export const NUMBER_OF_PRO_SHOPS = 12;
 export const NUMBER_OF_NHL_TEAMS = 6;
 export const NUMBER_OF_AHL_TEAMS = 3;
 
-export const work: ExperienceType[] = [
+export const WORK: ExperienceType[] = [
   {
     company: "Bauer Hockey",
     icon_url: "/portfolio/Bauer.png",
@@ -185,7 +185,7 @@ export const work: ExperienceType[] = [
   },
 ];
 
-export const education: ExperienceType[] = [
+export const EDUCATION: ExperienceType[] = [
   {
     company: "Toronto Metropolitan University",
     icon_url: "/portfolio/TMU Talent Accelerator.png",

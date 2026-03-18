@@ -2,7 +2,7 @@ export interface ProjectType {
   title: string;
   description: React.ReactNode;
   picture_url: string | null;
-  tech_stack: string[];
+  TECH_STACK: string[];
   deployed_url?: string;
   download_url?: string;
   source_url: string;
@@ -21,7 +21,7 @@ export const PROJECTS: ProjectType[] = [
       </>
     ),
     picture_url: "/portfolio/music_player.jpg",
-    tech_stack: ["React Native", "Expo"],
+    TECH_STACK: ["React Native", "Expo"],
     download_url: "/portfolio/Music Player.apk",
     source_url: "https://github.com/kwanlokto/MusicPlayerApp",
   },
@@ -36,7 +36,7 @@ export const PROJECTS: ProjectType[] = [
       </>
     ),
     picture_url: "/portfolio/graphing_library.png",
-    tech_stack: ["Next.JS", "MUI"],
+    TECH_STACK: ["Next.JS", "MUI"],
     deployed_url: "https://graphing-library.vercel.app/",
     source_url: "https://github.com/kwanlokto/graphing_library",
   },
@@ -50,7 +50,7 @@ export const PROJECTS: ProjectType[] = [
       </>
     ),
     picture_url: "/portfolio/wordle.png",
-    tech_stack: ["Next.JS", "Tailwind CSS"],
+    TECH_STACK: ["Next.JS", "Tailwind CSS"],
     deployed_url: "https://wordle-three-gules.vercel.app/",
     source_url: "https://github.com/kwanlokto/wordle",
   },
@@ -64,7 +64,7 @@ export const PROJECTS: ProjectType[] = [
       </>
     ),
     picture_url: null,
-    tech_stack: ["Next.JS", "MUI", "Tailwind CSS"],
+    TECH_STACK: ["Next.JS", "MUI", "Tailwind CSS"],
     source_url: "https://github.com/kwanlokto/portfolio",
   },
   {
@@ -77,7 +77,7 @@ export const PROJECTS: ProjectType[] = [
       </>
     ),
     picture_url: "/portfolio/atm.png",
-    tech_stack: ["Python", "React", "Docker", "Alembic", "Flask"],
+    TECH_STACK: ["Python", "React", "Docker", "Alembic", "Flask"],
     source_url: "https://github.com/kwanlokto/atm",
   },
   {
@@ -91,7 +91,7 @@ export const PROJECTS: ProjectType[] = [
       </>
     ),
     picture_url: null,
-    tech_stack: ["Python"],
+    TECH_STACK: ["Python"],
     source_url: "https://github.com/kwanlokto/algorithms",
   },
 ];

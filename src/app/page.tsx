@@ -9,7 +9,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { NUMBER_OF_NHL_TEAMS, education, work } from "@/lib/experience";
+import { NUMBER_OF_NHL_TEAMS, WORK, EDUCATION } from "@/lib/experience";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 
 import { BoldText } from "@/ui/bold_text";
@@ -140,10 +140,13 @@ export default function Home() {
         </Tabs>
       </Box>
       {tab_idx === 0 && (
-        <ExperienceTimeline experience_list={work} collapsed_item_count={2} />
+        <ExperienceTimeline experience_list={WORK} collapsed_item_count={2} />
       )}
       {tab_idx === 1 && (
-        <ExperienceTimeline experience_list={education} collapsed_item_count={2} />
+        <ExperienceTimeline
+          experience_list={EDUCATION}
+          collapsed_item_count={2}
+        />
       )}
 
       <Divider sx={{ my: 1 }} />
