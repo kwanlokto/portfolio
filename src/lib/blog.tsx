@@ -5,7 +5,7 @@ export interface BlogType {
   rating: number;
 }
 
-export const blogs: BlogType[] = [
+export const BLOGS: BlogType[] = [
   {
     id: "the-pragmatic-programmer",
     title: "Why 'The Pragmatic Programmer' Still Matters.",

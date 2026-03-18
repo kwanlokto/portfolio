@@ -4,7 +4,7 @@ import { Box, Divider, Typography } from "@mui/material";
 
 import { BlogCard } from "@/ui/card/blog_card";
 import { ItemGrid } from "@/ui/item_grid";
-import { blogs } from "@/lib/blog";
+import { BLOGS } from "@/lib/blog";
 
 export default function Page() {
   return (
@@ -19,7 +19,7 @@ export default function Page() {
       </Typography>
       <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
       <ItemGrid
-        items={blogs}
+        items={BLOGS}
         render_item={(blog, idx) => <BlogCard key={idx} blog={blog} />}
       />
     </Box>
