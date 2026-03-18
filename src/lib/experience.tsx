@@ -28,12 +28,13 @@ export const WORK: ExperienceType[] = [
         achievements: [
           <>
             Supported the development of Bauer’s next-generation skate tuning
-            machine
+            machine which performs <BoldText>75% more efficient</BoldText> than
+            current competitors.
           </>,
           <>
-            Evaluated and selected software solutions for machine vision,
-            ensuring seamless integration of Skatescribe software with new
-            hardware
+            Evaluated and compared different vision solutions and CNC
+            controllers to ensuring seamless integration of Skatescribe software
+            with new hardware.
           </>,
           <>
             Provided expertise on microservices architecture, cloud
