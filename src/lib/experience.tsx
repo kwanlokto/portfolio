@@ -122,6 +122,27 @@ export const WORK: ExperienceType[] = [
     ],
   },
   {
+    company: "Race2Win",
+    icon_url: "",
+    roles: [
+      {
+        name: "Software Developer (Startup)",
+        timeline: "Jan 2021 - Aug 2021",
+        achievements: [
+          <>
+            Pitched the concept at the UofT Hatchery and was accpeted into the
+            program, collaborating with four students to design and build a
+            running mobile app in Swift
+          </>,
+          <>
+            Implemented webhooks to track real-time running progress, enabling
+            live competition with friends
+          </>,
+        ],
+      },
+    ],
+  },
+  {
     company: "Cognitive Centivizer",
     icon_url: "/portfolio/Cognitive Centivizer.png",
     roles: [
