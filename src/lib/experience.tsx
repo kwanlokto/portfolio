@@ -206,6 +206,7 @@ export const WORK: ExperienceType[] = [
   {
     company: "Town of Richmond Hill",
     icon_url: "/portfolio/Town of Richmond Hill.png",
+    dark_mode_icon_url: "/portfolio/Town of Richmond Hill Dark.png",
     roles: [
       {
         name: "Swim Instructor",
