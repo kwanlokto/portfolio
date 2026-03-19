@@ -132,9 +132,9 @@ export const WORK: ExperienceType[] = [
         timeline: "Jan 2021 - May 2021",
         achievements: [
           <>
-            Pitched and secured acceptance into the UofT Hatchery; co-developed
-            a mobile running app with four students using{" "}
-            <BoldText>Swift</BoldText> and
+            Pitched and secured acceptance into the{" "}
+            <BoldText>UofT Hatchery</BoldText>; co-developed a mobile running
+            app with four students using <BoldText>Swift</BoldText> and
             <BoldText>Node.js</BoldText>.
           </>,
           <>
