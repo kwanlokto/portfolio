@@ -23,8 +23,8 @@ export const HOBBY_IMAGES: Record<string, HobbyImageType[]> = {
 
 const HOBBIES = [
   { title: "Traveling", img: "/portfolio/travel.png" },
-  { title: "Reading", img: "/portfolio/reading.png" },
-  { title: "Gaming", img: "/portfolio/gaming.png" },
+  { title: "Reading", img: "/portfolio/reading.jpg" },
+  { title: "Gaming", img: "/portfolio/gaming.jpg" },
   { title: "Sports", img: "/portfolio/sport.png" },
 ];
 
