@@ -27,23 +27,25 @@ export const WORK: ExperienceType[] = [
         timeline: "Jan 2026 – Present",
         achievements: [
           <>
-            Supported the development of Bauer&apos;s next-generation skate tuning
-            machine which performs <BoldText>75% more efficient</BoldText> than
-            competitors.
+            Contributed to the development of Bauer&apos;s next-generation skate
+            tuning machine, achieving{" "}
+            <BoldText>75% greater efficiency</BoldText> than competing
+            solutions.
           </>,
           <>
-            Evaluated and compared different vision solutions and CNC
-            controllers to ensuring seamless integration of Skatescribe software
-            with new hardware.
+            Evaluated vision systems and CNC controllers to ensure seamless
+            integration between Skatescribe software and new hardware platforms.
           </>,
           <>
-            Provided expertise on microservices architecture, cloud
-            infrastructure, and data analytics to support the company&apos;s
-            growth and product development from{" "}
+            Provided expertise in{" "}
+            <BoldText>
+              microservices architecture, cloud infrastructure, and analytics
+            </BoldText>{" "}
+            to support scaling from{" "}
             <BoldText>
               {NUMBER_OF_NHL_TEAMS + NUMBER_OF_AHL_TEAMS + NUMBER_OF_PRO_SHOPS}
             </BoldText>
-            + to <BoldText>700+ machines</BoldText>.
+            + to <BoldText>700+ deployed machines</BoldText>.
           </>,
         ],
       },
@@ -106,9 +108,9 @@ export const WORK: ExperienceType[] = [
           <>
             Prototyped a skate profiling and sharpening system using an LJ V7080
             laser profiler with Tormach 1100MX CNC mill through custom{" "}
-            <BoldText>Python (Flask, SQLAlchemy, Pandas, NumPy)</BoldText>{" "}
-            backend, <BoldText>React + Electron UI</BoldText>, and{" "}
-            <BoldText>PostgreSQL database</BoldText>.
+            <BoldText>Python</BoldText> backend,{" "}
+            <BoldText>React + Electron UI</BoldText>, and{" "}
+            <BoldText>PSQL</BoldText> database.
           </>,
           <>
             Invented proprietary algorithms achieving{" "}
@@ -130,21 +132,18 @@ export const WORK: ExperienceType[] = [
         timeline: "Jan 2021 - May 2021",
         achievements: [
           <>
-            Pitched the concept at the UofT Hatchery and was accepted into the
-            program; collaborated with four students to design and build a
-            mobile running app in <BoldText>Swift</BoldText> and{" "}
-            <BoldText>Node JS</BoldText>.
+            Pitched and secured acceptance into the UofT Hatchery; co-developed
+            a mobile running app with four students using{" "}
+            <BoldText>Swift</BoldText> and
+            <BoldText>Node.js</BoldText>.
           </>,
           <>
-            Implemented webhook handlers and utilized phone&apos;s built-in GPS
-            to track real-time running progress, enabling users to compete live
-            with friends while viewing elapsed time, remaining race distance,
-            and live race status.
+            Implemented <BoldText>webhook</BoldText> and integrated mobile GPS
+            for real-time race tracking and live competition features.
           </>,
           <>
-            Developed the app during COVID-19 to help friends stay connected
-            through virtual running competitions when in-person social
-            interaction was limited.
+            Built the app during <BoldText>COVID-19</BoldText> to enable virtual
+            running competitions and keep users socially connected.
           </>,
         ],
       },
