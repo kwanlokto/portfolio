@@ -123,10 +123,10 @@ export const WORK: ExperienceType[] = [
   },
   {
     company: "Race2Win",
-    icon_url: "",
+    icon_url: "/portfolio/Hatchery.png",
     roles: [
       {
-        name: "Software Developer (Startup)",
+        name: "Software Developer (Part-Time)",
         timeline: "Jan 2021 - May 2021",
         achievements: [
           <>
