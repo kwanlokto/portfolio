@@ -27,9 +27,9 @@ export const WORK: ExperienceType[] = [
         timeline: "Jan 2026 – Present",
         achievements: [
           <>
-            Supported the development of Bauer’s next-generation skate tuning
+            Supported the development of Bauer&apos;s next-generation skate tuning
             machine which performs <BoldText>75% more efficient</BoldText> than
-            current competitors.
+            competitors.
           </>,
           <>
             Evaluated and compared different vision solutions and CNC
@@ -131,14 +131,15 @@ export const WORK: ExperienceType[] = [
         achievements: [
           <>
             Pitched the concept at the UofT Hatchery and was accepted into the
-            program, collaborating with four students to design and build a
-            mobile running app in <BoldText>Swift</BoldText>.
+            program; collaborated with four students to design and build a
+            mobile running app in <BoldText>Swift</BoldText> and{" "}
+            <BoldText>Node JS</BoldText>.
           </>,
           <>
-            Implemented webhooks and utilized phone's built-in GPS to track
-            real-time running progress, enabling users to compete live with
-            friends while viewing elapsed time, remaining race distance, and
-            live race status.
+            Implemented webhook handlers and utilized phone&apos;s built-in GPS
+            to track real-time running progress, enabling users to compete live
+            with friends while viewing elapsed time, remaining race distance,
+            and live race status.
           </>,
           <>
             Developed the app during COVID-19 to help friends stay connected
