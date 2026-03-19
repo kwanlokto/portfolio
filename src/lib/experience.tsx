@@ -34,7 +34,7 @@ export const WORK: ExperienceType[] = [
           </>,
           <>
             Evaluated vision systems and CNC controllers to ensure seamless
-            integration between Skatescribe software and new hardware platforms.
+            integration of Skatescribe software with new hardware platforms.
           </>,
           <>
             Provided expertise in{" "}
@@ -124,22 +124,22 @@ export const WORK: ExperienceType[] = [
     ],
   },
   {
-    company: "Race2Win",
+    company: "Race2Win — UofT Hatchery Accelerator Program",
     icon_url: "/portfolio/Hatchery.png",
     roles: [
       {
-        name: "Software Developer (Part-Time)",
+        name: "Software Developer",
         timeline: "Jan 2021 - May 2021",
         achievements: [
           <>
-            Pitched and secured acceptance into the{" "}
-            <BoldText>UofT Hatchery</BoldText>; co-developed a mobile running
-            app with four students using <BoldText>Swift</BoldText> and
-            <BoldText>Node.js</BoldText>.
+            Co-developed and pitched a mobile running app for the{" "}
+            <BoldText>UofT Hatchery</BoldText> accelerator program, and securing{" "}
+            <BoldText>$10K in funding</BoldText>.
           </>,
           <>
-            Implemented <BoldText>webhook</BoldText> and integrated mobile GPS
-            for real-time race tracking and live competition features.
+            Implemented <BoldText>sockets</BoldText> and integrated mobile GPS
+            for real-time race tracking and live competition features in
+            <BoldText>Swift</BoldText> and <BoldText>Node.js</BoldText>.
           </>,
           <>
             Built the app during <BoldText>COVID-19</BoldText> to enable virtual
@@ -154,7 +154,7 @@ export const WORK: ExperienceType[] = [
     icon_url: "/portfolio/Cognitive Centivizer.png",
     roles: [
       {
-        name: "Full Stack Software Developer (Part-Time)",
+        name: "Full Stack Software Developer",
         timeline: "Sept 2020 – May 2021",
         achievements: [
           <>
