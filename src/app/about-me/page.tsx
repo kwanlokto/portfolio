@@ -170,7 +170,11 @@ export default function Page() {
       {/* Masonry Modal */}
       <Modal
         open={open}
-        onClose={() => set_open(false)}
+        onClose={() => {
+          set_open(false)
+          set_selected_hobby(null);
+          set_selected_md(null);
+        }}
         sx={{
           borderRadius: 3,
           boxShadow: 10,
@@ -200,12 +204,12 @@ export default function Page() {
                 top: 0,
                 right: 0,
                 width: 420,
-                height: "100vh",
+                height: "100%",
                 bgcolor: "background.paper",
-                boxShadow: 6,
+                boxShadow: 3,
                 overflow: "auto",
                 p: 3,
-                zIndex: 1200,
+                zIndex: 1,
               }}
             >
               {selected_md !== null && <MDReader path={selected_md} />}
