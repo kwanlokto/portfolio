@@ -90,7 +90,7 @@ const READING_IMAGES: HobbyImageType[] = [
     type: "reading",
     title: "The Pragmatic Programmer",
     src: "/portfolio/reading/The Pragmatic Programmer.jpg",
-    md: "/portfolio/reading/the-pragmatic-programmer.md",
+    md: "/portfolio/reading/The Pragmatic Programmer.md",
     rating: 4.75,
     aspect_ratio: "3/2",
   },
