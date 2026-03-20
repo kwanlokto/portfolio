@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Card,
-  CardContent,
-  Rating,
-  Typography,
-} from "@mui/material";
+import { Box, Rating, Typography } from "@mui/material";
 
 import Image from "next/image";
 import { MDReader } from "@/ui/md_reader";
@@ -22,18 +16,15 @@ export const HobbyCard = ({ hobby }: HobbyCardParams) => {
   const [expanded, setExpanded] = useState(false);
   return (
     <>
-      <Card
-        variant="outlined"
+      <Box
         sx={{
           position: "relative",
-          display: "block", // important
           width: "100%",
-          borderRadius: 2,
+          borderRadius: 3,
           overflow: "hidden",
-          cursor: "pointer",
           boxShadow: 2,
-          aspectRatio: hobby.aspect_ratio,
-          transition: "all 0.25s ease",
+          cursor: "pointer",
+          transition: "transform 0.25s ease, box-shadow 0.25s ease",
           "&:hover": {
             transform: "translateY(-6px)",
             boxShadow: 6,
@@ -41,34 +32,26 @@ export const HobbyCard = ({ hobby }: HobbyCardParams) => {
         }}
         onClick={() => setExpanded(!expanded)}
       >
+        {/* Image section */}
         <Box
           sx={{
             position: "relative",
             width: "100%",
-            height: "100%",
+            aspectRatio: hobby.aspect_ratio,
           }}
         >
           <Image
             src={hobby.src}
             alt={hobby.title}
             fill
-          />
-          <Box
-            sx={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(to top, rgba(0,0,0,0.25), rgba(0,0,0,0))",
-            }}
+            style={{ objectFit: "cover" }}
           />
         </Box>
 
-        <CardContent
+        <Box
           sx={{
-            flexGrow: 1,
-            p: 2,
-            pb: "32px !important",
-            position: "relative",
+            p: 1.5,
+            bgcolor: "white",
           }}
         >
           <Typography
@@ -95,8 +78,8 @@ export const HobbyCard = ({ hobby }: HobbyCardParams) => {
               />
             </Box>
           )}
-        </CardContent>
-      </Card>
+        </Box>
+      </Box>
 
       <Modal open={expanded} onClose={() => setExpanded(false)}>
         {hobby.type === "reading" && <MDReader path={hobby.md} />}

@@ -42,7 +42,7 @@ export const Modal = ({
             md: "60%", // desktop
             lg: "50%", // large screens
           },
-          maxHeight: "75vh",
+          maxHeight: "80vh",
           overflow: "auto",
           ...sx,
         }}
