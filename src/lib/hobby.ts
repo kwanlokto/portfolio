@@ -14,6 +14,12 @@ export type HobbyImageType = {
   aspect_ratio: string; // format "width/height" e.g. "3/4"
 } & (TravelingImageType | ReadingImageType);
 
+export type HobbyType = {
+  title: string;
+  img: string;
+  images: HobbyImageType[];
+};
+
 /**
  * For traveling hobby, each image represents a place that I have traveled to. Clicking on the
  * image will shows more pictures and details about the place. The aspect ratio
@@ -111,4 +117,4 @@ const HOBBIES = [
   { title: "Sports", img: "/portfolio/sport.png", images: [] },
 ];
 
-export const SCROLLING_HOBBIES = [...HOBBIES, ...HOBBIES];
+export const SCROLLING_HOBBIES: HobbyType[] = [...HOBBIES, ...HOBBIES];

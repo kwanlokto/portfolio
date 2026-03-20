@@ -3,19 +3,16 @@
 import { Box, Rating, Typography } from "@mui/material";
 
 import Image from "next/image";
-import { MDReader } from "@/ui/md_reader";
-import { Modal } from "../modal";
-import { useState } from "react";
+
 import { HobbyImageType } from "@/lib/hobby";
 
 interface HobbyCardParams {
   hobby: HobbyImageType;
+  set_selected_md: (md: string) => void;
 }
 
-export const HobbyCard = ({ hobby }: HobbyCardParams) => {
-  const [expanded, setExpanded] = useState(false);
+export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
   return (
-    <>
       <Box
         sx={{
           position: "relative",
@@ -30,7 +27,11 @@ export const HobbyCard = ({ hobby }: HobbyCardParams) => {
             boxShadow: 6,
           },
         }}
-        onClick={() => setExpanded(!expanded)}
+        onClick={() => {
+          if (hobby.type === "reading") {
+            set_selected_md(hobby.md);
+          }
+        }}
       >
         {/* Image section */}
         <Box
@@ -80,10 +81,5 @@ export const HobbyCard = ({ hobby }: HobbyCardParams) => {
           )}
         </Box>
       </Box>
-
-      <Modal open={expanded} onClose={() => setExpanded(false)}>
-        {hobby.type === "reading" && <MDReader path={hobby.md} />}
-      </Modal>
-    </>
   );
 };

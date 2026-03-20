@@ -8,7 +8,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import { HobbyImageType, SCROLLING_HOBBIES } from "@/lib/hobby";
+import { HobbyImageType, HobbyType, SCROLLING_HOBBIES } from "@/lib/hobby";
 
 import { BoldText } from "@/ui/bold_text";
 import Image from "next/image";
@@ -17,12 +17,14 @@ import { Modal } from "@/ui/modal";
 import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
 import { HobbyCard } from "@/ui/card/hobby_card";
+import { MDReader } from "@/ui/md_reader";
 
 export default function Page() {
   const current_year = new Date().getFullYear();
 
   const [open, set_open] = useState<boolean>(false);
-  const [images, set_images] = useState<HobbyImageType[]>([]);
+  const [selected_hobby, set_selected_hobby] = useState<HobbyType | null>(null);
+  const [selected_md, set_selected_md] = useState<string | null>(null);
 
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -116,10 +118,9 @@ export default function Page() {
               >
                 <CardActionArea
                   onClick={async () => {
-                    const loading_images = hobby.images;
                     // If the images we have isn't empty then continue
-                    if (loading_images.length > 0) {
-                      set_images(loading_images);
+                    if (hobby.images.length > 0) {
+                      set_selected_hobby(hobby);
                       set_open(true);
                     }
                   }}
@@ -178,11 +179,39 @@ export default function Page() {
           pr: 1,
         }}
       >
-        <Masonry columns={{ xs: 2, sm: 2, md: 3, lg: 4 }} spacing={2}>
-          {images.map((image: HobbyImageType, idx: number) => (
-            <HobbyCard key={idx} hobby={image} />
-          ))}
-        </Masonry>
+        <Box sx={{ display: "flex", gap: 2, position: "relative" }}>
+          <Masonry columns={{ xs: 2, sm: 2, md: 3, lg: 4 }} spacing={2}>
+            {selected_hobby !== null &&
+              selected_hobby.images.map(
+                (image: HobbyImageType, idx: number) => (
+                  <HobbyCard
+                    key={idx}
+                    hobby={image}
+                    set_selected_md={set_selected_md}
+                  />
+                ),
+              )}
+          </Masonry>
+
+          {selected_hobby !== null && selected_hobby.title === "Reading" && (
+            <Box
+              sx={{
+                position: "fixed",
+                top: 0,
+                right: 0,
+                width: 420,
+                height: "100vh",
+                bgcolor: "background.paper",
+                boxShadow: 6,
+                overflow: "auto",
+                p: 3,
+                zIndex: 1200,
+              }}
+            >
+              {selected_md !== null && <MDReader path={selected_md} />}
+            </Box>
+          )}
+        </Box>
       </Modal>
     </Box>
   );
