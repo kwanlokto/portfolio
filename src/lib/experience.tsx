@@ -158,12 +158,12 @@ export const WORK: ExperienceType[] = [
           <>
             Pitched and secured <BoldText>$10K</BoldText> from the{" "}
             <BoldText>UofT Hatchery</BoldText> accelerator to build a{" "}
-            <BoldText>Swift</BoldText> and
-            <BoldText>Node.js</BoldText> real-time race tracking mobile app.
+            <BoldText>Swift</BoldText> and <BoldText>Node.js</BoldText>{" "}
+            real-time race tracking mobile app.
           </>,
           <>
             Implemented <BoldText>sockets</BoldText> and integrated mobile GPS
-            for real-time race tracking and live competition features in
+            for real-time race tracking and live competition features in{" "}
             <BoldText>Swift</BoldText> and <BoldText>Node.js</BoldText>.
           </>,
           <>
