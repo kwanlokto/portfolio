@@ -124,32 +124,6 @@ export const WORK: ExperienceType[] = [
     ],
   },
   {
-    company: "Race2Win — UofT Hatchery Accelerator Program",
-    icon_url: "/portfolio/Hatchery.png",
-    roles: [
-      {
-        name: "Software Developer",
-        timeline: "Jan 2021 - May 2021",
-        achievements: [
-          <>
-            Co-developed and pitched a mobile running app for the{" "}
-            <BoldText>UofT Hatchery</BoldText> accelerator program, and securing{" "}
-            <BoldText>$10K in funding</BoldText>.
-          </>,
-          <>
-            Implemented <BoldText>sockets</BoldText> and integrated mobile GPS
-            for real-time race tracking and live competition features in
-            <BoldText>Swift</BoldText> and <BoldText>Node.js</BoldText>.
-          </>,
-          <>
-            Built the app during <BoldText>COVID-19</BoldText> to enable virtual
-            running competitions and keep users socially connected.
-          </>,
-        ],
-      },
-    ],
-  },
-  {
     company: "Cognitive Centivizer",
     icon_url: "/portfolio/Cognitive Centivizer.png",
     roles: [
@@ -168,6 +142,33 @@ export const WORK: ExperienceType[] = [
             Refactored redundant code across the codebase and established PR
             review standards and development workflow, improving code
             consistency and reducing technical debt for a team of 10.
+          </>,
+        ],
+      },
+    ],
+  },
+  {
+    company: "Race2Win — UofT Hatchery",
+    icon_url: "/portfolio/Hatchery.png",
+    roles: [
+      {
+        name: "Software Developer",
+        timeline: "Jan 2021 - April 2021",
+        achievements: [
+          <>
+            Pitched and secured <BoldText>$10K</BoldText> from the{" "}
+            <BoldText>UofT Hatchery</BoldText> accelerator to build a{" "}
+            <BoldText>Swift</BoldText> and
+            <BoldText>Node.js</BoldText> real-time race tracking mobile app.
+          </>,
+          <>
+            Implemented <BoldText>sockets</BoldText> and integrated mobile GPS
+            for real-time race tracking and live competition features in
+            <BoldText>Swift</BoldText> and <BoldText>Node.js</BoldText>.
+          </>,
+          <>
+            Built the app during <BoldText>COVID-19</BoldText> to enable virtual
+            running competitions and keep users socially connected.
           </>,
         ],
       },
