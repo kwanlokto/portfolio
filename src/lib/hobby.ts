@@ -1,6 +1,5 @@
 type TravelingImageType = {
   type: "traveling";
-  aspect_ratio: string; // format "width/height" e.g. "3/4"
 };
 
 type ReadingImageType = {
@@ -12,8 +11,8 @@ type ReadingImageType = {
 export type HobbyImageType = {
   title: string;
   src: string;
+  aspect_ratio: string; // format "width/height" e.g. "3/4"
 } & (TravelingImageType | ReadingImageType);
-
 
 /**
  * For traveling hobby, each image represents a place that I have traveled to. Clicking on the
@@ -26,50 +25,50 @@ const TRAVELING_IMAGES: HobbyImageType[] = [
   {
     type: "traveling",
     title: "Antelope Canyon",
-    src: "Antelope Canyon.jpg",
+    src: "/portfolio/traveling/Antelope Canyon.jpg",
     aspect_ratio: "3/4",
   },
   {
     type: "traveling",
     title: "Mt Fuji",
-    src: "Mt Fuji.jpg",
+    src: "/portfolio/traveling/Mt Fuji.jpg",
     aspect_ratio: "16/9",
   },
   {
     type: "traveling",
     title: "Lynn Canyon",
-    src: "Lynn Canyon.jpg",
+    src: "/portfolio/traveling/Lynn Canyon.jpg",
     aspect_ratio: "3/4",
   },
   {
     type: "traveling",
     title: "The Crack",
-    src: "The Crack.jpg",
+    src: "/portfolio/traveling/The Crack.jpg",
     aspect_ratio: "1",
   },
   // Row 2
   {
     type: "traveling",
     title: "Minoh Waterfalls",
-    src: "Minoh Waterfalls.jpg",
+    src: "/portfolio/traveling/Minoh Waterfalls.jpg",
     aspect_ratio: "9/16",
   },
   {
     type: "traveling",
     title: "Osaka Castle",
-    src: "Osaka Castle.jpg",
+    src: "/portfolio/traveling/Osaka Castle.jpg",
     aspect_ratio: "3/4",
   },
   {
     type: "traveling",
     title: "Whistler",
-    src: "Whistler.jpg",
+    src: "/portfolio/traveling/Whistler.jpg",
     aspect_ratio: "4/3",
   },
   {
     type: "traveling",
     title: "Vancouver Canucks",
-    src: "Vancouver Canucks.jpg",
+    src: "/portfolio/traveling/Vancouver Canucks.jpg",
     aspect_ratio: "1",
   },
 ];
@@ -84,12 +83,12 @@ const READING_IMAGES: HobbyImageType[] = [
   {
     type: "reading",
     title: "The Pragmatic Programmer",
-    src: "the_pragmatic_programmer.jfif",
-    md: "the_pragmatic_programmer",
+    src: "/portfolio/reading/The Pragmatic Programmer.jpg",
+    md: "/portfolio/reading/the-pragmatic-programmer.md",
     rating: 4.75,
+    aspect_ratio: "1",
   },
 ];
-
 
 /**
  * This is the main list of hobbies that will be displayed on the homepage. Each hobby has a
