@@ -92,7 +92,7 @@ const READING_IMAGES: HobbyImageType[] = [
     src: "/portfolio/reading/The Pragmatic Programmer.jpg",
     md: "/portfolio/reading/the-pragmatic-programmer.md",
     rating: 4.75,
-    aspect_ratio: "1",
+    aspect_ratio: "3/2",
   },
 ];
 
