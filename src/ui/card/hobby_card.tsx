@@ -70,7 +70,14 @@ export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
 
         {/* Rating pinned bottom-right */}
         {hobby.type === "reading" && (
-          <Box sx={{ position: "absolute", bottom: 6, right: 8 }}>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              mt: 0.5,
+            }}
+          >
             <Rating
               size="small"
               value={hobby.rating}
