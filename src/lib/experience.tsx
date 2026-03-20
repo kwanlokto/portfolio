@@ -17,40 +17,40 @@ export const NUMBER_OF_NHL_TEAMS = 6;
 export const NUMBER_OF_AHL_TEAMS = 3;
 
 export const WORK: ExperienceType[] = [
-  {
-    company: "Bauer Hockey",
-    icon_url: "/portfolio/Bauer.png",
-    dark_mode_icon_url: "/portfolio/Bauer Dark.png",
-    roles: [
-      {
-        name: "Software Engineer (Consultant)",
-        timeline: "Jan 2026 – Present",
-        achievements: [
-          <>
-            Contributed to the development of Bauer&apos;s next-generation skate
-            tuning machine, achieving{" "}
-            <BoldText>75% greater efficiency</BoldText> than competing
-            solutions.
-          </>,
-          <>
-            Evaluated vision systems and CNC controllers to ensure seamless
-            integration of Skatescribe software with new hardware platforms.
-          </>,
-          <>
-            Provided expertise in{" "}
-            <BoldText>
-              microservices architecture, cloud infrastructure, and analytics
-            </BoldText>{" "}
-            to support scaling from{" "}
-            <BoldText>
-              {NUMBER_OF_NHL_TEAMS + NUMBER_OF_AHL_TEAMS + NUMBER_OF_PRO_SHOPS}
-            </BoldText>
-            + to <BoldText>700+ deployed machines</BoldText>.
-          </>,
-        ],
-      },
-    ],
-  },
+  // {
+  //   company: "Bauer Hockey",
+  //   icon_url: "/portfolio/Bauer.png",
+  //   dark_mode_icon_url: "/portfolio/Bauer Dark.png",
+  //   roles: [
+  //     {
+  //       name: "Software Engineer (Consultant)",
+  //       timeline: "Jan 2026 – Present",
+  //       achievements: [
+  //         <>
+  //           Contributed to the development of Bauer&apos;s next-generation skate
+  //           tuning machine, achieving{" "}
+  //           <BoldText>75% greater efficiency</BoldText> than competing
+  //           solutions.
+  //         </>,
+  //         <>
+  //           Evaluated vision systems and CNC controllers to ensure seamless
+  //           integration of Skatescribe software with new hardware platforms.
+  //         </>,
+  //         <>
+  //           Provided expertise in{" "}
+  //           <BoldText>
+  //             microservices architecture, cloud infrastructure, and analytics
+  //           </BoldText>{" "}
+  //           to support scaling from{" "}
+  //           <BoldText>
+  //             {NUMBER_OF_NHL_TEAMS + NUMBER_OF_AHL_TEAMS + NUMBER_OF_PRO_SHOPS}
+  //           </BoldText>
+  //           + to <BoldText>700+ deployed machines</BoldText>.
+  //         </>,
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     company: "Skatescribe",
     icon_url: "/portfolio/SS Logo.png",
