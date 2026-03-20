@@ -8,7 +8,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import { HOBBY_IMAGES, HobbyImageType, SCROLLING_HOBBIES } from "@/lib/hobby";
+import { HobbyImageType, SCROLLING_HOBBIES } from "@/lib/hobby";
 
 import { BoldText } from "@/ui/bold_text";
 import Image from "next/image";
@@ -16,6 +16,7 @@ import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
 import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
+import { HobbyCard } from "@/ui/card/hobby_card";
 
 export default function Page() {
   const current_year = new Date().getFullYear();
@@ -115,18 +116,10 @@ export default function Page() {
               >
                 <CardActionArea
                   onClick={async () => {
-                    const hobby_title = hobby.title.toLowerCase();
-                    const loading_images = HOBBY_IMAGES[hobby_title];
+                    const loading_images = hobby.images;
                     // If the images we have isn't empty then continue
                     if (loading_images.length > 0) {
-                      set_images(
-                        loading_images.map((image: HobbyImageType) => {
-                          return {
-                            src: `/portfolio/${hobby_title}/${image.src}`,
-                            aspect_ratio: image.aspect_ratio,
-                          };
-                        }),
-                      );
+                      set_images(loading_images);
                       set_open(true);
                     }
                   }}
@@ -187,25 +180,7 @@ export default function Page() {
       >
         <Masonry columns={{ xs: 2, sm: 2, md: 3, lg: 4 }} spacing={2}>
           {images.map((image: HobbyImageType, idx: number) => (
-            <Box
-              key={idx}
-              sx={{
-                position: "relative",
-                width: "100%",
-                aspectRatio: image.aspect_ratio,
-                borderRadius: 3,
-                overflow: "hidden",
-                boxShadow: 2,
-              }}
-            >
-              <Image
-                src={image.src}
-                alt={`collage-${idx}`}
-                fill
-                style={{ objectFit: "cover" }}
-                loading="lazy"
-              />
-            </Box>
+            <HobbyCard key={idx} hobby={image} />
           ))}
         </Masonry>
       </Modal>
