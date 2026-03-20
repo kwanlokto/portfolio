@@ -14,6 +14,13 @@ export type HobbyImageType = {
   src: string;
 } & (TravelingImageType | ReadingImageType);
 
+
+/**
+ * For traveling hobby, each image represents a place that I have traveled to. Clicking on the
+ * image will shows more pictures and details about the place. The aspect ratio
+ * of the image is also provided to ensure that the image is displayed correctly without
+ * distortion.
+ */
 const TRAVELING_IMAGES: HobbyImageType[] = [
   // Row 1
   {
@@ -66,6 +73,12 @@ const TRAVELING_IMAGES: HobbyImageType[] = [
     aspect_ratio: "1",
   },
 ];
+
+/**
+ * For reading hobby, each image represents a book. Clicking on the book will open a modal
+ * that shows the markdown content of the book review and the rating (e.g. 4.5/5) will be
+ * displayed as stars on the card.
+ */
 const READING_IMAGES: HobbyImageType[] = [
   // Row 1
   {
@@ -77,6 +90,13 @@ const READING_IMAGES: HobbyImageType[] = [
   },
 ];
 
+
+/**
+ * This is the main list of hobbies that will be displayed on the homepage. Each hobby has a
+ * title, a cover image, and a list of images that will be shown in the modal when the hobby
+ * card is clicked. The images in the modal can be either traveling images or reading images,
+ * which are defined above.
+ */
 const HOBBIES = [
   {
     title: "Traveling",
