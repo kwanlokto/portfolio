@@ -2,6 +2,7 @@
 
 import {
   Box,
+  Button,
   Card,
   CardActionArea,
   CardContent,
@@ -18,6 +19,7 @@ import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
 import { HobbyCard } from "@/ui/card/hobby_card";
 import { MDReader } from "@/ui/md_reader";
+import { MdArrowBack } from "react-icons/md";
 
 export default function Page() {
   const current_year = new Date().getFullYear();
@@ -171,7 +173,7 @@ export default function Page() {
       <Modal
         open={open}
         onClose={() => {
-          set_open(false)
+          set_open(false);
           set_selected_hobby(null);
           set_selected_md(null);
         }}
@@ -196,25 +198,39 @@ export default function Page() {
                 ),
               )}
           </Masonry>
+          <Box
+            sx={{
+              position: "fixed",
+              top: 0,
+              right: 0,
+              width: { xs: "100%", sm: "50%", md: "50%" },
+              height: "100%",
+              bgcolor: "background.paper",
+              boxShadow: 3,
+              overflow: "auto",
+              p: 3,
+              zIndex: 1200,
 
-          {selected_hobby !== null && selected_hobby.title === "Reading" && (
-            <Box
-              sx={{
-                position: "fixed",
-                top: 0,
-                right: 0,
-                width: 420,
-                height: "100%",
-                bgcolor: "background.paper",
-                boxShadow: 3,
-                overflow: "auto",
-                p: 3,
-                zIndex: 1,
-              }}
-            >
-              {selected_md !== null && <MDReader path={selected_md} />}
+              // Transition & slide
+              transition: "transform 0.3s ease",
+              transform: selected_md ? "translateX(0)" : "translateX(100%)", // slide in/out
+            }}
+          >
+            {/* Close button on mobile */}
+            <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+              <Button
+                startIcon={<MdArrowBack />}
+                variant="text"
+                size="small"
+                onClick={() => set_selected_md(null)}
+              >
+                Back
+              </Button>
             </Box>
-          )}
+
+            {/* Only render MD content if selected_md */}
+            {selected_md && <MDReader path={selected_md} />}
+          </Box>
         </Box>
       </Modal>
     </Box>
