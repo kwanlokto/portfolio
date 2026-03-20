@@ -40,9 +40,9 @@ export const Modal = ({
             xs: "90%", // mobile
             sm: "80%", // small tablets
             md: "60%", // desktop
-            lg: "50%", // large screens
+            lg: "55%", // large screens
           },
-          maxHeight: "80vh",
+          maxHeight: "85vh",
           overflow: "hidden",
           ...sx,
         }}

@@ -180,9 +180,9 @@ export default function Page() {
         sx={{
           borderRadius: 3,
           boxShadow: 10,
-          pt: 6,
-          pl: 3,
-          pr: 1,
+          p: 6,
+          pr: 4,
+          pb: 4,
         }}
       >
         <Box sx={{ display: "flex", gap: 2, position: "relative" }}>
