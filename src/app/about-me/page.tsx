@@ -2,12 +2,12 @@
 
 import {
   Box,
-  Button,
   Card,
   CardActionArea,
   CardContent,
   Divider,
   Typography,
+  Button,
 } from "@mui/material";
 import { HobbyImageType, HobbyType, SCROLLING_HOBBIES } from "@/lib/hobby";
 
@@ -19,7 +19,7 @@ import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
 import { HobbyCard } from "@/ui/card/hobby_card";
 import { MDReader } from "@/ui/md_reader";
-import { MdArrowBack } from "react-icons/md";
+import { MdArrowForward } from "react-icons/md";
 
 export default function Page() {
   const current_year = new Date().getFullYear();
@@ -208,27 +208,44 @@ export default function Page() {
               bgcolor: "background.paper",
               boxShadow: 3,
               overflow: "auto",
-              p: 3,
+              px: 3,
               zIndex: 1200,
 
               // Transition & slide
               transition: "transform 0.3s ease",
-              transform: selected_md ? "translateX(0)" : "translateX(100%)", // slide in/out
+              transform: selected_md ? "translateX(0)" : "translateX(100%)",
             }}
           >
-            {/* Close button on mobile */}
-            <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+            {/* Back button pinned to top-left */}
+            <Box
+              sx={{
+                position: "sticky", // keeps it at the top when scrolling
+                top: 0,
+                left: 0,
+                zIndex: 1300,
+                display: "flex",
+                py: 0.75,
+                bgcolor: "background.paper", // optional: background to cover content underneath
+              }}
+            >
               <Button
-                startIcon={<MdArrowBack />}
+                startIcon={<MdArrowForward style={{ paddingBottom: "2px" }} />}
                 variant="text"
                 size="small"
                 onClick={() => set_selected_md(null)}
+                sx={{
+                  color: "primary.light", // normal color
+                  "&:hover": {
+                    bgcolor: "transparent", // no background change
+                    color: "primary.dark", // subtle text color change
+                  },
+                }}
               >
                 Back
               </Button>
             </Box>
 
-            {/* Only render MD content if selected_md */}
+            {/* MD content */}
             {selected_md && <MDReader path={selected_md} />}
           </Box>
         </Box>
