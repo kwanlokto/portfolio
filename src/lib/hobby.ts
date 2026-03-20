@@ -1,9 +1,9 @@
-type TravelingImageType = {
-  type: "traveling";
+type DefaultImageType = {
+  type: "default";
 };
 
-type ReadingImageType = {
-  type: "reading";
+type BlogImageType = {
+  type: "blog";
   md: string; // markdown file name without extension
   rating: number; // 0 to 5
 };
@@ -12,7 +12,7 @@ export type HobbyImageType = {
   title: string;
   src: string;
   aspect_ratio: string; // format "width/height" e.g. "3/4"
-} & (TravelingImageType | ReadingImageType);
+} & (DefaultImageType | BlogImageType);
 
 export type HobbyType = {
   title: string;
@@ -29,50 +29,50 @@ export type HobbyType = {
 const TRAVELING_IMAGES: HobbyImageType[] = [
   // Row 1
   {
-    type: "traveling",
+    type: "default",
     title: "Antelope Canyon",
     src: "/portfolio/traveling/Antelope Canyon.jpg",
     aspect_ratio: "3/4",
   },
   {
-    type: "traveling",
+    type: "default",
     title: "Mt Fuji",
     src: "/portfolio/traveling/Mt Fuji.jpg",
     aspect_ratio: "16/9",
   },
   {
-    type: "traveling",
+    type: "default",
     title: "Lynn Canyon",
     src: "/portfolio/traveling/Lynn Canyon.jpg",
     aspect_ratio: "3/4",
   },
   {
-    type: "traveling",
+    type: "default",
     title: "The Crack",
     src: "/portfolio/traveling/The Crack.jpg",
     aspect_ratio: "1",
   },
   // Row 2
   {
-    type: "traveling",
+    type: "default",
     title: "Minoh Waterfalls",
     src: "/portfolio/traveling/Minoh Waterfalls.jpg",
     aspect_ratio: "9/16",
   },
   {
-    type: "traveling",
+    type: "default",
     title: "Osaka Castle",
     src: "/portfolio/traveling/Osaka Castle.jpg",
     aspect_ratio: "3/4",
   },
   {
-    type: "traveling",
+    type: "default",
     title: "Whistler",
     src: "/portfolio/traveling/Whistler.jpg",
     aspect_ratio: "4/3",
   },
   {
-    type: "traveling",
+    type: "default",
     title: "Vancouver Canucks",
     src: "/portfolio/traveling/Vancouver Canucks.jpg",
     aspect_ratio: "1",
@@ -87,7 +87,7 @@ const TRAVELING_IMAGES: HobbyImageType[] = [
 const READING_IMAGES: HobbyImageType[] = [
   // Row 1
   {
-    type: "reading",
+    type: "blog",
     title: "The Pragmatic Programmer",
     src: "/portfolio/reading/The Pragmatic Programmer.jpg",
     md: "/portfolio/reading/The Pragmatic Programmer.md",

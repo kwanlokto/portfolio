@@ -28,7 +28,7 @@ export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
         },
       }}
       onClick={() => {
-        if (hobby.type === "reading") {
+        if (hobby.type === "blog") {
           set_selected_md(hobby.md);
         }
       }}
@@ -69,7 +69,7 @@ export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
         </Typography>
 
         {/* Rating pinned bottom-right */}
-        {hobby.type === "reading" && (
+        {hobby.type === "blog" && (
           <Box
             sx={{
               width: "100%",
