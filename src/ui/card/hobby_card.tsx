@@ -1,10 +1,9 @@
 "use client";
 
-import { Box, Rating, Typography } from "@mui/material";
-
-import Image from "next/image";
+import { Box, Card, CardContent, Rating, Typography } from "@mui/material";
 
 import { HobbyImageType } from "@/lib/hobby";
+import Image from "next/image";
 
 interface HobbyCardParams {
   hobby: HobbyImageType;
@@ -13,19 +12,17 @@ interface HobbyCardParams {
 
 export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
   return (
-    <Box
+    <Card
+      variant="outlined"
       sx={{
-        position: "relative",
-        width: "100%",
-        borderRadius: 3,
-        overflow: "hidden",
+        display: "flex",
         boxShadow: 2,
-        cursor: "pointer",
+        flexDirection: "column",
+        height: "100%",
+        borderRadius: 2,
+        overflow: "hidden",
         transition: "transform 0.25s ease, box-shadow 0.25s ease",
-        "&:hover": {
-          transform: "translateY(-6px)",
-          boxShadow: 6,
-        },
+        "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
       }}
       onClick={() => {
         if (hobby.type === "blog") {
@@ -49,22 +46,8 @@ export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
         />
       </Box>
 
-      <Box
-        sx={{
-          p: 1.5,
-          bgcolor: "white",
-        }}
-      >
-        <Typography
-          variant="subtitle1"
-          lineHeight={1.5}
-          sx={{
-            display: "-webkit-box",
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: "vertical",
-            overflow: "hidden",
-          }}
-        >
+      <CardContent sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" fontWeight={600} gutterBottom>
           {hobby.title}
         </Typography>
 
@@ -86,7 +69,7 @@ export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
             />
           </Box>
         )}
-      </Box>
-    </Box>
+      </CardContent>
+    </Card>
   );
 };
