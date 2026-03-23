@@ -17,7 +17,7 @@ interface HobbyCardParams {
   set_selected_md: (md: string) => void;
 }
 
-export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
+export const HobbyActivityCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
   return (
     <Card
       variant="outlined"

@@ -12,7 +12,7 @@ import {
 import { HobbyImageType, HobbyType, SCROLLING_HOBBIES } from "@/lib/hobby";
 
 import { BoldText } from "@/ui/bold_text";
-import { HobbyCard } from "@/ui/card/hobby_card";
+import { HobbyActivityCard } from "@/ui/card/hobby_activity_card";
 import Image from "next/image";
 import { MDReader } from "@/ui/md_reader";
 import { Masonry } from "@mui/lab";
@@ -190,7 +190,7 @@ export default function Page() {
             {selected_hobby !== null &&
               selected_hobby.images.map(
                 (image: HobbyImageType, idx: number) => (
-                  <HobbyCard
+                  <HobbyActivityCard
                     key={idx}
                     hobby={image}
                     set_selected_md={set_selected_md}
