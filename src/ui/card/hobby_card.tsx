@@ -1,6 +1,13 @@
 "use client";
 
-import { Box, Card, CardContent, Rating, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardActionArea,
+  CardContent,
+  Rating,
+  Typography,
+} from "@mui/material";
 
 import { HobbyImageType } from "@/lib/hobby";
 import Image from "next/image";
@@ -25,52 +32,55 @@ export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
         transition: "transform 0.25s ease, box-shadow 0.25s ease",
         "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
       }}
-      onClick={() => {
-        if (hobby.type === "blog") {
-          set_selected_md(hobby.md);
-        }
-      }}
     >
-      {/* Image section */}
-      <Box
-        sx={{
-          position: "relative",
-          width: "100%",
-          aspectRatio: hobby.aspect_ratio,
+      <CardActionArea
+        onClick={() => {
+          if (hobby.type === "blog") {
+            set_selected_md(hobby.md);
+          }
         }}
       >
-        <Image
-          src={hobby.src}
-          alt={hobby.title}
-          fill
-          style={{ objectFit: "cover" }}
-        />
-      </Box>
+        {/* Image section */}
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            aspectRatio: hobby.aspect_ratio,
+          }}
+        >
+          <Image
+            src={hobby.src}
+            alt={hobby.title}
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </Box>
 
-      <CardContent sx={{ flexGrow: 1 }}>
-        <Typography variant="h6" fontWeight={600} gutterBottom>
-          {hobby.title}
-        </Typography>
+        <CardContent sx={{ py: 1 }}>
+          <Typography variant="body1" fontWeight={500}>
+            {hobby.title}
+          </Typography>
 
-        {/* Rating pinned bottom-right */}
-        {hobby.type === "blog" && (
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "flex-end",
-              mt: 0.5,
-            }}
-          >
-            <Rating
-              size="small"
-              value={hobby.rating}
-              precision={0.25}
-              readOnly
-            />
-          </Box>
-        )}
-      </CardContent>
+          {/* Rating pinned bottom-right */}
+          {hobby.type === "blog" && (
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "flex-end",
+                mt: 0.5,
+              }}
+            >
+              <Rating
+                size="small"
+                value={hobby.rating}
+                precision={0.25}
+                readOnly
+              />
+            </Box>
+          )}
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 };

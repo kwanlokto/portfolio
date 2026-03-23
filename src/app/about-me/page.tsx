@@ -2,24 +2,24 @@
 
 import {
   Box,
+  Button,
   Card,
   CardActionArea,
   CardContent,
   Divider,
   Typography,
-  Button,
 } from "@mui/material";
 import { HobbyImageType, HobbyType, SCROLLING_HOBBIES } from "@/lib/hobby";
 
 import { BoldText } from "@/ui/bold_text";
+import { HobbyCard } from "@/ui/card/hobby_card";
 import Image from "next/image";
+import { MDReader } from "@/ui/md_reader";
 import { Masonry } from "@mui/lab";
+import { MdArrowForward } from "react-icons/md";
 import { Modal } from "@/ui/modal";
 import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
-import { HobbyCard } from "@/ui/card/hobby_card";
-import { MDReader } from "@/ui/md_reader";
-import { MdArrowForward } from "react-icons/md";
 
 export default function Page() {
   const current_year = new Date().getFullYear();
