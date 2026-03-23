@@ -251,8 +251,8 @@ export const EDUCATION: ExperienceType[] = [
         name: "BSc. in Computer Science",
         timeline: "Sept 2016 – April 2021",
         achievements: [
-          <>Computer Science Specialist</>,
-          <>Graduated with high distinction</>,
+          <>Dean&apos;s List (All Years of Undergraduate Study)</>,
+          <>CGPA: 3.72 / 4.0</>,
         ],
       },
     ],
