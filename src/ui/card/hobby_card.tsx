@@ -55,14 +55,13 @@ export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
             style={{ objectFit: "cover" }}
           />
         </Box>
+        {/* Rating pinned bottom-right */}
+        {hobby.type === "blog" && (
+          <CardContent sx={{ py: 1 }}>
+            <Typography variant="body1" fontWeight={500}>
+              {hobby.title}
+            </Typography>
 
-        <CardContent sx={{ py: 1 }}>
-          <Typography variant="body1" fontWeight={500}>
-            {hobby.title}
-          </Typography>
-
-          {/* Rating pinned bottom-right */}
-          {hobby.type === "blog" && (
             <Box
               sx={{
                 width: "100%",
@@ -78,8 +77,8 @@ export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
                 readOnly
               />
             </Box>
-          )}
-        </CardContent>
+          </CardContent>
+        )}
       </CardActionArea>
     </Card>
   );
