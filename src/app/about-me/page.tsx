@@ -1,14 +1,14 @@
 "use client";
 
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import { HobbyItemType, HobbyType, SCROLLING_HOBBIES } from "@/lib/hobby";
 
+import { BackButton } from "@/ui/back_button";
 import { BoldText } from "@/ui/bold_text";
 import { HobbyCard } from "@/ui/card/hobby_card";
 import { HobbyItemCard } from "@/ui/card/hobby_item_card";
 import { MDReader } from "@/ui/md_reader";
 import { Masonry } from "@mui/lab";
-import { MdArrowForward } from "react-icons/md";
 import { Modal } from "@/ui/modal";
 import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
@@ -178,33 +178,7 @@ export default function Page() {
             }}
           >
             {/* Back button pinned to top-left */}
-            <Box
-              sx={{
-                position: "sticky", // keeps it at the top when scrolling
-                top: 0,
-                left: 0,
-                zIndex: 1300,
-                display: "flex",
-                py: 0.75,
-                bgcolor: "background.default",
-              }}
-            >
-              <Button
-                startIcon={<MdArrowForward style={{ paddingBottom: "2px" }} />}
-                variant="text"
-                size="small"
-                onClick={() => set_selected_md(null)}
-                sx={{
-                  color: "primary.light",
-                  "&:hover": {
-                    bgcolor: "transparent",
-                    color: "primary.dark",
-                  },
-                }}
-              >
-                Back
-              </Button>
-            </Box>
+            <BackButton on_click={() => set_selected_md(null)} />
 
             {/* MD content */}
             {selected_md && <MDReader path={selected_md} />}

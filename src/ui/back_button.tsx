@@ -1,33 +1,37 @@
 "use client";
 
-import { Button } from "@mui/material";
-import Link from "next/link";
-import { MdArrowBack } from "react-icons/md";
+import { Box, Button } from "@mui/material";
 
-export const BackButton = ({ href }: { href: string }) => {
+import { MdArrowForward } from "react-icons/md";
+
+export const BackButton = ({ on_click }: { on_click: () => void }) => {
   return (
-    <Button
-      variant="outlined"
-      startIcon={<MdArrowBack size={18} />}
-      component={Link}
-      href={href}
+    <Box
       sx={{
-        textTransform: "none",
-        borderRadius: 2,
-        px: 1.5,
-        py: 0.5,
-        mb: 2,
-        fontSize: "0.875rem",
-        borderColor: "divider",
-        color: "text.primary",
-        backgroundColor: "background.paper",
-        "&:hover": {
-          backgroundColor: "action.hover",
-          borderColor: "text.secondary",
-        },
+        position: "sticky", // keeps it at the top when scrolling
+        top: 0,
+        left: 0,
+        zIndex: 1300,
+        display: "flex",
+        py: 0.75,
+        bgcolor: "background.default",
       }}
     >
-      Back
-    </Button>
+      <Button
+        startIcon={<MdArrowForward style={{ paddingBottom: "2px" }} />}
+        variant="text"
+        size="small"
+        onClick={on_click}
+        sx={{
+          color: "primary.light",
+          "&:hover": {
+            bgcolor: "transparent",
+            color: "primary.dark",
+          },
+        }}
+      >
+        Back
+      </Button>
+    </Box>
   );
 };
