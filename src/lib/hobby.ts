@@ -8,7 +8,7 @@ type BlogImageType = {
   rating: number; // 0 to 5
 };
 
-export type HobbyImageType = {
+export type HobbyItemType = {
   title: string;
   src: string;
   aspect_ratio: string; // format "width/height" e.g. "3/4"
@@ -17,7 +17,7 @@ export type HobbyImageType = {
 export type HobbyType = {
   title: string;
   img: string;
-  images: HobbyImageType[];
+  images: HobbyItemType[];
 };
 
 /**
@@ -26,7 +26,7 @@ export type HobbyType = {
  * of the image is also provided to ensure that the image is displayed correctly without
  * distortion.
  */
-const TRAVELING_IMAGES: HobbyImageType[] = [
+const TRAVELING_IMAGES: HobbyItemType[] = [
   // Row 1
   {
     type: "default",
@@ -84,7 +84,7 @@ const TRAVELING_IMAGES: HobbyImageType[] = [
  * that shows the markdown content of the book review and the rating (e.g. 4.5/5) will be
  * displayed as stars on the card.
  */
-const READING_IMAGES: HobbyImageType[] = [
+const READING_IMAGES: HobbyItemType[] = [
   // Row 1
   {
     type: "blog",

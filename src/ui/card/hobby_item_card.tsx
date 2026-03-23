@@ -9,15 +9,15 @@ import {
   Typography,
 } from "@mui/material";
 
-import { HobbyImageType } from "@/lib/hobby";
+import { HobbyItemType } from "@/lib/hobby";
 import Image from "next/image";
 
-interface HobbyCardParams {
-  hobby: HobbyImageType;
+interface HobbyItemCardParams {
+  hobby_item: HobbyItemType;
   set_selected_md: (md: string) => void;
 }
 
-export const HobbyActivityCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
+export const HobbyItemCard = ({ hobby_item, set_selected_md }: HobbyItemCardParams) => {
   return (
     <Card
       variant="outlined"
@@ -35,8 +35,8 @@ export const HobbyActivityCard = ({ hobby, set_selected_md }: HobbyCardParams) =
     >
       <CardActionArea
         onClick={() => {
-          if (hobby.type === "blog") {
-            set_selected_md(hobby.md);
+          if (hobby_item.type === "blog") {
+            set_selected_md(hobby_item.md);
           }
         }}
       >
@@ -45,21 +45,21 @@ export const HobbyActivityCard = ({ hobby, set_selected_md }: HobbyCardParams) =
           sx={{
             position: "relative",
             width: "100%",
-            aspectRatio: hobby.aspect_ratio,
+            aspectRatio: hobby_item.aspect_ratio,
           }}
         >
           <Image
-            src={hobby.src}
-            alt={hobby.title}
+            src={hobby_item.src}
+            alt={hobby_item.title}
             fill
             style={{ objectFit: "cover" }}
           />
         </Box>
         {/* Rating pinned bottom-right */}
-        {hobby.type === "blog" && (
+        {hobby_item.type === "blog" && (
           <CardContent sx={{ py: 1 }}>
             <Typography variant="body1" fontWeight={500}>
-              {hobby.title}
+              {hobby_item.title}
             </Typography>
 
             <Box
@@ -72,7 +72,7 @@ export const HobbyActivityCard = ({ hobby, set_selected_md }: HobbyCardParams) =
             >
               <Rating
                 size="small"
-                value={hobby.rating}
+                value={hobby_item.rating}
                 precision={0.25}
                 readOnly
               />

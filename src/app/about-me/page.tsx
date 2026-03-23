@@ -1,19 +1,11 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  Divider,
-  Typography,
-} from "@mui/material";
-import { HobbyImageType, HobbyType, SCROLLING_HOBBIES } from "@/lib/hobby";
+import { Box, Button, Divider, Typography } from "@mui/material";
+import { HobbyItemType, HobbyType, SCROLLING_HOBBIES } from "@/lib/hobby";
 
 import { BoldText } from "@/ui/bold_text";
-import { HobbyActivityCard } from "@/ui/card/hobby_activity_card";
-import Image from "next/image";
+import { HobbyCard } from "@/ui/card/hobby_card";
+import { HobbyItemCard } from "@/ui/card/hobby_item_card";
 import { MDReader } from "@/ui/md_reader";
 import { Masonry } from "@mui/lab";
 import { MdArrowForward } from "react-icons/md";
@@ -104,47 +96,16 @@ export default function Page() {
         >
           {SCROLLING_HOBBIES.map((hobby, index) => (
             <Box key={index} sx={{ width: 220, mx: 1, my: 2 }}>
-              <Card
-                sx={{
-                  borderRadius: 2,
-                  boxShadow: 2,
-                  border: (theme) =>
-                    `1px solid ${
-                      theme.palette.mode === "dark"
-                        ? theme.palette.grey[800]
-                        : theme.palette.grey[400]
-                    }`,
-                  transition: "transform 0.25s ease, box-shadow 0.1s ease",
-                  "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
+              <HobbyCard
+                hobby={hobby}
+                on_click={async () => {
+                  // If the images we have isn't empty then continue
+                  if (hobby.images.length > 0) {
+                    set_selected_hobby(hobby);
+                    set_open(true);
+                  }
                 }}
-              >
-                <CardActionArea
-                  onClick={async () => {
-                    // If the images we have isn't empty then continue
-                    if (hobby.images.length > 0) {
-                      set_selected_hobby(hobby);
-                      set_open(true);
-                    }
-                  }}
-                >
-                  <Box
-                    sx={{ width: "100%", height: 110, position: "relative" }}
-                  >
-                    <Image
-                      src={hobby.img}
-                      alt={hobby.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                    />
-                  </Box>
-
-                  <CardContent sx={{ textAlign: "center", p: 0.5 }}>
-                    <Typography variant="body1" fontWeight={500}>
-                      {hobby.title}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+              />
             </Box>
           ))}
         </Box>
@@ -189,10 +150,10 @@ export default function Page() {
           <Masonry columns={{ xs: 2, sm: 2, md: 3, lg: 4 }} spacing={2}>
             {selected_hobby !== null &&
               selected_hobby.images.map(
-                (image: HobbyImageType, idx: number) => (
-                  <HobbyActivityCard
+                (hobby_item: HobbyItemType, idx: number) => (
+                  <HobbyItemCard
                     key={idx}
-                    hobby={image}
+                    hobby_item={hobby_item}
                     set_selected_md={set_selected_md}
                   />
                 ),
