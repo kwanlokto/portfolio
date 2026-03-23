@@ -205,7 +205,7 @@ export default function Page() {
               right: 0,
               width: { xs: "100%", sm: "50%", md: "50%" },
               height: "100%",
-              bgcolor: "background.paper",
+              bgcolor: "background.default",
               boxShadow: 3,
               overflow: "auto",
               px: 3,
@@ -225,7 +225,7 @@ export default function Page() {
                 zIndex: 1300,
                 display: "flex",
                 py: 0.75,
-                bgcolor: "background.paper", // optional: background to cover content underneath
+                bgcolor: "background.default",
               }}
             >
               <Button
@@ -234,10 +234,10 @@ export default function Page() {
                 size="small"
                 onClick={() => set_selected_md(null)}
                 sx={{
-                  color: "primary.light", // normal color
+                  color: "primary.light",
                   "&:hover": {
-                    bgcolor: "transparent", // no background change
-                    color: "primary.dark", // subtle text color change
+                    bgcolor: "transparent",
+                    color: "primary.dark",
                   },
                 }}
               >
