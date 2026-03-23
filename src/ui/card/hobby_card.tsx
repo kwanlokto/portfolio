@@ -18,9 +18,10 @@ export const HobbyCard = ({ hobby, set_selected_md }: HobbyCardParams) => {
         display: "flex",
         boxShadow: 2,
         flexDirection: "column",
-        height: "100%",
+        width: "100%",
         borderRadius: 2,
         overflow: "hidden",
+        cursor: "pointer",
         transition: "transform 0.25s ease, box-shadow 0.25s ease",
         "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
       }}
