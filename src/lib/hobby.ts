@@ -92,7 +92,15 @@ const READING_IMAGES: HobbyItemType[] = [
     src: "/portfolio/reading/The Pragmatic Programmer.jpg",
     md: "/portfolio/reading/The Pragmatic Programmer.md",
     rating: 4.75,
-    aspect_ratio: "3/2",
+    aspect_ratio: "1",
+  },
+  {
+    type: "blog",
+    title: "The Phoenix Project",
+    src: "/portfolio/reading/The Phoenix Project.jpg",
+    md: "/portfolio/reading/The Phoenix Project.md",
+    rating: 4.5,
+    aspect_ratio: "1",
   },
 ];
 
