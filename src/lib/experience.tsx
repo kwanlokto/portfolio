@@ -23,7 +23,7 @@ export const WORK: ExperienceType[] = [
   //   dark_mode_icon_url: "/portfolio/Bauer Dark.png",
   //   roles: [
   //     {
-  //       name: "Software Engineer (Consultant)",
+  //       name: "Software Engineer",
   //       timeline: "Jan 2026 – Present",
   //       achievements: [
   //         <>
