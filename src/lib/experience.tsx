@@ -148,19 +148,13 @@ export const WORK: ExperienceType[] = [
     ],
   },
   {
-    company: "Race2Win — UofT Hatchery",
+    company: "OpenRace — UofT Hatchery",
     icon_url: "/portfolio/Hatchery.png",
     roles: [
       {
         name: "Software Developer",
         timeline: "Jan 2021 - April 2021",
         achievements: [
-          <>
-            Pitched and secured <BoldText>$10K</BoldText> from the{" "}
-            <BoldText>UofT Hatchery</BoldText> accelerator to build a{" "}
-            <BoldText>Swift</BoldText> and <BoldText>Node.js</BoldText>{" "}
-            real-time race tracking mobile app.
-          </>,
           <>
             Implemented <BoldText>sockets</BoldText> and integrated mobile GPS
             for real-time race tracking and live competition features in{" "}
