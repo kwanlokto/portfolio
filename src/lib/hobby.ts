@@ -27,6 +27,7 @@ export type HobbyType = {
  * distortion.
  */
 const TRAVELING_IMAGES: HobbyItemType[] = [
+  // Row 1
   {
     type: "default",
     title: "Antelope Canyon",
@@ -51,11 +52,30 @@ const TRAVELING_IMAGES: HobbyItemType[] = [
     src: "/portfolio/traveling/The Crack.jpg",
     aspect_ratio: "1",
   },
+  // Row 2
+  {
+    type: "default",
+    title: "Minoh Waterfalls",
+    src: "/portfolio/traveling/Minoh Waterfalls.jpg",
+    aspect_ratio: "9/16",
+  },
   {
     type: "default",
     title: "Osaka Castle",
     src: "/portfolio/traveling/Osaka Castle.jpg",
     aspect_ratio: "3/4",
+  },
+  {
+    type: "default",
+    title: "Whistler",
+    src: "/portfolio/traveling/Whistler.jpg",
+    aspect_ratio: "4/3",
+  },
+  {
+    type: "default",
+    title: "Vancouver Canucks",
+    src: "/portfolio/traveling/Vancouver Canucks.jpg",
+    aspect_ratio: "1",
   },
 ];
 
