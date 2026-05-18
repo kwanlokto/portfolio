@@ -199,8 +199,17 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
           p: 4,
         }}
       >
-        <Typography variant="h5" fontWeight="bold" mb={2} textAlign="center">
-          Contact Me
+        <Typography
+          component="h2"
+          sx={{
+            fontSize: "1.5rem",
+            fontWeight: 600,
+            letterSpacing: "-0.018em",
+            mb: 2,
+            textAlign: "center",
+          }}
+        >
+          Contact me
         </Typography>
 
         <Box component="form" onSubmit={handle_submit} noValidate>
@@ -244,15 +253,9 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
             type="submit"
             variant="contained"
             fullWidth
-            sx={{
-              mt: 3,
-              py: 1.2,
-              borderRadius: 2,
-              textTransform: "none",
-              fontWeight: "medium",
-            }}
+            sx={{ mt: 3, py: 1.2 }}
           >
-            Send Message
+            Send message
           </Button>
         </Box>
       </Modal>

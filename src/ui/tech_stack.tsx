@@ -1,12 +1,12 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { TechStackType, TECH_STACK } from "@/lib/tech_stack";
 
+import { SectionHeader } from "@/ui/section_header";
+
 export const TechStack = () => {
   return (
-    <Box pt={2}>
-      <Typography variant="h6" fontWeight="bold" mb={2}>
-        Tech Stack
-      </Typography>
+    <Box>
+      <SectionHeader title="Tech stack" />
 
       <Box component="section" aria-label="Tech stack">
         <Grid container spacing={1}>
@@ -14,14 +14,13 @@ export const TechStack = () => {
             <Grid size={12} key={index}>
               {tech.category && (
                 <Typography
-                  variant="subtitle2"
                   sx={{
-                    mb: 0.5,
-                    letterSpacing: 0.6,
+                    mb: 1,
+                    letterSpacing: "0.08em",
                     fontWeight: 600,
                     textTransform: "uppercase",
                     color: "text.secondary",
-                    fontSize: 12,
+                    fontSize: "0.6875rem",
                   }}
                 >
                   {tech.category}
@@ -33,7 +32,7 @@ export const TechStack = () => {
                 sx={{
                   display: "flex",
                   flexWrap: "wrap",
-                  mb: 2,
+                  mb: 2.5,
                 }}
               >
                 {tech.items.map((tech_item, tech_item_index) => (
@@ -43,21 +42,15 @@ export const TechStack = () => {
                     tabIndex={0}
                     sx={{
                       px: 1,
-                      // card-like tile but very subtle
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
-
                       borderRadius: 2,
-                      bgcolor: "transparent", // keep surface clean
-
-                      // subtle elevation only on hover/focus
-                      transition: "transform 160ms ease, box-shadow 160ms ease",
-                      transform: "translateY(0)",
-                      boxShadow: "none",
+                      bgcolor: "transparent",
+                      transition: "transform 160ms ease",
                       "&:hover, &:focus-visible": {
-                        transform: "translateY(-6px)",
+                        transform: "translateY(-4px)",
                       },
                     }}
                   >
@@ -68,7 +61,6 @@ export const TechStack = () => {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        mb: 0,
                         color: "text.primary",
                       }}
                     >
@@ -77,13 +69,12 @@ export const TechStack = () => {
 
                     {tech_item.name && (
                       <Typography
-                        variant="body2"
                         sx={{
-                          mt: 0,
                           textAlign: "center",
                           fontWeight: 500,
-                          color: "text.primary",
-                          fontSize: 13,
+                          color: "text.secondary",
+                          fontSize: "0.75rem",
+                          letterSpacing: "-0.005em",
                         }}
                       >
                         {tech_item.name}

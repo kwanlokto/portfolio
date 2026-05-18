@@ -23,10 +23,10 @@ export const BackButton = ({ on_click }: { on_click: () => void }) => {
         size="small"
         onClick={on_click}
         sx={{
-          color: "primary.light",
+          color: "text.secondary",
           "&:hover": {
             bgcolor: "transparent",
-            color: "primary.dark",
+            color: "text.primary",
           },
         }}
       >

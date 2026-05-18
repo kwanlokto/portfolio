@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { HobbyItemType, HobbyType, SCROLLING_HOBBIES } from "@/lib/hobby";
 
 import { BackButton } from "@/ui/back_button";
@@ -10,6 +10,7 @@ import { HobbyItemCard } from "@/ui/card/hobby_item_card";
 import { MDReader } from "@/ui/md_reader";
 import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
+import { SectionHeader } from "@/ui/section_header";
 import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
 
@@ -21,19 +22,16 @@ export default function Page() {
   const [selected_md, set_selected_md] = useState<string | null>(null);
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-      {/* About Section */}
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, sm: 7 } }}>
       <Box>
+        <SectionHeader title="About me" mb={3} />
         <Typography
-          variant="h5"
-          fontWeight="bold"
-          gutterBottom
-          sx={{ color: "text.primary" }}
+          sx={{
+            fontSize: { xs: "1rem", sm: "1.0625rem" },
+            color: "text.primary",
+            lineHeight: 1.65,
+          }}
         >
-          About Me
-        </Typography>
-        <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
-        <Typography variant="body2">
           I&apos;m a Senior Software Engineer specializing in
           <BoldText> React</BoldText> and <BoldText>Python</BoldText>, with a
           focus on building maintainable systems and intuitive user interfaces.
@@ -47,9 +45,7 @@ export default function Page() {
         </Typography>
       </Box>
 
-      <Divider />
-
-      <TextSection title="How I Work" mb={1}>
+      <TextSection title="How I work">
         I&apos;m convinced that the best code is boring code. When I&apos;m
         building something, I&apos;d rather spend time making it obvious than
         clever. I&apos;ve learned that the real challenge isn&apos;t solving the
@@ -57,9 +53,7 @@ export default function Page() {
         future me) can understand six months later.
       </TextSection>
 
-      <Divider />
-
-      <TextSection title="Outside of Work" mb={1}>
+      <TextSection title="Outside of work">
         When I&apos;m not coding, I&apos;m often out playing hockey, which is
         something I picked up {current_year - 2021} years ago. It&apos;s been
         fun, frustrating, and humbling. I&apos;ve spent plenty of time falling,
@@ -71,12 +65,14 @@ export default function Page() {
         perspective to my work.
       </TextSection>
 
-      <Divider sx={{ mb: -1 }} />
-
       <Box
         sx={{
           overflow: "hidden",
           width: "100%",
+          maskImage:
+            "linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
         }}
       >
         <Box
@@ -85,21 +81,16 @@ export default function Page() {
             width: "max-content",
             animation: "scrollX 35s linear infinite",
             "@keyframes scrollX": {
-              "0%": {
-                transform: "translateX(0)",
-              },
-              "100%": {
-                transform: "translateX(-50%)",
-              },
+              "0%": { transform: "translateX(0)" },
+              "100%": { transform: "translateX(-50%)" },
             },
           }}
         >
           {SCROLLING_HOBBIES.map((hobby, index) => (
-            <Box key={index} sx={{ width: 220, mx: 1, my: 2 }}>
+            <Box key={index} sx={{ width: 220, mx: 1, my: 1 }}>
               <HobbyCard
                 hobby={hobby}
                 on_click={async () => {
-                  // If the images we have isn't empty then continue
                   if (hobby.images.length > 0) {
                     set_selected_hobby(hobby);
                     set_open(true);
@@ -111,20 +102,22 @@ export default function Page() {
         </Box>
       </Box>
 
-      <Divider sx={{ mb: 1, mt: -1 }} />
-
       <Box textAlign="center">
         <Typography
-          variant="body1"
           sx={{
-            color: (theme) =>
-              theme.palette.mode === "dark"
-                ? theme.palette.grey[300]
-                : theme.palette.grey[700],
+            fontSize: { xs: "1rem", sm: "1.0625rem" },
+            color: "text.secondary",
           }}
         >
           Want to connect? Reach me at{" "}
-          <Typography component="span" color="primary" fontWeight={500}>
+          <Typography
+            component="span"
+            sx={{
+              color: "text.primary",
+              fontWeight: 500,
+              fontSize: "inherit",
+            }}
+          >
             lokto.kwan@gmail.com
           </Typography>
         </Typography>
@@ -171,16 +164,11 @@ export default function Page() {
               overflow: "auto",
               px: 3,
               zIndex: 1200,
-
-              // Transition & slide
               transition: "transform 0.3s ease",
               transform: selected_md ? "translateX(0)" : "translateX(100%)",
             }}
           >
-            {/* Back button pinned to top-left */}
             <BackButton on_click={() => set_selected_md(null)} />
-
-            {/* MD content */}
             {selected_md && <MDReader path={selected_md} />}
           </Box>
         </Box>
