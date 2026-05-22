@@ -3,23 +3,31 @@
 import {
   Box,
   Button,
+  Divider,
   Drawer,
   IconButton,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  TextField,
+  Stack,
   Typography,
+  useTheme,
 } from "@mui/material";
-import { EmailData, send_email } from "@/lib/email";
-import { FormEvent, useState } from "react";
 import { MdBrightness4, MdHome, MdInfo, MdMenu, MdWork } from "react-icons/md";
+import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 
+import { CiMail } from "react-icons/ci";
+import { HRefButton } from "./href_button";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import Link from "next/link";
 import { Modal } from "./modal";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
+
+const CONTACT_EMAIL = "lokto.kwan@gmail.com";
+const MAILTO_SUBJECT = "Hi Ray — saw your portfolio";
+const MAILTO_BODY = "Hey Ray,\n\n";
 
 const tabs = [
   { label: "Home", href: "/", icon: <MdHome size={20} /> },
@@ -77,43 +85,26 @@ type NavbarProps = {
 
 export const Navbar = ({ toggleTheme }: NavbarProps) => {
   const pathname = usePathname();
+  const theme = useTheme();
 
   const [drawerOpen, setDrawerOpen] = useState(false);
-
   const [show_contact_form, set_show_contact_form] = useState(false);
-  const [form_data, set_form_data] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [errors, set_errors] = useState<EmailData>({});
+  const [copied, set_copied] = useState(false);
 
-  const handle_change = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    set_form_data((prev) => ({ ...prev, [name]: value }));
+  const handle_open_mail = () => {
+    const url = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      MAILTO_SUBJECT
+    )}&body=${encodeURIComponent(MAILTO_BODY)}`;
+    window.location.href = url;
   };
 
-  const validate = () => {
-    const errors: EmailData = {};
-    if (!form_data.name) errors.name = "Name is required";
-    if (!form_data.email) {
-      errors.email = "Email is required";
-    } else if (
-      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(form_data.email)
-    ) {
-      errors.email = "Invalid email address";
-    }
-    if (!form_data.message) errors.message = "Message is required";
-    set_errors(errors);
-
-    return Object.keys(errors).length === 0;
-  };
-
-  const handle_submit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (validate()) {
-      await send_email(form_data);
-      set_form_data({ name: "", email: "", message: "" });
+  const handle_copy_email = async () => {
+    try {
+      await navigator.clipboard.writeText(CONTACT_EMAIL);
+      set_copied(true);
+      setTimeout(() => set_copied(false), 2000);
+    } catch {
+      // Clipboard API unavailable — silently no-op
     }
   };
 
@@ -193,71 +184,120 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         open={show_contact_form}
         onClose={() => set_show_contact_form(false)}
         sx={{
-          maxWidth: 450,
-          borderRadius: 3,
-          boxShadow: 10,
-          p: 4,
+          maxWidth: 440,
+          borderRadius: 2.5,
+          p: { xs: 3, sm: 3.5 },
         }}
       >
-        <Typography
-          component="h2"
-          sx={{
-            fontSize: "1.5rem",
-            fontWeight: 600,
-            letterSpacing: "-0.018em",
-            mb: 2,
-            textAlign: "center",
-          }}
-        >
-          Contact me
-        </Typography>
-
-        <Box component="form" onSubmit={handle_submit} noValidate>
-          <TextField
-            name="name"
-            label="Name"
-            fullWidth
-            margin="normal"
-            value={form_data.name}
-            onChange={handle_change}
-            error={!!errors.name}
-            helperText={errors.name}
-          />
-
-          <TextField
-            name="email"
-            label="Email"
-            type="email"
-            fullWidth
-            margin="normal"
-            value={form_data.email}
-            onChange={handle_change}
-            error={!!errors.email}
-            helperText={errors.email}
-          />
-
-          <TextField
-            name="message"
-            label="Message"
-            multiline
-            rows={4}
-            fullWidth
-            margin="normal"
-            value={form_data.message}
-            onChange={handle_change}
-            error={!!errors.message}
-            helperText={errors.message}
-          />
+        <Stack spacing={2.5} sx={{ pt: 1 }}>
+          <Box>
+            <Typography
+              component="h2"
+              sx={{
+                fontSize: "1.5rem",
+                fontWeight: 600,
+                letterSpacing: "-0.018em",
+                mb: 0.5,
+              }}
+            >
+              Get in touch
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "0.9375rem",
+                color: "text.secondary",
+                lineHeight: 1.55,
+              }}
+            >
+              Recruiter, collaborator, or just want to chat? Drop me a line —
+              I read every message.
+            </Typography>
+          </Box>
 
           <Button
-            type="submit"
             variant="contained"
             fullWidth
-            sx={{ mt: 3, py: 1.2 }}
+            startIcon={<CiMail size={20} />}
+            onClick={handle_open_mail}
+            sx={{
+              py: 1.1,
+              fontSize: "0.9375rem",
+              textTransform: "none",
+              letterSpacing: "-0.005em",
+            }}
           >
-            Send message
+            Open in your email app
           </Button>
-        </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              px: 1.5,
+              py: 1,
+              border: "1px solid",
+              borderColor: "divider",
+              borderRadius: 1.5,
+              bgcolor: "action.hover",
+            }}
+          >
+            <Typography
+              sx={{
+                flex: 1,
+                fontSize: "0.875rem",
+                color: "text.primary",
+                fontFamily: "monospace",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {CONTACT_EMAIL}
+            </Typography>
+            <Button
+              size="small"
+              onClick={handle_copy_email}
+              sx={{
+                minWidth: 0,
+                px: 1.25,
+                fontSize: "0.8125rem",
+                textTransform: "none",
+                color: "text.secondary",
+                "&:hover": { color: "text.primary", bgcolor: "transparent" },
+              }}
+            >
+              {copied ? "Copied" : "Copy"}
+            </Button>
+          </Box>
+
+          <Divider sx={{ "&::before, &::after": { borderColor: "divider" } }}>
+            <Typography
+              sx={{
+                fontSize: "0.75rem",
+                color: "text.secondary",
+                letterSpacing: "-0.005em",
+              }}
+            >
+              or find me on
+            </Typography>
+          </Divider>
+
+          <Box sx={{ display: "flex", justifyContent: "center", gap: 0.5 }}>
+            <HRefButton url="https://www.linkedin.com/in/loktokwan/">
+              <SlSocialLinkedin
+                size={20}
+                color={theme.palette.text.secondary}
+              />
+            </HRefButton>
+            <HRefButton url="https://github.com/kwanlokto">
+              <SlSocialGithub
+                size={20}
+                color={theme.palette.text.secondary}
+              />
+            </HRefButton>
+          </Box>
+        </Stack>
       </Modal>
     </Box>
   );
