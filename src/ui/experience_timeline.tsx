@@ -103,8 +103,8 @@ export const ExperienceTimeline = ({
                   sx={{ mb: 0.5 }}
                 >
                   <Typography
-                    variant="h6"
-                    sx={{ color: "text.primary", fontSize: "1.125rem" }}
+                    variant="body1"
+                    sx={{ color: "text.primary", fontWeight: 600, pt: 0.75 }}
                   >
                     {experience.company}
                   </Typography>
@@ -144,10 +144,9 @@ export const ExperienceTimeline = ({
                     )} */}
                       <TimelineContent>
                         <Typography
-                          variant="subtitle2"
+                          variant="h6"
                           sx={{
-                            fontWeight: 600,
-                            fontSize: "0.9375rem",
+                            fontSize: "1.125rem",
                             color: "text.primary",
                           }}
                         >
@@ -194,7 +193,7 @@ export const ExperienceTimeline = ({
                         )}
 
                         {role_idx < experience.roles.length - 1 && (
-                          <Divider sx={{ mt: 1 }} />
+                          <Divider sx={{ mt: 1.5, mb: 0.5 }} />
                         )}
                       </TimelineContent>
                     </TimelineItem>
