@@ -33,123 +33,133 @@ export default function Home() {
   const current_year = new Date().getFullYear();
   const theme = useTheme();
 
+  const action_buttons = (display: { xs: string; sm: string }) => (
+    <Box
+      sx={{
+        pt: 2,
+        display,
+        flexWrap: "wrap",
+        gap: 2,
+        alignItems: "center",
+        justifyContent: "flex-start",
+      }}
+    >
+      <Button
+        variant="contained"
+        onClick={() =>
+          handle_download("/portfolio/Resume.pdf", "ray_resume.pdf")
+        }
+        endIcon={<MdOutlineCloudDownload size={18} />}
+        sx={{ px: 2.25, py: 0.75, fontSize: "0.875rem" }}
+      >
+        Resume
+      </Button>
+
+      <Box sx={{ display: "flex", alignItems: "center", gap: 0.75 }}>
+        <HRefButton url="https://www.linkedin.com/in/loktokwan/">
+          <SlSocialLinkedin size={20} color={theme.palette.text.secondary} />
+        </HRefButton>
+        <HRefButton url="https://github.com/kwanlokto">
+          <SlSocialGithub size={20} color={theme.palette.text.secondary} />
+        </HRefButton>
+        <HRefButton url="https://leetcode.com/u/GyBaljomA8/">
+          <SiLeetcode size={20} color={theme.palette.text.secondary} />
+        </HRefButton>
+        <EmailButton />
+      </Box>
+    </Box>
+  );
+
   return (
     <Box
       sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, sm: 4 } }}
     >
       {/* Hero */}
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          textAlign: "left",
-          gap: { xs: 2, sm: 0 },
-        }}
-      >
-        <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              gap: 1,
-              mb: 1,
-            }}
-          >
-            <PiHandWavingBold
-              style={{
-                animation: "wave 3s infinite",
-                transformOrigin: "70% 70%",
-              }}
-              size={22}
-            />
-            <Typography
-              variant="body1"
-              sx={{ color: "text.secondary", fontWeight: 500 }}
-            >
-              Hi, I&apos;m Ray
-            </Typography>
-          </Box>
-
-          <Typography
-            variant="h4"
-            sx={{ mb: { xs: 2, sm: 3 }, fontSize: { xs: "1.5rem", sm: "1.875rem" } }}
-          >
-            Senior Software Engineer
-          </Typography>
-
-          <Typography
-            variant="body1"
-            sx={{
-              color: "text.secondary",
-              maxWidth: 560,
-            }}
-          >
-            {current_year - 2019} years building full-stack systems and leading
-            cross-functional teams. Currently developing automated skate
-            sharpening technology endorsed by{" "}
-            <BoldText>{NUMBER_OF_NHL_TEAMS}+ NHL teams</BoldText>.
-          </Typography>
-
-          <Box
-            sx={{
-              pt: 2,
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 2,
-              alignItems: "center",
-              justifyContent: "flex-start",
-            }}
-          >
-            <Button
-              variant="contained"
-              onClick={() =>
-                handle_download("/portfolio/Resume.pdf", "ray_resume.pdf")
-              }
-              endIcon={<MdOutlineCloudDownload size={18} />}
-              sx={{ px: 2.25, py: 0.75, fontSize: "0.875rem" }}
-            >
-              Resume
-            </Button>
-
-            <Box sx={{ display: "flex", alignItems: "center", gap: 0.75 }}>
-              <HRefButton url="https://www.linkedin.com/in/loktokwan/">
-                <SlSocialLinkedin
-                  size={20}
-                  color={theme.palette.text.secondary}
-                />
-              </HRefButton>
-              <HRefButton url="https://github.com/kwanlokto">
-                <SlSocialGithub size={20} color={theme.palette.text.secondary} />
-              </HRefButton>
-              <HRefButton url="https://leetcode.com/u/GyBaljomA8/">
-                <SiLeetcode size={20} color={theme.palette.text.secondary} />
-              </HRefButton>
-              <EmailButton />
-            </Box>
-          </Box>
-        </Box>
-
+      <Box>
         <Box
           sx={{
-            position: "relative",
-            width: { xs: 120, sm: 160 },
-            height: { xs: 180, sm: 200 },
-            flexShrink: 0,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: { xs: "flex-start", sm: "center" },
+            textAlign: "left",
+            gap: { xs: 2, sm: 0 },
           }}
         >
-          <Image
-            src="/portfolio/Profile Picture.jpg"
-            alt="Ray's Picture"
-            fill
-            sizes="(max-width: 600px) 120px, 160px"
-            style={{
-              objectFit: "cover",
-              borderRadius: 16,
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                gap: 1,
+                mb: 1,
+              }}
+            >
+              <PiHandWavingBold
+                style={{
+                  animation: "wave 3s infinite",
+                  transformOrigin: "70% 70%",
+                }}
+                size={22}
+              />
+              <Typography
+                variant="body1"
+                sx={{ color: "text.secondary", fontWeight: 500 }}
+              >
+                Hi, I&apos;m Ray
+              </Typography>
+            </Box>
+
+            <Typography
+              variant="h4"
+              sx={{
+                mb: { xs: 2, sm: 3 },
+                fontSize: { xs: "1.5rem", sm: "1.875rem" },
+              }}
+            >
+              Senior Software Engineer
+            </Typography>
+
+            <Typography
+              variant="body1"
+              sx={{
+                color: "text.secondary",
+                maxWidth: 560,
+              }}
+            >
+              {current_year - 2019} years building full-stack systems and
+              leading cross-functional teams. Currently developing automated
+              skate sharpening technology endorsed by{" "}
+              <BoldText>{NUMBER_OF_NHL_TEAMS}+ NHL teams</BoldText>.
+            </Typography>
+
+            {/* Desktop: buttons inside the text column */}
+            {action_buttons({ xs: "none", sm: "flex" })}
+          </Box>
+
+          <Box
+            sx={{
+              position: "relative",
+              width: { xs: 120, sm: 160 },
+              height: { xs: 180, sm: 200 },
+              flexShrink: 0,
             }}
-          />
+          >
+            <Image
+              src="/portfolio/Profile Picture.jpg"
+              alt="Ray's Picture"
+              fill
+              sizes="(max-width: 600px) 120px, 160px"
+              style={{
+                objectFit: "cover",
+                borderRadius: 16,
+              }}
+            />
+          </Box>
         </Box>
+
+        {/* Mobile: buttons below the row, full width */}
+        {action_buttons({ xs: "flex", sm: "none" })}
       </Box>
 
       {/* Experience */}
