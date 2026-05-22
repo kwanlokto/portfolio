@@ -102,7 +102,10 @@ export const ExperienceTimeline = ({
                   justifyContent="space-between"
                   sx={{ mb: 0.5 }}
                 >
-                  <Typography variant="h6" sx={{ color: "text.primary" }}>
+                  <Typography
+                    variant="h6"
+                    sx={{ color: "text.primary", fontSize: "1.125rem" }}
+                  >
                     {experience.company}
                   </Typography>
                 </Box>
@@ -141,31 +144,46 @@ export const ExperienceTimeline = ({
                     )} */}
                       <TimelineContent>
                         <Typography
-                          variant="subtitle1"
-                          sx={{ fontWeight: 600 }}
+                          variant="subtitle2"
+                          sx={{
+                            fontWeight: 600,
+                            fontSize: "0.9375rem",
+                            color: "text.primary",
+                          }}
                         >
                           {role.name}
                         </Typography>
                         <Typography
-                          variant="body2"
-                          color="text.secondary"
-                          sx={{ mb: 1 }}
+                          variant="caption"
+                          sx={{
+                            color: "text.secondary",
+                            display: "block",
+                            mb: 1,
+                          }}
                         >
                           {role.timeline}
                         </Typography>
 
                         {role.achievements.length > 0 && (
-                          <List sx={{ listStyleType: "disc", pl: 2 }}>
+                          <List sx={{ listStyleType: "disc", pl: 2, py: 0 }}>
                             {role.achievements.map(
                               (achievement, achievement_idx) => (
                                 <ListItem
                                   key={achievement_idx}
-                                  sx={{ display: "list-item", p: 0 }}
+                                  sx={{
+                                    display: "list-item",
+                                    p: 0,
+                                    mb: 0.5,
+                                    "&::marker": { color: "text.secondary" },
+                                  }}
                                 >
                                   <Typography
                                     variant="body2"
-                                    fontWeight="light"
-                                    pl={1}
+                                    sx={{
+                                      color: "text.secondary",
+                                      pl: 0.5,
+                                      lineHeight: 1.55,
+                                    }}
                                   >
                                     {achievement}
                                   </Typography>

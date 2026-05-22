@@ -184,31 +184,16 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         open={show_contact_form}
         onClose={() => set_show_contact_form(false)}
         sx={{
-          maxWidth: 440,
-          borderRadius: 2.5,
+          maxWidth: 420,
           p: { xs: 3, sm: 3.5 },
         }}
       >
-        <Stack spacing={2.5} sx={{ pt: 1 }}>
+        <Stack spacing={2.5} sx={{ pt: 0.5 }}>
           <Box>
-            <Typography
-              component="h2"
-              sx={{
-                fontSize: "1.5rem",
-                fontWeight: 600,
-                letterSpacing: "-0.018em",
-                mb: 0.5,
-              }}
-            >
+            <Typography variant="h5" sx={{ mb: 0.5 }}>
               Get in touch
             </Typography>
-            <Typography
-              sx={{
-                fontSize: "0.9375rem",
-                color: "text.secondary",
-                lineHeight: 1.55,
-              }}
-            >
+            <Typography variant="body2" sx={{ color: "text.secondary" }}>
               Recruiter, collaborator, or just want to chat? Drop me a line —
               I read every message.
             </Typography>
@@ -217,14 +202,9 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
           <Button
             variant="contained"
             fullWidth
-            startIcon={<CiMail size={20} />}
+            startIcon={<CiMail size={18} />}
             onClick={handle_open_mail}
-            sx={{
-              py: 1.1,
-              fontSize: "0.9375rem",
-              textTransform: "none",
-              letterSpacing: "-0.005em",
-            }}
+            sx={{ py: 1 }}
           >
             Open in your email app
           </Button>
@@ -235,17 +215,17 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
               alignItems: "center",
               gap: 1,
               px: 1.5,
-              py: 1,
+              py: 0.75,
               border: "1px solid",
               borderColor: "divider",
-              borderRadius: 1.5,
+              borderRadius: 1.25,
               bgcolor: "action.hover",
             }}
           >
             <Typography
+              variant="body2"
               sx={{
                 flex: 1,
-                fontSize: "0.875rem",
                 color: "text.primary",
                 fontFamily: "monospace",
                 overflow: "hidden",
@@ -261,8 +241,6 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
               sx={{
                 minWidth: 0,
                 px: 1.25,
-                fontSize: "0.8125rem",
-                textTransform: "none",
                 color: "text.secondary",
                 "&:hover": { color: "text.primary", bgcolor: "transparent" },
               }}
@@ -271,14 +249,8 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
             </Button>
           </Box>
 
-          <Divider sx={{ "&::before, &::after": { borderColor: "divider" } }}>
-            <Typography
-              sx={{
-                fontSize: "0.75rem",
-                color: "text.secondary",
-                letterSpacing: "-0.005em",
-              }}
-            >
+          <Divider>
+            <Typography variant="caption" sx={{ color: "text.secondary" }}>
               or find me on
             </Typography>
           </Divider>

@@ -1,23 +1,15 @@
 "use client";
 
-import { Box, Divider, Typography } from "@mui/material";
-
+import { Box } from "@mui/material";
 import { ItemGrid } from "@/ui/item_grid";
 import { PROJECTS } from "@/lib/project";
 import { Project } from "@/ui/card/project_card";
+import { SectionHeader } from "@/ui/section_header";
 
 export default function Page() {
   return (
     <Box>
-      <Typography
-        variant="h5"
-        fontWeight="bold"
-        gutterBottom
-        sx={{ color: "text.primary" }}
-      >
-        My Projects
-      </Typography>
-      <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
+      <SectionHeader title="My Projects" variant="page" mb={3} />
       <ItemGrid
         items={PROJECTS}
         render_item={(project, index) => (

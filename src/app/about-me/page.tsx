@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { HobbyItemType, HobbyType, SCROLLING_HOBBIES } from "@/lib/hobby";
 
 import { BackButton } from "@/ui/back_button";
@@ -10,6 +10,7 @@ import { HobbyItemCard } from "@/ui/card/hobby_item_card";
 import { MDReader } from "@/ui/md_reader";
 import { Masonry } from "@mui/lab";
 import { Modal } from "@/ui/modal";
+import { SectionHeader } from "@/ui/section_header";
 import { TextSection } from "@/ui/text_section";
 import { useState } from "react";
 
@@ -21,19 +22,11 @@ export default function Page() {
   const [selected_md, set_selected_md] = useState<string | null>(null);
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, sm: 5 } }}>
       {/* About Section */}
       <Box>
-        <Typography
-          variant="h5"
-          fontWeight="bold"
-          gutterBottom
-          sx={{ color: "text.primary" }}
-        >
-          About Me
-        </Typography>
-        <Divider sx={{ width: 60, borderBottomWidth: 3, mb: 2 }} />
-        <Typography variant="body2">
+        <SectionHeader title="About Me" variant="page" mb={2.5} />
+        <Typography variant="body1" sx={{ color: "text.secondary" }}>
           I&apos;m a Senior Software Engineer specializing in
           <BoldText> React</BoldText> and <BoldText>Python</BoldText>, with a
           focus on building maintainable systems and intuitive user interfaces.
@@ -47,9 +40,7 @@ export default function Page() {
         </Typography>
       </Box>
 
-      <Divider />
-
-      <TextSection title="How I Work" mb={1}>
+      <TextSection title="How I Work">
         I&apos;m convinced that the best code is boring code. When I&apos;m
         building something, I&apos;d rather spend time making it obvious than
         clever. I&apos;ve learned that the real challenge isn&apos;t solving the
@@ -57,9 +48,7 @@ export default function Page() {
         future me) can understand six months later.
       </TextSection>
 
-      <Divider />
-
-      <TextSection title="Outside of Work" mb={1}>
+      <TextSection title="Outside of Work">
         When I&apos;m not coding, I&apos;m often out playing hockey, which is
         something I picked up {current_year - 2021} years ago. It&apos;s been
         fun, frustrating, and humbling. I&apos;ve spent plenty of time falling,
@@ -70,8 +59,6 @@ export default function Page() {
         cultures. These experiences keep me curious and help bring a fresh
         perspective to my work.
       </TextSection>
-
-      <Divider sx={{ mb: -1 }} />
 
       <Box
         sx={{
@@ -111,20 +98,13 @@ export default function Page() {
         </Box>
       </Box>
 
-      <Divider sx={{ mb: 1, mt: -1 }} />
-
       <Box textAlign="center">
-        <Typography
-          variant="body1"
-          sx={{
-            color: (theme) =>
-              theme.palette.mode === "dark"
-                ? theme.palette.grey[300]
-                : theme.palette.grey[700],
-          }}
-        >
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
           Want to connect? Reach me at{" "}
-          <Typography component="span" color="primary" fontWeight={500}>
+          <Typography
+            component="span"
+            sx={{ color: "primary.main", fontWeight: 500, fontSize: "inherit" }}
+          >
             lokto.kwan@gmail.com
           </Typography>
         </Typography>

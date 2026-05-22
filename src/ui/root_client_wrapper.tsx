@@ -71,6 +71,27 @@ export default function RootLayoutClientWrapper({
                 : "rgba(90, 165, 255, 0.16)",
           },
         },
+        shape: { borderRadius: 10 },
+        typography: {
+          h4: { fontWeight: 600, fontSize: "1.875rem" },
+          h5: { fontWeight: 600, fontSize: "1.375rem" },
+          h6: { fontWeight: 600, fontSize: "1.0625rem" },
+          subtitle1: { fontWeight: 600, fontSize: "0.9375rem" },
+          body1: { fontSize: "0.9375rem", lineHeight: 1.6 },
+          body2: { fontSize: "0.875rem", lineHeight: 1.6 },
+          button: { textTransform: "none", fontWeight: 500 },
+        },
+        components: {
+          MuiButton: {
+            defaultProps: { disableElevation: true },
+            styleOverrides: {
+              root: { textTransform: "none", borderRadius: 8 },
+            },
+          },
+          MuiCard: {
+            styleOverrides: { root: { borderRadius: 12 } },
+          },
+        },
       }),
     [mode],
   );
