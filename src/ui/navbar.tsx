@@ -142,39 +142,127 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         sx={{
           display: { xs: "flex", sm: "none" },
           width: "100%",
+          alignItems: "center",
           justifyContent: "space-between",
+          py: 0.5,
         }}
       >
-        <IconButton onClick={() => setDrawerOpen(true)}>
-          <MdMenu size={24} />
+        <IconButton
+          onClick={() => setDrawerOpen(true)}
+          size="small"
+          aria-label="Open navigation menu"
+        >
+          <MdMenu size={22} />
         </IconButton>
+
+        {/* Brand */}
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <Typography
+            sx={{
+              fontWeight: 600,
+              fontSize: "0.95rem",
+              letterSpacing: "0.02em",
+              color: "text.primary",
+            }}
+          >
+            Ray Kwan
+          </Typography>
+        </Link>
+
         {/* Right side: Contact + Theme */}
-        <Box sx={{ display: "flex", gap: 1 }}>
-          <IconButton onClick={() => set_show_contact_form(true)}>
-            <IoChatbubbleEllipsesOutline size={24} />
+        <Box sx={{ display: "flex", gap: 0.25 }}>
+          <IconButton
+            onClick={() => set_show_contact_form(true)}
+            size="small"
+            aria-label="Contact"
+          >
+            <IoChatbubbleEllipsesOutline size={20} />
           </IconButton>
 
-          <IconButton onClick={toggleTheme}>
-            <MdBrightness4 size={24} />
+          <IconButton
+            onClick={toggleTheme}
+            size="small"
+            aria-label="Toggle theme"
+          >
+            <MdBrightness4 size={20} />
           </IconButton>
         </Box>
+
         <Drawer
           anchor="left"
           open={drawerOpen}
           onClose={() => setDrawerOpen(false)}
+          PaperProps={{
+            sx: {
+              bgcolor: "background.default",
+              borderRight: 1,
+              borderColor: "divider",
+            },
+          }}
         >
-          <Box sx={{ width: 175, p: 0.75, pt: 2.5 }}>
-            <List disablePadding>
-              {tabs.map((tab) => (
-                <Link key={tab.href} href={tab.href} passHref>
-                  <ListItemButton onClick={() => setDrawerOpen(false)}>
-                    <ListItemIcon sx={{ minWidth: 36 }}>
-                      {tab.icon}
-                    </ListItemIcon>
-                    <ListItemText primary={tab.label} />
-                  </ListItemButton>
-                </Link>
-              ))}
+          <Box sx={{ width: 240, display: "flex", flexDirection: "column" }}>
+            <Box
+              sx={{
+                px: 2,
+                py: 2,
+                borderBottom: 1,
+                borderColor: "divider",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontWeight: 600,
+                  fontSize: "1rem",
+                  color: "text.primary",
+                }}
+              >
+                Ray Kwan
+              </Typography>
+              <Typography
+                variant="caption"
+                sx={{ color: "text.secondary" }}
+              >
+                Senior Software Engineer
+              </Typography>
+            </Box>
+
+            <List sx={{ px: 1, py: 1.5 }}>
+              {tabs.map((tab) => {
+                const active = pathname === tab.href;
+                return (
+                  <Link key={tab.href} href={tab.href} passHref>
+                    <ListItemButton
+                      selected={active}
+                      onClick={() => setDrawerOpen(false)}
+                      sx={{
+                        borderRadius: 1.5,
+                        mb: 0.5,
+                        py: 1,
+                        "&.Mui-selected": {
+                          bgcolor: "action.selected",
+                        },
+                      }}
+                    >
+                      <ListItemIcon
+                        sx={{
+                          minWidth: 36,
+                          color: active ? "primary.main" : "text.secondary",
+                        }}
+                      >
+                        {tab.icon}
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={tab.label}
+                        primaryTypographyProps={{
+                          fontWeight: active ? 600 : 500,
+                          color: active ? "text.primary" : "text.secondary",
+                          fontSize: "0.9375rem",
+                        }}
+                      />
+                    </ListItemButton>
+                  </Link>
+                );
+              })}
             </List>
           </Box>
         </Drawer>

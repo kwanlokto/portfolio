@@ -29,11 +29,18 @@ export const HobbyCard = ({ hobby, on_click }: HobbyCardParams) => {
       }}
     >
       <CardActionArea onClick={on_click}>
-        <Box sx={{ width: "100%", height: 110, position: "relative" }}>
+        <Box
+          sx={{
+            width: "100%",
+            height: { xs: 90, sm: 110 },
+            position: "relative",
+          }}
+        >
           <Image
             src={hobby.img}
             alt={hobby.title}
             fill
+            sizes="(max-width: 600px) 160px, 220px"
             style={{ objectFit: "cover" }}
           />
         </Box>
