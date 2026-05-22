@@ -1,8 +1,8 @@
 1:"$Sreact.fragment"
-2:I[97367,["/portfolio/_next/static/chunks/c81db6e24f0cfdeb.js","/portfolio/_next/static/chunks/df1a8a4ebc30a190.js","/portfolio/_next/static/chunks/2e765c396a7d37f4.js","/portfolio/_next/static/chunks/f54275f3705db96e.js","/portfolio/_next/static/chunks/10b96d2cbccd4dc3.js"],"ViewportBoundary"]
-4:I[97367,["/portfolio/_next/static/chunks/c81db6e24f0cfdeb.js","/portfolio/_next/static/chunks/df1a8a4ebc30a190.js","/portfolio/_next/static/chunks/2e765c396a7d37f4.js","/portfolio/_next/static/chunks/f54275f3705db96e.js","/portfolio/_next/static/chunks/10b96d2cbccd4dc3.js"],"MetadataBoundary"]
+2:I[97367,["/portfolio/_next/static/chunks/ff1a16fafef87110.js","/portfolio/_next/static/chunks/c81db6e24f0cfdeb.js"],"ViewportBoundary"]
+4:I[97367,["/portfolio/_next/static/chunks/ff1a16fafef87110.js","/portfolio/_next/static/chunks/c81db6e24f0cfdeb.js"],"MetadataBoundary"]
 5:"$Sreact.suspense"
-7:I[27201,["/portfolio/_next/static/chunks/c81db6e24f0cfdeb.js","/portfolio/_next/static/chunks/df1a8a4ebc30a190.js","/portfolio/_next/static/chunks/2e765c396a7d37f4.js","/portfolio/_next/static/chunks/f54275f3705db96e.js","/portfolio/_next/static/chunks/10b96d2cbccd4dc3.js"],"IconMark"]
-0:{"buildId":"xOTQiQ-smU1ryoGgT_b3q","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"loading":null,"isPartial":false}
+7:I[27201,["/portfolio/_next/static/chunks/ff1a16fafef87110.js","/portfolio/_next/static/chunks/c81db6e24f0cfdeb.js"],"IconMark"]
+0:{"buildId":"opzr34gohFlfVxCn4niF_","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"loading":null,"isPartial":false}
 3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-6:[["$","title","0",{"children":"Ray's Portfolio"}],["$","meta","1",{"name":"description","content":"Ray's Portfolio"}],["$","link","2",{"rel":"icon","href":"/portfolio/favicon.ico"}],["$","$L7","3",{}]]
+6:[["$","title","0",{"children":"Ray's Portfolio"}],["$","meta","1",{"name":"description","content":"Ray's Portfolio"}],["$","link","2",{"rel":"icon","href":"/portfolio/icon.svg?icon.0d2793a8.svg","sizes":"any","type":"image/svg+xml"}],["$","$L7","3",{}]]
