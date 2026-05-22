@@ -41,18 +41,18 @@ export default function Home() {
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column-reverse", sm: "row" },
-          alignItems: { xs: "center", sm: "center" },
-          textAlign: { xs: "center", sm: "left" },
+          flexDirection: "row",
+          alignItems: "center",
+          textAlign: "left",
           gap: { xs: 2, sm: 0 },
         }}
       >
-        <Box sx={{ flex: 1, minWidth: 0, width: "100%" }}>
+        <Box sx={{ flex: 1, minWidth: 0 }}>
           <Box
             sx={{
               display: "flex",
               alignItems: "center",
-              justifyContent: { xs: "center", sm: "flex-start" },
+              justifyContent: "flex-start",
               gap: 1,
               mb: 1,
             }}
@@ -84,7 +84,6 @@ export default function Home() {
             sx={{
               color: "text.secondary",
               maxWidth: 560,
-              mx: { xs: "auto", sm: 0 },
             }}
           >
             {current_year - 2019} years building full-stack systems and leading
@@ -100,7 +99,7 @@ export default function Home() {
               flexWrap: "wrap",
               gap: 2,
               alignItems: "center",
-              justifyContent: { xs: "center", sm: "flex-start" },
+              justifyContent: "flex-start",
             }}
           >
             <Button
@@ -136,7 +135,7 @@ export default function Home() {
           sx={{
             position: "relative",
             width: { xs: 120, sm: 160 },
-            height: { xs: 120, sm: 160 },
+            height: { xs: 180, sm: 200 },
             flexShrink: 0,
           }}
         >
