@@ -1,74 +1,24 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Tab,
-  Tabs,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
 import { EDUCATION, NUMBER_OF_NHL_TEAMS, WORK } from "@/lib/experience";
-import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 
 import { BoldText } from "@/ui/bold_text";
-import { EmailButton } from "@/ui/email_button";
 import { ExperienceTimeline } from "@/ui/experience_timeline";
-import { HRefButton } from "@/ui/href_button";
+import { HeroActions } from "@/ui/hero_actions";
 import Image from "next/image";
 import { ItemGrid } from "@/ui/item_grid";
 import Link from "next/link";
-import { MdOutlineCloudDownload } from "react-icons/md";
 import { PROJECTS } from "@/lib/project";
 import { PiHandWavingBold } from "react-icons/pi";
 import { Project } from "@/ui/card/project_card";
 import { SectionHeader } from "@/ui/section_header";
-import { SiLeetcode } from "react-icons/si";
 import { TechStack } from "@/ui/tech_stack";
-import { handle_download } from "@/utils/download";
 import { useState } from "react";
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
   const current_year = new Date().getFullYear();
-  const theme = useTheme();
-
-  const action_buttons = (display: { xs: string; sm: string }) => (
-    <Box
-      sx={{
-        pt: 2,
-        display,
-        flexWrap: "wrap",
-        gap: 2,
-        alignItems: "center",
-        justifyContent: "flex-start",
-      }}
-    >
-      <Button
-        variant="contained"
-        onClick={() =>
-          handle_download("/portfolio/Resume.pdf", "ray_resume.pdf")
-        }
-        endIcon={<MdOutlineCloudDownload size={18} />}
-        sx={{ px: 2.25, py: 0.75, fontSize: "0.875rem" }}
-      >
-        Resume
-      </Button>
-
-      <Box sx={{ display: "flex", alignItems: "center", gap: 0.75 }}>
-        <HRefButton url="https://www.linkedin.com/in/loktokwan/">
-          <SlSocialLinkedin size={20} color={theme.palette.text.secondary} />
-        </HRefButton>
-        <HRefButton url="https://github.com/kwanlokto">
-          <SlSocialGithub size={20} color={theme.palette.text.secondary} />
-        </HRefButton>
-        <HRefButton url="https://leetcode.com/u/GyBaljomA8/">
-          <SiLeetcode size={20} color={theme.palette.text.secondary} />
-        </HRefButton>
-        <EmailButton />
-      </Box>
-    </Box>
-  );
 
   return (
     <Box
@@ -134,7 +84,7 @@ export default function Home() {
             </Typography>
 
             {/* Desktop: buttons inside the text column */}
-            {action_buttons({ xs: "none", sm: "flex" })}
+            <HeroActions sx={{ display: { xs: "none", sm: "flex" } }} />
           </Box>
 
           <Box
@@ -159,7 +109,7 @@ export default function Home() {
         </Box>
 
         {/* Mobile: buttons below the row, full width */}
-        {action_buttons({ xs: "flex", sm: "none" })}
+        <HeroActions sx={{ display: { xs: "flex", sm: "none" } }} />
       </Box>
 
       {/* Experience */}
