@@ -17,40 +17,37 @@ export const NUMBER_OF_NHL_TEAMS = 6;
 export const NUMBER_OF_AHL_TEAMS = 3;
 
 export const WORK: ExperienceType[] = [
-  // {
-  //   company: "Bauer Hockey",
-  //   icon_url: "/portfolio/Bauer.png",
-  //   dark_mode_icon_url: "/portfolio/Bauer Dark.png",
-  //   roles: [
-  //     {
-  //       name: "Software Engineer",
-  //       timeline: "Jan 2026 – Present",
-  //       achievements: [
-  //         <>
-  //           Contributed to the development of Bauer&apos;s next-generation skate
-  //           tuning machine, achieving{" "}
-  //           <BoldText>75% greater efficiency</BoldText> than competing
-  //           solutions.
-  //         </>,
-  //         <>
-  //           Evaluated vision systems and CNC controllers to ensure seamless
-  //           integration of Skatescribe software with new hardware platforms.
-  //         </>,
-  //         <>
-  //           Provided expertise in{" "}
-  //           <BoldText>
-  //             microservices architecture, cloud infrastructure, and analytics
-  //           </BoldText>{" "}
-  //           to support scaling from{" "}
-  //           <BoldText>
-  //             {NUMBER_OF_NHL_TEAMS + NUMBER_OF_AHL_TEAMS + NUMBER_OF_PRO_SHOPS}
-  //           </BoldText>
-  //           + to <BoldText>700+ deployed machines</BoldText>.
-  //         </>,
-  //       ],
-  //     },
-  //   ],
-  // },
+  {
+    company: "Bauer Hockey",
+    icon_url: "/portfolio/Bauer.png",
+    dark_mode_icon_url: "/portfolio/Bauer Dark.png",
+    roles: [
+      {
+        name: "Software Engineer",
+        timeline: "Jan 2026 – Present",
+        achievements: [
+          <>
+            Evaluated <BoldText>7 scanning and CNC solutions</BoldText> and
+            selected one that reduced costs without compromising quality,
+            informing the hardware roadmap for the next-generation skate tuning
+            platform.
+          </>,
+          <>
+            Integrated the <BoldText>Aetrex API</BoldText> to automate customer
+            data transfer from foot scanning hardware into Skatescribe,
+            delivering recommended skate specs and eliminating manual data
+            entry and operator error.
+          </>,
+          <>
+            Built the foundational cloud infrastructure on{" "}
+            <BoldText>AWS</BoldText> to scale globally — deploying servers,
+            load balancers, and databases across multiple regions to support a
+            target of <BoldText>700+ machines</BoldText> worldwide.
+          </>,
+        ],
+      },
+    ],
+  },
   {
     company: "Skatescribe",
     icon_url: "/portfolio/SS Logo.png",
@@ -79,9 +76,15 @@ export const WORK: ExperienceType[] = [
           //   imbalances
           // </>,
           <>
-            Collaborated closely with cross-functional teams including product
-            management, marketing, and operations to align technology
-            initiatives with business goals and drive company growth.
+            Hired <BoldText>3 full-time engineers</BoldText> and{" "}
+            <BoldText>1 co-op</BoldText> to scale the engineering team, and
+            shipped <BoldText>4 production machines</BoldText> since assuming
+            the CTO role.
+          </>,
+          <>
+            Set the engineering bar by leading hands-on alongside the team and
+            holding direct 1:1 performance conversations — providing regular
+            feedback to keep expectations clear and engineering output high.
           </>,
         ],
       },
@@ -91,13 +94,19 @@ export const WORK: ExperienceType[] = [
         achievements: [
           <>
             Architected <BoldText>microservices refactor</BoldText> to decouple
-            order management into independent services, decreasing cycle time by
-            25%, and improving data accuracy by 70%.
+            order management into independent services, decreasing cycle time
+            by 25%, and improving data accuracy by 70%.
           </>,
           <>
-            Provided technical support for critical hardware and software issues
-            and developed a comprehensive troubleshooting workflow to reduce
-            support calls by 10%
+            Managed high-availability cloud infrastructure on{" "}
+            <BoldText>Linode</BoldText>, deploying containerized environments
+            with <BoldText>NGINX</BoldText> to ensure a seamless user
+            experience across <BoldText>19+ deployed locations</BoldText>.
+          </>,
+          <>
+            Provided technical support for critical hardware and software
+            issues and developed a comprehensive troubleshooting workflow to
+            reduce support calls by 10%.
           </>,
         ],
       },
@@ -113,11 +122,18 @@ export const WORK: ExperienceType[] = [
             <BoldText>PSQL</BoldText> database.
           </>,
           <>
-            Invented proprietary algorithms achieving{" "}
-            <BoldText>±1 μm precision</BoldText> through signal processing and
-            regression, and designed scalable cloud infrastructure on{" "}
+            Invented proprietary signal processing algorithms for smoothing
+            and joining noisy laser data, achieving{" "}
+            <BoldText>±1 μm precision</BoldText> via least-squares
+            optimization — establishing the technical foundation for every
+            production machine that followed.
+          </>,
+          <>
+            Designed and built the initial cloud infrastructure on{" "}
             <BoldText>Linode</BoldText> using <BoldText>Docker</BoldText> and{" "}
-            <BoldText>NGINX</BoldText> for high availability.
+            <BoldText>NGINX</BoldText>, establishing the containerized
+            deployment pattern that scaled the platform from prototype to
+            production.
           </>,
         ],
       },
@@ -174,7 +190,7 @@ export const WORK: ExperienceType[] = [
     roles: [
       {
         name: "Full Stack Software Developer (Internship)",
-        timeline: "May 2019 – April 2020",
+        timeline: "May 2019 – June 2020",
         achievements: [
           <>
             Developed a full-stack cost-benefit analysis platform (

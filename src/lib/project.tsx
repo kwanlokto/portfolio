@@ -10,6 +10,29 @@ export interface ProjectType {
 
 export const PROJECTS: ProjectType[] = [
   {
+    title: "Chatbot",
+    description: (
+      <>
+        A desktop RAG chatbot that lets you upload PDFs and ask questions
+        about them, with answers grounded in the source
+        documents through vector search. Runs entirely locally — no API keys,
+        no cloud calls — with FastAPI, ChromaDB, and Ollama bundled inside an
+        Electron shell.
+      </>
+    ),
+    picture_url: null,
+    TECH_STACK: [
+      "Electron",
+      "Next.JS",
+      "FastAPI",
+      "Ollama",
+      "ChromaDB",
+      "PyInstaller",
+    ],
+    download_url: "/portfolio/Ray - Chatbot.exe",
+    source_url: "https://github.com/kwanlokto/chatbot",
+  },
+  {
     title: "Music Player",
     description: (
       <>
