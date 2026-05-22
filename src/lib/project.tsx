@@ -29,7 +29,8 @@ export const PROJECTS: ProjectType[] = [
       "ChromaDB",
       "PyInstaller",
     ],
-    download_url: "/portfolio/Ray - Chatbot.exe",
+    download_url:
+      "https://github.com/kwanlokto/chatbot/releases/latest/download/Ray%20-%20Chatbot.exe",
     source_url: "https://github.com/kwanlokto/chatbot",
   },
   {

@@ -130,30 +130,48 @@ export const Project = ({ project }: ProjectParams) => {
         <Divider sx={{ my: 1 }} />
 
         <CardActions sx={{ justifyContent: "center", pb: 2 }}>
-          {project.download_url && (
-            <Button
-              variant="contained"
-              startIcon={<MdGetApp />}
-              onClick={() => {
-                if (project.download_url) {
-                  handle_download(
-                    project.download_url,
-                    project.download_url.split("/").pop() || "",
-                  );
-                }
-              }}
-              sx={{
-                textTransform: "none",
-                fontSize: "0.875rem",
-                py: 0.5,
-                px: 2,
-                borderRadius: 1.5,
-              }}
-              aria-label="Download project"
-            >
-              Download
-            </Button>
-          )}
+          {project.download_url &&
+            (/^https?:\/\//.test(project.download_url) ? (
+              <Button
+                variant="contained"
+                startIcon={<MdGetApp />}
+                href={project.download_url}
+                rel="noopener"
+                sx={{
+                  textTransform: "none",
+                  fontSize: "0.875rem",
+                  py: 0.5,
+                  px: 2,
+                  borderRadius: 1.5,
+                }}
+                aria-label="Download project"
+              >
+                Download
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                startIcon={<MdGetApp />}
+                onClick={() => {
+                  if (project.download_url) {
+                    handle_download(
+                      project.download_url,
+                      project.download_url.split("/").pop() || "",
+                    );
+                  }
+                }}
+                sx={{
+                  textTransform: "none",
+                  fontSize: "0.875rem",
+                  py: 0.5,
+                  px: 2,
+                  borderRadius: 1.5,
+                }}
+                aria-label="Download project"
+              >
+                Download
+              </Button>
+            ))}
 
           {project.deployed_url && (
             <Button
