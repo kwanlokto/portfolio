@@ -139,12 +139,12 @@ export const Project = ({ project }: ProjectParams) => {
             (downloadIsExternal ? (
               <Button
                 variant="contained"
-                size="small"
                 startIcon={<MdGetApp />}
                 href={project.download_url}
                 rel="noopener"
                 aria-label="Download project"
                 sx={{
+                  fontSize: "0.875rem",
                   py: 0.5,
                   px: 2,
                 }}
@@ -154,7 +154,6 @@ export const Project = ({ project }: ProjectParams) => {
             ) : (
               <Button
                 variant="contained"
-                size="small"
                 startIcon={<MdGetApp />}
                 onClick={() => {
                   if (project.download_url) {
@@ -166,6 +165,7 @@ export const Project = ({ project }: ProjectParams) => {
                 }}
                 aria-label="Download project"
                 sx={{
+                  fontSize: "0.875rem",
                   py: 0.5,
                   px: 2,
                 }}
@@ -177,13 +177,13 @@ export const Project = ({ project }: ProjectParams) => {
           {project.deployed_url && (
             <Button
               variant="contained"
-              size="small"
               startIcon={<MdLaunch />}
               href={project.deployed_url}
               target="_blank"
               rel="noopener"
               aria-label="Open deployed project"
               sx={{
+                fontSize: "0.875rem",
                 py: 0.5,
                 px: 2,
               }}
@@ -194,13 +194,13 @@ export const Project = ({ project }: ProjectParams) => {
 
           <Button
             variant="outlined"
-            size="small"
             startIcon={<MdCode />}
             href={project.source_url}
             target="_blank"
             rel="noopener"
             aria-label="View source code"
             sx={{
+              fontSize: "0.875rem",
               py: 0.5,
               px: 2,
             }}

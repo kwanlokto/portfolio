@@ -79,7 +79,7 @@ export default function Home() {
               pt: 2,
               display: "flex",
               flexWrap: "wrap",
-              gap: 1.5,
+              gap: 2,
               alignItems: "center",
             }}
           >
@@ -89,12 +89,12 @@ export default function Home() {
                 handle_download("/portfolio/Resume.pdf", "ray_resume.pdf")
               }
               endIcon={<MdOutlineCloudDownload size={18} />}
-              sx={{ px: 2.25, py: 0.75 }}
+              sx={{ px: 2.25, py: 0.75, fontSize: "0.875rem" }}
             >
               Resume
             </Button>
 
-            <Box sx={{ display: "flex", alignItems: "center", gap: 0.25 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 0.75 }}>
               <HRefButton url="https://www.linkedin.com/in/loktokwan/">
                 <SlSocialLinkedin
                   size={20}
