@@ -52,7 +52,11 @@ export const ExperienceTimeline = ({
             <TimelineItem
               key={experience_idx}
               position="right"
-              sx={{ display: "flex", alignItems: "flex-start" }}
+              sx={{
+                display: "flex",
+                alignItems: "flex-start",
+                minHeight: 0,
+              }}
             >
               {/* --- Timeline Icon / Logo --- */}
               <TimelineSeparator>
@@ -61,8 +65,7 @@ export const ExperienceTimeline = ({
                   sx={{
                     bgcolor: "background.default",
                     boxShadow: 0,
-                    p: 0.5,
-                    pt: 0.75,
+                    mt: 0
                   }}
                 >
                   <Icon sx={{ position: "relative", width: 30, height: 30 }}>
@@ -88,8 +91,8 @@ export const ExperienceTimeline = ({
               {/* --- Company Content --- */}
               <TimelineContent
                 sx={{
-                  pt: 2,
                   px: 2,
+                  pb: 0,
                   mb: 0,
                   display: "flex",
                   flexDirection: "column",
