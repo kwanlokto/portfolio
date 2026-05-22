@@ -102,15 +102,7 @@ export const ExperienceTimeline = ({
                   justifyContent="space-between"
                   sx={{ mb: 0.5 }}
                 >
-                  <Typography
-                    component="h3"
-                    sx={{
-                      fontSize: "1.1875rem",
-                      fontWeight: 600,
-                      letterSpacing: "-0.012em",
-                      color: "text.primary",
-                    }}
-                  >
+                  <Typography variant="h6" sx={{ color: "text.primary" }}>
                     {experience.company}
                   </Typography>
                 </Box>
@@ -149,22 +141,15 @@ export const ExperienceTimeline = ({
                     )} */}
                       <TimelineContent>
                         <Typography
-                          sx={{
-                            fontSize: "1rem",
-                            fontWeight: 600,
-                            letterSpacing: "-0.008em",
-                            color: "text.primary",
-                          }}
+                          variant="subtitle1"
+                          sx={{ fontWeight: 600 }}
                         >
                           {role.name}
                         </Typography>
                         <Typography
-                          sx={{
-                            fontSize: "0.8125rem",
-                            color: "text.secondary",
-                            mb: 1,
-                            letterSpacing: "-0.003em",
-                          }}
+                          variant="body2"
+                          color="text.secondary"
+                          sx={{ mb: 1 }}
                         >
                           {role.timeline}
                         </Typography>
@@ -178,12 +163,9 @@ export const ExperienceTimeline = ({
                                   sx={{ display: "list-item", p: 0 }}
                                 >
                                   <Typography
-                                    sx={{
-                                      fontSize: "0.9375rem",
-                                      lineHeight: 1.55,
-                                      color: "text.primary",
-                                      pl: 1,
-                                    }}
+                                    variant="body2"
+                                    fontWeight="light"
+                                    pl={1}
                                   >
                                     {achievement}
                                   </Typography>

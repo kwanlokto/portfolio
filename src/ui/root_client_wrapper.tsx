@@ -71,23 +71,6 @@ export default function RootLayoutClientWrapper({
                 : "rgba(90, 165, 255, 0.16)",
           },
         },
-        typography: {
-          fontFamily:
-            '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Inter", system-ui, sans-serif',
-        },
-        components: {
-          MuiButton: {
-            defaultProps: { disableElevation: true },
-            styleOverrides: {
-              root: {
-                textTransform: "none",
-                borderRadius: 10,
-                fontWeight: 500,
-                letterSpacing: "-0.005em",
-              },
-            },
-          },
-        },
       }),
     [mode],
   );

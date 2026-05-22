@@ -7,6 +7,7 @@ import {
   CardActionArea,
   CardActions,
   CardContent,
+  Divider,
   Grid,
   Stack,
   Typography,
@@ -28,21 +29,16 @@ export const Project = ({ project }: ProjectParams) => {
   return (
     <Grid size={{ xs: 12, sm: 6, md: 4 }}>
       <Card
-        elevation={0}
+        variant="outlined"
         sx={{
           display: "flex",
+          boxShadow: 2,
           flexDirection: "column",
           height: "100%",
-          borderRadius: 2.5,
+          borderRadius: 2,
           overflow: "hidden",
-          bgcolor: "background.paper",
-          border: "1px solid",
-          borderColor: "divider",
-          transition: "transform 0.25s ease, border-color 0.25s ease",
-          "&:hover": {
-            transform: "translateY(-2px)",
-            borderColor: "text.secondary",
-          },
+          transition: "transform 0.25s ease, box-shadow 0.25s ease",
+          "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
         }}
       >
         <CardActionArea
@@ -63,22 +59,14 @@ export const Project = ({ project }: ProjectParams) => {
               fill
               style={{
                 objectFit: "cover",
-                objectPosition: "center",
+                objectPosition: "center", // ✅ centers the image
               }}
             />
           </Box>
         </CardActionArea>
 
-        <CardContent sx={{ flexGrow: 1, pb: 1.5 }}>
-          <Typography
-            sx={{
-              fontSize: "1.0625rem",
-              fontWeight: 600,
-              letterSpacing: "-0.012em",
-              mb: 1,
-              color: "text.primary",
-            }}
-          >
+        <CardContent sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" fontWeight={600} gutterBottom>
             {project.title}
           </Typography>
           <Box
@@ -92,48 +80,46 @@ export const Project = ({ project }: ProjectParams) => {
                 ? "none"
                 : "linear-gradient(to bottom, black 60%, transparent 100%)",
               transition: "all 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
-              maxHeight: expanded ? 500 : 64,
+              maxHeight: expanded ? 500 : 64, // ≈3 lines
             }}
           >
             <Typography
+              variant="body2"
+              color="text.secondary"
               sx={{
-                fontSize: "0.9375rem",
-                color: "text.secondary",
-                lineHeight: 1.55,
                 whiteSpace: "pre-wrap",
+                lineHeight: 1.5,
               }}
             >
               {project.description}
             </Typography>
           </Box>
           <Typography
+            variant="body2"
             onClick={() => setExpanded(!expanded)}
             sx={{
               mt: 1,
               cursor: "pointer",
-              color: "text.secondary",
+              color: "primary.main",
               fontSize: "0.8125rem",
               fontWeight: 500,
-              display: "inline-block",
-              "&:hover": { color: "text.primary" },
+              "&:hover": { textDecoration: "underline" }, // subtle hover effect
             }}
           >
             {expanded ? "Show less" : "Show more"}
           </Typography>
         </CardContent>
-
-        <Stack direction="row" flexWrap="wrap" gap={0.75} px={2} pb={1.5}>
+        <Stack direction="row" flexWrap="wrap" gap={1} px={2} pb={1}>
           {project.TECH_STACK.map((tech, i) => (
             <Typography
               key={i}
+              variant="caption"
               sx={{
-                fontSize: "0.75rem",
-                px: 1,
-                py: 0.375,
+                px: 1.3,
+                pt: 0.5,
+                pb: 0.25,
                 bgcolor: "action.hover",
                 borderRadius: 1,
-                color: "text.secondary",
-                fontWeight: 500,
               }}
             >
               {tech}
@@ -141,19 +127,12 @@ export const Project = ({ project }: ProjectParams) => {
           ))}
         </Stack>
 
-        <CardActions
-          sx={{
-            justifyContent: "flex-start",
-            gap: 0.5,
-            px: 1.5,
-            pb: 2,
-            pt: 0.5,
-          }}
-        >
+        <Divider sx={{ my: 1 }} />
+
+        <CardActions sx={{ justifyContent: "center", pb: 2 }}>
           {project.download_url && (
             <Button
               variant="contained"
-              size="small"
               startIcon={<MdGetApp />}
               onClick={() => {
                 if (project.download_url) {
@@ -163,7 +142,13 @@ export const Project = ({ project }: ProjectParams) => {
                   );
                 }
               }}
-              sx={{ fontSize: "0.8125rem" }}
+              sx={{
+                textTransform: "none",
+                fontSize: "0.875rem",
+                py: 0.5,
+                px: 2,
+                borderRadius: 1.5,
+              }}
               aria-label="Download project"
             >
               Download
@@ -173,12 +158,17 @@ export const Project = ({ project }: ProjectParams) => {
           {project.deployed_url && (
             <Button
               variant="contained"
-              size="small"
               startIcon={<MdLaunch />}
               href={project.deployed_url}
               target="_blank"
               rel="noopener"
-              sx={{ fontSize: "0.8125rem" }}
+              sx={{
+                textTransform: "none",
+                fontSize: "0.875rem",
+                py: 0.5,
+                px: 2,
+                borderRadius: 1.5,
+              }}
               aria-label="Open deployed project"
             >
               Visit
@@ -187,12 +177,18 @@ export const Project = ({ project }: ProjectParams) => {
 
           <Button
             variant="outlined"
-            size="small"
             startIcon={<MdCode />}
             href={project.source_url}
             target="_blank"
             rel="noopener"
-            sx={{ fontSize: "0.8125rem" }}
+            sx={{
+              textTransform: "none",
+              fontSize: "0.875rem",
+              py: 0.5,
+              px: 2,
+              borderRadius: 1.5,
+              borderWidth: 1,
+            }}
             aria-label="View source code"
           >
             Code

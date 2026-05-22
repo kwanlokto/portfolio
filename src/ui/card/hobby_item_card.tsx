@@ -59,22 +59,17 @@ export const HobbyItemCard = ({ hobby_item, set_selected_md }: HobbyItemCardPara
   // Blog/book entries keep card affordance since they're clickable.
   return (
     <Card
-      elevation={0}
+      variant="outlined"
       sx={{
         display: "flex",
+        boxShadow: 2,
         flexDirection: "column",
         width: "100%",
         borderRadius: 2,
         overflow: "hidden",
-        bgcolor: "background.paper",
-        border: "1px solid",
-        borderColor: "divider",
         cursor: "pointer",
-        transition: "transform 0.25s ease, border-color 0.25s ease",
-        "&:hover": {
-          transform: "translateY(-2px)",
-          borderColor: "text.secondary",
-        },
+        transition: "transform 0.25s ease, box-shadow 0.25s ease",
+        "&:hover": { transform: "translateY(-4px)", boxShadow: 6 },
       }}
     >
       <CardActionArea onClick={() => set_selected_md(hobby_item.md)}>
@@ -92,15 +87,8 @@ export const HobbyItemCard = ({ hobby_item, set_selected_md }: HobbyItemCardPara
             style={{ objectFit: "cover" }}
           />
         </Box>
-        <CardContent sx={{ py: 1.25 }}>
-          <Typography
-            sx={{
-              fontSize: "0.9375rem",
-              fontWeight: 500,
-              letterSpacing: "-0.005em",
-              color: "text.primary",
-            }}
-          >
+        <CardContent sx={{ py: 1 }}>
+          <Typography variant="body1" fontWeight={500}>
             {hobby_item.title}
           </Typography>
           <Box
