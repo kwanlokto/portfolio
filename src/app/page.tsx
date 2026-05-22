@@ -8,7 +8,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { NUMBER_OF_NHL_TEAMS, WORK, EDUCATION } from "@/lib/experience";
+import { EDUCATION, NUMBER_OF_NHL_TEAMS, WORK } from "@/lib/experience";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 
 import { BoldText } from "@/ui/bold_text";
@@ -34,14 +34,13 @@ export default function Home() {
   const theme = useTheme();
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, sm: 6 } }}>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
       {/* Hero */}
       <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column-reverse", sm: "row" },
           alignItems: { xs: "flex-start", sm: "center" },
-          gap: { xs: 3, sm: 4 },
         }}
       >
         <Box sx={{ flex: 1, minWidth: 0 }}>
@@ -54,14 +53,14 @@ export default function Home() {
               size={22}
             />
             <Typography
-              variant="body2"
+              variant="body1"
               sx={{ color: "text.secondary", fontWeight: 500 }}
             >
               Hi, I&apos;m Ray
             </Typography>
           </Box>
 
-          <Typography variant="h4" sx={{ mb: 1.5 }}>
+          <Typography variant="h4" sx={{ mb: 1 }}>
             Senior Software Engineer
           </Typography>
 
@@ -77,7 +76,7 @@ export default function Home() {
 
           <Box
             sx={{
-              pt: 2.5,
+              pt: 5,
               display: "flex",
               flexWrap: "wrap",
               gap: 1.5,
