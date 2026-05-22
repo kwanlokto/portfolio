@@ -38,7 +38,7 @@ export const ExperienceTimeline = ({
 
   return (
     <Box>
-      <Timeline sx={{ width: "100%" }}>
+      <Timeline sx={{ width: "100%", px: { xs: 0, sm: 2 }, py: { xs: 0, sm: 1 } }}>
         {experience_list.map((experience, experience_idx) => (
           <Collapse
             key={experience_idx}
@@ -91,11 +91,12 @@ export const ExperienceTimeline = ({
               {/* --- Company Content --- */}
               <TimelineContent
                 sx={{
-                  px: 2,
+                  px: { xs: 1.25, sm: 2 },
                   pb: 0,
                   mb: 0,
                   display: "flex",
                   flexDirection: "column",
+                  minWidth: 0,
                 }}
               >
                 {/* Company Header */}
@@ -117,13 +118,18 @@ export const ExperienceTimeline = ({
                 <Timeline
                   sx={{
                     mt: -1,
-                    ml: -2,
+                    ml: { xs: -1.5, sm: -2 },
                     pl: 0,
+                    pr: 0,
                     [`& .${timelineOppositeContentClasses.root}`]: { flex: 0 },
                   }}
                 >
                   {experience.roles?.map((role: Role, role_idx: number) => (
-                    <TimelineItem key={role_idx} position="right">
+                    <TimelineItem
+                      key={role_idx}
+                      position="right"
+                      sx={{ minHeight: 0 }}
+                    >
                       {/* TODO: This doesn't work as intended for some reason? */}
                       {/* {experience.roles.length > 1 && (
                       <TimelineSeparator>
@@ -145,11 +151,11 @@ export const ExperienceTimeline = ({
                         )}
                       </TimelineSeparator>
                     )} */}
-                      <TimelineContent>
+                      <TimelineContent sx={{ px: { xs: 1, sm: 2 }, py: 0.5 }}>
                         <Typography
                           variant="h6"
                           sx={{
-                            fontSize: "1.125rem",
+                            fontSize: { xs: "1rem", sm: "1.125rem" },
                             color: "text.primary",
                           }}
                         >
@@ -167,7 +173,13 @@ export const ExperienceTimeline = ({
                         </Typography>
 
                         {role.achievements.length > 0 && (
-                          <List sx={{ listStyleType: "disc", pl: 2, py: 0 }}>
+                          <List
+                            sx={{
+                              listStyleType: "disc",
+                              pl: { xs: 1.75, sm: 2 },
+                              py: 0,
+                            }}
+                          >
                             {role.achievements.map(
                               (achievement, achievement_idx) => (
                                 <ListItem

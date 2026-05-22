@@ -34,17 +34,29 @@ export default function Home() {
   const theme = useTheme();
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, sm: 4 } }}
+    >
       {/* Hero */}
       <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column-reverse", sm: "row" },
-          alignItems: { xs: "flex-start", sm: "center" },
+          alignItems: { xs: "center", sm: "center" },
+          textAlign: { xs: "center", sm: "left" },
+          gap: { xs: 2, sm: 0 },
         }}
       >
-        <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1 }}>
+        <Box sx={{ flex: 1, minWidth: 0, width: "100%" }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: { xs: "center", sm: "flex-start" },
+              gap: 1,
+              mb: 1,
+            }}
+          >
             <PiHandWavingBold
               style={{
                 animation: "wave 3s infinite",
@@ -60,13 +72,20 @@ export default function Home() {
             </Typography>
           </Box>
 
-          <Typography variant="h4" sx={{ mb: 3 }}>
+          <Typography
+            variant="h4"
+            sx={{ mb: { xs: 2, sm: 3 }, fontSize: { xs: "1.5rem", sm: "1.875rem" } }}
+          >
             Senior Software Engineer
           </Typography>
 
           <Typography
             variant="body1"
-            sx={{ color: "text.secondary", maxWidth: 560 }}
+            sx={{
+              color: "text.secondary",
+              maxWidth: 560,
+              mx: { xs: "auto", sm: 0 },
+            }}
           >
             {current_year - 2019} years building full-stack systems and leading
             cross-functional teams. Currently developing automated skate
@@ -81,6 +100,7 @@ export default function Home() {
               flexWrap: "wrap",
               gap: 2,
               alignItems: "center",
+              justifyContent: { xs: "center", sm: "flex-start" },
             }}
           >
             <Button
@@ -112,17 +132,25 @@ export default function Home() {
           </Box>
         </Box>
 
-        <Image
-          src="/portfolio/Profile Picture.jpg"
-          alt="Ray's Picture"
-          width={160}
-          height={160}
-          style={{
-            objectFit: "cover",
-            borderRadius: 16,
+        <Box
+          sx={{
+            position: "relative",
+            width: { xs: 120, sm: 160 },
+            height: { xs: 120, sm: 160 },
             flexShrink: 0,
           }}
-        />
+        >
+          <Image
+            src="/portfolio/Profile Picture.jpg"
+            alt="Ray's Picture"
+            fill
+            sizes="(max-width: 600px) 120px, 160px"
+            style={{
+              objectFit: "cover",
+              borderRadius: 16,
+            }}
+          />
+        </Box>
       </Box>
 
       {/* Experience */}

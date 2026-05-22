@@ -101,19 +101,26 @@ export default function RootLayoutClientWrapper({
       <CssBaseline />
       <Box
         sx={{
-          width: "100vw",
+          width: "100%",
           minHeight: "100vh",
+          overflowX: "hidden",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          px: { xs: 1, sm: 2, md: 4, lg: 8 },
+          px: { xs: 1.5, sm: 2, md: 4, lg: 8 },
         }}
       >
-        <Container maxWidth="md" sx={{ pt: { xs: 2, sm: 4 } }}>
+        <Container
+          maxWidth="md"
+          disableGutters
+          sx={{ pt: { xs: 2, sm: 4 }, px: { xs: 0, sm: 2 } }}
+        >
           <Navbar
             toggleTheme={() => setMode(mode === "light" ? "dark" : "light")}
           />
-          <Box sx={{ pt: { xs: 2, sm: 5 }, pb: 10 }}>{children}</Box>
+          <Box sx={{ pt: { xs: 2.5, sm: 5 }, pb: { xs: 6, sm: 10 } }}>
+            {children}
+          </Box>
         </Container>
       </Box>
       <Box
