@@ -134,7 +134,7 @@ export const Project = ({ project }: ProjectParams) => {
           ))}
         </Stack>
 
-        <CardActions sx={{ gap: 0.5, px: 2, pb: 2, pt: 0 }}>
+        <CardActions sx={{ justifyContent: "center", pb: 2, pt: 0 }}>
           {project.download_url &&
             (downloadIsExternal ? (
               <Button
@@ -144,6 +144,10 @@ export const Project = ({ project }: ProjectParams) => {
                 href={project.download_url}
                 rel="noopener"
                 aria-label="Download project"
+                sx={{
+                  py: 0.5,
+                  px: 2,
+                }}
               >
                 Download
               </Button>
@@ -161,6 +165,10 @@ export const Project = ({ project }: ProjectParams) => {
                   }
                 }}
                 aria-label="Download project"
+                sx={{
+                  py: 0.5,
+                  px: 2,
+                }}
               >
                 Download
               </Button>
@@ -175,6 +183,10 @@ export const Project = ({ project }: ProjectParams) => {
               target="_blank"
               rel="noopener"
               aria-label="Open deployed project"
+              sx={{
+                py: 0.5,
+                px: 2,
+              }}
             >
               Visit
             </Button>
@@ -188,6 +200,10 @@ export const Project = ({ project }: ProjectParams) => {
             target="_blank"
             rel="noopener"
             aria-label="View source code"
+            sx={{
+              py: 0.5,
+              px: 2,
+            }}
           >
             Code
           </Button>
