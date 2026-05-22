@@ -60,7 +60,7 @@ export default function Home() {
             </Typography>
           </Box>
 
-          <Typography variant="h4" sx={{ mb: 1 }}>
+          <Typography variant="h4" sx={{ mb: 3 }}>
             Senior Software Engineer
           </Typography>
 
@@ -76,7 +76,7 @@ export default function Home() {
 
           <Box
             sx={{
-              pt: 5,
+              pt: 2,
               display: "flex",
               flexWrap: "wrap",
               gap: 1.5,
@@ -115,8 +115,8 @@ export default function Home() {
         <Image
           src="/portfolio/Profile Picture.jpg"
           alt="Ray's Picture"
-          width={180}
-          height={180}
+          width={160}
+          height={160}
           style={{
             objectFit: "cover",
             borderRadius: 16,
