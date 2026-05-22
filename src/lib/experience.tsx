@@ -81,11 +81,11 @@ export const WORK: ExperienceType[] = [
             shipped <BoldText>4 production machines</BoldText> since assuming
             the CTO role.
           </>,
-          <>
-            Set the engineering bar by leading hands-on alongside the team and
-            holding direct 1:1 performance conversations — providing regular
-            feedback to keep expectations clear and engineering output high.
-          </>,
+          // <>
+          //   Set the engineering bar by leading hands-on alongside the team and
+          //   holding direct 1:1 performance conversations — providing regular
+          //   feedback to keep expectations clear and engineering output high.
+          // </>,
         ],
       },
       {
