@@ -30,7 +30,7 @@ export const PROJECTS: ProjectType[] = [
       "PyInstaller",
     ],
     download_url:
-      "https://github.com/kwanlokto/chatbot/releases/latest/download/Ray%20-%20Chatbot.exe",
+      "https://github.com/kwanlokto/chatbot/releases/download/v0.1.0/PDF.Chatbot-Setup-0.1.0.exe",
     source_url: "https://github.com/kwanlokto/chatbot",
   },
   {
