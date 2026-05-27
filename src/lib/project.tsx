@@ -47,7 +47,7 @@ export const PROJECTS: ProjectType[] = [
     picture_url: "/portfolio/music_player.jpg",
     TECH_STACK: ["React Native", "Expo"],
     download_url: "/portfolio/Music Player.apk",
-    source_url: "https://github.com/kwanlokto/MusicPlayerApp",
+    source_url: "https://github.com/kwanlokto/music-player",
   },
   {
     title: "Graphs",
