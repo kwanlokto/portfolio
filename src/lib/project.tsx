@@ -13,11 +13,10 @@ export const PROJECTS: ProjectType[] = [
     title: "PDF Chatbot",
     description: (
       <>
-        A desktop RAG chatbot that lets you upload PDFs and ask questions
-        about them, with answers grounded in the source
-        documents through vector search. Runs entirely locally — no API keys,
-        no cloud calls — with FastAPI, ChromaDB, and Ollama bundled inside an
-        Electron shell.
+        Delivered a privacy-first AI document assistant running entirely
+        offline, supporting PDF upload, semantic search, and multi-turn chat via
+        a bundled LLM. Distributed as a one-click installer for Windows and
+        Linux.
       </>
     ),
     picture_url: "/portfolio/pdf_chatbot.png",
