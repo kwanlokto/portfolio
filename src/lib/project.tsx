@@ -13,7 +13,7 @@ export const PROJECTS: ProjectType[] = [
     title: "PDF Chatbot",
     description: (
       <>
-        Delivered a privacy-first AI document assistant running entirely
+        An AI document assistant running entirely
         offline, supporting PDF upload, semantic search, and multi-turn chat via
         a bundled LLM. Distributed as a one-click installer for Windows and
         Linux.
