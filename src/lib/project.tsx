@@ -10,7 +10,7 @@ export interface ProjectType {
 
 export const PROJECTS: ProjectType[] = [
   {
-    title: "Chatbot",
+    title: "PDF Chatbot",
     description: (
       <>
         A desktop RAG chatbot that lets you upload PDFs and ask questions
@@ -20,7 +20,7 @@ export const PROJECTS: ProjectType[] = [
         Electron shell.
       </>
     ),
-    picture_url: null,
+    picture_url: "/portfolio/pdf_chatbot.png",
     TECH_STACK: [
       "Electron",
       "Next.JS",
