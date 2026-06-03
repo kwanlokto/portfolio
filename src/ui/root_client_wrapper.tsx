@@ -46,8 +46,8 @@ export default function RootLayoutClientWrapper({
             paper: mode === "light" ? "#fffaf2" : "#242424",
           },
           text: {
-            primary: mode === "light" ? "#0a1f2a" : "#e8e8e8",
-            secondary: mode === "light" ? "#577683" : "#a8a8a8",
+            primary: mode === "light" ? "#0a1f2a" : "#c8c8c8",
+            secondary: mode === "light" ? "#577683" : "#b0b0b0",
           },
           primary: {
             main: mode === "light" ? "#1a4d6b" : "#5aa5ff",
