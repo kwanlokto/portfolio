@@ -18,7 +18,7 @@ export const PROJECTS: ProjectType[] = [
         hide Shorts, the home feed, recommendations, and more.
       </>
     ),
-    picture_url: null,
+    picture_url: "/portfolio/focus_guard.jpg",
     TECH_STACK: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
     source_url: "https://github.com/kwanlokto/productivity-chrome-extension",
   },
