@@ -10,13 +10,25 @@ export interface ProjectType {
 
 export const PROJECTS: ProjectType[] = [
   {
+    title: "Focus Guard",
+    description: (
+      <>
+        A Chrome extension that protects your attention by blocking distracting
+        sites and taming YouTube&apos;s doom-scroll machinery with toggles to
+        hide Shorts, the home feed, recommendations, and more.
+      </>
+    ),
+    picture_url: null,
+    TECH_STACK: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
+    source_url: "https://github.com/kwanlokto/productivity-chrome-extension",
+  },
+  {
     title: "PDF Chatbot",
     description: (
       <>
-        An AI document assistant running entirely
-        offline, supporting PDF upload, semantic search, and multi-turn chat via
-        a bundled LLM. Distributed as a one-click installer for Windows and
-        Linux.
+        An AI document assistant running entirely offline, supporting PDF
+        upload, semantic search, and multi-turn chat via a bundled LLM.
+        Distributed as a one-click installer for Windows and Linux.
       </>
     ),
     picture_url: "/portfolio/pdf_chatbot.png",
