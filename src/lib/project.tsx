@@ -20,6 +20,8 @@ export const PROJECTS: ProjectType[] = [
     ),
     picture_url: "/portfolio/focus_guard.jpg",
     TECH_STACK: ["JavaScript", "Chrome Extension", "HTML", "CSS"],
+    deployed_url:
+      "https://chromewebstore.google.com/detail/focus-guard-%E2%80%94-productivit/oammbghjoieihnjfmedbnafbjfigjdlb",
     source_url: "https://github.com/kwanlokto/productivity-chrome-extension",
   },
   {
