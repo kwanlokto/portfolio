@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predeploy": "next build",
+    "fetch-screenshots": "node scripts/fetch_screenshots.mjs",
+    "predeploy": "node scripts/fetch_screenshots.mjs && next build",
     "deploy": "gh-pages -d out",
     "dev": "next dev --turbopack",
     "start": "next start",

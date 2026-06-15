@@ -28,7 +28,8 @@ const get_screenshot_url = (source_url: string): string => {
     if (url.hostname === "github.com") {
       const [owner, repo] = url.pathname.split("/").filter(Boolean);
       if (owner && repo) {
-        return `https://opengraph.githubassets.com/1/${owner}/${repo}`;
+        // Pre-generated at build time by scripts/fetch_screenshots.mjs.
+        return `/portfolio/screenshots/${owner}-${repo}.png`;
       }
     }
   } catch {
