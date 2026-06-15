@@ -22,6 +22,23 @@ interface ProjectParams {
   project: ProjectType;
 }
 
+const get_screenshot_url = (source_url: string): string => {
+  try {
+    const url = new URL(source_url);
+    if (url.hostname === "github.com") {
+      const [owner, repo] = url.pathname.split("/").filter(Boolean);
+      if (owner && repo) {
+        return `https://opengraph.githubassets.com/1/${owner}/${repo}`;
+      }
+    }
+  } catch {
+    // fall through to microlink
+  }
+  return `https://api.microlink.io/?url=${encodeURIComponent(
+    source_url,
+  )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=400`;
+};
+
 export const Project = ({ project }: ProjectParams) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -55,14 +72,10 @@ export const Project = ({ project }: ProjectParams) => {
         >
           <Box sx={{ position: "relative", height: 170 }}>
             <Image
-              src={
-                project.picture_url ||
-                `https://api.microlink.io/?url=${encodeURIComponent(
-                  project.source_url,
-                )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=400`
-              }
+              src={project.picture_url || get_screenshot_url(project.source_url)}
               alt={project.title}
               fill
+              loading="lazy"
               style={{
                 objectFit: "cover",
                 objectPosition: "center",
