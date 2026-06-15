@@ -7,6 +7,7 @@ import {
   CardActionArea,
   CardActions,
   CardContent,
+  Chip,
   Grid,
   Stack,
   Typography,
@@ -56,12 +57,15 @@ export const Project = ({ project }: ProjectParams) => {
           height: "100%",
           overflow: "hidden",
           bgcolor: "background.paper",
+          borderColor: project.featured ? "primary.main" : undefined,
+          borderWidth: project.featured ? 2 : 1,
+          boxShadow: project.featured ? 2 : 0,
           transition:
             "transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease",
           "&:hover": {
             transform: "translateY(-2px)",
-            borderColor: "text.secondary",
-            boxShadow: 3,
+            borderColor: project.featured ? "primary.main" : "text.secondary",
+            boxShadow: project.featured ? 6 : 3,
           },
         }}
       >
@@ -82,6 +86,24 @@ export const Project = ({ project }: ProjectParams) => {
                 objectPosition: "center",
               }}
             />
+            {project.featured && (
+              <Chip
+                label="Featured"
+                size="small"
+                color="primary"
+                sx={{
+                  position: "absolute",
+                  top: 10,
+                  right: 10,
+                  fontWeight: 600,
+                  fontSize: "0.6875rem",
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                  height: 22,
+                  boxShadow: 2,
+                }}
+              />
+            )}
           </Box>
         </CardActionArea>
 

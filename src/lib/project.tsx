@@ -6,6 +6,7 @@ export interface ProjectType {
   deployed_url?: string;
   download_url?: string;
   source_url: string;
+  featured?: boolean;
 }
 
 export const PROJECTS: ProjectType[] = [
@@ -23,6 +24,7 @@ export const PROJECTS: ProjectType[] = [
     deployed_url:
       "https://chromewebstore.google.com/detail/focus-guard-%E2%80%94-productivit/oammbghjoieihnjfmedbnafbjfigjdlb",
     source_url: "https://github.com/kwanlokto/productivity-chrome-extension",
+    featured: true,
   },
   {
     title: "PDF Chatbot",
@@ -45,6 +47,7 @@ export const PROJECTS: ProjectType[] = [
     download_url:
       "https://github.com/kwanlokto/chatbot/releases/download/v0.1.0/PDF.Chatbot-Setup-0.1.0.exe",
     source_url: "https://github.com/kwanlokto/chatbot",
+    featured: true,
   },
   {
     title: "Music Player",
