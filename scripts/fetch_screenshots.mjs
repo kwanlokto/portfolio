@@ -57,9 +57,9 @@ async function get_targets() {
           const [owner, repo] = url.pathname.split("/").filter(Boolean);
           if (owner && repo) {
             targets.push({
-              kind: "github_og",
+              kind: "deployed",
               filename: `${owner}-${repo}.png`,
-              url: `https://opengraph.githubassets.com/1/${owner}/${repo}`,
+              url: source_url,
             });
           }
         }
@@ -99,16 +99,7 @@ async function fetch_one(target) {
     return;
   }
   try {
-    const buf =
-      target.kind === "deployed"
-        ? await fetch_deployed_screenshot(target.url)
-        : await (async () => {
-            const res = await fetch(target.url);
-            if (!res.ok) {
-              throw new Error(`fetching ${target.url}: ${res.status}`);
-            }
-            return Buffer.from(await res.arrayBuffer());
-          })();
+    const buf = await fetch_deployed_screenshot(target.url);
     await writeFile(out_path, buf);
     console.log(`saved  ${target.filename} (${buf.length} bytes)`);
   } catch (err) {
