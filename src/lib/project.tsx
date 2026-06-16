@@ -66,7 +66,7 @@ export const PROJECTS: ProjectType[] = [
     source_url: "https://github.com/kwanlokto/music-player",
   },
   {
-    title: "Graphs",
+    title: "Visual Pathfinding",
     description: (
       <>
         This interactive web application visually demonstrates how various
