@@ -120,18 +120,4 @@ export const PROJECTS: ProjectType[] = [
     TECH_STACK: ["Python", "React", "Docker", "Alembic", "Flask"],
     source_url: "https://github.com/kwanlokto/atm",
   },
-  {
-    title: "Algorithm Library",
-    description: (
-      <>
-        Repository which is an collection of popular algorithms and data
-        structures that may be useful for future projects. The goal is to create
-        a GUI that visually demonstrates how the algorithm or data structure
-        solves the desired problem
-      </>
-    ),
-    picture_url: null,
-    TECH_STACK: ["Python"],
-    source_url: "https://github.com/kwanlokto/algorithms",
-  },
 ];
