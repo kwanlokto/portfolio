@@ -74,7 +74,8 @@ async function get_targets() {
 async function fetch_deployed_screenshot(deployed_url) {
   const api =
     `https://api.microlink.io/?url=${encodeURIComponent(deployed_url)}` +
-    `&screenshot=true&meta=false&viewport.width=1280&viewport.height=720`;
+    `&screenshot=true&meta=false&viewport.width=800&viewport.height=500` +
+    `&colorScheme=dark&waitUntil=networkidle0&waitFor=1500`;
   const res = await fetch(api);
   if (!res.ok) {
     throw new Error(`microlink failed for ${deployed_url}: ${res.status}`);
