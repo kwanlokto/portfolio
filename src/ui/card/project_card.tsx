@@ -23,13 +23,25 @@ interface ProjectParams {
   project: ProjectType;
 }
 
-const get_screenshot_url = (source_url: string): string => {
+const slug = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+// Resolved per project; pre-generated images live under /public/screenshots
+// and are produced by scripts/fetch_screenshots.mjs. Falls back to live
+// microlink only when nothing else is available.
+const get_screenshot_url = (project: ProjectType): string => {
+  if (project.deployed_url) {
+    return `/portfolio/screenshots/${slug(project.title)}.png`;
+  }
+  if (project.picture_url) return project.picture_url;
   try {
-    const url = new URL(source_url);
+    const url = new URL(project.source_url);
     if (url.hostname === "github.com") {
       const [owner, repo] = url.pathname.split("/").filter(Boolean);
       if (owner && repo) {
-        // Pre-generated at build time by scripts/fetch_screenshots.mjs.
         return `/portfolio/screenshots/${owner}-${repo}.png`;
       }
     }
@@ -37,7 +49,7 @@ const get_screenshot_url = (source_url: string): string => {
     // fall through to microlink
   }
   return `https://api.microlink.io/?url=${encodeURIComponent(
-    source_url,
+    project.source_url,
   )}&screenshot=true&meta=false&embed=screenshot.url&viewport.width=400`;
 };
 
@@ -77,7 +89,7 @@ export const Project = ({ project }: ProjectParams) => {
         >
           <Box sx={{ position: "relative", height: 170 }}>
             <Image
-              src={project.picture_url || get_screenshot_url(project.source_url)}
+              src={get_screenshot_url(project)}
               alt={project.title}
               fill
               loading="lazy"
