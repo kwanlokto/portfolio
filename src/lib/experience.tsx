@@ -93,9 +93,12 @@ export const WORK: ExperienceType[] = [
         timeline: "Oct 2023 – June 2025",
         achievements: [
           <>
-            Architected <BoldText>microservices refactor</BoldText> to decouple
-            order management into independent services, decreasing cycle time
-            by 25%, and improving data accuracy by 70%.
+            Cut <BoldText>cycle time by 25%</BoldText> and improved{" "}
+            <BoldText>data accuracy by 70%</BoldText> by decomposing a monolith
+            into independent services behind a{" "}
+            <BoldText>custom-built API gateway</BoldText> — centralizing
+            authentication, isolating service responsibilities, and decoupling
+            deploys so each service could ship on its own cadence.
           </>,
           <>
             Managed high-availability cloud infrastructure on{" "}
