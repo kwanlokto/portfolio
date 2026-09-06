@@ -62,8 +62,8 @@ const NavButton = ({ label, onClick, active }: NavButtonProps) => {
                 ? theme.palette.common.white
                 : theme.palette.common.black
               : theme.palette.mode === "dark"
-              ? theme.palette.grey[400]
-              : theme.palette.grey[500],
+                ? theme.palette.grey[400]
+                : theme.palette.grey[500],
           transition: "color 0.2s",
           "&:hover": {
             color: (theme) =>
@@ -93,7 +93,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
 
   const handle_open_mail = () => {
     const url = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      MAILTO_SUBJECT
+      MAILTO_SUBJECT,
     )}&body=${encodeURIComponent(MAILTO_BODY)}`;
     window.location.href = url;
   };
@@ -218,10 +218,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
               >
                 Ray Kwan
               </Typography>
-              <Typography
-                variant="caption"
-                sx={{ color: "text.secondary" }}
-              >
+              <Typography variant="caption" sx={{ color: "text.secondary" }}>
                 Senior Software Engineer
               </Typography>
             </Box>
@@ -282,8 +279,8 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
               Get in touch
             </Typography>
             <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Recruiter, collaborator, or just want to chat? Drop me a line —
-              I read every message.
+              Recruiter, collaborator, or just want to chat? Drop me a line — I
+              read every message.
             </Typography>
           </Box>
 
@@ -351,10 +348,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
               />
             </HRefButton>
             <HRefButton url="https://github.com/kwanlokto">
-              <SlSocialGithub
-                size={20}
-                color={theme.palette.text.secondary}
-              />
+              <SlSocialGithub size={20} color={theme.palette.text.secondary} />
             </HRefButton>
           </Box>
         </Stack>

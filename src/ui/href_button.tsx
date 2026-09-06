@@ -10,7 +10,6 @@ export const HRefButton = ({
   className = "",
   children,
 }: HRefButtonParams) => {
-
   return (
     <IconButton href={url} target="_blank" className={className}>
       {children}

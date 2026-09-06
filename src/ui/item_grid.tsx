@@ -5,8 +5,7 @@ import { Grid, GridProps, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 
 type ResponsiveCount =
-  | number
-  | { xs?: number; sm?: number; md?: number; lg?: number; xl?: number };
+  number | { xs?: number; sm?: number; md?: number; lg?: number; xl?: number };
 
 interface ItemGridProps<T> extends Omit<GridProps, "container"> {
   items: T[];

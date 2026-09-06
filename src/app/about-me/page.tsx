@@ -22,7 +22,9 @@ export default function Page() {
   const [selected_md, set_selected_md] = useState<string | null>(null);
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, sm: 5 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, sm: 5 } }}
+    >
       {/* About Section */}
       <Box>
         <SectionHeader title="About Me" variant="page" mb={2.5} />

@@ -45,7 +45,9 @@ export const HobbyCard = ({ hobby, on_click }: HobbyCardParams) => {
           />
         </Box>
 
-        <CardContent sx={{ textAlign: "center", py: 1, "&:last-child": { pb: 1 } }}>
+        <CardContent
+          sx={{ textAlign: "center", py: 1, "&:last-child": { pb: 1 } }}
+        >
           <Typography variant="body2" sx={{ fontWeight: 500 }}>
             {hobby.title}
           </Typography>

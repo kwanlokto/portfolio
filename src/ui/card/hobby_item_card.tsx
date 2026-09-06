@@ -17,7 +17,10 @@ interface HobbyItemCardParams {
   set_selected_md: (md: string) => void;
 }
 
-export const HobbyItemCard = ({ hobby_item, set_selected_md }: HobbyItemCardParams) => {
+export const HobbyItemCard = ({
+  hobby_item,
+  set_selected_md,
+}: HobbyItemCardParams) => {
   // Travel/default photos: flat, chrome-less, with a small caption below.
   if (hobby_item.type === "default") {
     return (

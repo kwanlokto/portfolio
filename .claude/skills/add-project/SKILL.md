@@ -64,12 +64,12 @@ absent, the regex did not match it — recheck step 2.
 `slug()` and the filename precedence are **duplicated** in `scripts/fetch_screenshots.mjs` and
 `src/ui/card/project_card.tsx`. If you touch either, update both. Precedence:
 
-| Condition | Screenshot file |
-|---|---|
-| `deployed_url` set | `<slug(title)>.png` |
-| no `deployed_url`, `picture_url` set | `picture_url` used directly (card only) |
-| no `deployed_url`, no `picture_url`, GitHub `source_url` | `<owner>-<repo>.png` |
-| none of the above | live microlink URL (card only) |
+| Condition                                                | Screenshot file                         |
+| -------------------------------------------------------- | --------------------------------------- |
+| `deployed_url` set                                       | `<slug(title)>.png`                     |
+| no `deployed_url`, `picture_url` set                     | `picture_url` used directly (card only) |
+| no `deployed_url`, no `picture_url`, GitHub `source_url` | `<owner>-<repo>.png`                    |
+| none of the above                                        | live microlink URL (card only)          |
 
 ## 5. Refreshing an existing screenshot
 

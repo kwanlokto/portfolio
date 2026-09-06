@@ -51,7 +51,8 @@ export const TechStack = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     borderRadius: 1.25,
-                    transition: "transform 180ms ease, background-color 180ms ease",
+                    transition:
+                      "transform 180ms ease, background-color 180ms ease",
                     "&:hover, &:focus-visible": {
                       transform: "translateY(-2px)",
                       bgcolor: "action.hover",

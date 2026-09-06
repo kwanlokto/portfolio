@@ -4,6 +4,7 @@ This is my personal portfolio website built with [Next.js](https://nextjs.org/).
 It showcases my projects, skills, and experience in a clean, modern interface.
 
 ## 🚀 Features
+
 - Built with **Next.js** and **React**
 - Responsive and mobile-friendly design
 - Deployed with GitHub Pages (or your chosen hosting)
@@ -45,6 +46,7 @@ npm run deploy
 ```
 
 ## 📂 Project Structure
+
 ```
 ├── public          # Static assets
 ├── src
@@ -56,7 +58,9 @@ npm run deploy
 ```
 
 ## 📄 License
+
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
+
 ✨ Feel free to fork, clone, and adapt this portfolio for your own use!

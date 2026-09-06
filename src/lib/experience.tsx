@@ -35,14 +35,14 @@ export const WORK: ExperienceType[] = [
           <>
             Integrated the <BoldText>Aetrex API</BoldText> to automate customer
             data transfer from foot scanning hardware into Skatescribe,
-            delivering recommended skate specs and eliminating manual data
-            entry and operator error.
+            delivering recommended skate specs and eliminating manual data entry
+            and operator error.
           </>,
           <>
             Built the foundational cloud infrastructure on{" "}
-            <BoldText>AWS</BoldText> to scale globally — deploying servers,
-            load balancers, and databases across multiple regions to support a
-            target of <BoldText>700+ machines</BoldText> worldwide.
+            <BoldText>AWS</BoldText> to scale globally — deploying servers, load
+            balancers, and databases across multiple regions to support a target
+            of <BoldText>700+ machines</BoldText> worldwide.
           </>,
         ],
       },
@@ -103,13 +103,13 @@ export const WORK: ExperienceType[] = [
           <>
             Managed high-availability cloud infrastructure on{" "}
             <BoldText>Linode</BoldText>, deploying containerized environments
-            with <BoldText>NGINX</BoldText> to ensure a seamless user
-            experience across <BoldText>19+ deployed locations</BoldText>.
+            with <BoldText>NGINX</BoldText> to ensure a seamless user experience
+            across <BoldText>19+ deployed locations</BoldText>.
           </>,
           <>
-            Provided technical support for critical hardware and software
-            issues and developed a comprehensive troubleshooting workflow to
-            reduce support calls by 10%.
+            Provided technical support for critical hardware and software issues
+            and developed a comprehensive troubleshooting workflow to reduce
+            support calls by 10%.
           </>,
         ],
       },
@@ -125,11 +125,11 @@ export const WORK: ExperienceType[] = [
             <BoldText>PSQL</BoldText> database.
           </>,
           <>
-            Invented proprietary signal processing algorithms for smoothing
-            and joining noisy laser data, achieving{" "}
-            <BoldText>±1 μm precision</BoldText> via least-squares
-            optimization — establishing the technical foundation for every
-            production machine that followed.
+            Invented proprietary signal processing algorithms for smoothing and
+            joining noisy laser data, achieving{" "}
+            <BoldText>±1 μm precision</BoldText> via least-squares optimization
+            — establishing the technical foundation for every production machine
+            that followed.
           </>,
           <>
             Designed and built the initial cloud infrastructure on{" "}

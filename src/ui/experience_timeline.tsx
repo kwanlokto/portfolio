@@ -38,7 +38,9 @@ export const ExperienceTimeline = ({
 
   return (
     <Box>
-      <Timeline sx={{ width: "100%", px: { xs: 0, sm: 2 }, py: { xs: 0, sm: 1 } }}>
+      <Timeline
+        sx={{ width: "100%", px: { xs: 0, sm: 2 }, py: { xs: 0, sm: 1 } }}
+      >
         {experience_list.map((experience, experience_idx) => (
           <Collapse
             key={experience_idx}
@@ -65,7 +67,7 @@ export const ExperienceTimeline = ({
                   sx={{
                     bgcolor: "background.default",
                     boxShadow: 0,
-                    mt: 0
+                    mt: 0,
                   }}
                 >
                   <Icon sx={{ position: "relative", width: 30, height: 30 }}>
