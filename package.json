@@ -4,12 +4,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "fetch-screenshots": "node scripts/fetch_screenshots.mjs",
-    "predeploy": "node scripts/fetch_screenshots.mjs && next build",
-    "deploy": "gh-pages -d out",
     "dev": "next dev --turbopack",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "next build",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "fetch-screenshots": "node scripts/fetch_screenshots.mjs",
+    "predeploy": "npm run fetch-screenshots && npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -32,9 +34,10 @@
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
-    "eslint-config-next": "15.2.1",
+    "eslint-config-next": "^16.3.4",
     "gh-pages": "^6.3.0",
     "postcss": "^8.5.3",
+    "prettier": "^3.9.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
