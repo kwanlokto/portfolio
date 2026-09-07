@@ -3,6 +3,11 @@ import { asset } from "@/lib/site";
 export interface Role {
   title: string;
   dates: string;
+  /**
+   * Optional one-line clarifier shown under the dates. Used where a date range
+   * alone would read as a mistake — e.g. two roles that are both "Present".
+   */
+  note?: string;
   /** Plain text. `**...**` marks emphasis; rendered by <RichText>. */
   achievements: string[];
 }
@@ -30,9 +35,10 @@ export const WORK: ExperienceType[] = [
       {
         title: "Software Engineer",
         dates: "Jan 2026 – Present",
+        note: "Ongoing partnership, concurrent with the Skatescribe CTO role",
         achievements: [
-          "Evaluate **7 scanning and CNC solutions** and selected one that reduced costs without compromising quality, informing the hardware roadmap for the next-generation skate tuning platform.",
-          "Integrated the **Aetrex foot-scanning API** to automate customer data transfer from scanning hardware into the skate tuning platform, delivering recommended skate specs and eliminating manual data entry and operator error.",
+          "Evaluated **7 scanning and CNC solutions** and selected one that reduced costs without compromising quality, informing the hardware roadmap for the next-generation skate tuning platform.",
+          "Integrated the **Aetrex foot-scanning API** to automate customer data transfer from scanning hardware into **Skatescribe**, delivering recommended skate specs and eliminating manual data entry and operator error.",
           "Stood up the first multi-region **AWS** footprint — servers, load balancers, and databases across regions — replacing a single-region deployment and clearing the path from **19 installed machines** toward a planned **700+ worldwide**.",
         ],
       },

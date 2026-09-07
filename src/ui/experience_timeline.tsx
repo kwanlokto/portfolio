@@ -152,11 +152,26 @@ export const ExperienceTimeline = ({
                           sx={{
                             color: "text.secondary",
                             display: "block",
-                            mb: 1,
+                            mb: role.note ? 0.25 : 1,
                           }}
                         >
                           {role.dates}
                         </Typography>
+
+                        {role.note && (
+                          <Typography
+                            variant="caption"
+                            sx={{
+                              color: "text.secondary",
+                              display: "block",
+                              mb: 1,
+                              fontStyle: "italic",
+                              opacity: 0.85,
+                            }}
+                          >
+                            {role.note}
+                          </Typography>
+                        )}
 
                         {role.achievements.length > 0 && (
                           <List
