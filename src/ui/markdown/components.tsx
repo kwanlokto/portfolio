@@ -154,6 +154,9 @@ export const MARKDOWN_COMPONENTS: Components = {
       component="blockquote"
       sx={{
         my: 3,
+        // Browsers default blockquote to margin-inline 40px. Tailwind's
+        // Preflight used to zero it; nothing else does, so be explicit.
+        mx: 0,
         pl: 2.5,
         borderLeft: "2px solid",
         borderColor: "divider",

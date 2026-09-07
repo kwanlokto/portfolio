@@ -38,9 +38,15 @@ raw `<a>`, so it always needs `asset()`.
 ## Styling: MUI `sx` only
 
 All styling goes through MUI v7 `sx` props and the theme in `src/ui/root_client_wrapper.tsx`.
-Tailwind is configured (`tailwind.config.js`, PostCSS, `@tailwind` directives in `globals.css`)
-but is **vestigial and unused** — there is exactly one `className` in `src/`, and it is a
-pass-through prop. Never add Tailwind utility classes to match "existing style"; there is none.
+There is **no CSS framework** — Tailwind was removed once it was confirmed unused, and there is
+no PostCSS config, so Next uses its own defaults. Do not reintroduce a utility framework; there
+are zero `className` usages in `src/` and the codebase should stay that way.
+
+The only global CSS is `src/app/globals.css`, which holds keyframes and two narrow overrides.
+MUI's `CssBaseline` is the only reset. It does **not** zero the margins that Tailwind's Preflight
+used to, so any raw HTML element rendered outside a MUI component (chiefly the markdown map in
+`src/ui/markdown/components.tsx`) must set its own margins — see the `blockquote` entry, which
+pins `mx: 0` against the browser's default 40px.
 
 ## Naming
 
