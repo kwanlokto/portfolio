@@ -27,23 +27,23 @@ export const NUMBER_OF_AHL_TEAMS = 3;
 export const CAREER_START_YEAR = 2019;
 
 export const WORK: ExperienceType[] = [
-  {
-    organization: "Bauer Hockey",
-    icon_url: asset("/Bauer.png"),
-    dark_mode_icon_url: asset("/Bauer Dark.png"),
-    roles: [
-      {
-        title: "Software Engineer",
-        dates: "Jan 2026 – Present",
-        note: "Ongoing partnership, concurrent with the Skatescribe CTO role",
-        achievements: [
-          "Evaluated **7 scanning and CNC solutions** and selected one that reduced costs without compromising quality, informing the hardware roadmap for the next-generation skate tuning platform.",
-          "Integrated the **Aetrex foot-scanning API** to automate customer data transfer from scanning hardware into **Skatescribe**, delivering recommended skate specs and eliminating manual data entry and operator error.",
-          "Stood up the first multi-region **AWS** footprint — servers, load balancers, and databases across regions — replacing a single-region deployment and clearing the path from **19 installed machines** toward a planned **700+ worldwide**.",
-        ],
-      },
-    ],
-  },
+  // {
+  //   organization: "Bauer Hockey",
+  //   icon_url: asset("/Bauer.png"),
+  //   dark_mode_icon_url: asset("/Bauer Dark.png"),
+  //   roles: [
+  //     {
+  //       title: "Software Engineer",
+  //       dates: "Jan 2026 – Present",
+  //       note: "Ongoing partnership, concurrent with the Skatescribe CTO role",
+  //       achievements: [
+  //         "Evaluated **7 scanning and CNC solutions** and selected one that reduced costs without compromising quality, informing the hardware roadmap for the next-generation skate tuning platform.",
+  //         "Integrated the **Aetrex foot-scanning API** to automate customer data transfer from scanning hardware into **Skatescribe**, delivering recommended skate specs and eliminating manual data entry and operator error.",
+  //         "Stood up the first multi-region **AWS** footprint — servers, load balancers, and databases across regions — replacing a single-region deployment and clearing the path from **19 installed machines** toward a planned **700+ worldwide**.",
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     organization: "Skatescribe",
     icon_url: asset("/SS Logo.png"),
