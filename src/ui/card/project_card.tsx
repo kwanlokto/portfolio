@@ -184,10 +184,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             href={project.deployed_url}
             target="_blank"
             rel="noopener"
-            aria-label={`Visit ${project.title}`}
+            aria-label={`${project.deployed_label ?? "Live demo"} — ${project.title}`}
             sx={ACTION_SX}
           >
-            Visit
+            {project.deployed_label ?? "Live demo"}
           </Button>
         )}
 

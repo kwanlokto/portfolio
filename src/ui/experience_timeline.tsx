@@ -39,12 +39,14 @@ export const ExperienceTimeline = ({
 
   const [expanded, set_expanded] = React.useState(false);
 
+  const visible = experience_list.filter((experience) => !experience.hidden);
+
   return (
     <Box>
       <Timeline
         sx={{ width: "100%", px: { xs: 0, sm: 2 }, py: { xs: 0, sm: 1 } }}
       >
-        {experience_list.map((experience, experience_idx) => (
+        {visible.map((experience, experience_idx) => (
           <Collapse
             key={experience.organization}
             in={expanded || experience_idx < collapsed_item_count}
@@ -90,9 +92,7 @@ export const ExperienceTimeline = ({
                     />
                   </Icon>
                 </TimelineDot>
-                {experience_idx !== experience_list.length - 1 && (
-                  <TimelineConnector />
-                )}
+                {experience_idx !== visible.length - 1 && <TimelineConnector />}
               </TimelineSeparator>
 
               {/* --- Company Content --- */}
@@ -220,7 +220,7 @@ export const ExperienceTimeline = ({
       </Timeline>
 
       {/* Show more / less button */}
-      {experience_list.length > collapsed_item_count && (
+      {visible.length > collapsed_item_count && (
         <Box textAlign="center" mb={1}>
           <Button
             size="small"

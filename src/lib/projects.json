@@ -6,7 +6,8 @@
     "tech_stack": ["JavaScript", "Chrome Extension", "HTML", "CSS"],
     "deployed_url": "https://chromewebstore.google.com/detail/focus-guard-%E2%80%94-productivit/oammbghjoieihnjfmedbnafbjfigjdlb",
     "source_url": "https://github.com/kwanlokto/productivity-chrome-extension",
-    "featured": true
+    "featured": true,
+    "deployed_label": "Chrome Web Store"
   },
   {
     "title": "PDF Chatbot",
@@ -38,7 +39,8 @@
     "picture_url": "/graphing_library.png",
     "tech_stack": ["Next.js", "MUI"],
     "deployed_url": "https://graphing-library.vercel.app/",
-    "source_url": "https://github.com/kwanlokto/graphing_library"
+    "source_url": "https://github.com/kwanlokto/graphing_library",
+    "featured": true
   },
   {
     "title": "Wordle",

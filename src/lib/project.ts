@@ -9,6 +9,12 @@ export interface ProjectType {
   picture_url: string | null;
   tech_stack: string[];
   deployed_url?: string;
+  /**
+   * Button label for `deployed_url`. Defaults to "Live demo"; override where the
+   * link is a store listing or docs page rather than a running app, so the card
+   * does not promise something it cannot deliver.
+   */
+  deployed_label?: string;
   download_url?: string;
   source_url: string;
   featured?: boolean;

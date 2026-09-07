@@ -1,6 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
 
+import type { Metadata } from "next";
 import { asset } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Page not found — Ray Kwan",
+  description: "That link is out of date or the page has moved.",
+};
 
 export default function NotFound() {
   return (
