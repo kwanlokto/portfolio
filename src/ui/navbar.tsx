@@ -12,41 +12,44 @@ import {
   ListItemText,
   Stack,
   Typography,
-  useTheme,
 } from "@mui/material";
-import { MdBrightness4, MdHome, MdInfo, MdMenu, MdWork } from "react-icons/md";
-import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
+import {
+  MdDarkMode,
+  MdHome,
+  MdInfo,
+  MdLightMode,
+  MdMenu,
+  MdWork,
+} from "react-icons/md";
+import { CONTACT_EMAIL, mailto_url } from "@/lib/contact";
 
 import { CiMail } from "react-icons/ci";
-import { HRefButton } from "./href_button";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import Link from "next/link";
 import { Modal } from "./modal";
+import { SocialLinks } from "@/ui/social_links";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-
-const CONTACT_EMAIL = "lokto.kwan@gmail.com";
-const MAILTO_SUBJECT = "Hi Ray — saw your portfolio";
-const MAILTO_BODY = "Hey Ray,\n\n";
 
 const tabs = [
   { label: "Home", href: "/", icon: <MdHome size={20} /> },
   { label: "Projects", href: "/project", icon: <MdWork size={20} /> },
   { label: "About", href: "/about-me", icon: <MdInfo size={20} /> },
-  // { label: "Blog", href: "/blog", icon: <MdInfo size={20} /> },
 ];
 
 interface NavButtonProps {
   label: string;
   onClick?: () => void;
   active?: boolean;
+  href?: string;
 }
 
-const NavButton = ({ label, onClick, active }: NavButtonProps) => {
+const NavButton = ({ label, onClick, active, href }: NavButtonProps) => {
   return (
     <Button
       disableRipple
       onClick={onClick}
+      {...(href ? { component: Link, href } : {})}
       sx={{
         bgcolor: "transparent",
         textTransform: "none",
@@ -80,22 +83,23 @@ const NavButton = ({ label, onClick, active }: NavButtonProps) => {
 };
 
 type NavbarProps = {
+  mode: "light" | "dark";
   toggleTheme: () => void;
 };
 
-export const Navbar = ({ toggleTheme }: NavbarProps) => {
+export const Navbar = ({ mode, toggleTheme }: NavbarProps) => {
   const pathname = usePathname();
-  const theme = useTheme();
 
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [drawer_open, set_drawer_open] = useState(false);
   const [show_contact_form, set_show_contact_form] = useState(false);
   const [copied, set_copied] = useState(false);
 
+  const ThemeIcon = mode === "dark" ? MdLightMode : MdDarkMode;
+  const theme_label =
+    mode === "dark" ? "Switch to light mode" : "Switch to dark mode";
+
   const handle_open_mail = () => {
-    const url = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      MAILTO_SUBJECT,
-    )}&body=${encodeURIComponent(MAILTO_BODY)}`;
-    window.location.href = url;
+    window.location.href = mailto_url();
   };
 
   const handle_copy_email = async () => {
@@ -120,20 +124,24 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
     >
       <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
         {tabs.map((tab) => (
-          <Link key={tab.href} href={tab.href}>
-            <NavButton label={tab.label} active={pathname === tab.href} />
-          </Link>
-        ))}
-        <Link href="_blank" onClick={(e) => e.preventDefault()}>
           <NavButton
-            label="Contact"
-            onClick={() => set_show_contact_form(true)}
+            key={tab.href}
+            label={tab.label}
+            href={tab.href}
+            active={pathname === tab.href}
           />
-        </Link>
+        ))}
+        <NavButton
+          label="Contact"
+          onClick={() => set_show_contact_form(true)}
+        />
 
-        <IconButton color="inherit" onClick={toggleTheme}>
-          {/* you can conditionally show dark/light icons here */}
-          <MdBrightness4 style={{ marginTop: -2 }} size={18} />
+        <IconButton
+          color="inherit"
+          onClick={toggleTheme}
+          aria-label={theme_label}
+        >
+          <ThemeIcon style={{ marginTop: -2 }} size={18} />
         </IconButton>
       </Box>
 
@@ -148,7 +156,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
         }}
       >
         <IconButton
-          onClick={() => setDrawerOpen(true)}
+          onClick={() => set_drawer_open(true)}
           size="small"
           aria-label="Open navigation menu"
         >
@@ -182,16 +190,16 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
           <IconButton
             onClick={toggleTheme}
             size="small"
-            aria-label="Toggle theme"
+            aria-label={theme_label}
           >
-            <MdBrightness4 size={20} />
+            <ThemeIcon size={20} />
           </IconButton>
         </Box>
 
         <Drawer
           anchor="left"
-          open={drawerOpen}
-          onClose={() => setDrawerOpen(false)}
+          open={drawer_open}
+          onClose={() => set_drawer_open(false)}
           PaperProps={{
             sx: {
               bgcolor: "background.default",
@@ -219,7 +227,7 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
                 Ray Kwan
               </Typography>
               <Typography variant="caption" sx={{ color: "text.secondary" }}>
-                Senior Software Engineer
+                Chief Technology Officer
               </Typography>
             </Box>
 
@@ -227,37 +235,38 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
               {tabs.map((tab) => {
                 const active = pathname === tab.href;
                 return (
-                  <Link key={tab.href} href={tab.href} passHref>
-                    <ListItemButton
-                      selected={active}
-                      onClick={() => setDrawerOpen(false)}
+                  <ListItemButton
+                    key={tab.href}
+                    component={Link}
+                    href={tab.href}
+                    selected={active}
+                    onClick={() => set_drawer_open(false)}
+                    sx={{
+                      borderRadius: 1.5,
+                      mb: 0.5,
+                      py: 1,
+                      "&.Mui-selected": {
+                        bgcolor: "action.selected",
+                      },
+                    }}
+                  >
+                    <ListItemIcon
                       sx={{
-                        borderRadius: 1.5,
-                        mb: 0.5,
-                        py: 1,
-                        "&.Mui-selected": {
-                          bgcolor: "action.selected",
-                        },
+                        minWidth: 36,
+                        color: active ? "primary.main" : "text.secondary",
                       }}
                     >
-                      <ListItemIcon
-                        sx={{
-                          minWidth: 36,
-                          color: active ? "primary.main" : "text.secondary",
-                        }}
-                      >
-                        {tab.icon}
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={tab.label}
-                        primaryTypographyProps={{
-                          fontWeight: active ? 600 : 500,
-                          color: active ? "text.primary" : "text.secondary",
-                          fontSize: "0.9375rem",
-                        }}
-                      />
-                    </ListItemButton>
-                  </Link>
+                      {tab.icon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={tab.label}
+                      primaryTypographyProps={{
+                        fontWeight: active ? 600 : 500,
+                        color: active ? "text.primary" : "text.secondary",
+                        fontSize: "0.9375rem",
+                      }}
+                    />
+                  </ListItemButton>
                 );
               })}
             </List>
@@ -279,8 +288,8 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
               Get in touch
             </Typography>
             <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Recruiter, collaborator, or just want to chat? Drop me a line — I
-              read every message.
+              Recruiter, collaborator, or just curious? Drop me a line — I read
+              every message.
             </Typography>
           </Box>
 
@@ -340,16 +349,8 @@ export const Navbar = ({ toggleTheme }: NavbarProps) => {
             </Typography>
           </Divider>
 
-          <Box sx={{ display: "flex", justifyContent: "center", gap: 0.5 }}>
-            <HRefButton url="https://www.linkedin.com/in/loktokwan/">
-              <SlSocialLinkedin
-                size={20}
-                color={theme.palette.text.secondary}
-              />
-            </HRefButton>
-            <HRefButton url="https://github.com/kwanlokto">
-              <SlSocialGithub size={20} color={theme.palette.text.secondary} />
-            </HRefButton>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <SocialLinks ids={["linkedin", "github"]} />
           </Box>
         </Stack>
       </Modal>

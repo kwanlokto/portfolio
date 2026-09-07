@@ -13,7 +13,7 @@ export const SectionHeader = ({
   trailing,
   mb = 2,
 }: SectionHeaderProps) => {
-  const isPage = variant === "page";
+  const is_page = variant === "page";
 
   return (
     <Box sx={{ mb }}>
@@ -26,14 +26,17 @@ export const SectionHeader = ({
         }}
       >
         <Typography
-          variant={isPage ? "h5" : "h6"}
+          variant={is_page ? "h5" : "h6"}
+          // Visual size stays; the element level keeps the outline valid
+          // (the hero owns <h1>, every section header is an <h2>).
+          component="h2"
           sx={{ color: "text.primary" }}
         >
           {title}
         </Typography>
         {trailing}
       </Box>
-      {isPage && (
+      {is_page && (
         <Divider
           sx={{
             width: 48,

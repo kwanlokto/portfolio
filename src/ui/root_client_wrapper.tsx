@@ -7,7 +7,13 @@ import {
   ThemeProvider,
   createTheme,
 } from "@mui/material";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useSyncExternalStore } from "react";
+import {
+  get_server_snapshot,
+  get_snapshot,
+  subscribe,
+  toggle_mode,
+} from "@/lib/theme_mode";
 
 import { Navbar } from "@/ui/navbar";
 
@@ -16,25 +22,14 @@ export default function RootLayoutClientWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  const [mode, setMode] = useState<"light" | "dark">("dark");
-  const [mounted, setMounted] = useState(false);
-
-  // Restore theme from localStorage on mount
-  useEffect(() => {
-    if (!mounted) {
-      setMode(
-        (localStorage.getItem("theme-mode") as "light" | "dark") ?? "dark",
-      );
-    }
-    setMounted(true);
-  }, [mounted]);
-
-  // Save theme to localStorage whenever it changes
-  useEffect(() => {
-    if (mounted) {
-      localStorage.setItem("theme-mode", mode);
-    }
-  }, [mode, mounted]);
+  // useSyncExternalStore rather than useState + an effect: it gives React a
+  // server snapshot to hydrate against, so the page renders real content on
+  // the server instead of gating the whole tree behind a mounted flag.
+  const mode = useSyncExternalStore(
+    subscribe,
+    get_snapshot,
+    get_server_snapshot,
+  );
 
   const theme = useMemo(
     () =>
@@ -95,7 +90,6 @@ export default function RootLayoutClientWrapper({
       }),
     [mode],
   );
-  if (!mounted) return <></>;
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -115,9 +109,7 @@ export default function RootLayoutClientWrapper({
           disableGutters
           sx={{ pt: { xs: 2, sm: 4 }, px: { xs: 0, sm: 2 } }}
         >
-          <Navbar
-            toggleTheme={() => setMode(mode === "light" ? "dark" : "light")}
-          />
+          <Navbar mode={mode} toggleTheme={toggle_mode} />
           <Box sx={{ pt: { xs: 2.5, sm: 5 }, pb: { xs: 6, sm: 10 } }}>
             {children}
           </Box>

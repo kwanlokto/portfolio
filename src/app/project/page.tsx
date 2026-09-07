@@ -1,21 +1,24 @@
-"use client";
-
 import { Box } from "@mui/material";
 import { ItemGrid } from "@/ui/item_grid";
 import { PROJECTS } from "@/lib/project";
-import { Project } from "@/ui/card/project_card";
+import { ProjectCard } from "@/ui/card/project_card";
 import { SectionHeader } from "@/ui/section_header";
+
+export const metadata = {
+  title: "Projects — Ray Kwan",
+  description:
+    "Chrome extensions, offline AI tooling, algorithm visualizers, and hardware-integrated systems.",
+};
 
 export default function Page() {
   return (
     <Box>
-      <SectionHeader title="My Projects" variant="page" mb={3} />
-      <ItemGrid
-        items={PROJECTS}
-        render_item={(project, index) => (
-          <Project key={index} project={project} />
-        )}
-      />
+      <SectionHeader title="Projects" variant="page" mb={3} />
+      <ItemGrid>
+        {PROJECTS.map((project) => (
+          <ProjectCard key={project.title} project={project} />
+        ))}
+      </ItemGrid>
     </Box>
   );
 }

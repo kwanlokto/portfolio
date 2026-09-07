@@ -1,74 +1,35 @@
 // Pre-generates project screenshots at build time so the project cards render
 // instantly from /public instead of waiting on a remote screenshot service.
 //
-// Per project, the highest-priority capturable URL wins:
-//   1. deployed_url → live screenshot via microlink (saved as <title-slug>.png)
-//   2. github source_url with no picture_url → GitHub OG card (<owner>-<repo>.png)
-//   3. otherwise skip; runtime falls back to picture_url
+// Reads src/lib/projects.json directly and derives filenames with the same
+// module the app uses (src/lib/screenshot_name.mjs), so the generator and the
+// runtime <Image src> can never disagree.
 //
-// Idempotent: existing files are kept. Delete the screenshots dir to refresh.
+// Idempotent: existing files are kept. Delete a PNG to refresh it.
+
+import {
+  screenshot_filename,
+  screenshot_source_url,
+} from "../src/lib/screenshot_name.mjs";
 
 import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const PROJECT_FILE = path.join(__dirname, "..", "src", "lib", "project.tsx");
+const PROJECT_FILE = path.join(__dirname, "..", "src", "lib", "projects.json");
 const OUTPUT_DIR = path.join(__dirname, "..", "public", "screenshots");
 
-const PROJECT_BLOCK_RE = /\{[^{}]*?source_url:\s*"[^"]+"[^{}]*?\}/gs;
-
-const string_field = (block, name) => {
-  const m = block.match(new RegExp(`${name}:\\s*"([^"]+)"`));
-  return m ? m[1] : null;
-};
-
-const slug = (s) =>
-  s
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-
 async function get_targets() {
-  const source = await readFile(PROJECT_FILE, "utf8");
+  const projects = JSON.parse(await readFile(PROJECT_FILE, "utf8"));
   const targets = [];
-  for (const match of source.matchAll(PROJECT_BLOCK_RE)) {
-    const block = match[0];
-    const title = string_field(block, "title");
-    const source_url = string_field(block, "source_url");
-    const deployed_url = string_field(block, "deployed_url");
-    const picture_url = string_field(block, "picture_url");
-    if (!title) continue;
-
-    if (deployed_url) {
-      targets.push({
-        kind: "deployed",
-        filename: `${slug(title)}.png`,
-        url: deployed_url,
-      });
-      continue;
-    }
-    if (!picture_url && source_url) {
-      try {
-        const url = new URL(source_url);
-        if (url.hostname === "github.com") {
-          const [owner, repo] = url.pathname.split("/").filter(Boolean);
-          if (owner && repo) {
-            targets.push({
-              kind: "deployed",
-              filename: `${owner}-${repo}.png`,
-              url: source_url,
-            });
-          }
-        }
-      } catch {
-        // ignore unparseable URLs
-      }
-    }
+  for (const project of projects) {
+    const filename = screenshot_filename(project);
+    const url = screenshot_source_url(project);
+    if (filename && url) targets.push({ filename, url, title: project.title });
   }
-  return targets;
+  return { targets, total: projects.length };
 }
 
 async function fetch_deployed_screenshot(deployed_url) {
@@ -109,12 +70,10 @@ async function fetch_one(target) {
 
 async function main() {
   await mkdir(OUTPUT_DIR, { recursive: true });
-  const targets = await get_targets();
-  if (targets.length === 0) {
-    console.log("Nothing to fetch.");
-    return;
-  }
-  console.log(`Fetching ${targets.length} screenshot(s)...`);
+  const { targets, total } = await get_targets();
+  console.log(
+    `${total} project(s) defined; ${targets.length} with a capturable URL.`,
+  );
   for (const target of targets) {
     await fetch_one(target);
   }

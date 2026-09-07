@@ -1,20 +1,32 @@
 "use client";
 
 import { Box, Button, Tab, Tabs, Typography } from "@mui/material";
-import { EDUCATION, NUMBER_OF_NHL_TEAMS, WORK } from "@/lib/experience";
+import {
+  CAREER_START_YEAR,
+  EDUCATION,
+  NUMBER_OF_NHL_TEAMS,
+  WORK,
+} from "@/lib/experience";
 
 import { BoldText } from "@/ui/bold_text";
 import { ExperienceTimeline } from "@/ui/experience_timeline";
+import { FEATURED_PROJECTS } from "@/lib/project";
 import { HeroActions } from "@/ui/hero_actions";
 import Image from "next/image";
 import { ItemGrid } from "@/ui/item_grid";
 import Link from "next/link";
-import { PROJECTS } from "@/lib/project";
+import { MdArrowForward } from "react-icons/md";
 import { PiHandWavingBold } from "react-icons/pi";
-import { Project } from "@/ui/card/project_card";
+import { ProjectCard } from "@/ui/card/project_card";
 import { SectionHeader } from "@/ui/section_header";
 import { TechStack } from "@/ui/tech_stack";
+import { asset } from "@/lib/site";
 import { useState } from "react";
+
+const EXPERIENCE_TABS = [
+  { label: "Work", data: WORK },
+  { label: "Education", data: EDUCATION },
+];
 
 export default function Home() {
   const [tab_idx, set_tab_idx] = useState(0);
@@ -62,12 +74,13 @@ export default function Home() {
 
             <Typography
               variant="h4"
+              component="h1"
               sx={{
                 mb: { xs: 2, sm: 3 },
                 fontSize: { xs: "1.5rem", sm: "1.875rem" },
               }}
             >
-              Senior Software Engineer
+              Chief Technology Officer
             </Typography>
 
             <Typography
@@ -77,9 +90,9 @@ export default function Home() {
                 maxWidth: 560,
               }}
             >
-              {current_year - 2019} years building full-stack systems and
-              leading cross-functional teams. Currently developing automated
-              skate sharpening technology endorsed by{" "}
+              {current_year - CAREER_START_YEAR} years building full-stack
+              systems and leading cross-functional teams. Currently developing
+              the automated skate tuning platform used by{" "}
               <BoldText>{NUMBER_OF_NHL_TEAMS}+ NHL teams</BoldText>.
             </Typography>
 
@@ -96,9 +109,10 @@ export default function Home() {
             }}
           >
             <Image
-              src="/portfolio/Profile Picture.jpg"
-              alt="Ray's Picture"
+              src={asset("/Profile Picture.jpg")}
+              alt="Ray Kwan"
               fill
+              priority
               sizes="(max-width: 600px) 120px, 160px"
               style={{
                 objectFit: "cover",
@@ -132,19 +146,15 @@ export default function Home() {
               },
             }}
           >
-            <Tab label="Work" />
-            <Tab label="Education" />
+            {EXPERIENCE_TABS.map((tab) => (
+              <Tab key={tab.label} label={tab.label} />
+            ))}
           </Tabs>
         </Box>
-        {tab_idx === 0 && (
-          <ExperienceTimeline experience_list={WORK} collapsed_item_count={2} />
-        )}
-        {tab_idx === 1 && (
-          <ExperienceTimeline
-            experience_list={EDUCATION}
-            collapsed_item_count={2}
-          />
-        )}
+        <ExperienceTimeline
+          experience_list={EXPERIENCE_TABS[tab_idx].data}
+          collapsed_item_count={2}
+        />
       </Box>
 
       {/* Tech Stack */}
@@ -155,20 +165,22 @@ export default function Home() {
         <SectionHeader
           title="Featured Projects"
           trailing={
-            <Link href="/project" style={{ textDecoration: "none" }}>
-              <Button size="small" sx={{ color: "text.secondary" }}>
-                View all →
-              </Button>
-            </Link>
+            <Button
+              component={Link}
+              href="/project"
+              size="small"
+              endIcon={<MdArrowForward size={16} />}
+              sx={{ color: "text.secondary" }}
+            >
+              View all
+            </Button>
           }
         />
-        <ItemGrid
-          items={PROJECTS}
-          total_featured_items={{ xs: 1, sm: 2, md: 3 }}
-          render_item={(project, index) => (
-            <Project key={index} project={project} />
-          )}
-        />
+        <ItemGrid>
+          {FEATURED_PROJECTS.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </ItemGrid>
       </Box>
     </Box>
   );

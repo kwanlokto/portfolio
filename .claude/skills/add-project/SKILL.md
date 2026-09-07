@@ -1,82 +1,80 @@
 ---
 name: add-project
-description: Add or edit a project entry in src/lib/project.tsx without breaking the screenshot pipeline. Use whenever adding, removing, or editing a project card on the portfolio.
+description: Add or edit a project entry on the portfolio, keeping the screenshot pipeline in sync. Use whenever adding, removing, or editing a project card.
 ---
 
 # Adding a project
 
-Project cards are driven entirely by the `PROJECTS` array in `src/lib/project.tsx`. A build-time
-script parses that file **with a regex**, so the shape of what you write matters as much as its
-content.
+Project cards are driven entirely by `src/lib/projects.json`. It is plain JSON — no JSX, no
+regex parsing, no formatting constraints.
 
 ## 1. Add the entry
 
-Append to `PROJECTS` in `src/lib/project.tsx`, matching `ProjectType`:
+Append to `src/lib/projects.json`, matching `ProjectType` in `src/lib/project.ts`:
 
-```tsx
+```json
 {
-  title: "Project Name",
-  description: (
-    <>
-      One or two sentences, plain prose.
-    </>
-  ),
-  picture_url: null,
-  TECH_STACK: ["Next.js", "TypeScript"],
-  deployed_url: "https://example.com/",
-  source_url: "https://github.com/kwanlokto/repo",
-  featured: false,
+  "title": "Project Name",
+  "description": "One or two sentences. Lead with what it does, not why you built it.",
+  "picture_url": null,
+  "tech_stack": ["Next.js", "TypeScript"],
+  "deployed_url": "https://example.com/",
+  "source_url": "https://github.com/kwanlokto/repo",
+  "featured": false
 }
 ```
 
-`deployed_url`, `download_url`, `picture_url`, and `featured` are optional; `title`, `description`,
-`TECH_STACK`, and `source_url` are required (`picture_url` is required by the type but may be `null`).
+`title`, `description`, `picture_url`, `tech_stack`, and `source_url` are required
+(`picture_url` may be `null`). `deployed_url`, `download_url`, and `featured` are optional.
 
-## 2. Respect the regex constraints
+Notes:
 
-`scripts/fetch_screenshots.mjs` matches project objects with:
+- `picture_url` and `download_url` are site-relative **without** the `/portfolio` prefix —
+  `asset()` adds it. Write `/atm.png`, not `/portfolio/atm.png`.
+- `featured: true` is what puts a card on the home page. The home page renders
+  `FEATURED_PROJECTS`; `/project` renders all of them.
+- Descriptions are plain strings. Keep them comparable in length and voice to their neighbours,
+  and lead with capability rather than backstory.
 
-```js
-const PROJECT_BLOCK_RE = /\{[^{}]*?source_url:\s*"[^"]+"[^{}]*?\}/gs;
-```
-
-The `[^{}]` classes mean the object must contain **no nested braces**. Therefore:
-
-- The `description` JSX must contain **no `{...}` expression** — no interpolation, and no
-  Prettier-inserted `{" "}`. Keep description lines short enough that Prettier does not wrap in a
-  way that injects `{" "}`. If it does, rewrap the prose by hand.
-- `deployed_url`, `source_url`, `picture_url`, and `title` must be **plain double-quoted string
-  literals** — not template literals, not concatenations. A long URL may sit on its own line.
-
-A violating entry does not error. It is silently skipped and the card renders a missing image.
-
-## 3. Verify extraction
+## 2. Generate the screenshot
 
 ```bash
 npm run fetch-screenshots
 ```
 
-It prints one `saved`/`skip` line per capturable project. Confirm the new project appears. If it is
-absent, the regex did not match it — recheck step 2.
+It prints how many projects are defined and how many have a capturable URL, then one
+`saved`/`skip`/`failed` line each. Confirm the new project appears.
 
-## 4. Keep filename derivation in sync
+Filenames come from `src/lib/screenshot_name.mjs`, which **both** the generator and
+`src/lib/project.ts` import. Precedence:
 
-`slug()` and the filename precedence are **duplicated** in `scripts/fetch_screenshots.mjs` and
-`src/ui/card/project_card.tsx`. If you touch either, update both. Precedence:
+| Condition                            | Image used                                    |
+| ------------------------------------ | --------------------------------------------- |
+| `deployed_url` set                   | `screenshots/<title-slug>.png` (live capture) |
+| no `deployed_url`, `picture_url` set | `picture_url` as-is                           |
+| neither, GitHub `source_url`         | `screenshots/<owner>-<repo>.png`              |
+| none of the above                    | live microlink URL                            |
 
-| Condition                                                | Screenshot file                         |
-| -------------------------------------------------------- | --------------------------------------- |
-| `deployed_url` set                                       | `<slug(title)>.png`                     |
-| no `deployed_url`, `picture_url` set                     | `picture_url` used directly (card only) |
-| no `deployed_url`, no `picture_url`, GitHub `source_url` | `<owner>-<repo>.png`                    |
-| none of the above                                        | live microlink URL (card only)          |
+If you change that logic, change it in `screenshot_name.mjs` only — nowhere else derives it.
 
-## 5. Refreshing an existing screenshot
+## 3. Refreshing an existing screenshot
 
-The cache is idempotent — existing files are skipped. Delete the PNG from `public/screenshots/`
-first, then re-run `npm run fetch-screenshots`.
+The cache is idempotent; existing files are skipped. Delete the PNG from `public/screenshots/`
+first, then re-run. Failures only `console.warn`, so read the output.
 
-## 6. Finish
+## 4. Finish
 
-Run `npm run lint` and `npm run build`. Commit the `project.tsx` change **and** any new PNG in
-`public/screenshots/` (they are committed, not gitignored). Use a short lowercase commit message.
+```bash
+npm run lint && npm run build
+```
+
+Then confirm the card resolves to a real file:
+
+```bash
+for f in $(grep -o '/portfolio/screenshots/[^"&?]*' out/project.html | sort -u); do
+  [ -f "public/${f#/portfolio/}" ] && echo "OK $f" || echo "MISSING $f"
+done
+```
+
+Commit the JSON change **and** any new PNG in `public/screenshots/` — they are tracked.
+Use a short lowercase commit message.

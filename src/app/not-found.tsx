@@ -1,5 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 
+import { asset } from "@/lib/site";
+
 export default function NotFound() {
   return (
     <Box
@@ -9,14 +11,21 @@ export default function NotFound() {
       justifyContent="center"
       height="100vh"
     >
-      <Typography variant="h4" fontWeight="bold">
-        404 - Page Not Found
+      <Typography variant="h4" component="h1" fontWeight="bold">
+        This page doesn&apos;t exist
       </Typography>
-      <Typography variant="body1" mt={2}>
-        The page you&apos;re looking for doesn&apos;t exist.
+      <Typography variant="body1" mt={2} sx={{ color: "text.secondary" }}>
+        The link may be out of date, or the page may have moved.
       </Typography>
-      <Button variant="contained" color="primary" href="/" sx={{ mt: 4 }}>
-        Go Back Home
+      {/* asset() applies basePath by hand: Next only prefixes next/link and the
+          router, and a bare href="/" would leave the site on GitHub Pages. */}
+      <Button
+        href={asset("/")}
+        variant="contained"
+        color="primary"
+        sx={{ mt: 4 }}
+      >
+        Back to home
       </Button>
     </Box>
   );

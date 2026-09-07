@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 
 import {
@@ -14,6 +16,7 @@ import { ExperienceType, Role } from "@/lib/experience";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
 
 import Image from "next/image";
+import { RichText } from "@/ui/rich_text";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
@@ -43,7 +46,7 @@ export const ExperienceTimeline = ({
       >
         {experience_list.map((experience, experience_idx) => (
           <Collapse
-            key={experience_idx}
+            key={experience.organization}
             in={expanded || experience_idx < collapsed_item_count}
             timeout={400}
             easing={{
@@ -52,7 +55,6 @@ export const ExperienceTimeline = ({
             }}
           >
             <TimelineItem
-              key={experience_idx}
               position="right"
               sx={{
                 display: "flex",
@@ -78,10 +80,13 @@ export const ExperienceTimeline = ({
                           ? experience.dark_mode_icon_url
                           : experience.icon_url
                       }
-                      alt={experience.company}
+                      alt={experience.organization}
                       fill
+                      sizes="30px"
                       style={{ objectFit: "contain" }}
-                      priority
+                      // Only the first logo is above the fold; preloading all of
+                      // them competes with the real LCP image.
+                      priority={experience_idx === 0}
                     />
                   </Icon>
                 </TimelineDot>
@@ -112,7 +117,7 @@ export const ExperienceTimeline = ({
                     variant="body1"
                     sx={{ color: "text.primary", fontWeight: 600, pt: 0.75 }}
                   >
-                    {experience.company}
+                    {experience.organization}
                   </Typography>
                 </Box>
 
@@ -126,33 +131,12 @@ export const ExperienceTimeline = ({
                     [`& .${timelineOppositeContentClasses.root}`]: { flex: 0 },
                   }}
                 >
-                  {experience.roles?.map((role: Role, role_idx: number) => (
+                  {experience.roles.map((role: Role, role_idx: number) => (
                     <TimelineItem
-                      key={role_idx}
+                      key={role.title}
                       position="right"
                       sx={{ minHeight: 0 }}
                     >
-                      {/* TODO: This doesn't work as intended for some reason? */}
-                      {/* {experience.roles.length > 1 && (
-                      <TimelineSeparator>
-                        {role_idx !== 0 && (
-                          <TimelineConnector sx={{ ml: -5.5 }} />
-                        )}
-                        <TimelineDot
-                          color={
-                            role_idx === 0
-                              ? "primary"
-                              : role_idx === experience.roles.length - 1
-                              ? "grey"
-                              : "secondary"
-                          }
-                          sx={{ p: 0.25, ml: -3.25 }}
-                        />
-                        {role_idx !== experience.roles.length - 1 && (
-                          <TimelineConnector sx={{ ml: -5.5 }} />
-                        )}
-                      </TimelineSeparator>
-                    )} */}
                       <TimelineContent sx={{ px: { xs: 1, sm: 2 }, py: 0.5 }}>
                         <Typography
                           variant="h6"
@@ -161,7 +145,7 @@ export const ExperienceTimeline = ({
                             color: "text.primary",
                           }}
                         >
-                          {role.name}
+                          {role.title}
                         </Typography>
                         <Typography
                           variant="caption"
@@ -171,7 +155,7 @@ export const ExperienceTimeline = ({
                             mb: 1,
                           }}
                         >
-                          {role.timeline}
+                          {role.dates}
                         </Typography>
 
                         {role.achievements.length > 0 && (
@@ -182,30 +166,28 @@ export const ExperienceTimeline = ({
                               py: 0,
                             }}
                           >
-                            {role.achievements.map(
-                              (achievement, achievement_idx) => (
-                                <ListItem
-                                  key={achievement_idx}
+                            {role.achievements.map((achievement) => (
+                              <ListItem
+                                key={achievement}
+                                sx={{
+                                  display: "list-item",
+                                  p: 0,
+                                  mb: 0.5,
+                                  "&::marker": { color: "text.secondary" },
+                                }}
+                              >
+                                <Typography
+                                  variant="body2"
                                   sx={{
-                                    display: "list-item",
-                                    p: 0,
-                                    mb: 0.5,
-                                    "&::marker": { color: "text.secondary" },
+                                    color: "text.secondary",
+                                    pl: 0.5,
+                                    lineHeight: 1.55,
                                   }}
                                 >
-                                  <Typography
-                                    variant="body2"
-                                    sx={{
-                                      color: "text.secondary",
-                                      pl: 0.5,
-                                      lineHeight: 1.55,
-                                    }}
-                                  >
-                                    {achievement}
-                                  </Typography>
-                                </ListItem>
-                              ),
-                            )}
+                                  <RichText text={achievement} />
+                                </Typography>
+                              </ListItem>
+                            ))}
                           </List>
                         )}
 

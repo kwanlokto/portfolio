@@ -1,9 +1,11 @@
-type DefaultImageType = {
-  type: "default";
+import { asset } from "@/lib/site";
+
+type PhotoItemType = {
+  type: "photo";
 };
 
-type BlogImageType = {
-  type: "blog";
+type ReviewItemType = {
+  type: "review";
   md: string; // markdown file name without extension
   rating: number; // 0 to 5
 };
@@ -12,7 +14,7 @@ export type HobbyItemType = {
   title: string;
   src: string;
   aspect_ratio: string; // format "width/height" e.g. "3/4"
-} & (DefaultImageType | BlogImageType);
+} & (PhotoItemType | ReviewItemType);
 
 export type HobbyType = {
   title: string;
@@ -29,53 +31,53 @@ export type HobbyType = {
 const TRAVELING_IMAGES: HobbyItemType[] = [
   // Row 1
   {
-    type: "default",
+    type: "photo",
     title: "Antelope Canyon",
-    src: "/portfolio/traveling/Antelope Canyon.jpg",
+    src: asset("/traveling/Antelope Canyon.jpg"),
     aspect_ratio: "3/4",
   },
   {
-    type: "default",
+    type: "photo",
     title: "Mt Fuji",
-    src: "/portfolio/traveling/Mt Fuji.jpg",
+    src: asset("/traveling/Mt Fuji.jpg"),
     aspect_ratio: "16/9",
   },
   {
-    type: "default",
+    type: "photo",
     title: "Lynn Canyon",
-    src: "/portfolio/traveling/Lynn Canyon.jpg",
+    src: asset("/traveling/Lynn Canyon.jpg"),
     aspect_ratio: "3/4",
   },
   {
-    type: "default",
+    type: "photo",
     title: "The Crack",
-    src: "/portfolio/traveling/The Crack.jpg",
-    aspect_ratio: "1",
+    src: asset("/traveling/The Crack.jpg"),
+    aspect_ratio: "1/1",
   },
   // Row 2
   {
-    type: "default",
+    type: "photo",
     title: "Minoh Waterfalls",
-    src: "/portfolio/traveling/Minoh Waterfalls.jpg",
+    src: asset("/traveling/Minoh Waterfalls.jpg"),
     aspect_ratio: "9/16",
   },
   {
-    type: "default",
+    type: "photo",
     title: "Osaka Castle",
-    src: "/portfolio/traveling/Osaka Castle.jpg",
+    src: asset("/traveling/Osaka Castle.jpg"),
     aspect_ratio: "3/4",
   },
   {
-    type: "default",
+    type: "photo",
     title: "Whistler",
-    src: "/portfolio/traveling/Whistler.jpg",
+    src: asset("/traveling/Whistler.jpg"),
     aspect_ratio: "4/3",
   },
   {
-    type: "default",
+    type: "photo",
     title: "Vancouver Canucks",
-    src: "/portfolio/traveling/Vancouver Canucks.jpg",
-    aspect_ratio: "1",
+    src: asset("/traveling/Vancouver Canucks.jpg"),
+    aspect_ratio: "1/1",
   },
 ];
 
@@ -87,20 +89,20 @@ const TRAVELING_IMAGES: HobbyItemType[] = [
 const READING_IMAGES: HobbyItemType[] = [
   // Row 1
   {
-    type: "blog",
+    type: "review",
     title: "The Pragmatic Programmer",
-    src: "/portfolio/reading/The Pragmatic Programmer.jpg",
-    md: "/portfolio/reading/The Pragmatic Programmer.md",
+    src: asset("/reading/The Pragmatic Programmer.jpg"),
+    md: asset("/reading/The Pragmatic Programmer.md"),
     rating: 4.75,
-    aspect_ratio: "1",
+    aspect_ratio: "1/1",
   },
   {
-    type: "blog",
+    type: "review",
     title: "The Phoenix Project",
-    src: "/portfolio/reading/The Phoenix Project.jpg",
-    md: "/portfolio/reading/The Phoenix Project.md",
+    src: asset("/reading/The Phoenix Project.jpg"),
+    md: asset("/reading/The Phoenix Project.md"),
     rating: 4.5,
-    aspect_ratio: "1",
+    aspect_ratio: "1/1",
   },
 ];
 
@@ -110,19 +112,17 @@ const READING_IMAGES: HobbyItemType[] = [
  * card is clicked. The images in the modal can be either traveling images or reading images,
  * which are defined above.
  */
-const HOBBIES = [
+export const HOBBIES: HobbyType[] = [
   {
     title: "Traveling",
-    img: "/portfolio/traveling.png",
+    img: asset("/traveling.png"),
     images: TRAVELING_IMAGES,
   },
   {
     title: "Reading",
-    img: "/portfolio/reading.jpg",
+    img: asset("/reading.jpg"),
     images: READING_IMAGES,
   },
-  { title: "Gaming", img: "/portfolio/gaming.jpg", images: [] },
-  { title: "Sports", img: "/portfolio/sport.png", images: [] },
+  { title: "Gaming", img: asset("/gaming.jpg"), images: [] },
+  { title: "Sports", img: asset("/sport.png"), images: [] },
 ];
-
-export const SCROLLING_HOBBIES: HobbyType[] = [...HOBBIES, ...HOBBIES];

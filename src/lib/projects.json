@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Focus Guard",
+    "description": "A Chrome extension that protects your attention by blocking distracting sites and taming YouTube's doom-scroll machinery — toggles to hide Shorts, the home feed, recommendations, and the comment section.",
+    "picture_url": "/focus_guard.jpg",
+    "tech_stack": ["JavaScript", "Chrome Extension", "HTML", "CSS"],
+    "deployed_url": "https://chromewebstore.google.com/detail/focus-guard-%E2%80%94-productivit/oammbghjoieihnjfmedbnafbjfigjdlb",
+    "source_url": "https://github.com/kwanlokto/productivity-chrome-extension",
+    "featured": true
+  },
+  {
+    "title": "PDF Chatbot",
+    "description": "An AI document assistant that runs entirely offline: upload a PDF, search it semantically, and hold a multi-turn conversation against a bundled local LLM. Ships as a one-click installer for Windows and Linux.",
+    "picture_url": "/pdf_chatbot.png",
+    "tech_stack": [
+      "Electron",
+      "Next.js",
+      "FastAPI",
+      "Ollama",
+      "ChromaDB",
+      "PyInstaller"
+    ],
+    "download_url": "https://github.com/kwanlokto/chatbot/releases/download/v0.1.0/PDF.Chatbot-Setup-0.1.0.exe",
+    "source_url": "https://github.com/kwanlokto/chatbot",
+    "featured": true
+  },
+  {
+    "title": "Music Player",
+    "description": "A minimal, ad-free mobile music player: local library playback, gapless queueing, and nothing else. Built after every free player I tried buried the play button under ads and social feeds. Beta APK below.",
+    "picture_url": "/music_player.jpg",
+    "tech_stack": ["React Native", "Expo"],
+    "download_url": "/Music Player.apk",
+    "source_url": "https://github.com/kwanlokto/music-player"
+  },
+  {
+    "title": "Visual Pathfinding",
+    "description": "An interactive grid for watching search algorithms think. Drop start and goal nodes, draw walls, and step through A*, Dijkstra, BFS, and DFS as each expands its frontier — built to make the difference between informed and uninformed search visible.",
+    "picture_url": "/graphing_library.png",
+    "tech_stack": ["Next.js", "MUI"],
+    "deployed_url": "https://graphing-library.vercel.app/",
+    "source_url": "https://github.com/kwanlokto/graphing_library"
+  },
+  {
+    "title": "Wordle",
+    "description": "An unlimited-play Wordle clone — same rules, no one-puzzle-a-day limit, with shareable result grids.",
+    "picture_url": "/wordle.png",
+    "tech_stack": ["Next.js", "Tailwind CSS"],
+    "deployed_url": "https://wordle-three-gules.vercel.app/",
+    "source_url": "https://github.com/kwanlokto/wordle"
+  },
+  {
+    "title": "Portfolio",
+    "description": "This site. A statically-exported Next.js app with MUI theming, a persisted dark/light mode, and a build-time pipeline that generates every project card screenshot.",
+    "picture_url": null,
+    "tech_stack": ["Next.js", "TypeScript", "MUI"],
+    "source_url": "https://github.com/kwanlokto/portfolio"
+  },
+  {
+    "title": "ATM",
+    "description": "A containerized banking service that tracks accounts and transactions end to end — a Flask and PostgreSQL API with Alembic migrations, a React front end, and a one-command Docker Compose setup.",
+    "picture_url": "/atm.png",
+    "tech_stack": ["Python", "React", "Docker", "Alembic", "Flask"],
+    "source_url": "https://github.com/kwanlokto/atm"
+  }
+]

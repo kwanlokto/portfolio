@@ -24,13 +24,16 @@ means there is no server build to run.
 Next applies `basePath` automatically to `next/link` and the router, but **not** to `next/image`
 `src`, raw `fetch()`, or `<a href>`. Those must hardcode the prefix:
 
+Use `asset()` from `src/lib/site.ts` rather than writing the prefix by hand:
+
 ```tsx
-<Link href="/project" />                          // correct — no prefix
-<Image src="/portfolio/Profile Picture.jpg" />    // correct — prefix required
-handle_download("/portfolio/Resume.pdf", ...)     // correct — prefix required
+<Link href="/project" />                  // correct — next/link is prefixed for you
+<Image src={asset("/Profile Picture.jpg")} />   // correct — asset() adds /portfolio
+<Button href={asset("/")} />              // correct — a raw href is NOT prefixed
 ```
 
-Getting this backwards works in dev and silently 404s in production.
+Getting this backwards works in dev and silently 404s in production. MUI's `href` prop renders a
+raw `<a>`, so it always needs `asset()`.
 
 ## Styling: MUI `sx` only
 
@@ -41,7 +44,7 @@ pass-through prop. Never add Tailwind utility classes to match "existing style";
 
 ## Naming
 
-- Files are `snake_case`: `project_card.tsx`, `root_client_wrapper.tsx`, `md_reader.tsx`
+- Files are `snake_case`: `project_card.tsx`, `root_client_wrapper.tsx`, `hobby_gallery_modal.tsx`
 - Locals, state setters, handlers, and props are `snake_case`: `set_show_contact_form`,
   `handle_download`, `tab_idx`, `experience_list`, `collapsed_item_count`
 - Components are `PascalCase`; module-level data constants are `UPPER_SNAKE_CASE` (`PROJECTS`, `WORK`)
@@ -50,42 +53,48 @@ Some older camelCase (`setExpanded`, `toggleTheme`) survives. Write new code as 
 
 ## Content lives in `src/lib/`
 
-`project.tsx`, `experience.tsx`, `hobby.ts`, `tech_stack.tsx`, and `system_design.tsx` export typed
-arrays — this is content-as-code, not a CMS. To add a project or job, edit these files.
-`project.tsx` and `experience.tsx` are `.tsx` because their `description` fields are inline JSX.
+`projects.json`, `experience.ts`, `hobby.ts`, and `tech_stack.ts` hold the site's content as plain
+typed data — no JSX. To add a project or job, edit these files.
 
-Long-form markdown (`public/reading/`, `public/blog/`) is fetched **client-side at runtime** by
-`src/ui/md_reader.tsx`, so it is neither bundled nor type-checked. `public/blog/` is currently
-orphaned — there is no `/blog` route and the navbar tab is commented out.
+`src/lib/` must not import from `src/ui/`. Emphasis in copy is written as `**bold**` and rendered by
+`src/ui/rich_text.tsx`; icons are stored as component references (`icon: FaPython`), with the size
+applied at the render site.
 
-## Screenshot pipeline — two fragile couplings
+Long-form markdown (`public/reading/`) is fetched **client-side at runtime** by
+`src/ui/markdown/reader.tsx`, so it is neither bundled nor type-checked.
+
+## Screenshot pipeline
 
 `scripts/fetch_screenshots.mjs` pre-generates project card images into `public/screenshots/`
-(committed). Two things break silently:
+(committed). It reads `src/lib/projects.json` directly and derives filenames from
+`src/lib/screenshot_name.mjs` — the same module `src/lib/project.ts` uses to build the `<Image src>`,
+so the generator and the runtime cannot disagree. **Change filename logic in that one module only.**
 
-1. **It parses `src/lib/project.tsx` with a regex, not by importing it.** `PROJECT_BLOCK_RE` uses
-   `[^{}]` character classes, so **a project object containing any nested `{}` will not match** and
-   its screenshot is skipped without error. In practice this means a `description` whose JSX
-   contains an expression — including a Prettier-inserted `{" "}` on a wrapped line — silently
-   drops that project. It also only reads plain double-quoted strings, so `deployed_url` must not be
-   a template literal or concatenation. After editing `project.tsx`, verify all projects still
-   extract: `npm run fetch-screenshots` should report one line per project.
+Precedence: `deployed_url` → `<title-slug>.png`; else `picture_url` used as-is; else GitHub
+`source_url` → `<owner>-<repo>.png`; else a live microlink URL.
 
-2. **The `slug()` function and its filename precedence are duplicated** in
-   `scripts/fetch_screenshots.mjs` and `src/ui/card/project_card.tsx`. Change one and the runtime
-   `<Image src>` points at a file the generator never wrote. Precedence: `deployed_url` →
-   `<title-slug>.png`; else GitHub `source_url` with no `picture_url` → `<owner>-<repo>.png`.
-
-The cache is idempotent — `fetch_one` skips any file that already exists. **To refresh a screenshot,
-delete its PNG from `public/screenshots/` first.** Fetch failures are `console.warn` only and never
-fail the build.
+The cache is idempotent — existing files are skipped. **To refresh a screenshot, delete its PNG from
+`public/screenshots/` first.** Fetch failures are `console.warn` only and never fail the build, so
+read the output after adding a project.
 
 ## Rendering
 
-Every page is a client component. `src/app/layout.tsx` delegates to `root_client_wrapper.tsx`
-(`"use client"`), which owns the MUI theme and renders `<></>` until `mounted` — a deliberate
-hydration guard for the `localStorage` theme (key `"theme-mode"`, dark by default). Do not
-"fix" that empty first render without accounting for hydration mismatch.
+`src/app/layout.tsx` delegates to `root_client_wrapper.tsx` (`"use client"`), which owns the MUI
+theme. Theme mode comes from `src/lib/theme_mode.ts` via `useSyncExternalStore`, whose server
+snapshot is always `"dark"` — that is what lets the static export contain real HTML while still
+honouring the stored preference after hydration.
+
+**Never gate the tree behind a `mounted` flag.** An earlier version returned `<></>` until mount,
+which shipped an empty `<body>` in the export. If you touch the theme, rebuild and check:
+
+```bash
+python3 -c "import re;h=open('out/index.html').read();b=re.search(r'<body[^>]*>(.*)</body>',h,re.S).group(1);print(len(re.sub(r'<script.*?</script>','',b,flags=re.S).strip()))"
+```
+
+That should print six figures, not double digits.
+
+`src/app/project/page.tsx` is a server component. Keep it that way — don't pass function props to
+`ItemGrid`, and don't put JSX back into `src/lib/`.
 
 ## Deployment
 
@@ -97,6 +106,7 @@ dotfiles. Without it GitHub Pages runs Jekyll and 404s every `_next/*` asset.
 ## Conventions
 
 - Path alias `@/*` → `./src/*`, used throughout (`@/ui/navbar`, `@/lib/project`)
+- Prettier is enforced by a `PostToolUse` hook; run `npm run format` if it drifts
 - Commit messages are short, lowercase, imperative, and **not** conventional commits —
   `add deployed url`, `cleaner mobile?`, `revert some small changes`. Match that; no `feat:`/`fix:` prefixes.
 - No environment variables. `npm install && npm run dev` is the entire setup.
