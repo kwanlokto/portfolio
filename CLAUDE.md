@@ -109,6 +109,17 @@ developer machine. There is no CI. `.nojekyll` exists only on the `gh-pages` bra
 produced by the build and is not in `public/`. It survives because the `gh-pages` package ignores
 dotfiles. Without it GitHub Pages runs Jekyll and 404s every `_next/*` asset.
 
+## Git
+
+**Do not commit or push unless explicitly asked.** Leave finished work staged or in the working
+tree and say what changed; the author commits from GitKraken and wants to review diffs first.
+This is easy to get wrong when finishing a multi-phase task — completing a phase is not a
+request to commit it.
+
+Never use `git add -A`/`git add .` — the author edits in an IDE and GitKraken stages files
+during a session, so a blanket add sweeps unrelated changes into a commit whose message does not
+describe them. Stage the specific paths you changed.
+
 ## Conventions
 
 - Path alias `@/*` → `./src/*`, used throughout (`@/ui/navbar`, `@/lib/project`)
